@@ -1,0 +1,243 @@
+.LandingPage-body{
+    width: 100%;
+    height: max-content;
+    background-color: goldenrod;
+}
+
+.LandingPageImgBox{
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    /* background-size: cover; */
+    /* background-position:  center;  */
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+    transition:  1s ease-in-out;
+
+
+    & .Img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        
+    }
+
+    & .LandinPageImgBoxText{
+        width: 55%;
+        height: 40%;
+        /* background-color: green; */
+         font-family: "Poppins", sans-serif;
+        position: absolute;
+        top:210px;
+        left: 310px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    & .LandinPageImgBoxTextH1{
+        color: white;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+    }
+    & .LandinPageImgBoxTextP{
+        width: 80%;
+        height: 25%;
+        /* background-color: blue; */
+        color: white;
+        text-align: center;
+        font-size: 27px;
+    }
+
+    & .Btn{
+        width: 35%;
+        /* height: 50%; */
+        padding: 20px;
+        background-color: #ff5722;
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.LandingPageBox2{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    gap: 10px;
+
+    & .LandingPageBox2Nav1{
+        width: 50%;
+        height: 100%;
+        /* background-color: gray; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .LandingPageBox2Nav1Small{
+        width: 75%;
+        height: 50%;
+        /* background-color: #fff; */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+        font-family: "Poppins", sans-serif;
+    }
+
+    & .LandingPageBox2Nav1SmallH1{
+        font-family: "Poppins", sans-serif;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .LandingPageBox2Nav1SmallBox{
+        width: 100%;
+        height: 15%;
+        /* background-color: green; */
+        display: flex;
+        padding-left: 30px;
+        gap: 15px;
+    }
+
+    & .Btns{
+        width: 35%;
+        color: white;
+        border-radius: 50px;
+        border: none;
+        background-color: #27187e;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    & .Btns2{
+        width: 35%;
+        color: orange;
+        border-radius: 50px;
+        border: solid orange 2px;
+        /* background-color: #27187e; */
+        font-size: 17px;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+    }
+}
+
+ .LandingPageBox2Nav1Small2{
+    width: 80%;
+    height: 65%;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    font-size: 18px;
+    flex-wrap: wrap;
+
+}
+
+.card{
+    width: 239px;
+    height: 172px;
+    /* background-color: green; */
+    display: flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    gap: 5px;
+    flex-direction: column;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+
+
+    & .cardNav{
+        width: 100%;
+        height: 50%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #27187e;
+        text-align: center;
+    }
+}
+
+.TrendingEventBlock{
+    width: 100%;
+    height: 100vh;
+    background-color: #edecf4;
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+
+
+    & .TrendingEventBlockHeader{
+        width: 100%;
+        height: 15%;
+        /* background-color: grey; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    & .TrendingEventBlockScroll{
+        width: 90%;
+        height: 70%;
+        background-color: #edecf4;
+        overflow-x: auto;
+        white-space: nowrap;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        scrollbar-width: none;
+    }
+}
+
+.FeaturedEventBlocked{
+    width: 100%;
+    height: 728px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+   & .FeaturedEventBlockedHeader{
+        width: 100%;
+        height: 15%;
+        /* background-color: gray; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    & .FeaturedEventBlockedBody{
+        width: 1323px;
+        height: 468px;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
