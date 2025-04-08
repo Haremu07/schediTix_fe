@@ -9,6 +9,9 @@
     margin-top: 20px;
     z-index: 1000;
   }
+  .firste{
+    bottom: 0px;
+  }
   
   /* Inner container */
   .header-container {
