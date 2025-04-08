@@ -11,6 +11,7 @@ import img1 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-f
 import img2 from "../../assets/Hero carousel.png"
 import img3 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-field 8.jpg"
 import img4 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-field 9.jpg"
+import vector from "../../assets/Vector.png"
 
 const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -127,7 +128,7 @@ useEffect(() => {
       <div className="TrendingEventBlock">
           <div className="TrendingEventBlockHeader">
             <h1>Trending Events</h1>
-            <img src="../../../public/images/Vector.png" alt="" />
+            <img src={vector} alt="" />
           </div>
           <div className="TrendingEventBlockScroll">
             <Cards img="https://www.astro.com/im/in/sr_cosmic_sky.jpg" text1="CONVERGENCE OF STARS" Date="21st December, 2025" content="This is the 4th edition of the biggest community awards ceremony in Africa." Location="Eko Hotel and Suites" Price="2,000"/>
@@ -145,21 +146,21 @@ useEffect(() => {
         <div className="FeaturedEventBlocked">
             <div className="FeaturedEventBlockedHeader">
               <h1>Featured Events</h1>
-            <img src="../../../public/images/Vector.png" alt="" />
+            <img src={vector} alt="" />
             </div>
             <div className="FeaturedEventBlockedBody">
               <Card2 text="Kora Hack2.0 - Redesigni..." content="A 14-day hackathon to build  ideas that are breaking boundaries 
               in how we pay, buy, and sell in emerging markets. KoraHACK 2.0 is sponsored by Kora, 
-              a pan-African payment gateway." image="../../../public/images/Frame 236 (1).png"/>
+              a pan-African payment gateway." image={img1}/>
               <Card2 text="Genz Tech Fest 2024" content="We are GenZtechies, where Gen-Z developers,
                founders, designers, and techies can connect, learn, 
-               and discover life-changing opportunities." image="../../../public/images/fusion 236.png"/>
+               and discover life-changing opportunities." image={img2}/>
               <Card2 text="Lagos Tech Fest" content="Now in its 5th year, Lagos Tech Fest gathers startups, innovators, 
               investors, and government representatives to shape Nigeria's tech future through conferences,
-               exhibitions, networking....." image="../../../public/images/TechFrame 236.png"/>
+               exhibitions, networking....." image={img3}/>
               <Card2 text="Adanian Labs Africa merges with ImpalaPay" content="A Pan African Venture Studio Actuating the 
               Tech Revolution for a Borderless Africa. Unleash the full potential of your business with our groundbreaking ..." 
-              image="../../../public/images/Frame 236 (1).png"/>
+              image={img4}/>
             </div>
         </div>
     </div>
