@@ -62,9 +62,9 @@
     }
 
     & .Btn{
-        width: 35%;
+        width: 30%;
         /* height: 50%; */
-        padding: 20px;
+        padding: 13px;
         background-color: #ff5722;
         border: none;
         border-radius: 50px;
@@ -120,18 +120,27 @@
         width: 35%;
         color: white;
         border-radius: 50px;
+        padding: 15px;
         border: none;
         background-color: #27187e;
-        font-size: 17px;
+        font-size: 15px;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
     }
     & .Btns2{
         width: 35%;
         color: orange;
         border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
         border: solid orange 2px;
         /* background-color: #27187e; */
-        font-size: 17px;
+        font-size: 15px;
         font-family: "Poppins", sans-serif;
         cursor: pointer;
     }
@@ -172,6 +181,18 @@
         align-items: center;
         color: #27187e;
         text-align: center;
+    }
+
+    & .cardNav2{
+        width: 100%;
+        height: 50%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #27187e;
+        text-align: center;
+        padding-bottom: 20px;
     }
 }
 
