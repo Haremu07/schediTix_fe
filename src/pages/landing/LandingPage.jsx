@@ -97,26 +97,26 @@ useEffect(() => {
         <div className="LandingPageBox2Nav1">
         <div className="LandingPageBox2Nav1Small2">
           <div className="card">
-            <div className="cardNav"><TbTargetArrow size={70}/></div>
-            <div className="cardNav">
+            <div className="cardNav"><TbTargetArrow size={50}/></div>
+            <div className="cardNav2">
               <p>Effortless Event Creation for Organizers</p>
             </div>
           </div>
           <div className="card">
-             <div className="cardNav"><BsTicketPerforatedFill size={80}/></div>
-            <div className="cardNav">
+             <div className="cardNav"><BsTicketPerforatedFill size={50}/></div>
+            <div className="cardNav2">
               <p>Admin Dashboard for Seamless Event Management</p>
             </div>
           </div>
           <div className="card">
-             <div className="cardNav"><GrServerCluster size={60}/></div>
-            <div className="cardNav">
+             <div className="cardNav"><GrServerCluster size={50}/></div>
+            <div className="cardNav2">
               <p> Simple Ticketing System with Purchase Confirmation</p>
             </div>
           </div>
           <div className="card">
-             <div className="cardNav"><FaListAlt size={70}/></div>
-            <div className="cardNav">
+             <div className="cardNav"><FaListAlt size={50}/></div>
+            <div className="cardNav2">
               <p>Streamlined Event Listings for Attendees</p>
             </div>
           </div>

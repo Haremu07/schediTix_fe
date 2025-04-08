@@ -1,0 +1,209 @@
+.email-verification-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Nav{
+    width: 40%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: flex-end;
+    padding-left: 40px;
+}
+
+.Nav-Box{
+    width: 35%;
+    height: 25%;
+    /* background-color: green; */
+    margin-bottom: 30px;
+    margin-right: 25px;
+    position: relative;
+
+
+    & .navBoxs1{
+        width: 80%;
+        height: 65%;
+        border-radius: 100px;
+        background-color: #ff5722;
+        position: absolute;
+        z-index: 1;
+
+    }
+
+    & .navBoxs2{
+        width: 80%;
+        height: 65%;
+        border-radius: 100px;
+        background-color: #27187e;
+        position: absolute;
+        top: 35%;
+        left: 20%;
+    }
+}
+
+.Nav2{
+    width: 40%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    padding-top: 30px;
+}
+
+
+.email-verification-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-verification-form2{
+    width: 650.56px;
+    height: 420px;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Logo{
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.email-verification-form{
+    width: 556.56px;
+    height: 450px;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Back{
+    display: flex;
+    gap: 6px;
+    /* background-color: red; */
+}
+
+.GoBack{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.email-verification-form-Header{
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.form{
+    height: max-content;
+    display: flex;
+    gap: 21px;
+    /* background-color: green; */
+    flex-direction: column;
+    box-shadow: none;
+    border-radius: none;
+    }
+
+    
+
+.inputBox{
+    width: 80%;
+    height: 60px;
+    margin-left: 50px;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+
+    & .inpute{
+        width: 20%;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+        padding-left: 30px;
+        border: 1px solid gray;
+        outline-color: #ff5722;
+     }
+}
+
+
+
+.btn{
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff5722;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+    
+.box{
+    color: #ff5722;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.Passage{
+    text-align: center;
+    font-size: 20px;
+}
+.Passage2{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.resend1{
+    color: #ff5722;
+}
+.resend{
+    background-color: #ff5722;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.CodeBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
