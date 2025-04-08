@@ -2,7 +2,6 @@ import "./emailVerification.css"
 import { useNavigate } from "react-router";
 import { FaArrowLeft } from "react-icons/fa6";
 import Logo from "../../../assets/orangelogo.png"
-import orangeLogo from "../../../assets/orangelogo.png"
 
 
 const EmailVerification = () => {

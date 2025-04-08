@@ -1,4 +1,3 @@
-import React from 'react'
 import './landing.css'
 import { useEffect, useState } from "react"
 import { TbTargetArrow } from "react-icons/tb";

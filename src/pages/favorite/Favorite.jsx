@@ -1,5 +1,5 @@
 import React from 'react'
-import '../favorite/favorite.css'
+import "./favorite.css"
 import { BsArrowRight } from "react-icons/bs";
 
 const Favorites = () => {
