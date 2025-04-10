@@ -2,7 +2,6 @@ import "./signIn.css";
 import { MdEmail } from "react-icons/md";
 import { GiDialPadlock } from "react-icons/gi";
 import { useNavigate } from "react-router";
-import { FaArrowLeft } from "react-icons/fa6";
 import orangeLogo from "../../../assets/orangelogo.png";
 import { useState } from "react";
 import axios from "axios";

@@ -1,4 +1,4 @@
-import "./PasswordResetSuccessfull.css";
+import "./passwordResetSuccessfull.css";
 import { useNavigate } from "react-router";
 import orangeLogo from "../../assets/orangelogo.png";
 import celebrate from "../../assets/celebrate-pVcLfSIZyx.png"
