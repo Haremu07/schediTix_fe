@@ -25,6 +25,11 @@ import ProfileSetting from "./pages/profileSetting/ProfileSetting"
 import TicketSales from "./pages/ticketSales/TicketSales"
 import ManageEventDetails from "./pages/manageEventDetails/ManageEventDetails"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import AttendeDashBorad from "./components/Layout/AttendeDashBorad"
+import UpcomingEvent from "./pages/UpcomingEvent/UpcomingEvent"
+import PastEvent from "./pages/pastEvent/PastEvent"
+import  EventFavorite  from "./pages/eventFavorite/EventFavorite"
+import AttendeeLogout from "./pages/attendeeLogout/AttendeeLogout"
 
 const App = () => {
 
@@ -159,6 +164,33 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
+
+      {
+        element: <AttendeDashBorad/>,
+        children:[
+          {
+            path:"dashBoard/upcoming-events",
+            errorElement: <ErrorPage/>,
+            element: <UpcomingEvent/>
+          },
+          {
+            path:"dashBoard/past-events",
+            errorElement: <ErrorPage/>,
+            element: <PastEvent/>
+          },
+       
+          {
+            path:"dashBoard/event-favorite",
+            errorElement: <ErrorPage/>,
+            element: <EventFavorite/>
+          },
+          {
+            path:"dashBoard/logout-attendee",
+            errorElement: <ErrorPage/>,
+            element: <AttendeeLogout/>
+          },
+        ]
+      }
      
   ])
   return (
