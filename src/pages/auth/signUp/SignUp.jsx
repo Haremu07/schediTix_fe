@@ -6,10 +6,35 @@ import { GiDialPadlock } from "react-icons/gi";
 import { FaArrowLeft } from "react-icons/fa6";
 import {  useNavigate } from "react-router";
 import orangeLogo from "../../../assets/orangelogo.png"
+import { useState } from "react";
+import axios from "axios";
 
 
 
 const SignIn = () => {
+  const [input, setInput] = useState({
+    fullname: "",
+    email: "",
+    phonenumber: "",
+    password: ""
+  })
+
+const handleChange =  (e) => {
+  const {name, value} = e.target;
+  setInput((prev) => ({...prev, [name]: value})) 
+}  
+
+const BASEURL = "https://scheditix.onrender.com"
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await axios.post(`${BASEURL}/api/v1/register/user`, input) 
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
   const navigate = useNavigate();
   return (
     <div className="signin-container">
@@ -26,29 +51,35 @@ const SignIn = () => {
       </div>
       <div className="signin-body">
         <div className="signin-form">
-             <span className="Back" onClick={() => navigate("/")}><FaArrowLeft/><p>go back</p></span>
           <div className="sigin-form-Header">
           <h2 >Unlock Your Event Access</h2>
           </div>
           <form className="form">
          <span className="input">
           <FaUser/>
-           <input type="text" className="input2" placeholder="enther your fullname"/>
+           <input type="text" name="fullname" value={input.fullname}
+           onChange={handleChange} className="input2" 
+           placeholder="enther your fullname"/>
           </span> 
           <span className="input" >
             <MdEmail/>
-            <input type="email" className="input2"  placeholder="enther your email" />
+            <input type="email" name="email" value={input.email}
+            onChange={handleChange} className="input2" 
+             placeholder="enther your email" />
           </span>
           <span className="input">
             <IoMdCall/>
-           <input type="number" className="input2" placeholder="enther your phonenumber"/>
+           <input type="number" name="phonenumber" value={input.phonenumber}
+           onChange={handleChange} className="input2" 
+           placeholder="enther your phonenumber"/>
           </span>
           <span className="input">
             <GiDialPadlock/>
-           <input type="password" className="input2" placeholder="enther your password"/>
+           <input type="password" name="password" value={input.password} 
+           onChange={handleChange} className="input2" 
+           placeholder="enther your password"/>
           </span>
-          <span className="checkbox"><input type="checkbox" /> <h4>I agree to the terms & conditions and privacy policy</h4></span>
-            <button type="submit" className="btn">Sign Up</button>
+            <button type="submit" className="btn" onClick={handleSubmit}>Sign Up</button>
             <span className="signinBox"><h5>Already have an account? 
               <span className="box" onClick={()=> navigate("/login")}>sign In</span></h5>
               </span>

@@ -22,7 +22,7 @@ const ForgetPassword = () => {
       <div className="ForgetPassword-body">
         <div className="ForgetPassword-form">
           <div className="ForgetPassword-form-Header">
-        <span className="Back" onClick={() => navigate("/login")}><FaArrowLeft/><p>go back</p></span>
+        {/* <span className="Back" onClick={() => navigate("/login")}><FaArrowLeft/><p>go back</p></span> */}
           <h2 >Forgot your password?</h2>
           </div>
           <form className="form">

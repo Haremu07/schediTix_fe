@@ -89,6 +89,8 @@
     align-items: center;
     gap: 10px;
     flex-direction: column;
+    color: rgb(66, 66, 66);
+
 }
 
 .form{
@@ -99,6 +101,8 @@
     flex-direction: column;
     box-shadow: none;
     border: none;
+    color: rgb(66, 66, 66);
+
     }
 
 .input{
@@ -145,8 +149,7 @@
 }
 
 .box{
-    color: #ff5722;
+    color: #27187e;
     margin-left: 10px;
     cursor: pointer;
-
 }
