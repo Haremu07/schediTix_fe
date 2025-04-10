@@ -1,6 +1,6 @@
 .CardsBox{
-    min-width: 378px;
-    height: 420px;
+    min-width: 30%;
+    height: 100%;
     background-color: white;
     border-radius: 10px;
     padding: 20px;
@@ -8,12 +8,12 @@
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .CardBoxImgBox{
-    width: 333.5px;
-    height: 180px;
+    width: 100%;
+    height: 40%;
     background-color: green;
     border-radius: 10px;
     align-self: center;
@@ -56,7 +56,7 @@
     text-wrap: wrap;
     font-family: "Poppins", sans-serif; 
     padding: 10px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .CardsBoxContent{
@@ -64,6 +64,7 @@
     height: 10%;
     /* background-color: gray; */
     text-wrap: wrap;
+    font-size: 12px;
     font-family: "Poppins", sans-serif;
 }
 
@@ -73,6 +74,7 @@
     /* background-color: gray; */
     display: flex;
     font-family: "Poppins", sans-serif;
+    font-size: 12px;
     align-items: center;
     gap: 5px;
 }
@@ -89,7 +91,7 @@
 }
 
 .TicketBtn{
-    padding: 15px;
+    padding: 9px;
     border-radius: 5px;
     background-color: #ff5722;
     color: white;
@@ -99,12 +101,13 @@
 }
 
 .Card2{
-    width: 637px;
-    height: 220px;
+    width: 40%;
+    height: 50%;
     border: 1px gray solid;
     border-radius: 5px;
     padding: 10px;
     display: flex;
+    /* flex-wrap: wrap; */
     gap: 10px;
     /* background-color: green; */
 }
@@ -130,14 +133,109 @@
 
 .Card2Nav2{
     width: 40%;
-    height: 100%;
+    height: 200px;
     background-color: #ff5722;
     border-radius: 10px;
 
     & .Card2Nav2Img{
         width: 100%;
         height: 100%;
+        object-fit: cover;
         border-radius: 10px;
 
+    }
+}
+
+.UsersBlockHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-family: "Poppins", sans-serif;
+}
+
+.UsersBlockNav{
+   width: 100%;
+   height: 100%;
+   /* background-color: gray; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+ .UsersBlockNav1{
+    width: 45%;
+    height: 100%;
+    /* background-color: green; */
+}
+
+ .UsersBlockNav1Img{
+    width: 100%;
+    height: 100%;
+}
+
+.UsersBlockNav1Text{
+    width: 80%;
+    height: 60%;
+    /* background-color: #ff5722; */
+    font-size: 22px;
+    /* text-align: center; */
+    margin-top: 30px;
+}
+
+.UsersBlockNav1Box{
+    width: 80%;
+    height: 17%;
+    /* background-color: gray; */
+    margin-top: 10px;
+    display: flex;
+
+    & .ImgBox{
+        width: 40%;
+        height: 100%;
+        /* background-color: green; */
+        display: flex;
+        position: relative;
+        transition:  1s ease-in-out;
+
+    }
+
+    & .ImgBoxCircle{
+        width: 30%;
+        height: 100%;
+        border-radius: 100px;
+        /* background-color: red; */
+        position: absolute;
+    }
+    & .ImgBoxCircle1{
+        width: 30%;
+        height: 100%;
+        border-radius: 100px;
+        /* background-color: blue; */
+        position: absolute;
+        left: 20px;
+        border: 2px solid white;
+    }
+    & .ImgBoxCircle2{
+        width: 30%;
+        height: 100%;
+        border-radius: 100px;
+        /* background-color: pink; */
+        position: absolute;
+        left: 40px;
+        border: 2px solid white;
+
+    }
+
+    & .circleBox{
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+    }
+
+    & .stars{
+        margin-left: 90px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 }

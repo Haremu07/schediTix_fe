@@ -22,7 +22,7 @@ const ForgetPassword = () => {
       <div className="ForgetPassword-body">
         <div className="ForgetPassword-form">
           <div className="ForgetPassword-form-Header">
-        <span className="Back" onClick={() => navigate("/login")}><FaArrowLeft/><p>go back</p></span>
+        {/* <span className="Back" onClick={() => navigate("/login")}><FaArrowLeft/><p>go back</p></span> */}
           <h2 >Forgot your password?</h2>
           </div>
           <form className="form">
@@ -34,7 +34,7 @@ const ForgetPassword = () => {
             <MdEmail/>
             <input type="email" className="input2"  placeholder="enther your email" />
           </span>
-            <button type="submit" className="btn" onClick={()=> navigate("/login")}>Sign In</button>
+            <button type="submit" className="btn" onClick={()=> navigate("/reset-password")}>Continue</button>
           </form>
         </div>
       </div>

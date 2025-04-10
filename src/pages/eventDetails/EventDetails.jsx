@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../pages/eventDetails/EventDetails.css'
+import '../../pages/eventDetails/eventDetails.css'
 import { CiCalendarDate } from "react-icons/ci";
 import { TbClock } from "react-icons/tb";
 import { MdLocationOn, MdFavoriteBorder } from "react-icons/md";
