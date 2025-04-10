@@ -22,7 +22,7 @@ const ResetPassword = () => {
       <div className="ResetPassword-body">
         <div className="ResetPassword-form">
           <div className="ResetPassword-form-Header">
-        <span className="Back" onClick={() => navigate("/reset-password")}><FaArrowLeft/><p>go back</p></span>
+        {/* <span className="Back" onClick={() => navigate("/reset-password")}><FaArrowLeft/><p>go back</p></span> */}
           <h2>Set your new password</h2>
           <p>Choose a strong password to secure your account</p>
           </div>
