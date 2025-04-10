@@ -82,7 +82,7 @@ const SignIn = () => {
               onClick={() => navigate("/forget-password")}
               style={{ cursor: "pointer" }}
             >
-              Forget password?
+              Forgot password?
             </h4>
             <button type="submit" className="btn" onClick={handleSubmit}>
               Log In
