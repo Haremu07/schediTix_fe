@@ -340,7 +340,7 @@ const LandingPage = () => {
         <div className="StayInLoopBlockNav">
               <div className="StayInLoopBlockNavbox">
                 <input  className="ipute" type="text" placeholder="enther your emaill address"/>
-                <button className="suscribe">SubScribe</button>
+                <button className="suscribe">Subscribe</button>
               </div>
         </div>
       </div>
