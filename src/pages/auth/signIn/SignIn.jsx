@@ -84,7 +84,7 @@ const SignIn = () => {
             >
               Forgot password?
             </h4>
-            <button type="submit" className="btn" onClick={handleSubmit}>
+            <button type="submit" className="btn" onClick={() => (navigate("/"), {handleSubmit})}>
               Log In
             </button>
             <span className="signinBox">
