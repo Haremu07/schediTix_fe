@@ -1,0 +1,14 @@
+.attendee-sidebar{
+    width: 20%;
+    height: 100%;
+    background-color: green;
+    border-left: 1px solid #dee2e6;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.logoutAtt{
+    margin-top: 28px;
+}
