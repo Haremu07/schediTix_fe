@@ -34,7 +34,7 @@ const ForgetPassword = () => {
             <MdEmail/>
             <input type="email" className="input2"  placeholder="enther your email" />
           </span>
-            <button type="submit" className="btn" onClick={()=> navigate("/login")}>Sign In</button>
+            <button type="submit" className="btn" onClick={()=> navigate("/login")}>Continue</button>
           </form>
         </div>
       </div>
