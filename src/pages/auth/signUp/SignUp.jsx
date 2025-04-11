@@ -59,25 +59,25 @@ const handleSubmit = async (e) => {
           <FaUser/>
            <input type="text" name="fullname" value={input.fullname}
            onChange={handleChange} className="input2" 
-           placeholder="enther your fullname"/>
+           placeholder="enter your fullname"/>
           </span> 
           <span className="input" >
             <MdEmail/>
             <input type="email" name="email" value={input.email}
             onChange={handleChange} className="input2" 
-             placeholder="enther your email" />
+             placeholder="enter your email" />
           </span>
           <span className="input">
             <IoMdCall/>
            <input type="number" name="phonenumber" value={input.phonenumber}
            onChange={handleChange} className="input2" 
-           placeholder="enther your phonenumber"/>
+           placeholder="enter your phonenumber"/>
           </span>
           <span className="input">
             <GiDialPadlock/>
            <input type="password" name="password" value={input.password} 
            onChange={handleChange} className="input2" 
-           placeholder="enther your password"/>
+           placeholder="enter your password"/>
           </span>
             <button type="submit" className="btn" onClick={handleSubmit}>Sign Up</button>
             <span className="signinBox"><h5>Already have an account? 

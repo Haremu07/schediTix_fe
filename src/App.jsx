@@ -30,6 +30,7 @@ import UpcomingEvent from "./pages/upcomingEvent/UpcomingEvent"
 import PastEvent from "./pages/pastEvent/PastEvent"
 import  EventFavorite  from "./pages/eventFavorite/EventFavorite"
 import AttendeeLogout from "./pages/attendeeLogout/AttendeeLogout"
+import CheckInAs from "./pages/checkInAs/CheckInAs"
 
 const App = () => {
 
@@ -149,6 +150,11 @@ const App = () => {
         path: "verify" ,
         errorElement: <ErrorPage/>,
         element: <Verify/>
+      },
+      {
+        path: "checkin-as" ,
+        errorElement: <ErrorPage/>,
+        element: <CheckInAs/>
       },
       {
         path: "reset-password" ,

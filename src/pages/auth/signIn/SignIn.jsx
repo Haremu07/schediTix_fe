@@ -63,7 +63,7 @@ const SignIn = () => {
                 value={input.email}
                 onChange={handleChange}
                 className="input2"
-                placeholder="enther your email"
+                placeholder="enter your email"
               />
             </span>
             <span className="input">
@@ -74,7 +74,7 @@ const SignIn = () => {
                 value={input.password}
                 onChange={handleChange}
                 className="input2"
-                placeholder="enther your password"
+                placeholder="enter your password"
               />
             </span>
             <h4
