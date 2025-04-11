@@ -3,6 +3,7 @@ import "./eventCategories.css"
 import EventForYou from './EventForYou'
 import StayinLoop from './StayinLoop'
 import FeatureComp from './FeatureComp'
+import { useNavigate } from 'react-router-dom'
 import Event1 from "../../assets/Event1.jpg"
 import Event2 from "../../assets/Event2.jpg"
 import Event3 from "../../assets/Event3.jpg"
@@ -11,7 +12,9 @@ import Event5 from "../../assets/Event5.jpg"
 
 
 
+
 const EventCategories = () => {
+  const navigate = useNavigate()
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -49,7 +52,9 @@ const EventCategories = () => {
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p 
+                    onClick={()=> navigate("/event-details")}
+                      ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
@@ -61,7 +66,9 @@ const EventCategories = () => {
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
@@ -73,7 +80,9 @@ const EventCategories = () => {
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
@@ -85,7 +94,9 @@ const EventCategories = () => {
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
