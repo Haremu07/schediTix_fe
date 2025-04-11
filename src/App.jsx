@@ -5,7 +5,7 @@ import EmailVerification from "./pages/auth/emailVerification/EmailVerification"
 import First from "./routes/First"
 import Private from "./routes/Private"
 import ForgetPassword from "./pages/auth/forgetPassword/ForgetPassword"
-import Verify from "./pages/auth/verify/Verify"
+import Verify from "./pages/auth/emailVerification/Verify"
 import ResetPassword from "./pages/resetPassword/ResetPassword"
 import PasswordResetSuccessfull from "./pages/passwordResetSuccessfull/PasswordResetSuccessfull"
 import LandingPage from "./pages/landing/LandingPage"
@@ -25,6 +25,12 @@ import ProfileSetting from "./pages/profileSetting/ProfileSetting"
 import TicketSales from "./pages/ticketSales/TicketSales"
 import ManageEventDetails from "./pages/manageEventDetails/ManageEventDetails"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import AttendeDashBorad from "./components/Layout/AttendeDashBorad"
+import UpcomingEvent from "./pages/upcomingEvent/UpcomingEvent"
+import PastEvent from "./pages/pastEvent/PastEvent"
+import  EventFavorite  from "./pages/eventFavorite/EventFavorite"
+import AttendeeLogout from "./pages/attendeeLogout/AttendeeLogout"
+import CheckInAs from "./pages/checkInAs/CheckInAs"
 
 const App = () => {
 
@@ -57,11 +63,7 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <Favorite/>
         },
-        {
-          path: "user-ticket-purchace" ,
-          errorElement: <ErrorPage/>,
-          element: <UserTicketPurchase/>
-        },
+      
         {
           path: "user-ticket-details" ,
           errorElement: <ErrorPage/>,
@@ -150,6 +152,11 @@ const App = () => {
         element: <Verify/>
       },
       {
+        path: "checkin-as" ,
+        errorElement: <ErrorPage/>,
+        element: <CheckInAs/>
+      },
+      {
         path: "reset-password" ,
         errorElement: <ErrorPage/>,
         element: <ResetPassword/>
@@ -159,6 +166,38 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
+
+      {
+        element: <AttendeDashBorad/>,
+        children:[
+          {
+            path:"dashboard/upcoming-events",
+            errorElement: <ErrorPage/>,
+            element: <UpcomingEvent/>
+          },
+          {
+            path:"dashboard/past-events",
+            errorElement: <ErrorPage/>,
+            element: <PastEvent/>
+          },
+       
+          {
+            path:"dashboard/event-favorite",
+            errorElement: <ErrorPage/>,
+            element: <EventFavorite/>
+          },
+          {
+            path: "dashboard/user-ticket-purchace" ,
+            errorElement: <ErrorPage/>,
+            element: <UserTicketPurchase/>
+          },
+          {
+            path:"dashboard/logout-attendee",
+            errorElement: <ErrorPage/>,
+            element: <AttendeeLogout/>
+          },
+        ]
+      }
      
   ])
   return (

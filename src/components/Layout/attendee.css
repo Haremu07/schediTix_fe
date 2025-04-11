@@ -1,0 +1,16 @@
+.attende-dashboard{
+  width: 100%;
+ 
+  height: 100vh;
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  z-index: 1000px;
+ 
+}
+.attendeDdashboardContent{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  /* background-color: green; */
+}
