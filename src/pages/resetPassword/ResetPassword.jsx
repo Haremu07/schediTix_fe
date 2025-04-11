@@ -7,7 +7,7 @@ import orangeLogo from "../../assets/orangelogo.png";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
-  const { token } = useParams(); // Extract token from URL
+  const { token } = useParams(); 
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +17,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Basic validation
+    
     if (newPassword !== confirmPassword) {
       setError("Passwords don't match");
       return;
