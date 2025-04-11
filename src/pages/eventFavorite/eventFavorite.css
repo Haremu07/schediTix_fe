@@ -1,0 +1,114 @@
+.Card{
+    width: 75%;
+    height: 100%;
+    /* background-color: gray; */
+    padding: 20px;
+    display: flex;
+    padding-bottom: 45px;
+    gap: 10px;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.CardsBox2{
+    width: 30%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 5px;
+}
+
+.CardBoxImgBox2{
+    width: 100%;
+    /* height: 50%; */
+    background-color: green;
+    border-radius: 10px;
+    align-self: center;
+
+    & .CardBoxImg2{
+        width: 100%;
+        height: 100%;
+        display: block;
+        border-radius: 10px;
+    }
+}
+
+.CardsBoxTextBox2{
+    width: 100%;
+    height: 70px;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.CardsBoxTextBoxNav12{
+    width: 57%;
+    height: 100%;
+    /* background-color: orange; */
+    font-family: "Poppins", sans-serif;
+    text-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 10px;
+}
+
+.CardsBoxTextBoxNav22{
+    width: 40%;
+    height: 100%;
+    background-color: #fff1ec;
+    border-radius: 10px;
+    text-wrap: wrap;
+    font-family: "Poppins", sans-serif; 
+    padding: 10px;
+    font-size: 11px;
+}
+
+.CardsBoxContent2{
+    width: 100%;
+    height: 15%;
+    /* background-color: gray; */
+    text-wrap: wrap;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+}
+
+.CardsBoxLocation2{
+    width: 100%;
+    height: 3%;
+    /* background-color: gray; */
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    align-items: center;
+    gap: 5px;
+}
+
+.CardBoxTicket2{
+    width: 100%;
+    height: 8%;
+    /* background-color: gray; */
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    align-items: center;
+    color: #ff5722;
+}
+
+.TicketBtn2{
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #ff5722;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    cursor: pointer;
+}

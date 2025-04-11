@@ -1,16 +1,12 @@
 .headerAttende{
     width: 100%;
- 
     height: 13vh;
     background-color:  white;
- 
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
- 
     z-index: 1000px;
  
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 
 
     & .headerAttendeImgBox{
@@ -26,8 +22,17 @@
         cursor: pointer;
     }
 
+    .HeaderBox{
+        width: 75%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     & .headerAttendeh2{
-        margin-left: 50px;
+        /* margin-left: 60px;
+        font-size: 20px; */
         color: rgb(58, 58, 58);
     }
 
@@ -35,14 +40,14 @@
         width: 18%;
         height: 100%;
         /* background-color: green; */
-        margin-left: 559px;
+        /* margin-left: 579px; */
         display: flex;
         align-items: center;
         gap: 5px;
 
         & .headerAttendeProfileCircle{
             width: 30%;
-            height: 80%;
+            height: 30%;
             border-radius: 1000px;
             background-color: pink;
         }
@@ -51,6 +56,7 @@
             width: 100%;
             height: 100%;
             border-radius: 1000px;
+            object-fit: contain;
         }
     }
  

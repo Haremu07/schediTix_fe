@@ -31,6 +31,7 @@ import PastEvent from "./pages/pastEvent/PastEvent"
 import  EventFavorite  from "./pages/eventFavorite/EventFavorite"
 import AttendeeLogout from "./pages/attendeeLogout/AttendeeLogout"
 import CheckInAs from "./pages/checkInAs/CheckInAs"
+import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 
 const App = () => {
 
@@ -84,46 +85,7 @@ const App = () => {
     {
       element: <Private/>,
       children: [
-        {
-          path: "dashboard/checkin" ,
-          errorElement: <ErrorPage/>,
-          element: <CheckInAttendee/>
-        },
-        {
-          path: "dashboard/crete-event" ,
-          errorElement: <ErrorPage/>,
-          element: <CreateEvent/>
-        },
-        {
-          path: "dashboard/manage-event" ,
-          errorElement: <ErrorPage/>,
-          element: <ManageEvent/>
-        },
-        {
-          path: "dashboard/manage-event-details" ,
-          errorElement: <ErrorPage/>,
-          element: <ManageEventDetails/>
-        },
-        {
-          path: "dashboard/overview" ,
-          errorElement: <ErrorPage/>,
-          element: <Overview/>
-        },
-        {
-          path: "dashboard/payout-details" ,
-          errorElement: <ErrorPage/>,
-          element: <PayOutDetails/>
-        },
-        {
-          path: "dashboard/profile" ,
-          errorElement: <ErrorPage/>,
-          element: <ProfileSetting/>
-        },
-        {
-          path: "dashboard/ticket-sales" ,
-          errorElement: <ErrorPage/>,
-          element: <TicketSales/>
-        },
+     
       ]
     },
       {
@@ -180,7 +142,6 @@ const App = () => {
             errorElement: <ErrorPage/>,
             element: <PastEvent/>
           },
-       
           {
             path:"dashboard/event-favorite",
             errorElement: <ErrorPage/>,
@@ -197,7 +158,53 @@ const App = () => {
             element: <AttendeeLogout/>
           },
         ]
-      }
+      },
+      {
+          
+        element: <EventplannerDashboard/>,
+        children:[
+          {
+            path: "dashboard/create-event" ,
+            errorElement: <ErrorPage/>,
+            element: <CreateEvent/>
+          },
+          {
+            path: "dashboard/overview" ,
+            errorElement: <ErrorPage/>,
+            element: <Overview/>
+          },
+          {
+            path: "dashboard/checkin" ,
+            errorElement: <ErrorPage/>,
+            element: <CheckInAttendee/>
+          },
+          {
+            path: "dashboard/profile" ,
+            errorElement: <ErrorPage/>,
+            element: <ProfileSetting/>
+          },
+          {
+            path: "dashboard/ticket-sales" ,
+            errorElement: <ErrorPage/>,
+            element: <TicketSales/>
+          },
+          {
+            path: "dashboard/manage-event" ,
+            errorElement: <ErrorPage/>,
+            element: <ManageEvent/>
+          },
+          {
+            path: "dashboard/manage-event-details" ,
+            errorElement: <ErrorPage/>,
+            element: <ManageEventDetails/>
+          },
+          {
+            path: "dashboard/payout-details" ,
+            errorElement: <ErrorPage/>,
+            element: <PayOutDetails/>
+          },
+        ]
+      },
      
   ])
   return (
