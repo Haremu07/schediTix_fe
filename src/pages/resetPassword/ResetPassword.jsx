@@ -37,7 +37,10 @@ const ResetPassword = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password: newPassword }),
+        body: JSON.stringify({
+          newPassword:newPassword,
+          confirmPassword:confirmPassword
+        }),
       });
       
       const data = await response.json();
@@ -48,7 +51,7 @@ const ResetPassword = () => {
       
       setSuccess(true);
       setTimeout(() => {
-        navigate("/login");
+        navigate("/SignIn");
       }, 2000);
       
     } catch (err) {
