@@ -62,11 +62,7 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <Favorite/>
         },
-        {
-          path: "user-ticket-purchace" ,
-          errorElement: <ErrorPage/>,
-          element: <UserTicketPurchase/>
-        },
+      
         {
           path: "user-ticket-details" ,
           errorElement: <ErrorPage/>,
@@ -183,6 +179,11 @@ const App = () => {
             path:"dashboard/event-favorite",
             errorElement: <ErrorPage/>,
             element: <EventFavorite/>
+          },
+          {
+            path: "dashboard/user-ticket-purchace" ,
+            errorElement: <ErrorPage/>,
+            element: <UserTicketPurchase/>
           },
           {
             path:"dashboard/logout-attendee",
