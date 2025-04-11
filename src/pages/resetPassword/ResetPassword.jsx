@@ -1,14 +1,14 @@
 import "./resetPassword.css";
 import { GiDialPadlock } from "react-icons/gi";
-<<<<<<< HEAD
+
 import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useState } from "react";
 import orangeLogo from "../../assets/orangelogo.png";
-=======
+
 import { useNavigate } from "react-router";
 import orangeLogo from "../../assets/orangelogo.png"
->>>>>>> 7d1f4abb9faced9b914d5f40439750efa58ea68a
+
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -82,7 +82,7 @@ const ResetPassword = () => {
       <div className="ResetPassword-body">
         <div className="ResetPassword-form">
           <div className="ResetPassword-form-Header">
-<<<<<<< HEAD
+
             <span className="Back" onClick={() => navigate("/reset-password")}>
               <FaArrowLeft /><p>go back</p>
             </span>
@@ -131,7 +131,7 @@ const ResetPassword = () => {
               </button>
             </form>
           )}
-=======
+
         {/* <span className="Back" onClick={() => navigate("/reset-password")}><FaArrowLeft/><p>go back</p></span> */}
           <h2>Set your new password</h2>
           <p>Choose a strong password to secure your account</p>
@@ -147,7 +147,7 @@ const ResetPassword = () => {
              </span>
             <button type="submit" className="btn" onClick={()=> navigate("/password-reset-successFull")}>Save Password</button>
           </form>
->>>>>>> 7d1f4abb9faced9b914d5f40439750efa58ea68a
+
         </div>
       </div>
       <div className="Nav2">
