@@ -11,7 +11,7 @@ const EmailVerification = () => {
       <div className="Nav">
                <div className="signIn-Nav-Header">
                  <div className="LogoBox">
-                   <span className="GoBack" onClick={() => navigate("/forget-password")}>  <FaArrowLeft/><p>go back</p></span>
+                   {/* <span className="GoBack" onClick={() => navigate("/forget-password")}>  <FaArrowLeft/><p>go back</p></span> */}
                  </div>
                  <div className="signIn-Nav-Box">
                <div className="navBoxs1"></div>

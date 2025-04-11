@@ -2,12 +2,12 @@
     width: 100%;
     height: max-content;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }
 
 .topBox{
     width: 100%;
-    height: 30vh;
+    height: 10vh;
     background-color:#edecf4;
     display: flex;
     justify-content: center;
@@ -42,7 +42,12 @@
     font-size: 22px;
     /* background-color: black; */
 }
-
+.replaceInline1{
+    width: 20px;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
 .middleCenter{
     width: 100%;
     height: 10%;
@@ -70,7 +75,7 @@
     flex-direction: row;
     gap: 35px;
    overflow-x: scroll;
-    /* background-color: black; */
+   scrollbar-width: none;
     
 }
 
@@ -80,7 +85,15 @@
     height: 100%;
     background-color:lightblue;
     position: relative; 
-    border-radius: 20px; 
+    border-radius: 20px;
+    
+    & img{
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        position: absolute;
+        object-fit: cover;
+    }
 }
 .radientBlackBox{
     border-radius: 20px; 
@@ -184,6 +197,14 @@
         position: absolute;
     }
 }
+
+.favoriteIcon{
+    font-size: 20px;
+    margin: 15px;
+}
+.location{
+    font-size: 20px;
+}
 .cardFirsBox{
     width: 90%;
     height: 17%;
@@ -216,6 +237,7 @@
     height: auto;
     font-size: 13px;
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 .cardThirdBox{

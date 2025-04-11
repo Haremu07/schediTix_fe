@@ -3,31 +3,18 @@ import "./eventCategories.css"
 import EventForYou from './EventForYou'
 import StayinLoop from './StayinLoop'
 import FeatureComp from './FeatureComp'
+import { useNavigate } from 'react-router-dom'
+import Event1 from "../../assets/Event1.jpg"
+import Event2 from "../../assets/Event2.jpg"
+import Event3 from "../../assets/Event3.jpg"
+import Event4 from "../../assets/Event 4.jpg"
+import Event5 from "../../assets/Event5.jpg"
 
-// const CardDetaisl = [
-//   {
-//     title: "MyKealWise Comedy Live",
-//     state: "Lagos",
-//     button:"See more"
-//   },
-//   {
-//     title: "Laff with Mc Savio - Live  in",
-//     state: "Ajegunle",
-//     button:"See more"
-//   },
-//   {
-//     title: "Laugh with Bukola 8th of March",
-//     state: "Ajegunle",
-//     button:"See more"
-//   },
-//   {
-//     title: "Laugh with Bukola 8th of March",
-//     state: "Ajegunle",
-//     button:"See more"
-//   },
-// ]
+
+
 
 const EventCategories = () => {
+  const navigate = useNavigate()
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -35,7 +22,7 @@ const EventCategories = () => {
         <nav className='middleBoxEventCategories'>
           <section className='middleTop'>
             <h4>Shows</h4>
-            <div style={{width:"20px", height:"3px", backgroundColor:"black", borderRadius:"5px" }}></div>
+            <div className='replaceInline1'></div>
             <h1 style={{color:"#271b6b"}}>Comedy Show</h1>
           </section>
           
@@ -59,50 +46,63 @@ const EventCategories = () => {
 
           <section className='middleBottom'>
             <article className='middleBottomCards'>
+                 <img src={Event1} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p 
+                    onClick={()=> navigate("/event-details")}
+                      ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
             </article>
             <article className='middleBottomCards'>
+                 <img src={Event2} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
             </article>
             <article className='middleBottomCards'>
+                 <img src={Event3} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
             </article>
             <article className='middleBottomCards'>
+                 <img src={Event4} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p
+                    onClick={()=> navigate("/event-details")}
+                    ><b>See More</b></p>
                   </div>
                 </nav>
               </div>
             </article>
             <article className='middleBottomCards'>
+                 <img src={Event5} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                   <p><b>MyKealWise Comedy Live</b></p>
