@@ -19,7 +19,9 @@
     width: 32%;
     height: 40px;
     /* background-color: green; */
-    margin-top: 30px;
+
+    margin-top: 140px;
+
     margin-left: 45px;
     display: flex;
     justify-content: space-between;
@@ -106,7 +108,9 @@
     height: 250px;
     background-color: rgb(248,199,1);
     border-radius: 35px;
-    background-image: url('public/images/Frame 83@2x.png');
+
+    background-image: url('C:\Users\user\Desktop\Scheditix-fe\schediTix_fe\src\assets\Frame 83@2x.png');
+
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
