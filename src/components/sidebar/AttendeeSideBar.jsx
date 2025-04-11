@@ -28,7 +28,7 @@ const AttendeeSideBar = () => {
        <p className={`${isActive === "Event favorite" ? "ACTIVE" : 'AttendeeTextsP' }`}
           onClick={() => setIsActive("Event favorite")}
        > <FaHeart/> Event favorite</p></div>
-     <div className='AttendeeTexts' onClick={() => navigate("/dashboard/past-events")}>
+     <div className='AttendeeTexts' onClick={() => navigate("/dashboard/profile")}>
        <p className={`${isActive === "Settings" ? "ACTIVE" : 'AttendeeTextsP' }`}
           onClick={() => setIsActive("Settings")}
        > <IoSettingsSharp/> Settings</p></div>
