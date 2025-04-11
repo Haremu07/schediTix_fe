@@ -169,23 +169,23 @@ const App = () => {
         element: <AttendeDashBorad/>,
         children:[
           {
-            path:"dashBoard/upcoming-events",
+            path:"dashboard/upcoming-events",
             errorElement: <ErrorPage/>,
             element: <UpcomingEvent/>
           },
           {
-            path:"dashBoard/past-events",
+            path:"dashboard/past-events",
             errorElement: <ErrorPage/>,
             element: <PastEvent/>
           },
        
           {
-            path:"dashBoard/event-favorite",
+            path:"dashboard/event-favorite",
             errorElement: <ErrorPage/>,
             element: <EventFavorite/>
           },
           {
-            path:"dashBoard/logout-attendee",
+            path:"dashboard/logout-attendee",
             errorElement: <ErrorPage/>,
             element: <AttendeeLogout/>
           },

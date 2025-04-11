@@ -1,8 +1,51 @@
 .headerAttende{
     width: 100%;
-    height: 10vh;
-    background-color: blue;
+    height: 13vh;
+    background-color:  white;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    & .headerAttendeImgBox{
+        width: 17%;
+        height: 70%;
+        /* background-color: gray; */
+    }
+
+    & .headerAttendeImg{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+    }
+
+    & .headerAttendeh2{
+        margin-left: 50px;
+        color: rgb(58, 58, 58);
+    }
+
+    & .headerAttendeProfile{
+        width: 18%;
+        height: 100%;
+        /* background-color: green; */
+        margin-left: 559px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        & .headerAttendeProfileCircle{
+            width: 30%;
+            height: 80%;
+            border-radius: 1000px;
+            background-color: pink;
+        }
+
+        & .headerAttendeProfileCircleImg{
+            width: 100%;
+            height: 100%;
+            border-radius: 1000px;
+        }
+    }
 }
