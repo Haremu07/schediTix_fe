@@ -63,7 +63,7 @@ const SignIn = () => {
                 value={input.email}
                 onChange={handleChange}
                 className="input2"
-                placeholder="enther your email"
+                placeholder="enter your email"
               />
             </span>
             <span className="input">
@@ -74,7 +74,7 @@ const SignIn = () => {
                 value={input.password}
                 onChange={handleChange}
                 className="input2"
-                placeholder="enther your password"
+                placeholder="enter your password"
               />
             </span>
             <h4
@@ -83,7 +83,7 @@ const SignIn = () => {
             >
               Forgot password?
             </h4>
-            <button type="submit" className="btn" onClick={() => (navigate("/"), {handleSubmit})}>
+            <button type="submit" className="btn" onClick={() => (navigate("/checkin-as"), {handleSubmit})}>
               Log In
             </button>
             <span className="signinBox">

@@ -41,7 +41,7 @@ const PasswordResetSuccessfull = () => {
                 alt=""
               />
             </div>
-            <button type="submit" onClick={() => navigate("/login")} className="btn">
+            <button type="submit" onClick={() => navigate("/register")} className="btn">
               Get Started
             </button>
           </form>

@@ -12,6 +12,7 @@ import img3 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-f
 import img4 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-field 9.jpg";
 import vector from "../../assets/Vector.png";
 import Card3 from "./Card3";
+import { Navigate, useNavigate } from "react-router-dom";
 // import { FaGreaterThan } from "react-icons/fa6";
 // import { FaLessThan } from "react-icons/fa6";
 
@@ -65,6 +66,8 @@ const LandingPage = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, [slides2.length]);
+
+  const navigate = useNavigate();
   return (
     <div className="LandingPage-body">
       <div
@@ -80,7 +83,7 @@ const LandingPage = () => {
             SchediTix simplifies ticketing and event management in one powerful
             tool
           </p>
-          <button className="Btn">Get started for free</button>
+          <button className="Btn" onClick={() => navigate("/login")}>Get started for free</button>
         </div>
       </div>
       <div className="LandingPageBox2">
@@ -279,7 +282,7 @@ const LandingPage = () => {
                 <li>Listing Basic Email Support Create 2 events for free</li>
               </ul>
             </div>
-            <button className="PlanCardsBtn">Get Started For Free</button>
+            <button className="PlanCardsBtn" onClick={() => navigate("/login")}>Get Started For Free</button>
           </div>
           <div className="PlanCard">
             <div className="PlanCardsHeader">
@@ -296,7 +299,7 @@ const LandingPage = () => {
                 <li> Analytics Dashboard: Basic ticket sales and attendee tracking </li>
               </ul>
             </div>
-            <button className="PlanCardsBtn">Get Started For Free</button>
+            <button className="PlanCardsBtn" onClick={() => navigate("/login")}>Get Started For Free</button>
           </div>
           <div className="PlanCards">
             <div className="PlanCardsHeader">
@@ -313,7 +316,7 @@ const LandingPage = () => {
                 <li>Advanced Analytics: reports on ticket sales,demographics, and performance</li>
               </ul>
             </div>
-            <button className="PlanCardsBtn">Get Started For Free</button>
+            <button className="PlanCardsBtn" onClick={() => navigate("/login")}>Get Started For Free</button>
           </div>
         </div>
       </div>
@@ -325,7 +328,7 @@ const LandingPage = () => {
             organizers effortlessly create,
              manage, and promote events. From weddings to concerts, our easy-to-use tools streamline event 
              planning, ticket sales, and user engagement in one seamless experience.</p>
-             <button className="GetStartedBlockBoxBtn">Get Started For Free</button>
+             <button className="GetStartedBlockBoxBtn" onClick={() => navigate("/login")}>Get Started For Free</button>
         </div>
       </div>
 
