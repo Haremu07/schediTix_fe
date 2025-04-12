@@ -1,7 +1,468 @@
-.CreateEventBody{
-    width: 75%;
-    height: 100%;
-    background-color: greenyellow;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+.create-event-bg{
+    width: 75%;
+    height: max-content;
+    background-color:skyblue ;
+}
+.create-event-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color:rgb(255, 255, 255,55) ; 
+    overflow-y: scroll ;
+}
+.create-event-title{
+    width: 100%;
+    height: 50px;
+    /* background-color: red; */
+}
+.upload-img-wrapper{
+    width: 100%;
+    height: max-content;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+}
+.upload-img-title{
+    width: 80%;
+    height: 49px;
+    /* background-color: yellow; */
+    font-family: "Inter", sans-serif;
+  padding: 10px;
+}
+.holder-nav{
+    width: 38%;
+    height: 30px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arrow-back{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-after-arrow-back{
+    width: 280px;
+    /* background-color: goldenrod; */
+    padding-left: 5px;
+}
+.upload-img-card{
+    width: 80%;
+    height: 354px;
+    background-color: rgb(255, 255, 255);  
+    border-radius: 10px;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 20px;
+}
+.upload-img-template{
+    width: 92%;
+    height: 260px;
+    /* background-color: orange; */
+    border: 2px dashed rgb(255,170,144);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.upload-img-template-details-wrapper{
+    width: 41%;
+    height: 235px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.upload-img-template-details-icon-bg{
+    width: 100%;
+    height: 70px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload-img-template-details-icon-wrapper{
+    width: 30%;
+    height: 70px;
+    background-color: rgb(32, 32, 11);
+}
+.upload-img-template-details-text-bg{
+    width: 100%;
+    height: 108px;
+    /* background-color: rgb(44, 255, 55); */
+     font-family: "Inter", sans-serif;
+   font-weight: 400;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.upload-img-template-details-subtext-bg{
+    width: 100%;
+    height: 35px;
+    /* background-color: rgb(76, 44, 255); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+.upload-img-btn{
+    width: 13%;
+    height: 45px;
+    border-radius: 3px;
+    background-color: rgb(255,87,34);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-bg{
+    width: 100%;
+    height: max-content;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+.input-wrapper{
+    width: 80%;
+    height: 670px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+   
+}
+.input-holder{
+    width: 100%;
+    height: 135px;
+    /* background-color: cadetblue; */
+    padding: 7px;
+    
+}
+.event-title{
+width: 20%;
+height: 38px;
+font-family: "Inter", sans-serif;
+/* background-color: red; */
+}
+.catchy{
+    width: 85%;
+    height: 39px;
+    font-family: "Inter", sans-serif;
+   
+    /* background-color: goldenrod; */
+}
+.inputs{
+    width: 100%;
+    height: 47px;
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: "Inter", sans-serif;
+}
+.double-input-holder{
+    width: 100%;
+    height: 135px;
+    /* background-color: rgb(4, 36, 37); */
+    /* padding: 7px; */
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.event-category-div{
+    width: 100%;
+    height: 135px;
+    /* background-color: rgb(27, 25, 165);  */
+    padding: 10px;
+    
+}
+.event-category{
+    width: 40%;
+    height: 26px;
+    /* background-color: blue; */
+    font-family: "Inter", sans-serif;
+    
+}
+.double-inputs-category{
+    width: 89%;
+    height: 56px;
+    /* background-color: rgb(177, 65, 65); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    border: 1px solid grey;
+}
+.describe-category{
+    width: 89%;
+    height: 56px;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+.arrow-down{
+    width: 10%;
+    height: 56px;
+    /* background-color: grey; */
+    font-size: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.event-location{
+    width: 45%;
+    height: 26px;
+    font-family: "Inter", sans-serif;
+    /* background-color: green; */
+}
+.double-inputs-location{
+    width: 100%;
+    height: 54px;
+    /* background-color: rgb(124, 4, 4); */
+    display: flex;
+    border-radius: 7px;
+    border: 1px solid grey;
+  
+}
+
+.location-icons{
+    width: 10%;
+    height: 54px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    font-size: 22px;
+}
+.location-input{
+    width: 100%;
+    height: 52px;
+    /* background-color: yellowgreen; */
+    border: none;
+border-radius: 7px;
+    outline: none;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    
+}
+.Four-input-bg{
+    width: 100%;
+    height: 185px;
+    /* background-color: rgb(62, 97, 99); */
+    display: flex;
+    gap: 10px;  
+    padding-top: 13px;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.text-holder{
+    width:95% ;
+    height: 73px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.start{
+    width: 45%;
+    height: 50px;
+    /* background-color: red; */
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+.Four-input-wrapper{
+    width: 93%;
+    height: 65px;
+    /* background-color: gold; */
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.input-one-holder{
+    width: 38%;
+    height: 60px;
+    /* background-color: goldenrod; */
+    border: 1px solid grey;
+    display: flex;
+    border-radius: 8px;
+}
+.calendar-icon{
+    width: 40%;
+    height: 63px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.time-input{
+    width: 100%;
+    height: 63px;
+    /* background-color: blue; */
+}
+.input-time{
+    width: 100%;
+    height: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.wider-bg{
+    width: 80%;
+    height: 570px;
+    /* background-color: blueviolet; */
+}
+.event-agenda-wrapper{
+    width: 100%;
+    height: 300px;
+    /* background-color: rgb(243, 243, 243); */
+    padding-left: 10px;
+}
+.event-agenda-holder{
+    width: 100%;
+    height: 30px;
+    /* background-color: aquamarine; */
+   padding: 7px;
+   font-family: "Inter", sans-serif;
+}
+.event-agenda-text-holder{
+    width: 100%;
+    height: 25px;
+    /* background-color: yellow; */
+    padding: 7px;
+    font-family: "Inter", sans-serif;
+}
+.wider-input-div{
+    width: 100%;
+    height: 210px;
+    /* background-color: black; */
+    margin-top: 20px;
+}
+.wider-input{
+    width: 100%;
+    height: 200px;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid grey;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    border-radius: 7px;
+    padding: 7px;
+}
+.finally-input-bg{
+    width: 100%;
+    height: 560px;
+    /* background-color: black; */
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+ 
+}
+.finally-input-wrapper{
+    width: 80%;
+    height: 470px;
+    /* background-color: aliceblue; */
+}
+.finally-double-input-wrapper{
+    width: 100%;
+    height: 220px;
+    /* background-color: darkmagenta; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.finally-box{
+    width: 46%;
+    height: 150px;
+    /* background-color: darkolivegreen; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 9px;
+    font-family: "Inter", sans-serif;
+}
+.finally-input{
+    width: 95%;
+    height: 53px;
+    border-radius: 7px;
+    font-family: "Inter", sans-serif;
+    border: 1px solid grey;
+    outline: none;
+    padding: 5px;
+    margin-top: 7px;
+    font-family: "Inter", sans-serif;
+}
+.finally-single-input-wrapper{
+    width: 100%;
+    height: 200px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.finally-single-input-holder{
+    width: 100%;
+    height: 140px;
+    /* background-color: darkred; */
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: "Inter", sans-serif;
+    padding: 9px;
+}
+.parking-input{
+    width: 100%;
+    height: 53px;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 7px;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+}
+.parking-btn-wrapper{
+    width: 100%;
+    height: 53px;
+    /* background-color: rgba(32, 221, 221, 0.699); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parking-btn{
+    width: 9%;
+    height: 45px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    background-color:rgb(255,87,34) ;
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
 }
