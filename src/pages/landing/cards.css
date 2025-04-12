@@ -131,6 +131,11 @@
     }
 }
 
+.SeeM:hover{
+    gap: 15px;
+    color: black;
+}
+
 .Card2Nav2{
     width: 40%;
     height: 200px;

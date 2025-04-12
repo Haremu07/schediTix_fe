@@ -25,18 +25,6 @@
     cursor: pointer;
 }
 
-.ACTIVE{
-    width: 100%;
-    height: 100%;
-    /* margin-left: 30px; */
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    color: white;
-    background-color: orangered;
-    padding-left: 30px;
-}
 
 .AttendeeTextsP{
     width: 100%;
@@ -46,6 +34,7 @@
     display: flex;
     gap: 10px;
     align-items: center;
+    /* background-color: orangered; */
 }
 
 .AttendeeTexts:hover{
@@ -53,36 +42,57 @@
     color: white;
 }
 
+.logout{
+    width: 100%;
+    height: 80%;
+    /* background-color: greenyellow; */
+}
+
 .logoutAtt{
     font-family: "Poppins", sans-serif;
     font-size: 20px;
-    /* margin-top: 28px;
-    margin-left: 30px; */
+    margin-bottom: 80px;
     cursor: pointer;
     width: 100%;
-    height: 70%;
+    height: 25%;
     display: flex;
+    margin-top: 120px;
     align-items: center;
-    /* background-color: orangered; */
+    /* background-color: gray; */
 }
 
 .logoutAttP{
         width: 100%;
-        height: 30%;
+        /* height: 30%; */
         /* margin-left: 30px; */
         font-family: "Poppins", sans-serif;
         display: flex;
         gap: 10px;
         align-items: center;
-        /* background-color: orangered; */
+        /* background-color: pink; */
+
+
     & .nav{
         width: 100%;
         height: 100%;
         margin-left: 30px;
+        /* background-color: red; */
     }
 }
 
-.logoutAttP:hover{
+.ACTIVE{
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    background-color: orangered;
+}
+
+.logoutAtt:hover{
     background-color: orangered;
     color: white;
 }
