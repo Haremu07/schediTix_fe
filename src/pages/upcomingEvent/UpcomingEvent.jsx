@@ -1,24 +1,27 @@
 import React from 'react'
 import "./upcoming.css"
 import { FaLocationDot } from "react-icons/fa6";
+import { SlCalender } from "react-icons/sl";
+import { BsFillClockFill } from "react-icons/bs";
 import EventDetails from './EventDetails';
+import UpcomingEventImage from "../../assets/upcmingEventImage.jpg"
 
 const UpcomingEvent = () => {
   return (
     <div className="upcoming-event">
       <div className='upimgDiv'>
         <section className='upImgDiv'>
-        <img src="" alt="" />
+        <img src={UpcomingEventImage} alt="" />
         </section>
         
         <section className='upTextDiv'>
           <h1>MyKealwise Live in Aj City</h1>
           <nav className='upTExtDate'> 
-          <FaLocationDot className='uptextDateIcone'/>
+          <SlCalender className='uptextDateIcone'/>
           <p><b>26 August 2025</b></p>
           </nav>
           <nav className='upTExtDate'>
-          <FaLocationDot className='uptextDateIcone'/>
+          <BsFillClockFill className='uptextDateIcone'/>
           <p><b>6pm wat</b></p>
            </nav>
           <nav className='upTExtDate'> 
