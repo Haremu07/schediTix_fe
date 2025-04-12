@@ -11,7 +11,7 @@ const UserTicketPurchase = () => {
       <div className="tickets-list">
         {[
           {
-            title: "AJ City Youth Ma...",
+            title: "AJ City Youth Ma",
             date: "Dec 1, 2025",
             time: "11am prompt",
             seat: "Table3Seat14",
@@ -19,7 +19,7 @@ const UserTicketPurchase = () => {
             image: image1
           },
           {
-            title: "Mykealwise live in Ajeg...",
+            title: "Mykealwise live in Ajeg",
             date: "Oct 4, 2024",
             time: "6pm prompt",
             seat: "Table12Seat19",
@@ -27,7 +27,7 @@ const UserTicketPurchase = () => {
             image: image2
           },
           {
-            title: "AJ City Youth Ma...",
+            title: "AJ City Youth Ma",
             date: "Dec 28, 2025",
             time: "11am prompt",
             seat: "Table3Seat14",
