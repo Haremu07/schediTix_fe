@@ -53,17 +53,19 @@ function ProfileSetting() {
   return (
     <div className="profile-settings-container">
       
-      <div className="back-button">
+      {/* <div className="back-button">
         <FaArrowLeft className="back-icon" />
         <span>back</span>
-      </div>
+      </div> */}
+        <div className="profile-settings-container-small">
 
+        
       <h1 className="profile-title">Profile Settings</h1>
 
       <form onSubmit={handleSubmit}>
       
         <div className="profile-picture-section">
-          <p className="section-label">profile picture</p>
+          {/* <p className="section-label">profile picture</p> */}
           <label htmlFor="profile-picture-input" className="profile-picture-circle">
             {profileImage ? (
               <img src={profileImage || "/placeholder.svg"} alt="Profile" className="profile-image" />
@@ -201,6 +203,7 @@ function ProfileSetting() {
         <button type="button" className="delete-button">
           delete account
         </button>
+      </div>
       </div>
     </div>
   )

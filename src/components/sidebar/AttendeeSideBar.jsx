@@ -10,8 +10,8 @@ import {  useNavigate } from 'react-router-dom';
 const AttendeeSideBar = () => {
   const navigate = useNavigate();
 
-  const [isActive, setIsActive ] = useState("Upcoming Event")
-  // const []
+  const [isActive, setIsActive ] = useState("")
+
   return (
     <div className='attendee-sidebar'>
      <div className="AttendeeTexts"
@@ -32,9 +32,11 @@ const AttendeeSideBar = () => {
        <p className={`${isActive === "Settings" ? "ACTIVE" : 'AttendeeTextsP' }`}
           onClick={() => setIsActive("Settings")}
        > <IoSettingsSharp/> Settings</p></div>
-     <div className='logoutAtt'>  <p className='logoutAttP'><nav className={`${isActive === "Logout" ? "ACTIVE" : 'nav' }`}
+    <div className="logout">
+    <div className='logoutAtt' onClick={() => navigate("/dashboard/logout")}>  <p className={`${isActive === "Logout" ? "ACTIVE" : 'logoutAttP' }`}><nav className='nav' 
       onClick={() => setIsActive("Logout")}
      ><IoLogOut/>Logout</nav> </p></div>
+    </div>
       </div>
   )
 }
