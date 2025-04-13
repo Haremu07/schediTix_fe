@@ -1,0 +1,133 @@
+.EditEvent{
+    width: 75%;
+    height: 100vh;
+    background-color: #fffcfb;
+    padding: 20px;
+    padding-top: 10px;
+
+}
+
+.EditEventHeader{
+    width: 100%;
+    height: 15%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & .EditEventHeaderSpan{
+        color: orangered;
+        cursor: pointer;
+    }
+}
+
+.AddEvent{
+    width: 100%;
+    height: 65%;
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: rgb(54, 54, 54);
+
+    & .LocationIcon{
+        position: absolute;
+        top: 230px;
+        left: 340px;
+    }
+
+    & .AddEventInputBox{
+        width: 50%;
+        height: 13%;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        gap: 10px;
+        outline: none;
+        border: 1px solid rgb(54, 54, 54);;
+    }
+
+    & .AddEventInput{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.AddEventDatesNav{
+    width: 70%;
+    height: 30%;
+    /* background-color: gray; */
+    display: flex;
+    gap: 15px;
+    color: rgb(54, 54, 54);
+
+}
+
+.AddEventDatesNavs{
+    width: 50%;
+    height: 100%;
+    /* background-color: pink; */
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.AddDateInputBox{
+    width: 100%;
+    height: 35%;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    & .AddDate{
+        width: 50%;
+        height: 90%;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid rgb(54, 54, 54);
+        padding-left: 15px;
+        outline: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    & .CalenderIcon{
+        position: absolute;
+        left: 340px;
+        top: 356px;
+    }
+
+    & .ClockIcon{
+        position: absolute;
+        left: 500px;
+        top: 356px;
+    }
+
+    & .CalenderIcon2{
+        position: absolute;
+        left: 660px;
+        top: 356px;
+    }
+
+    & .ClockIcon2{
+        position: absolute;
+        left: 815px;
+        top: 356px;
+    }
+}
+
+.Updatebtn{
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+    border: none;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+}
