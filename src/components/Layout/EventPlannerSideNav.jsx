@@ -11,7 +11,7 @@ import { BsFillHddStackFill } from "react-icons/bs";
 
 const EventPlannerSideNav = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("Overview")
+  const [isActive, setIsActive] = useState("")
   return (
     <div className='attendee-sidebar'>
      <div className='AttendeeTexts' onClick={() => navigate("/dashboard/overview")}>
@@ -38,7 +38,8 @@ const EventPlannerSideNav = () => {
        <p className={`${isActive === "Settings" ? "ACTIVE" : "AttendeeTextsP" }`}
        onClick={() => setIsActive("Settings")}
        > <IoSettingsSharp/> Settings</p></div>
-     <div className='logoutAtt'>  <p className= {`${isActive === "Logout" ? "ACTIVE" : "logoutAttP" }`}
+     <div className='logoutAtt' onClick={() => navigate("/dashboard/logout")}>  
+      <p className= {`${isActive === "Logout" ? "ACTIVE" : "logoutAttP" }`}
        onClick={() => setIsActive("Logout")}
      ><nav className='nav'><IoLogOut/>Logout</nav> </p></div>
       </div>

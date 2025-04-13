@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p className="footer-copyright">© 2024 SchedTrix, Inc. All rights reserved.</p>
+          <p className="footer-copyright">&copy; {new Date().getFullYear()} SchedTrx, Inc. All rights reserved.</p>
           <div className="footer-social">
             <a href="#">
               <FaTwitter />

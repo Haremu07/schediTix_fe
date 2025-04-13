@@ -1,6 +1,9 @@
 import React from 'react'
 import "./upcoming.css"
 
+
+
+
 const EventDetails = () => {
   return (
     <div className='exentDetails'>
@@ -81,12 +84,37 @@ const EventDetails = () => {
         </section>
      
      <section  className='rightDivWrap'>
-        <button>add to fave</button>
+        <div className='addtoFav' onClick={()=>openModal()}>Add to favorites</div>
         <div className='addtofavDiv'>
-          <div className='addtofavDivWrap'></div>
+          <div className='addtofavDivWrap'>
+            <p><b>Event Agenda</b></p>
+            <nav className='agenda'>
+                <p><b>.</b> 6:30 PM – Doors Open & Check-In</p>
+                <p><b>.</b> 7:00 PM – Welcome & Introduction</p>
+                <p><b>.</b> 7:15 PM – Opening Act</p>
+                <p><b>.</b> 7:45 PM – Main Performance (First Comedian)</p>
+                <p><b>.</b> 8:15 PM – Intermission</p>
+                <p><b>.</b> 8:30 PM – Main Performance (Second Comedian)</p>
+                <p><b>.</b> 9:00 PM – Headliner Performance</p>
+                <p><b>.</b> 9:45 PM – Closing Remarks & Thank You</p>
+                <p><b>.</b> 10:00 PM – Event Ends</p>
+            </nav>
+          </div>
+        </div>
+     
+        
+        <div className='guestPerformer'>
+          <div className='guestPerformerWrap'>
+            <p><b>Guest Performers</b></p>
+            <nav className='performer'>
+                <p><b>. Comedian Gutter mouth</b> </p>
+                <p><b>. Comedian Funnymouth</b> </p>
+                <p><b>. Mc Savio</b> </p>
+            </nav>
+          </div>
+
         </div>
      </section>
-        
     </div>
   )
 }

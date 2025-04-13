@@ -32,6 +32,8 @@ import  EventFavorite  from "./pages/eventFavorite/EventFavorite"
 import AttendeeLogout from "./pages/attendeeLogout/AttendeeLogout"
 import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
+import EditEvent from "./pages/manageEvent/EditEvent"
+import Logout from "./pages/auth/logout/Logout"
 
 const App = () => {
 
@@ -148,6 +150,16 @@ const App = () => {
             element: <EventFavorite/>
           },
           {
+            path: "dashboard/profile" ,
+            errorElement: <ErrorPage/>,
+            element: <ProfileSetting/>
+          },
+          {
+            path: "dashboard/logout" ,
+            errorElement: <ErrorPage/>,
+            element: <Logout/>
+          },
+          {
             path: "dashboard/user-ticket-purchace" ,
             errorElement: <ErrorPage/>,
             element: <UserTicketPurchase/>
@@ -194,6 +206,11 @@ const App = () => {
             element: <ManageEvent/>
           },
           {
+            path: "dashboard/edit-event" ,
+            errorElement: <ErrorPage/>,
+            element: <EditEvent/>
+          },
+          {
             path: "dashboard/manage-event-details" ,
             errorElement: <ErrorPage/>,
             element: <ManageEventDetails/>
@@ -202,6 +219,11 @@ const App = () => {
             path: "dashboard/payout-details" ,
             errorElement: <ErrorPage/>,
             element: <PayOutDetails/>
+          },
+          {
+            path: "dashboard/logout" ,
+            errorElement: <ErrorPage/>,
+            element: <Logout/>
           },
         ]
       },
