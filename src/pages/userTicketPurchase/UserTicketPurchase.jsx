@@ -41,7 +41,9 @@ const UserTicketPurchase = () => {
             </div>
             <div className="ticket-details">
               <h2>{ticket.title}</h2>
-              <p className="venue">City Hall, Ajegunle, Lagos,</p>
+
+              <p className="venue">City Hall, Ajegunle, Lagos, Nigeria</p>
+
               <p className="datetime">{ticket.date} | {ticket.time}</p>
               <div className="ticket-footer">
                 <div>
