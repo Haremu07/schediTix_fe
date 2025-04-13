@@ -7,7 +7,6 @@ import { useState } from "react";
 import orangeLogo from "../../assets/orangelogo.png";
 
 
-
 const ResetPassword = () => {
   const navigate = useNavigate();
   const { token } = useParams(); 
@@ -40,7 +39,12 @@ const ResetPassword = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password: newPassword }),
+
+        body: JSON.stringify({
+          newPassword:newPassword,
+          confirmPassword:confirmPassword
+        }),
+
       });
       
       const data = await response.json();
@@ -51,7 +55,9 @@ const ResetPassword = () => {
       
       setSuccess(true);
       setTimeout(() => {
+
         navigate("/login");
+
       }, 2000);
       
     } catch (err) {
@@ -83,6 +89,7 @@ const ResetPassword = () => {
             </span>
             <h2>Set your new password</h2>
             <p>Choose a strong password to secure your account</p>
+
           </div>
           
           {success ? (
@@ -142,6 +149,50 @@ const ResetPassword = () => {
              </span>
             <button type="submit" className="btn" onClick={()=> navigate("/password-reset-successFull")}>Save Password</button>
           </form>
+
+          </div>
+          
+          {success ? (
+            <div className="success-message">
+              <p>Password successfully reset! Redirecting to login...</p>
+            </div>
+          ) : (
+            <form className="form" onSubmit={handleSubmit}>
+              {error && <div className="error-message">{error}</div>}
+              
+              <span className="input">
+                <GiDialPadlock />
+                <input 
+                  type="password" 
+                  className="input2" 
+                  placeholder="New password" 
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  required
+                />
+              </span>
+              
+              <span className="input">
+                <GiDialPadlock />
+                <input 
+                  type="password" 
+                  className="input2" 
+                  placeholder="Confirm password" 
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                />
+              </span>
+              
+              <button 
+                type="submit" 
+                className="btn" 
+                disabled={loading}
+              >
+                {loading ? "Processing..." : "Save Password"}
+              </button>
+            </form>
+          )}
 
         </div>
       </div>
