@@ -23,8 +23,10 @@ const navigate = useNavigate()
         <h2>Add event location</h2>
         <p>Enter the venue or online link</p>
         </div>
-        <ImLocation size={20} className="LocationIcon"/>
-        <input type="text" className="AddEventInput" placeholder="eg Heko Hotel, Lagos/Zoom Link" />
+        <div className="AddEventInputBox">
+        <ImLocation size={20}/>
+        <input type="text" className="AddEventInput"  placeholder="eg Heko Hotel, Lagos/Zoom Link" />
+        </div>
         <div className="AddEventDatesNav">
         <div className="AddEventDatesNavs">
         <div className="texts">
@@ -32,8 +34,12 @@ const navigate = useNavigate()
         <p>select event start date & time</p>
         </div>
             <div className="AddDateInputBox">
-              <FaCalendarAlt className="CalenderIcon"/>  <div className="AddDate" ><p >Select start date</p></div>
-               <GoClockFill className="ClockIcon"/> <div className="AddDate"><p>Select start time</p></div>
+                <div className="AddDate" >
+              <FaCalendarAlt />  <p >Select start date</p>
+                </div>
+                <div className="AddDate">
+               <GoClockFill c/> <p>Select start time</p>
+            </div>
             </div>
         </div>
         <div className="AddEventDatesNavs">
@@ -42,8 +48,12 @@ const navigate = useNavigate()
         <p>select event end date & time</p>
         </div>
             <div className="AddDateInputBox">
-              <FaCalendarAlt className="CalenderIcon2"/>  <div className="AddDate" ><p>Select start time</p></div>
-               <GoClockFill className="ClockIcon2"/> <div className="AddDate"><p>Select end time</p></div>
+            <div className="AddDate">
+              <FaCalendarAlt />   
+              <p>Select start time</p></div>
+              <div className="AddDate">
+               <GoClockFill /> 
+               <p>Select end time</p></div>
             </div>
         </div>
         </div>

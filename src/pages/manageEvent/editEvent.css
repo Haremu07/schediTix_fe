@@ -28,10 +28,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-
-    & p{
-        color: rgb(54, 54, 54);
-    }
+    color: rgb(54, 54, 54);
 
     & .LocationIcon{
         position: absolute;
@@ -39,16 +36,23 @@
         left: 340px;
     }
 
-    & .AddEventInput{
+    & .AddEventInputBox{
         width: 50%;
         height: 13%;
         border-radius: 5px;
         border: none;
         display: flex;
         align-items: center;
-        padding-left: 35px;
+        padding-left: 15px;
+        gap: 10px;
         outline: none;
         border: 1px solid rgb(54, 54, 54);;
+    }
+
+    & .AddEventInput{
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 }
 
@@ -58,6 +62,8 @@
     /* background-color: gray; */
     display: flex;
     gap: 15px;
+    color: rgb(54, 54, 54);
+
 }
 
 .AddEventDatesNavs{
@@ -83,9 +89,10 @@
         border-radius: 5px;
         border: none;
         border: 1px solid rgb(54, 54, 54);
-        padding-left: 35px;
+        padding-left: 15px;
         outline: none;
         display: flex;
+        gap: 10px;
         align-items: center;
         cursor: pointer;
     }

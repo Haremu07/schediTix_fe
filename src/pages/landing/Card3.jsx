@@ -53,8 +53,8 @@ const Card3 = () => {
             setTimeout(() =>{
                 setCurrentSlide((prev) => (prev + 1) % slides.length)
                 setFade(false)
-            },3000)
-        },3000)
+            },5000)
+        },5000)
         return () => clearInterval(interval)
     },[slides.length])
 
@@ -64,8 +64,8 @@ const Card3 = () => {
         setTimeout(()=>{
             setCurrentText((prev) => (prev + 1) % Texts.length)
             setFade(false)
-        },3000)
-    }, 3000)
+        },5000)
+    },5000)
     return () => clearInterval(interval)
 },[Texts.length])
   return (
