@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaUser, FaEnvelope, FaPhone, FaEye, FaEyeSlash, FaArrowLeft, FaPlus } from "react-icons/fa"
 import "../profileSetting/profieSetting.css"
+import DeletePopUp from "./DeletePopUp"
 
 function ProfileSetting() {
 
@@ -50,9 +51,20 @@ function ProfileSetting() {
     console.log("Form submitted:", formData)
   }
 
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(true)
+  }
+
+
   return (
+    <>
+     {
+        toggle && <DeletePopUp handleToggle={!handleToggle}/>
+      }
     <div className="profile-settings-container">
-      
+     
       {/* <div className="back-button">
         <FaArrowLeft className="back-icon" />
         <span>back</span>
@@ -200,12 +212,17 @@ function ProfileSetting() {
           placeholder="enter username to delete account"
           className="delete-input"
         />
-        <button type="button" className="delete-button">
+        <button type="button" className="delete-button"
+        onClick={handleToggle}
+        >
           delete account
         </button>
       </div>
       </div>
+      
     </div>
+    </>
+
   )
 }
 

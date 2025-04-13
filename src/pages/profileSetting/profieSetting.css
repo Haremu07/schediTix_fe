@@ -205,3 +205,24 @@
   .hidden-file-input {
     display: none;
   }
+
+  .DeletePopUpBody{
+    width: 73%;
+    height: 100vh;
+    background-color: #aaaaaad7;
+    position: absolute;
+    top: 0;
+    /* left: 0  ; */
+    z-index: 1;
+    margin-left: 365px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .DeletePopUpCard{
+      width: 60%;
+      height: 30%;
+      background-color: #fff;
+    }
+
+  }
