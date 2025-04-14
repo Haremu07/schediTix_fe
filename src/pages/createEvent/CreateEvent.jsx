@@ -3,9 +3,11 @@ import "../createEvent/createEvent.css";
 import { MdLocationOn } from "react-icons/md";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const CreateEvent = () => {
   const [profileImage, setProfileImage] = useState(null);
+  const nav = useNavigate();
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -68,14 +70,14 @@ const CreateEvent = () => {
               </label>
             </div>
             <div className="upload-img-btn">
-              <input
+                      <input
                 type="file"
                 id="Upload-img-input"
                 onChange={handleFileChange}
-                
-                //  className='hiden-file-input'
+                style={{ display: "none" }}
+                onClick={handleFileChange}
               />
-              <h5>Upload files</h5>
+              <h5 className="text-btn">Upload files</h5>
             </div>
           </div>
         </div>
@@ -291,7 +293,8 @@ const CreateEvent = () => {
                   </div>
                 </div>
                 <div className="parking-btn-wrapper">
-                  <button className="parking-btn">Next</button>
+                  <Outlet />
+                  <button className="parking-btn" onClick={()=>nav('publish')}>Next</button>
                 </div>
               </div>
             </div>

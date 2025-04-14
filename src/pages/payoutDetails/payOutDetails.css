@@ -5,6 +5,7 @@
     height: 100vh;
     /* background-color: blue; */
     overflow-y: scroll;
+    color: rgb(53, 52, 52);
 }
 .payout-wrapper{
     width: 100%;
