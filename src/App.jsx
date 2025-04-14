@@ -34,7 +34,9 @@ import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
+
 import Publish from "./pages/createEvent/Publish"
+
 
 const App = () => {
 
@@ -141,9 +143,19 @@ const App = () => {
             element: <UpcomingEvent/>
           },
           {
+            path:"dashboard/upcoming-event-details",
+            errorElement: <ErrorPage/>,
+            element: <UpcomingEventDetails/>
+          },
+          {
             path:"dashboard/past-events",
             errorElement: <ErrorPage/>,
             element: <PastEvent/>
+          },
+          {
+            path:"dashboard/ticket-purchased",
+            errorElement: <ErrorPage/>,
+            element: <UserTicketPurchase/>
           },
           {
             path:"dashboard/event-favorite",

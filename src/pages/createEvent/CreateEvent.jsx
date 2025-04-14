@@ -74,8 +74,10 @@ const CreateEvent = () => {
                 type="file"
                 id="Upload-img-input"
                 onChange={handleFileChange}
+
                 style={{ display: "none" }}
                 onClick={handleFileChange}
+
               />
               <h5 className="text-btn">Upload files</h5>
             </div>

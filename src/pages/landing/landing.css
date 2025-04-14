@@ -255,9 +255,15 @@
     height: 70%;
     background-color: white;
     display: flex;
+    align-items: center;
     flex-direction: column;
     color: rgb(66, 66, 66);
 
+    & .FeaturedEventBlockedBodyHold{
+        width: 100%;
+        height: max-content;
+        /* background-color: green; */
+    }
 
    & .FeaturedEventBlockedHeader{
         width: 100%;
@@ -276,6 +282,7 @@
         /* background-color: pink; */
         display: flex;
         justify-content: center;
+        /* flex-direction: column; */
         align-items: center;
         flex-wrap: wrap;
         margin-top: 20px;
@@ -289,7 +296,7 @@
         background-color: #ff5722;
         color: white;
         border: none;
-        margin-left: 115px;
+        margin-left: 120px;
         font-size: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
