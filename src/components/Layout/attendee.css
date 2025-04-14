@@ -1,6 +1,6 @@
 .attende-dashboard{
   width: 100%;
- overflow-y: hidden;
+  overflow-y: hidden;
   height: 100vh;
   /* background-color: black; */
   display: flex;

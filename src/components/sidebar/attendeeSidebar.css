@@ -1,16 +1,11 @@
 .attendee-sidebar{
     width: 25%;
     height: 100vh;
-    /* background-color: green; */
-    border-right: 1px solid rgb(201, 199, 199);
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     overflow-y: hidden;
-    /* scroll-margin-block: none; */
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* position: static;
-    bottom: 0; */
+    
 }
 
 

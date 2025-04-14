@@ -73,7 +73,7 @@ const CreateEvent = () => {
                 id="Upload-img-input"
                 onChange={handleFileChange}
                 
-                //  className='hiden-file-input'
+                 className='hiden-file-input'
               />
               <h5>Upload files</h5>
             </div>

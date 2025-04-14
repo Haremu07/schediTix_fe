@@ -61,7 +61,7 @@ function ProfileSetting() {
   return (
     <>
      {
-        toggle && <DeletePopUp handleToggle={!handleToggle}/>
+        toggle && <DeletePopUp setToggle={setToggle}/>
       }
     <div className="profile-settings-container">
      
@@ -209,7 +209,7 @@ function ProfileSetting() {
           name="deleteConfirm"
           value={formData.deleteConfirm}
           onChange={handleInputChange}
-          placeholder="enter username to delete account"
+          placeholder="confirm your password to delete account"
           className="delete-input"
         />
         <button type="button" className="delete-button"

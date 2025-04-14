@@ -10,7 +10,7 @@ import {  useNavigate } from 'react-router-dom';
 const AttendeeSideBar = () => {
   const navigate = useNavigate();
 
-  const [isActive, setIsActive ] = useState("")
+  const [isActive, setIsActive ] = useState("Upcoming Event")
 
   return (
     <div className='attendee-sidebar'>
