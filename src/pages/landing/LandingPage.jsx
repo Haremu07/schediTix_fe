@@ -12,7 +12,7 @@ import img3 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-f
 import img4 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-field 9.jpg";
 import vector from "../../assets/Vector.png";
 import Card3 from "./Card3";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { FaGreaterThan } from "react-icons/fa6";
 // import { FaLessThan } from "react-icons/fa6";
 
@@ -100,8 +100,8 @@ const LandingPage = () => {
               ticket purchases and real-time updates, we've got you covered.
             </p>
             <div className="LandingPageBox2Nav1SmallBox">
-              <button className="Btns">Create an event</button>
-              <button className="Btns2">Attend an event</button>
+              <button className="Btns" onClick={() => navigate("/login")}>Create an event</button>
+              <button className="Btns2" onClick={() => navigate("/login")} >Attend an event</button>
             </div>
           </div>
         </div>
@@ -159,22 +159,22 @@ const LandingPage = () => {
             Location="Eko Hotel and Suites"
             Price="2,000"
           />
-          <Cards
+          {/* <Cards
             img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
             text1="Ajegunle love feast"
             Date="23rd December, 2025"
             content="This is the 4th edition of the biggest community love feast."
             Location="Ayobami Hall"
             Price="Free"
-          />
-          <Cards
+          /> */}
+          {/* <Cards
             img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
             text1="Ajegunle City Youth Marathon"
             Date="18th Novenber, 2025"
             content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
             Location="Eko Hotel and Suites"
             Price="5,000"
-          />
+          /> */}
           <Cards
             img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
             text1="CONVERGENCE OF STARS"
@@ -191,21 +191,37 @@ const LandingPage = () => {
             Location="Eko Hotel and Suites"
             Price="2,000"
           />
-          <Cards
+          {/* <Cards
             img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
             text1="Ajegunle love feast"
             Date="23rd December, 2025"
             content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
             Location="Ayobami Hall"
             Price="Free"
-          />
-          <Cards
+          /> */}
+          {/* <Cards
             img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
             text1="Ajegunle City Youth Marathon"
             Date="18th Novenber, 2025"
             content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
             Location="Eko Hotel and Suites"
             Price="5,000"
+          /> */}
+          <Cards
+            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
+            text1="CONVERGENCE OF STARS"
+            Date="21st September, 2025"
+            content="This is the 4th edition of te biggest community awards ceremony in Africa."
+            Location="Eko Hotel and Suites"
+            Price="20,000"
+          />
+          <Cards
+            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
+            text1="CONVERGENCE OF STARS"
+            Date="21st September, 2025"
+            content="This is the 4th edition of te biggest community awards ceremony in Africa."
+            Location="Eko Hotel and Suites"
+            Price="20,000"
           />
           <Cards
             img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
@@ -223,6 +239,7 @@ const LandingPage = () => {
           <h1>Featured Events</h1>
           <img src={vector} alt="" />
         </div>
+          <div className="FeaturedEventBlockedBodyHold">        
         <div className="FeaturedEventBlockedBody">
           <Card2
             text="Kora Hack2.0 - Redesigni..."
@@ -253,6 +270,7 @@ const LandingPage = () => {
           />
         </div>
         <button className="FeaturedEventBlockedBtn">View all</button>
+        </div>
       </div>
 
       <div className="UsersBlock">

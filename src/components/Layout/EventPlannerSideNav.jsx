@@ -11,7 +11,7 @@ import { BsFillHddStackFill } from "react-icons/bs";
 
 const EventPlannerSideNav = () => {
   const navigate = useNavigate();
-  const [isActive, setIsActive] = useState("")
+  const [isActive, setIsActive] = useState("Overview")
   return (
     <div className='attendee-sidebar'>
      <div className='AttendeeTexts' onClick={() => navigate("/dashboard/overview")}>

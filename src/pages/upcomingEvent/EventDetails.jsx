@@ -1,13 +1,24 @@
-import React from 'react'
-import "./upcoming.css"
+// import "./upcoming.css"
 
-
-
+import { useEffect, useState } from "react"
+import AddedPopUp from "./AddedPopUp"
 
 const EventDetails = () => {
+    const [toggle, setToggle] = useState(false)
+      
+      const handleToggle = () => {
+        setToggle(true)
+      }
+    
+      useEffect(() =>{
+          setTimeout(() => {
+              setToggle(!true)
+          },3000)
+      },[toggle])
   return (
     <div className='exentDetails'>
         <section className='detailsText'>
+                    {toggle && <AddedPopUp/>}
             <h1>Event Details</h1>
             <p className='detailsTextP'>
                 The Biggest #comedy show to hit the # city of <br />
@@ -84,7 +95,9 @@ const EventDetails = () => {
         </section>
      
      <section  className='rightDivWrap'>
-        <div className='addtoFav' onClick={()=>openModal()}>Add to favorites</div>
+        <div className='addtoFav' 
+        onClick={handleToggle}
+        >Add to favorites</div>
         <div className='addtofavDiv'>
           <div className='addtofavDivWrap'>
             <p><b>Event Agenda</b></p>
