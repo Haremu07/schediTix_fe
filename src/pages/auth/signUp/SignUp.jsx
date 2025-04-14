@@ -81,7 +81,7 @@ const handleSubmit = async (e) => {
           </span>
             <button type="submit" className="btn" onClick={handleSubmit}>Sign Up</button>
             <span className="signinBox"><h5>Already have an account? 
-              <span className="box" onClick={()=> navigate("/login")}>sign In</span></h5>
+              <div className="box" onClick={()=> navigate("/login")}>sign In</div></h5>
               </span>
           </form>
         </div>
