@@ -1,5 +1,6 @@
 import "./exploreCategories.css"
 import ExploreFetures from './ExploreFetures'
+import mic from "../../assets/mic.jpg" 
 
 const ExploreCategories = () => {
   return (
@@ -8,32 +9,21 @@ const ExploreCategories = () => {
           <div className='exploreMiddleBox'>
               <section className='exlporeMiddleTop'>
               <h1>Shows</h1>
-            <div style={{width:"20px", height:"3px", backgroundColor:"black", borderRadius:"5px" }}></div>
+            <div  className="exploreReplaceIn"></div>
             <h1 style={{color:"#271b6b"}}>Comedy Show</h1>
               </section>
 
-              <section className='exploreMiddleCenter'>
-              <div className='explorelistOfShowsBox' style={{backgroundColor:"#27187d",border:"0px", color:"white"}}>
-              <p><b>MyKeal wise live</b></p>
-            </div>
-            <div className='explorelistOfShowsBox'>
-              <p><b>MC Savio show</b></p>
-            </div>
-            <div className='explorelistOfShowsBox'>
-              <p><b>Rabboski comedy show</b></p>
-            </div>
-            <div className='explorelistOfShowsBox'>
-              <p><b>North funny</b></p>
-            </div>
-            <div className='explorelistOfShowsBox'>
-              <p><b>Mykeal live</b></p>
-            </div>
-           </section>
+
            
            <nav className='billBord'>
             <section className='fadedBlackBox'>
-
+              <img src={mic} alt="" className="billBordImg"/>
+              <div className="exploreBillBordText">
+                <p>Comedy Shows in</p>
+                <p>Lagos</p>
+            </div>
             </section>
+           
           </nav>
           </div>
         </nav>

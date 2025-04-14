@@ -22,8 +22,8 @@ const EventCategories = () => {
         <nav className='middleBoxEventCategories'>
           <section className='middleTop'>
             <h4>Shows</h4>
-            <div className='replaceInline1'></div>
-            <h1 style={{color:"#271b6b"}}>Comedy Show</h1>
+            {/* <div className='replaceInline1'></div>
+            <h1 style={{color:"#271b6b"}}>Comedy Show</h1> */}
           </section>
           
           <section className='middleCenter'>
@@ -54,7 +54,7 @@ const EventCategories = () => {
                   <div className='seeMoreButton'>
                     <p 
                     onClick={()=> navigate("/event-details")}
-                      ><b>See More</b></p>
+                      >See More</p>
                   </div>
                 </nav>
               </div>
@@ -68,7 +68,7 @@ const EventCategories = () => {
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
-                    ><b>See More</b></p>
+                    >See More</p>
                   </div>
                 </nav>
               </div>
@@ -82,7 +82,7 @@ const EventCategories = () => {
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
-                    ><b>See More</b></p>
+                    >See More</p>
                   </div>
                 </nav>
               </div>
@@ -96,7 +96,7 @@ const EventCategories = () => {
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
-                    ><b>See More</b></p>
+                    >See More</p>
                   </div>
                 </nav>
               </div>
@@ -108,7 +108,7 @@ const EventCategories = () => {
                   <p><b>MyKealWise Comedy Live</b></p>
                   <p><b>Lagos</b></p>
                   <div className='seeMoreButton'>
-                    <p><b>See More</b></p>
+                    <p>See More</p>
                   </div>
                 </nav>
               </div>

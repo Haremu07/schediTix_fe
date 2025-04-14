@@ -11,6 +11,25 @@ const CheckInAttendee = () => {
         <p>ended event</p>
         <input type="text" placeholder="search for event" className='navInpit'/>
       </nav>
+
+      <table className='tableSS'> 
+        <tbody className='rowSS'>
+          <tr className='tr'>
+            <td>Event</td>
+            <td>Attendee</td>
+            <td>Cdeck In</td>
+            <td>Cdeck Out</td>
+            <td>Status</td>
+          </tr>
+          <tr className='tr'>
+            <td>Event</td>
+            <td>Attendee</td>
+            <td>Cdeck In</td>
+            <td>Cdeck Out</td>
+            <td>Status</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
