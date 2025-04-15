@@ -12,6 +12,11 @@ import { VscVerifiedFilled } from "react-icons/vsc";
 const PayOutDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpens, setIsModalOpens] = useState(false);
+  const [showInput, setShowInput] = useState(false);
+
+  const handleInput = () => {
+    setShowInput(true)
+  }
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -43,6 +48,9 @@ const PayOutDetails = () => {
   const handleOptions = (selectedOption) => {
     console.log('Seleted:', selectedOption);
   }
+
+  
+  
   return (
     <div className='payout-bg'>
       <div className='payout-wrapper'>
@@ -126,8 +134,20 @@ const PayOutDetails = () => {
                 </div>
 
                 <div className='request-for-payment-btn-div'>
-                  <button className='request-for-payment-btns' onClick={() => { timeout(); showModals(); }}>
-                    <h3>Request For payment</h3>
+                  <button className='request-for-payment-btns'
+                  >
+                    {
+                  
+                      showInput? (
+                        <div className="div">
+                          <input type="number"  placeholder='Enter amount' className='bank-account-input' style={{ padding: "7px" }} /> 
+                           <button className='divBtn'
+                            onClick={() => {setShowInput(false), timeout(); showModals(); }}
+                            >Request For payment</button>
+                        </div>
+                      ): null
+                    }
+                    <h3 onClick={handleInput}>Continue</h3>
                   </button>
                 </div>
               </div>
