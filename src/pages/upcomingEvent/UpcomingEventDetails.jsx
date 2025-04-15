@@ -6,7 +6,8 @@ import { BsFillClockFill } from "react-icons/bs";
 import EventDetails from './EventDetails';
 import UpcomingEventImage from "../../assets/upcmingEventImage.jpg"
 import { useNavigate } from 'react-router-dom';
-import { FaLessThan } from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
+
 // import AddedPopUp from './AddedPopUp';
 
 const UpcomingEventDetails = () => {
@@ -15,7 +16,7 @@ const UpcomingEventDetails = () => {
   return (
     <div className="upcoming-event">
         <div className="upcoming-evenr-header">
-            <h5 onClick={() => navigate("/dashboard/upcoming-events")}><FaLessThan size={25}/> back</h5>
+            <h5 onClick={() => navigate("/dashboard/upcoming-events")}><IoIosArrowBack size={25}/> back</h5>
         </div>
       <div className='upimgDiv'>
         <section className='upImgDiv'>

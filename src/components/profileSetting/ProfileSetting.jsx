@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { FaUser, FaEnvelope, FaPhone, FaEye, FaEyeSlash, FaArrowLeft, FaPlus } from "react-icons/fa"
-import "../profileSetting/profieSetting.css"
+import "./profieSetting.css"
 import DeletePopUp from "./DeletePopUp"
 
 function ProfileSetting() {

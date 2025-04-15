@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import orangeLogo from "../../../assets/orangelogo.png";
 import { useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ const SignIn = () => {
     email: "",
     password: "",
   });
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,14 +26,25 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`${BASEURL}/api/v1/login/user`, input)
+      if(response.status === 200){
+        setTimeout(() => {
+          navigate("")
+          setIsLoading(false)
+        }, 3000)
+      }
       console.log(response)
+      
     } catch (error) {
       console.log(error)
+      toast.error(error.response.data.message)
+      setIsLoading(false)
+
     }
   };
 
   return (
     <div className="signin-container">
+      <Toaster/>
       <div className="signIn-Nav">
         <div className="signIn-Nav-Header">
           <div className="LogoBox">
@@ -49,12 +63,12 @@ const SignIn = () => {
       </div>
 
       <div className="signin-body">
-        <div className="signin-form">
+        <div className="signin-form" onSubmit={handleSubmit}>
          
           <div className="sigin-form-Header">
             <h2>Login to continue</h2>
           </div>
-          <form className="form">
+          <form className="form" >
             <span className="input">
               <MdEmail />
               <input
@@ -77,21 +91,34 @@ const SignIn = () => {
                 placeholder="enter your password"
               />
             </span>
+           
             <h4
               onClick={() => navigate("/forget-password")}
               style={{ cursor: "pointer" }}
             >
               Forgot password?
             </h4>
-            <button type="submit" className="btn" onClick={() => (navigate("/checkin-as"), {handleSubmit})}>
-              Log In
-            </button>
-            <span className="signinBox">
+          {
+            isLoading ? (
+              <button type="submit" className="btn"
+               >
+                Loading...
+              </button>
+            ): (
+              <button type="submit" className="btn"
+               onClick={() => setIsLoading(true)}
+               >
+                {/* (navigate("/checkin-as") */}
+                Log In
+              </button>
+            )
+          }
+            <span className="signinBox" style={{display: "flex"}}>
               <h5>
                 Dont have an account?
-                <span className="box" onClick={() => navigate("/register")}>
+                <p className="boxs" onClick={() => navigate("/register")}>
                   sign Up
-                </span>
+                </p>
               </h5>
             </span>
           </form>
