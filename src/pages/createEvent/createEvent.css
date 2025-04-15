@@ -4,6 +4,7 @@
     width: 80%;
     height: max-content;
     background-color:skyblue ;
+    color: rgb(53, 52, 52);
 }
 .create-event-wrapper{
     width: 100%;
@@ -28,9 +29,9 @@
     padding-bottom: 30px;
 }
 
-.hiden-file-input{
+/* .hiden-file-input{
     display: none;
-}
+} */
 .upload-img-title{
     width: 80%;
     height: 49px;
@@ -146,6 +147,22 @@
     justify-content: center;
     align-items: center;
 }
+.text-btn{
+    font-family: "Inter", sans-serif;
+    font-weight: 400; 
+    font-size: 16px; 
+    color: white;
+}
+.upload-img-btns {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+  }
 .input-bg{
     width: 100%;
     height: max-content;

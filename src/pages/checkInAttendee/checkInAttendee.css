@@ -1,16 +1,17 @@
 .checkInAttendee{
-    width:75%;
+    width:80%;
     height: 100%;
     display: flex;
     flex-direction: column;
     /* background-color:aqua ; */
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .checkInAttendee__nav{
     width: 100%;
-    height: 7%;
+    height: 6%;
     display: flex;
     justify-content: space-between;
     /* background-color: aqua; */
@@ -27,4 +28,150 @@
     padding: 10px;
     font-size: 15px;
     color:rgba(186, 186, 186, 1) ;    
+}
+
+.table-bg1{
+    width: 100%;
+    height: max-content;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;   
+    border-radius: 10px;
+    border: 1px solid gray;
+    /* padding: 20px; */
+}
+.table{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgba(186, 186, 186, 1); */
+  
+}
+.rows{
+    width: 100%;
+    height: 20%;
+    border-bottom: 1px solid gray;
+    padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1e1e1e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.medalandtitleHeader{
+    width: 24%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    gap: 5px;
+    color: #1e1e1e;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.medalandtitle{
+    width: 27%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    gap: 5px;
+    color: #1e1e1e;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: green;
+     
+    & img{
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}
+.status{
+    width: 10%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(16, 112, 255, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color:rgba(16, 112, 255, 1); 
+}
+.statusUpgoing{
+    width: 10%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(244, 195, 0, 0.18);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color:rgba(232, 135, 1, 1); 
+}
+.statusend{
+    width: 10%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(237, 32, 0, 0.09);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color:rgba(237, 32, 0, 1); 
+}
+  .Checkinpagination-bg{
+    width: 100%;
+    height:  135px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: black; */
+    margin-top: 100px;
+}
+.pagination-wrapper{
+    width: 60%;
+    height: 100px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+.arrow{
+    font-size: 25px;
+    color:black;
+}
+.dot{
+    font-size: 25px;
+    color:black;
+}
+.num{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    /* background-color: aquamarine; */
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+.num:hover{
+    background-color: rgb(39,24,126);
+    color: white;
 }
