@@ -1,6 +1,7 @@
 import React from 'react'
 import "./eventCategories.css"
 import { GoArrowRight } from "react-icons/go";
+import vector from "../../assets/Vector.png"
 
 const EventForYou = () => {
   return (
@@ -8,7 +9,8 @@ const EventForYou = () => {
         <section className='firstBlock'></section>
         <section className='SecondBlock'>
             <nav className="textHeaders">
-                <p><b>Event For You</b></p>
+                <p>Event For You</p>
+                <img src={vector} alt="" className='vectorim' />
             </nav>
             <div className='contentBox'>
                 <span className='textBox'>
