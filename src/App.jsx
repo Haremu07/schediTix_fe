@@ -21,7 +21,7 @@ import CreateEvent from "./pages/createEvent/CreateEvent"
 import ManageEvent from "./pages/manageEvent/ManageEvent"
 import Overview from "./pages/overviewOrganizer/Overview"
 import PayOutDetails from "./pages/payoutDetails/PayOutDetails"
-import ProfileSetting from "./pages/profileSetting/ProfileSetting"
+import ProfileSetting from "./components/profileSetting/ProfileSetting"
 import TicketSales from "./pages/ticketSales/TicketSales"
 import ManageEventDetails from "./pages/manageEventDetails/ManageEventDetails"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
@@ -131,6 +131,11 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
+      {
+        path: "dashboard/logout" ,
+        errorElement: <ErrorPage/>,
+        element: <Logout/>
+      },
 
       {
         element: <AttendeDashBorad/>,
@@ -231,11 +236,7 @@ const App = () => {
             errorElement: <ErrorPage/>,
             element: <PayOutDetails/>
           },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
+     
         ]
       },
      
