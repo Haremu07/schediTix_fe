@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import img from '../../../src/assets/paypal.png';
 import { TbChartCandle } from "react-icons/tb";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
-import { Modal } from 'antd';
+import { Modal, Select } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
 
 const PayOutDetails = () => {
@@ -31,6 +31,18 @@ const PayOutDetails = () => {
     }, 2000);
   };
 
+  const options = [
+    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+    { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
+    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+    { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
+    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+  ]
+
+  const handleOptions = (selectedOption) => {
+    console.log('Seleted:', selectedOption);
+  }
   return (
     <div className='payout-bg'>
       <div className='payout-wrapper'>
@@ -104,12 +116,13 @@ const PayOutDetails = () => {
             <Modal open={isModalOpen} onCancel={handleCancel} okButtonProps={{ style: { display: "none" } }} cancelButtonProps={{ style: { display: "none" } }}>
               <div className='modal-bg'>
                 <div className='payment-modal-header'>
-                  <h3>Add amount to withdraw</h3>
+                  <h3>Choose an event to proceed</h3>
                 </div>
 
                 <div className='amount-input-holder'>
-                  <p className='amount'>Amount</p>
-                  <input type="number" placeholder='#80000' className='amount-input' min={0} />
+                  <p className='amount'>Select Event</p>
+                  <Select options={options} onChange={handleOptions}/>
+
                 </div>
 
                 <div className='request-for-payment-btn-div'>
@@ -124,7 +137,7 @@ const PayOutDetails = () => {
               <div className='success-bg'>
                 <div className='verified-icon-holder'><VscVerifiedFilled className='verified-icon' /></div>
                 <div className='successful-text-holder'>
-                  <h3 className='successful-text'>Congratulations on successfully creating an event!!</h3>
+                  <h3 className='successful-text'>Congratulations payment requested successfully!!!</h3>
                 </div>
               </div>
             </Modal>
