@@ -34,8 +34,8 @@ import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
-
 import Publish from "./pages/createEvent/Publish"
+import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
 
 
 const App = () => {

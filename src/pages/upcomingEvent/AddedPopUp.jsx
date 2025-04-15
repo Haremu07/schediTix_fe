@@ -9,7 +9,7 @@ const AddedPopUp = () => {
                 <div className="ImgBox">
                 <img className="Img" src={Successful} alt="" />
                 </div>
-                <h2>Congratulations on successfully creating an event!!</h2>
+                <h2>Added to favorite</h2>
             </div>
         </div>
     </div>

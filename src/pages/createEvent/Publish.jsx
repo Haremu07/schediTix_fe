@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 import { Modal } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
+import { useNavigate } from 'react-router-dom';
 
 const Publish = () => {
     const [isModalOpens, setIsModalOpens] = useState(false);
@@ -16,12 +17,13 @@ const Publish = () => {
       setIsModalOpens(false);
     }, 2000);
   };
+  const navigate = useNavigate()
     return (
       <div className='publish-bg'>
           <div className='publish-wrapper'>
               <div className='publish-title'>
                             <div className='publish-holder-nav'>
-                            <p className='arrow-back'><IoIosArrowBack /></p>
+                            <p className='arrow-back' onClick={() => navigate("/dashboard/create-event")}><IoIosArrowBack /></p>
                             <h3>Create event - <span style={{color:"rgb(255,128,88)"}}>Add ticket</span> </h3>
                               </div>  
               

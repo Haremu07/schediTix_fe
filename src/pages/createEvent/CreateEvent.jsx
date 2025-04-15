@@ -296,7 +296,7 @@ const CreateEvent = () => {
                 </div>
                 <div className="parking-btn-wrapper">
                   <Outlet />
-                  <button className="parking-btn" onClick={()=>nav('publish')}>Next</button>
+                  <button className="parking-btn" onClick={()=> nav('/dashboard/create-event/publish')}>Next</button>
                 </div>
               </div>
             </div>
