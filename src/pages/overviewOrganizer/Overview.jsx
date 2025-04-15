@@ -1,8 +1,10 @@
 import "../overviewOrganizer/overview.css";
 import { FaTicketAlt, FaUsers, FaCheck, FaPlus, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import Calender from "../../assets/calendar.png";
+import { useNavigate } from "react-router-dom";
 
 function Overview() {
+  const navigate = useNavigate()
   return (
     <div className="dashboard-container">
       <div className="stats-grid">
@@ -83,7 +85,7 @@ function Overview() {
               Ready to host an unforgettable event? Set up your event in minutes
             </p>
             <div className="button-container">
-              <button className="create-button">
+              <button className="create-button" onClick={() => navigate("/dashboard/create-event")}>
                 <FaPlus className="button-icon" />
                 Create an event
               </button>
