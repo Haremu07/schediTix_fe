@@ -7,6 +7,7 @@ import orangeLogo from "../../assets/orangelogo.png";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
+
   const { token } = useParams(); 
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -16,17 +17,16 @@ const ResetPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    
     if (newPassword !== confirmPassword) {
       setError("Passwords don't match");
       return;
     }
-    
+
     if (newPassword.length < 8) {
       setError("Password must be at least 8 characters long");
       return;
     }
+
     
     setLoading(true);
     setError("");
@@ -38,35 +38,36 @@ const ResetPassword = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          newPassword:newPassword,
-          confirmPassword:confirmPassword
+          newPassword,
+          confirmPassword,
         }),
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.message || "Failed to reset password");
       }
-      
+
       setSuccess(true);
       setTimeout(() => {
-        navigate("/SignIn");
+        navigate("/login");
       }, 2000);
-      
+
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-  
+
   return (
     <div className="ResetPassword-container">
       <div className="Nav">
         <div className="signIn-Nav-Header">
           <div className="LogoBox">
-            <img className="Logo" src={orangeLogo} alt="" onClick={() => navigate("/")} />
+            <img className="Logo" src={orangeLogo} alt="logo" onClick={() => navigate("/")} />
+
           </div>
           <div className="signIn-Nav-Box">
             <div className="navBoxs1"></div>
@@ -74,23 +75,27 @@ const ResetPassword = () => {
           </div>
         </div>
       </div>
+
       <div className="ResetPassword-body">
         <div className="ResetPassword-form">
           <div className="ResetPassword-form-Header">
             <span className="Back" onClick={() => navigate("/reset-password")}>
-              <FaArrowLeft /><p>go back</p>
+
             </span>
             <h2>Set your new password</h2>
             <p>Choose a strong password to secure your account</p>
           </div>
-          
+
           {success ? (
             <div className="success-message">
               <p>Password successfully reset! Redirecting to login...</p>
+              <p>If not redirected <button onClick={() => navigate("/login")}>click here</button>.</p>
+
             </div>
           ) : (
             <form className="form" onSubmit={handleSubmit}>
               {error && <div className="error-message">{error}</div>}
+
               
               <span className="input">
                 <GiDialPadlock />
@@ -103,7 +108,8 @@ const ResetPassword = () => {
                   required
                 />
               </span>
-              
+
+
               <span className="input">
                 <GiDialPadlock />
                 <input 
@@ -115,6 +121,7 @@ const ResetPassword = () => {
                   required
                 />
               </span>
+
               
               <button 
                 type="submit" 
@@ -127,6 +134,7 @@ const ResetPassword = () => {
           )}
         </div>
       </div>
+
       <div className="Nav2">
         <div className="Nav-Box">
           <div className="navBoxs1"></div>
@@ -138,3 +146,4 @@ const ResetPassword = () => {
 };
 
 export default ResetPassword;
+

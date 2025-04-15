@@ -1,99 +1,176 @@
-import "./signUp.css"
+import "./signUp.css";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 import { GiDialPadlock } from "react-icons/gi";
-import { FaArrowLeft } from "react-icons/fa6";
-import {  useNavigate } from "react-router";
-import orangeLogo from "../../../assets/orangelogo.png"
+import { useNavigate } from "react-router";
+import orangeLogo from "../../../assets/orangelogo.png";
 import { useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
-
-
-const SignIn = () => {
+const SignUP = () => {
   const [input, setInput] = useState({
     fullname: "",
     email: "",
-    phonenumber: "",
-    password: ""
-  })
+    phoneNo: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-const handleChange =  (e) => {
-  const {name, value} = e.target;
-  setInput((prev) => ({...prev, [name]: value})) 
-}  
+  const [isloading, setIsLoading] = useState(false);
 
-const BASEURL = "https://scheditix.onrender.com"
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInput((prev) => ({ ...prev, [name]: value }));
+    validateField(name, value);
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const res = await axios.post(`${BASEURL}/api/v1/register/user`, input) 
-    
-  } catch (error) {
-    console.log(error)
-  }
-}
+  const BASEURL = "https://scheditix.onrender.com";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${BASEURL}/api/v1/register/user`,
+        input
+      );
+      if (response.status === "201");
+      setTimeout(() => {
+        navigate("/login");
+        setIsLoading(false);
+      }, 3000);
+      if (input !== input) toast.success("omo run am bro");
+      console.log(response);
+      toast.success(response.data.message);
+      const loadingState = toast.loading("Do the calms e don work....");
+      toast.dismiss(loadingState);
+    } catch (error) {
+      if (input !== input) console.log("omooooo");
+      const loadingState2 = toast.loading("Please wait....");
+      toast.dismiss(loadingState2);
+      toast.error(error?.response?.data?.message);
+      if (error.status !== 201) {
+        setIsLoading(false);
+      }
+    }
+  };
+
+  localStorage.setItem(`input`, JSON.stringify(input));
   const navigate = useNavigate();
+
   return (
-    <div className="signin-container">
+    <div className="signIn-container">
+      <Toaster />
       <div className="signIn-Nav">
-      <div className="signIn-Nav-Header">
+        <div className="signIn-Nav-Header">
           <div className="LogoBox">
-          <img  className="Logo" src={orangeLogo} onClick={() => navigate("/")} />
+            <img
+              className="Logo"
+              src={orangeLogo}
+              onClick={() => navigate("/")}
+            />
           </div>
           <div className="signIn-Nav-Box">
-        <div className="navBoxs1"></div>
-        <div className="navBoxs2"></div>
-        </div>
+            <div className="navBoxs1"></div>
+            <div className="navBoxs2"></div>
+          </div>
         </div>
       </div>
-      <div className="signin-body">
-        <div className="signin-form">
-          <div className="sigin-form-Header">
-          <h2 >Unlock Your Event Access</h2>
+      <div className="signup-body">
+        <div className="signup-form">
+          <div className="sigup-form-Header">
+            <h2>Unlock Your Event Access</h2>
           </div>
-          <form className="form">
-         <span className="input">
-          <FaUser/>
-           <input type="text" name="fullname" value={input.fullname}
-           onChange={handleChange} className="input2" 
-           placeholder="enter your fullname"/>
-          </span> 
-          <span className="input" >
-            <MdEmail/>
-            <input type="email" name="email" value={input.email}
-            onChange={handleChange} className="input2" 
-             placeholder="enter your email" />
-          </span>
-          <span className="input">
-            <IoMdCall/>
-           <input type="number" name="phonenumber" value={input.phonenumber}
-           onChange={handleChange} className="input2" 
-           placeholder="enter your phonenumber"/>
-          </span>
-          <span className="input">
-            <GiDialPadlock/>
-           <input type="password" name="password" value={input.password} 
-           onChange={handleChange} className="input2" 
-           placeholder="enter your password"/>
-          </span>
-            <button type="submit" className="btn" onClick={handleSubmit}>Sign Up</button>
-            <span className="signinBox"><h5>Already have an account? 
-              <span className="box" onClick={()=> navigate("/login")}>sign In</span></h5>
-              </span>
+          <form className="form" onSubmit={handleSubmit}>
+            <span className="input">
+              <FaUser />
+              <input
+                type="text"
+                name="fullname"
+                value={input.fullname}
+                onChange={handleChange}
+                className="input3"
+                placeholder="enter your fullname"
+              />
+            </span>
+            <span className="input">
+              <MdEmail />
+              <input
+                type="email"
+                name="email"
+                value={input.email}
+                onChange={handleChange}
+                className="input3"
+                placeholder="enter your email"
+              />
+            </span>
+            <span className="input">
+              <IoMdCall />
+              <input
+                type="number"
+                name="phoneNo"
+                value={input.phoneNo}
+                onChange={handleChange}
+                className="input3"
+                placeholder="enter your phonenumber"
+              />
+            </span>
+            <span className="input">
+              <GiDialPadlock />
+              <input
+                type="password"
+                name="password"
+                value={input.password}
+                onChange={handleChange}
+                className="input3"
+                placeholder="enter your password"
+              />
+            </span>
+
+            <span className="input">
+              <GiDialPadlock />
+              <input
+                type="password"
+                name="confirmPassword"
+                value={input.confirmPassword}
+                onChange={handleChange}
+                className="input3"
+                placeholder="enter confirm password"
+              />
+            </span>
+            {isloading ? (
+              <button type="submit" className="btn">
+                Loading....
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="btn"
+                onClick={() => setIsLoading(true)}
+              >
+                Sign Up
+              </button>
+            )}
+            <span className="sigupnBox">
+              <h5>
+                Already have an account?
+                <div className="boxs" onClick={() => navigate("/login")}>
+                  sign In
+                </div>
+              </h5>
+            </span>
           </form>
         </div>
       </div>
       <div className="signIn-Nav2">
-      <div className="signIn-Nav-Box">
-        <div className="navBoxs1"></div>
-        <div className="navBoxs2"></div>
+        <div className="signIn-Nav-Box">
+          <div className="navBoxs1"></div>
+          <div className="navBoxs2"></div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignUP;

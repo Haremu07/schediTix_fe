@@ -21,7 +21,7 @@ import CreateEvent from "./pages/createEvent/CreateEvent"
 import ManageEvent from "./pages/manageEvent/ManageEvent"
 import Overview from "./pages/overviewOrganizer/Overview"
 import PayOutDetails from "./pages/payoutDetails/PayOutDetails"
-import ProfileSetting from "./pages/profileSetting/ProfileSetting"
+import ProfileSetting from "./components/profileSetting/ProfileSetting"
 import TicketSales from "./pages/ticketSales/TicketSales"
 import ManageEventDetails from "./pages/manageEventDetails/ManageEventDetails"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
@@ -34,6 +34,7 @@ import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
+import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
 
 const App = () => {
 
@@ -130,6 +131,11 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
+      {
+        path: "dashboard/logout" ,
+        errorElement: <ErrorPage/>,
+        element: <Logout/>
+      },
 
       {
         element: <AttendeDashBorad/>,
@@ -140,9 +146,19 @@ const App = () => {
             element: <UpcomingEvent/>
           },
           {
+            path:"dashboard/upcoming-event-details",
+            errorElement: <ErrorPage/>,
+            element: <UpcomingEventDetails/>
+          },
+          {
             path:"dashboard/past-events",
             errorElement: <ErrorPage/>,
             element: <PastEvent/>
+          },
+          {
+            path:"dashboard/ticket-purchased",
+            errorElement: <ErrorPage/>,
+            element: <UserTicketPurchase/>
           },
           {
             path:"dashboard/event-favorite",
@@ -220,11 +236,7 @@ const App = () => {
             errorElement: <ErrorPage/>,
             element: <PayOutDetails/>
           },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
+     
         ]
       },
      

@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./cards.css"
 import { IoLocationSharp } from "react-icons/io5";
 
 const Cards = (props) => {
+    const navigte = useNavigate();
   return (
     <div className='CardsBox'>
         <div className="CardBoxImgBox">
@@ -26,7 +28,7 @@ const Cards = (props) => {
 
         <div className="CardBoxTicket">
             <p>#{props.Price}</p>
-            <button className="TicketBtn">Buy Ticket</button>
+            <button className="TicketBtn" onClick={() => navigte("/dashboard/upcoming-event-details")}>Buy Ticket</button>
         </div>
     </div>
   )

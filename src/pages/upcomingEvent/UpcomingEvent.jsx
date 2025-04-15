@@ -1,40 +1,61 @@
-import React from 'react'
-import "./upcoming.css"
-import { FaLocationDot } from "react-icons/fa6";
-import { SlCalender } from "react-icons/sl";
-import { BsFillClockFill } from "react-icons/bs";
-import EventDetails from './EventDetails';
-import UpcomingEventImage from "../../assets/upcmingEventImage.jpg"
+// import "./upcoming.css"
+import image1 from "../../assets/Frame 237815 (1).png"
+import image2 from "../../assets/Frame 237815 (2).png"
+import { useNavigate } from "react-router-dom"
 
 const UpcomingEvent = () => {
+  const navigate = useNavigate()
+  
   return (
-    <div className="upcoming-event">
-      <div className='upimgDiv'>
-        <section className='upImgDiv'>
-        <img src={UpcomingEventImage} alt="" />
-        </section>
+    <div className="tickets-container">
+      <h1 className="tickets-title">Tickets Purchased</h1>
+
+      <div className="tickets-list">
+        {[
+          {
+            title: "AJ City Youth Ma...",
+            date: "Dec 1, 2025",
+            time: "11am prompt",
+            seat: "Table3Seat14",
+            checkInCode: "RL48",
+            image: image1
+          },
+          {
+            title: "Mykealwise live in Ajeg...",
+            date: "Oct 4, 2024",
+            time: "6pm prompt",
+            seat: "Table12Seat19",
+            checkInCode: "RL48",
+            image: image2
+          },
         
-        <section className='upTextDiv'>
-          <h1>MyKealwise Live in Aj City</h1>
-          <nav className='upTExtDate'> 
-          <SlCalender className='uptextDateIcone'/>
-          <p><b>26 August 2025</b></p>
-          </nav>
-          <nav className='upTExtDate'>
-          <BsFillClockFill className='uptextDateIcone'/>
-          <p><b>6pm wat</b></p>
-           </nav>
-          <nav className='upTExtDate'> 
-          <FaLocationDot className='uptextDateIcone'/>
-          <p><b>Abayomi Mutipurpose hall, Ajegunle,<br />Lagos, Nigeria</b></p>
-          </nav>
-          <p className='seatnumber'>Seat number: Table1-seat5</p>
-          <p className='checkin'>check in code: <span>38AT</span></p>
-        </section>
+        ].map((ticket, index) => (
+          <div className="ticket-card" key={index} onClick={() => navigate("/dashboard/upcoming-event-details")}>
+
+            <div className="ticket-image">
+              <img src={ticket.image} alt={ticket.title} />
+            </div>
+            <div className="ticket-details">
+              <h2>{ticket.title}</h2>
+              <p className="venue">City Hall, Ajegunle, Lagos, Nigeria</p>
+              <p className="datetime">{ticket.date} | {ticket.time}</p>
+              <div className="ticket-footer">
+                <div>
+                  <p>{ticket.seat}</p>
+                  <p className="label">Ticket/Seat Number</p>
+                </div>
+                <div className="checkInCode-info">
+                  <p className="checkInCode">{ticket.checkInCode}</p>
+                  <p className="check-in">Check in code</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-      <EventDetails/>
     </div>
   )
 }
 
 export default UpcomingEvent
+
