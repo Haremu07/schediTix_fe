@@ -36,6 +36,7 @@ import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
 import Publish from "./pages/createEvent/Publish"
 import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
+import ViewEvent from "./pages/manageEvent/ViewEvent"
 
 
 const App = () => {
@@ -85,6 +86,11 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <LandingPage/>
         }, 
+        // {
+        //   path: "*" ,
+        //   errorElement: <ErrorPage/>,
+        //   element: <LandingPage/>
+        // }, 
       ],
     },
     {
@@ -133,11 +139,7 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
-      {
-        path: "dashboard/logout" ,
-        errorElement: <ErrorPage/>,
-        element: <Logout/>
-      },
+     
 
       {
         element: <AttendeDashBorad/>,
@@ -200,6 +202,11 @@ const App = () => {
               
           },
           {
+            path: "/dashboard/view-event" ,
+            errorElement: <ErrorPage/>,
+            element: <ViewEvent/>,
+          },
+          {
             path:"/dashboard/create-event/publish",
             errorElement: <ErrorPage/>,
             element: <Publish/>
@@ -244,7 +251,11 @@ const App = () => {
             errorElement: <ErrorPage/>,
             element: <PayOutDetails/>
           },
-     
+          {
+            path: "dashboard/logout" ,
+            errorElement: <ErrorPage/>,
+            element: <Logout/>
+          },
         ]
       },
      
