@@ -6,6 +6,7 @@ import orangelogo from '../../assets/orangelogo.png'
 
 const Header = () => {
  const  navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="header-container">

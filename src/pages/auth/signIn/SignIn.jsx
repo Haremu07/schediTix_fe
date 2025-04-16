@@ -117,9 +117,9 @@ const SignIn = () => {
           }
 
           {
-            disable ? isLoading : "yooo"
+            disable ? isLoading : null
           }
-            <span className="signinBox" style={{display: "flex"}}>
+            <span className="signinBox" style={{display: "flex", flexDirection: "row" }}>
               <h5>
                 Dont have an account?
                 <p className="boxs" onClick={() => navigate("/register")}>
