@@ -108,7 +108,7 @@ const App = () => {
         element: <SignUp/>
       },
       {
-        path: "email-verification" ,
+        path: "email-verification/:token" ,
         errorElement: <ErrorPage/>,
         element: <EmailVerification/>
       },

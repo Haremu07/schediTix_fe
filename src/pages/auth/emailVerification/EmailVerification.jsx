@@ -1,15 +1,41 @@
 import "./emailVerification.css"
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Logo from "../../../assets/orangelogo.png"
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const EmailVerification = () => {
   const navigate = useNavigate()
+  const { token } = useParams();
+  localStorage.setItem("Authtoken", token);
+  const BASEURL = "https://scheditix.onrender.com";
+  const Token = localStorage.getItem("Authtoken")
+ 
+  const handleEmailVerification = async (e) => {
+    e.preventDefault ();
+    try {
+      const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
+      console.log(response)
+      toast.success(response?.data?.message)
+      // navigate("/login")
+      
+    } catch (error) {
+      console.log(error)
+      toast.error(error?.response?.data?.message || "Something went wrong");
+      if (error.status === 404){
+        return toast.error("Invalid token")
+      }
+      
+    }
+
+  }
   return (
     <div className="email-verification-container">
       <div className="Nav">
                <div className="signIn-Nav-Header">
                  <div className="LogoBox">
+                  <Toaster/>
                  </div>
                  <div className="signIn-Nav-Box">
                <div className="navBoxs1"></div>
@@ -34,7 +60,7 @@ const EmailVerification = () => {
               good to go! 🥰</p>
 
            <div className="CodeBox">
-           <p> <button className="resend" onClick={() => navigate("/login")}>Verify email address</button>  </p>
+           <p> <button className="resend" onClick={handleEmailVerification}>Verify email address</button>  </p>
            </div>
           </form>
         </div>

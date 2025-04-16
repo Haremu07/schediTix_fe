@@ -5,6 +5,7 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
 import { Outlet, useNavigate } from "react-router-dom";
 
+
 const CreateEvent = () => {
   const [profileImage, setProfileImage] = useState(null);
   const nav = useNavigate();
@@ -23,7 +24,7 @@ const CreateEvent = () => {
         <div className="upload-img-wrapper">
           <div className="upload-img-title">
             <div className="holder-nav">
-              <p className="arrow-back">
+              <p className="arrow-back" onClick={() => nav(-1)}>
                 <IoIosArrowBack />
               </p>
               <h3 className="text-after-arrow-back">
