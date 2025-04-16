@@ -37,6 +37,8 @@ import Logout from "./pages/auth/logout/Logout"
 import Publish from "./pages/createEvent/Publish"
 import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
 import ViewEvent from "./pages/manageEvent/ViewEvent"
+import TicketPurchaced from "./pages/eventFavorite/TicketPurchaced"
+import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
 
 
 const App = () => {
@@ -86,11 +88,7 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <LandingPage/>
         }, 
-        // {
-        //   path: "*" ,
-        //   errorElement: <ErrorPage/>,
-        //   element: <LandingPage/>
-        // }, 
+       
       ],
     },
     {
@@ -149,10 +147,20 @@ const App = () => {
             errorElement: <ErrorPage/>,
             element: <UpcomingEvent/>
           },
+           {
+          path: "dashboard/ticket-purchace" ,
+          errorElement: <ErrorPage/>,
+          element: <TicketPurchaced/>
+        }, 
           {
             path:"dashboard/upcoming-event-details",
             errorElement: <ErrorPage/>,
             element: <UpcomingEventDetails/>
+          },
+          {
+            path:"dashboard/purchase-details",
+            errorElement: <ErrorPage/>,
+            element: <PurchaseDetails/>
           },
           {
             path:"dashboard/past-events",

@@ -4,25 +4,13 @@ import { CiCalendarDate } from "react-icons/ci";
 import { TbClock } from "react-icons/tb";
 import { MdLocationOn, MdFavoriteBorder } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-import AddedPopUp from './AddedPopUp';
 
 const EventDetails = () => {
   const navigate = useNavigate();
-  // const [toggle, setToggle] = useState(false)
-  
-  // const handleToggle = () => {
-  //   setToggle(true)
-  // }
 
-  // useEffect(() =>{
-  //     setTimeout(() => {
-  //         setToggle(!true)
-  //     }, 5000)
-  // },[])
   return (
     <div className='eventdetails-bg'>
-        {/* <div className="exentDetailsHeader" style={{background: "red", marginTop: "90px", height: "15%"}}>back</div> */}
-        {/* {toggle && <AddedPopUp/>} */}
+      
 
       <div className='eventdetails-wrapper'>
         <div className='eventdetails-sections'>

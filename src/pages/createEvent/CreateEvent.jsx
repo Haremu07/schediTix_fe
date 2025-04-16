@@ -49,13 +49,13 @@ const CreateEvent = () => {
                 ) : (
                   <div>
                     <div className="upload-img-template-details-text-bg">
-                      <h1>
+                      <h2>
                         Drag & Drop{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>images</span>,{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>Videos</span>{" "}
                         or any{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>file</span>
-                      </h1>
+                      </h2>
                     </div>
                     <div className="upload-img-template-details-subtext-bg">
                       <p>

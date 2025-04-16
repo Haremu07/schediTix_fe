@@ -24,7 +24,7 @@ const UpcomingEventDetails = () => {
         </section>
         
         <section className='upTextDiv'>
-          <h1>MyKealwise Live in Aj City</h1>
+          <h3>MyKealwise Live in Aj City</h3>
           <nav className='upTExtDate'> 
           <SlCalender className='uptextDateIcone'/>
           <p><b>26 August 2025</b></p>
