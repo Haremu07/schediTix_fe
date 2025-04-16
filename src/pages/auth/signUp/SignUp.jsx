@@ -25,6 +25,7 @@ const SignUP = () => {
     setInput((prev) => ({ ...prev, [name]: value }));
     validateField(name, value);
   };
+  
 
   const BASEURL = "https://scheditix.onrender.com";
 
@@ -37,7 +38,7 @@ const SignUP = () => {
       );
       if (response.status === "201");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/email-verification/:token");
         setIsLoading(false);
       }, 3000);
       if (input !== input) toast.success("omo run am bro");
