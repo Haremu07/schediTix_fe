@@ -20,13 +20,13 @@ const CheckInAs = () => {
             <div className="ImgBox">
               <img className="Img" src={logo1} alt="" />
             </div>
-              <h1>Organize an event</h1>
+              <h2>Organize an event</h2>
           </div>
           <div className="CheckInAsBoxs" onClick={() => navigate("/dashboard/upcoming-events")}>
             <div className="ImgBox">
           <img className="Img" src={logo2} alt="" />
             </div>
-          <h1>Attend an event</h1>
+          <h2>Attend an event</h2>
           </div>
         </div>
     </div>

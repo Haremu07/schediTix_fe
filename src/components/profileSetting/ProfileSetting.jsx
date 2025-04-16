@@ -57,6 +57,9 @@ function ProfileSetting() {
     setToggle(true)
   }
 
+const input = JSON.parse(localStorage.getItem(`input`))
+
+console.log(input)
 
   return (
     <>
@@ -103,10 +106,12 @@ function ProfileSetting() {
                 type="text"
                 name="fullname"
                 placeholder="FullName"
-                value={formData.fullname}
+                value={input.fullname}
                 onChange={handleInputChange}
                 className="form-input"
+                
               />
+
             </div>
           </div>
 
@@ -117,7 +122,7 @@ function ProfileSetting() {
               <input
                 type="email"
                 name="email"
-                value={formData.email}
+                value={input.email}
                 onChange={handleInputChange}
                 placeholder="enter your email"
                 className="form-input"
@@ -128,11 +133,12 @@ function ProfileSetting() {
           <div className="form-group">
             <label className="form-label">Phone number</label>
             <div className="input-container">
-              <FaPhone className="input-icon" />
+              <FaPhone  className="input-icon" />
+              {/* <p>+234</p> */}
               <input
                 type="tel"
                 name="phone"
-                value={formData.phone}
+                value={input.phoneNo}
                 onChange={handleInputChange}
                 placeholder="enter your phone number"
                 className="form-input"

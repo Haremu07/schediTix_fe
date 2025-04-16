@@ -3,7 +3,7 @@ import "../createEvent/createEvent.css";
 import { MdLocationOn } from "react-icons/md";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // import {  IoIosArrowBack } from "react-icons/io";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Modal } from "antd";
 import "../createEvent/publish.css";
@@ -51,13 +51,15 @@ const CreateEvent = () => {
     packingInfo: "",
     ticketPrice: "",
     ticketQuality: "",
-    ticketLimit: ""
+    ticketLimit: "",
   });
 
-  const [disable, setDisable] = useState(false)
+  const BASEURL = "https://scheditix.onrender.com";
+
+  const [disable, setDisable] = useState(false);
 
   const [categories, setCategories] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleCategories = async () => {
     try {
@@ -78,22 +80,22 @@ const CreateEvent = () => {
     setInput((prev) => ({ ...prev, [name]: value }));
   };
 
-  const BASEURL = "https://scheditix.onrender.com";
 
   const handleSubmit = async () => {
     try {
-    
       const response = await axios.post(`${BASEURL}/api/v1/category`);
+      setInput(response.data.data)
       console.log(response);
-      setIsLoading(true)
+      toast.success("successfull")
+      setIsLoading(true);
       // setDisable(true)
-      toast.success("E clear!!!")
-      setIsLoading(false)
+      toast.success("E clear!!!");
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
-      setIsLoading(true)
-      if( !eventTitle){
-        toast.error("Please fill in all fields")
+      setIsLoading(true);
+      if (!eventTitle) {
+        toast.error("Please fill in all fields");
       }
     }
   };
@@ -110,11 +112,11 @@ const CreateEvent = () => {
   };
   return (
     <div className="create-event-bg">
-      <Toaster/>
+      <Toaster />
       <div className="create-event-wrapper">
         <div className="create-event-title"></div>
         <div className="upload-img-wrapper">
-          <div className="upload-img-title" >
+          <div className="upload-img-title">
             <div className="holder-nav">
               <p className="arrow-back">
                 <IoIosArrowBack />
@@ -134,15 +136,11 @@ const CreateEvent = () => {
                 htmlFor="Upload-img-input"
                 className="upload-img-template-details-wrapper"
               >
-                
                 {profileImage ? (
                   <img src={profileImage} className="UploadImgBox" alt="" />
                 ) : (
                   <div>
-                    <div
-                      className="upload-img-template-details-text-bg"
-                      onSubmit={handleSubmit}
-                    >
+                    <div className="upload-img-template-details-text-bg">
                       <h2>
                         Drag & Drop{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>images</span>,{" "}
@@ -426,25 +424,25 @@ const CreateEvent = () => {
                     />
                   </div>
                 </div>
-                
-                  <Modal
-                    title=""
-                    open={isModalOpen}
-                    // onOk={handleOk}
-                    onCancel={handleCancel}
-                    // className="ModalBody"
-                    // style={{width: "80%"}}
-                    height={50}
-                    width={"70%"}
-                    okButtonProps={ { hidden:true,style:{display:"none"}}}
-                    // cancelButtonProps={ { hidden:true,style:{display:"none"}}}
-                     closeIcon={false}
-                  >
-                    <div className="publish-bg">
-                      <div className="publish-wrapper">
-                        <div className="publish-title">
-                          <div className="publish-holder-nav">
-                            {/* <p
+
+                <Modal
+                  title=""
+                  open={isModalOpen}
+                  // onOk={handleOk}
+                  onCancel={handleCancel}
+                  // className="ModalBody"
+                  // style={{width: "80%"}}
+                  height={50}
+                  width={"70%"}
+                  okButtonProps={{ hidden: true, style: { display: "none" } }}
+                  // cancelButtonProps={ { hidden:true,style:{display:"none"}}}
+                  closeIcon={false}
+                >
+                  <div className="publish-bg">
+                    <div className="publish-wrapper">
+                      <div className="publish-title">
+                        <div className="publish-holder-nav">
+                          {/* <p
                               className="arrow-back"
                               onClick={() =>
                                 navigate("/dashboard/create-event")
@@ -452,152 +450,151 @@ const CreateEvent = () => {
                             >
                               <IoIosArrowBack />
                             </p> */}
-                            <h3>
-                              Create event -{" "}
-                              <span style={{ color: "rgb(255,128,88)" }}>
-                                Add ticket
-                              </span>{" "}
-                            </h3>
-                          </div>
+                          <h3>
+                            Create event -{" "}
+                            <span style={{ color: "rgb(255,128,88)" }}>
+                              Add ticket
+                            </span>{" "}
+                          </h3>
                         </div>
-                        <div className="publish-wrapper-two">
-                          <div className="publish-wrapper-two-title">
-                            <h3>we don't charge for free ticket</h3>
-                          </div>
-                          <div className="publish-wrapper-two-double-bg">
-                            <div className="publish-wrapper-two-double-div-one">
-                              <div className="publish-first-box">
-                                <div>
-                                  <h3>Ticket Price</h3>
-                                </div>
-                                <div>
-                                  <p>Set the price for this ticket</p>
-                                </div>
-                                <div>
-                                  <input
-                                    type="number"
-                                    placeholder="e.g.,550 / #10,000"
-                                    className="publish-input"
-                                    // min={0}
-                                    name="ticketPrice"
-                                    value={input.ticketPrice}
-                                    onChange={handleChange}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="publish-wrapper-two-double-div-one">
-                              <div className="publish-first-box">
-                                <div>
-                                  <h3>Ticket Quality</h3>
-                                </div>
-                                <div>
-                                  <p>
-                                    How many of this ticket are available for
-                                    sale?
-                                  </p>
-                                </div>
-                                <div>
-                                  <input
-                                    type="number"
-                                    placeholder="e.g.,300"
-                                    className="publish-input"
-                                    // min={0}
-                                  name="ticketQuality"
-                                  value={input.ticketQuality}
-                                  onChange={handleChange}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="publish-wrapper-single-double-bg">
-                            <div className="publish-third-box">
+                      </div>
+                      <div className="publish-wrapper-two">
+                        <div className="publish-wrapper-two-title">
+                          <h3>we don't charge for free ticket</h3>
+                        </div>
+                        <div className="publish-wrapper-two-double-bg">
+                          <div className="publish-wrapper-two-double-div-one">
+                            <div className="publish-first-box">
                               <div>
-                                <h3>Ticket Purchase limit</h3>
+                                <h3>Ticket Price</h3>
                               </div>
                               <div>
-                                <p>Set this ticket purchase limit</p>
+                                <p>Set the price for this ticket</p>
                               </div>
                               <div>
                                 <input
                                   type="number"
-                                  placeholder="e.g.,3"
-                                  className="publish-third-input"
+                                  placeholder="e.g.,550 / #10,000"
+                                  className="publish-input"
                                   // min={0}
-                                  name="ticketLimit"
-                                  value={input.ticketLimit}
+                                  name="ticketPrice"
+                                  value={input.ticketPrice}
                                   onChange={handleChange}
                                 />
                               </div>
                             </div>
                           </div>
-                          <div className="quick-reminder-bg">
-                            <div className="quick-reminder-wrapper">
-                              <div className="quick-reminder-title-wrapper">
-                                <p className="warning-icon">
-                                  <IoWarning />
+                          <div className="publish-wrapper-two-double-div-one">
+                            <div className="publish-first-box">
+                              <div>
+                                <h3>Ticket Quality</h3>
+                              </div>
+                              <div>
+                                <p>
+                                  How many of this ticket are available for
+                                  sale?
                                 </p>
-                                <h2 className="warning-texts">
-                                  Quick Reminder:
-                                </h2>
                               </div>
-                              <div className="quick-reminder-text-wrapper">
-                                <h4 className="quick-reminder-text-wrapper-text">
-                                  You're only allowed to make changes to the
-                                  event date 📆, time ⏱, and location 📍 .{" "}
-                                  <br /> All other event details are locked in
-                                  once the event goes live. Make sure everything
-                                  else looks good before publishing !
-                                </h4>
+                              <div>
+                                <input
+                                  type="number"
+                                  placeholder="e.g.,300"
+                                  className="publish-input"
+                                  // min={0}
+                                  name="ticketQuality"
+                                  value={input.ticketQuality}
+                                  onChange={handleChange}
+                                />
                               </div>
                             </div>
-                            <Modal
-                              open={isModalOpens}
-                              okButtonProps={{ style: { display: "none" } }}
-                              cancelButtonProps={{ style: { display: "none" } }}
-                              closable={false}
-                            >
-                              <div className="success-bg">
-                                <div className="verified-icon-holder">
-                                  <VscVerifiedFilled className="verified-icon" />
-                                </div>
-                                <div className="successful-text-holder">
-                                  <h3 className="successful-text">
-                                    Congratulations on successfully creating an
-                                    event!!
-                                  </h3>
-                                </div>
+                          </div>
+                        </div>
+                        <div className="publish-wrapper-single-double-bg">
+                          <div className="publish-third-box">
+                            <div>
+                              <h3>Ticket Purchase limit</h3>
+                            </div>
+                            <div>
+                              <p>Set this ticket purchase limit</p>
+                            </div>
+                            <div>
+                              <input
+                                type="number"
+                                placeholder="e.g.,3"
+                                className="publish-third-input"
+                                // min={0}
+                                name="ticketLimit"
+                                value={input.ticketLimit}
+                                onChange={handleChange}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="quick-reminder-bg">
+                          <div className="quick-reminder-wrapper">
+                            <div className="quick-reminder-title-wrapper">
+                              <p className="warning-icon">
+                                <IoWarning />
+                              </p>
+                              <h2 className="warning-texts">Quick Reminder:</h2>
+                            </div>
+                            <div className="quick-reminder-text-wrapper">
+                              <h4 className="quick-reminder-text-wrapper-text">
+                                You're only allowed to make changes to the event
+                                date 📆, time ⏱, and location 📍 . <br /> All
+                                other event details are locked in once the event
+                                goes live. Make sure everything else looks good
+                                before publishing !
+                              </h4>
+                            </div>
+                          </div>
+                          <Modal
+                            open={isModalOpens}
+                            okButtonProps={{ style: { display: "none" } }}
+                            cancelButtonProps={{ style: { display: "none" } }}
+                            closable={false}
+                          >
+                            <div className="success-bg">
+                              <div className="verified-icon-holder">
+                                <VscVerifiedFilled className="verified-icon" />
                               </div>
-                            </Modal>
-                            <div className="publish-event-btn-bg">
-                          {
-                            isLoading ? ("loading...") : (
+                              <div className="successful-text-holder">
+                                <h3 className="successful-text">
+                                  Congratulations on successfully creating an
+                                  event!!
+                                </h3>
+                              </div>
+                            </div>
+                          </Modal>
+                          <div className="publish-event-btn-bg">
+                            {isLoading ? (
+                              <button className="publish-event-btn">Loading...</button>
+                            ) : (
                               <button
-                              className="publish-event-btn"
-                              onClick={() => {
-                                // if(response.status !== 200)
-                                //   toast.error("e no wrk"}
-                                setIsLoading(true)
-                               setTimeout(() => {
-                                timeout();
-                                showModals();
-                                setIsLoading(false)
-                               }, 3000)
-                              }}
-                              type="submit"
-                            >
-                              Publish Event
-                            </button>
-                            ) 
-                          }
-                            </div>
+                                className="publish-event-btn"
+                                onClick={() => {
+                                  // if(response.status !== 200)
+                                  //   toast.error("e no wrk"}
+                                  handleSubmit()
+                                  setIsLoading(true);
+                                  setTimeout(() => {
+                                    timeout();
+                                    showModals();
+                                    setIsLoading(false);
+                                  }, 3000);
+                                }}
+                                // type="submit"
+                              >
+                                Publish Event
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
                     </div>
-                  </Modal>
-                
+                  </div>
+                </Modal>
+
                 <div className="parking-btn-wrapper">
                   {/* <Outlet /> */}
                   <button
