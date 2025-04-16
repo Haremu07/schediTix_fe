@@ -8,9 +8,10 @@ import toast, { Toaster } from "react-hot-toast";
 const EmailVerification = () => {
   const navigate = useNavigate()
   const { token } = useParams();
-  localStorage.setItem("Authtoken", token);
+  console.log(token)
+  // localStorage.setItem("Authtoken", token);
   const BASEURL = "https://scheditix.onrender.com";
-  const Token = localStorage.getItem("Authtoken")
+  // const Token = localStorage.getItem("Authtoken")
  
   const handleEmailVerification = async (e) => {
     e.preventDefault ();
@@ -18,7 +19,9 @@ const EmailVerification = () => {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
       console.log(response)
       toast.success(response?.data?.message)
-      // navigate("/login")
+      if(response.status === 200){
+        navigate("/login")   
+      }
       
     } catch (error) {
       console.log(error)

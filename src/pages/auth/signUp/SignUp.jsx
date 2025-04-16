@@ -36,16 +36,18 @@ const SignUP = () => {
         `${BASEURL}/api/v1/register/user`,
         input
       );
-      if (response.status === "201");
-      setTimeout(() => {
-        navigate("/email-verification/:token");
-        setIsLoading(false);
-      }, 3000);
-      if (input !== input) toast.success("omo run am bro");
       console.log(response);
-      toast.success(response.data.message);
-      const loadingState = toast.loading("Do the calms e don work....");
-      toast.dismiss(loadingState);
+      if (response.status === 201){
+
+        // setTimeout(() => {
+          //   navigate("/email-verification/:token");
+          //   setIsLoading(false);
+          // }, 3000);
+          // if (input !== input) toast.success("omo run am bro");
+          toast.success(response.data.message);
+          // const loadingState = toast.loading("Do the calms e don work....");
+          // toast.dismiss(loadingState);
+        }
     } catch (error) {
       if (input !== input) console.log("omooooo");
       const loadingState2 = toast.loading("Please wait....");
