@@ -28,7 +28,7 @@ const Cards = (props) => {
 
         <div className="CardBoxTicket">
             <p>#{props.Price}</p>
-            <button className="TicketBtn" onClick={() => navigte("/dashboard/upcoming-event-details")}>Buy Ticket</button>
+            <button className="TicketBtn" onClick={() => navigte("/dashboard/ticket-purchace")}>Buy Ticket</button>
         </div>
     </div>
   )
