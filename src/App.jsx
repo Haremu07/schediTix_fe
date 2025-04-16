@@ -34,11 +34,12 @@ import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
-import Publish from "./pages/createEvent/Publish"
 import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
 import ViewEvent from "./pages/manageEvent/ViewEvent"
 import TicketPurchaced from "./pages/eventFavorite/TicketPurchaced"
 import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
+import CheckIn from "./pages/checkInAttendee/CheckIn"
+import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
 
 
 const App = () => {
@@ -210,15 +211,21 @@ const App = () => {
               
           },
           {
+            path: "/dashboard/view-event-attendee" ,
+            errorElement: <ErrorPage/>,
+            element: <ViewEventAttendee/>,
+          },
+          {
             path: "/dashboard/view-event" ,
             errorElement: <ErrorPage/>,
             element: <ViewEvent/>,
           },
           {
-            path:"/dashboard/create-event/publish",
+            path: "/dashboard/check-in" ,
             errorElement: <ErrorPage/>,
-            element: <Publish/>
+            element: <CheckIn/>,
           },
+        
           {
             path: "dashboard/overview" ,
             errorElement: <ErrorPage/>,
