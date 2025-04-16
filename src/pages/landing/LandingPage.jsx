@@ -146,7 +146,7 @@ const LandingPage = () => {
 
       <div className="TrendingEventBlock">
         <div className="TrendingEventBlockHeader">
-          <h1>Trending Events</h1>
+          <h2>Trending Events</h2>
           <img src={vector} alt="" />
         </div>
         {/* <FaGreaterThan/> */}
@@ -236,7 +236,7 @@ const LandingPage = () => {
 
       <div className="FeaturedEventBlocked">
         <div className="FeaturedEventBlockedHeader">
-          <h1>Featured Events</h1>
+          <h2>Featured Events</h2>
           <img src={vector} alt="" />
         </div>
           <div className="FeaturedEventBlockedBodyHold">        
@@ -279,7 +279,7 @@ const LandingPage = () => {
 
       <div className="PerfectPlanBlock">
         <div className="PerfectPlanBlockHeader">
-          <h1>Choose The Perfect Plan For Your Event Needs</h1>
+          <h2>Choose The Perfect Plan For Your Event Needs</h2>
           <img src={vector} alt="" />
         </div>
         <div className="PerfectPlanBlockPlnsBox">

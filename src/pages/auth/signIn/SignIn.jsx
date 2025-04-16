@@ -15,9 +15,10 @@ const SignIn = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false)
+  const [disable, setDisable] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const [ name, value ] = e.target;
     setInput((prev) => ({ ...prev, [name]: value }));
   };
   const BASEURL = "https://scheditix.onrender.com"
@@ -30,6 +31,7 @@ const SignIn = () => {
         setTimeout(() => {
           navigate("")
           setIsLoading(false)
+          setDisable(true)
         }, 3000)
       }
       console.log(response)
@@ -38,7 +40,7 @@ const SignIn = () => {
       console.log(error)
       toast.error(error.response.data.message)
       setIsLoading(false)
-
+      setDisable(true)
     }
   };
 
@@ -104,7 +106,7 @@ const SignIn = () => {
                >
                 Loading...
               </button>
-            ): (
+            ) : (
               <button type="submit" className="btn"
                onClick={() => setIsLoading(true)}
                >
@@ -112,6 +114,10 @@ const SignIn = () => {
                 Log In
               </button>
             )
+          }
+
+          {
+            disable ? isLoading : "yooo"
           }
             <span className="signinBox" style={{display: "flex"}}>
               <h5>
