@@ -129,7 +129,7 @@ const PayOutDetails = () => {
 
                 <div className='amount-input-holder'>
                   <p className='amount'>Select Event</p>
-                  <Select options={options} onChange={handleOptions}/>
+                  <Select options={options} onChange={handleOptions} style={{width: "50%"}}/>
 
                 </div>
 
