@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const AttendeHeader = () => {
   const navigate = useNavigate()
-  const input = JSON.parse(localStorage.getItem(`input`))
+  const input = JSON.parse(localStorage.getItem(`userData`))
 console.log(input)
   return (
     <div className="headerAttende">
