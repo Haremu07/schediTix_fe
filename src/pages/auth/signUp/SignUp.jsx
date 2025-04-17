@@ -23,7 +23,6 @@ const SignUP = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prev) => ({ ...prev, [name]: value }));
-    validateField(name, value);
   };
   
 
@@ -39,14 +38,14 @@ const SignUP = () => {
       console.log(response);
       if (response.status === 201){
 
-        // setTimeout(() => {
-          //   navigate("/email-verification/:token");
-          //   setIsLoading(false);
-          // }, 3000);
-          // if (input !== input) toast.success("omo run am bro");
+        setTimeout(() => {
+            navigate("/email-verification/:token");
+            setIsLoading(false);
+          }, 3000);
+          if (input !== input) toast.success("omo run am bro");
           toast.success(response.data.message);
-          // const loadingState = toast.loading("Do the calms e don work....");
-          // toast.dismiss(loadingState);
+          const loadingState = toast.loading("Do the calms e don work....");
+          toast.dismiss(loadingState);
         }
     } catch (error) {
       if (input !== input) console.log("omooooo");
@@ -155,13 +154,12 @@ const SignUP = () => {
                 Sign Up
               </button>
             )}
-            <span className="sigupnBox">
-              <h5>
-                Already have an account?
+            <span className="signupBox2">
+              <h5> Already have an account? </h5>
                 <div className="boxs" onClick={() => navigate("/login")}>
                   sign In
                 </div>
-              </h5>
+              
             </span>
           </form>
         </div>
