@@ -14,20 +14,22 @@ const EmailVerification = () => {
   const BASEURL = "https://scheditix.onrender.com";
   const user = localStorage.getItem("userData")
 
-  const handleEmailVerification = async (e) => {
-    e.preventDefault ();
+  const handleEmailVerification = async () => {
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
       console.log(response)
       toast.success(response?.data?.message)
       if(response.status === 200){
-        navigate("/login")   
+        setTimeout(()=>{
+          navigate("/login")
+        }, 3000)
       }
     } catch (error) {
       console.log(error)
       toast.error(error?.response?.data?.message || "Please verify your email");
     }
   }
+  console.log(handleEmailVerification)
 
   useEffect(() => {
     handleEmailVerification()
@@ -53,10 +55,10 @@ const EmailVerification = () => {
           </div>
           <form className="form">
             <p className="Passage2">Please wait while we verify your email</p>
-            <Flex align="center" gap="middle" style={{width: "70%", height: "200px",  paddingLeft: "180px", placeSelf: "center"}}>
+            <Flex align="center" gap="middle" style={{width: "70%", height: "200px",  paddingLeft: "90px", placeSelf: "center"}}>
     {/* <Spin size="small" /> */}
     {/* <Spin /> */}
-    <Spin size="large"  style={{width: "70px"}} />
+    <Spin size="large"  style={{width: "70px",}} />
   </Flex>
 
                {/* You’re officially part of the SchediTix family! 
