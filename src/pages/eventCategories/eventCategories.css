@@ -231,6 +231,7 @@
     justify-content: space-between;
     gap: 15px;
     /* background-color: #fe5722; */
+    font-weight: 700;
 
     & div{
         width: 30%;
@@ -303,6 +304,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    font-size: 20px;
 }
 .ThirdBlock{
     width: 46%;
@@ -358,6 +360,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #1e1e1e;
+    font-weight: 700;
 }
 .imgDiv{
     width: 40%;
@@ -452,4 +455,582 @@
     align-items: center;
     font-size: 15px;
 }
+
+@media  (max-width: 360px){
+    .MainPageEventCategories{
+        /* background-color: #1e1e1e; */
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+    }
+    .topBox{
+        width: 100%;
+        height: 6vh;
+        /* background-color: #1e1e1e; */
+    }
+    .LandingPageEventCategories{
+        /* background-color: #1e1e1e; */
+        width: 100%;
+        height: 80vh;
+    }
+    .middleBoxEventCategories{
+        width: 100%;
+        height: 80%;
+        /* background-color: aqua; */
+    }
+    .middleTop{
+        /* background-color: aqua; */
+        width: 100%;
+        height: 5%;
+        font-size: 20px;
+    }
+    .middleCenter{
+        width: 100%;
+        height: 5%;
+        /* background-color: lightseagreen; */
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .listOfShowsBox{
+        width: max-content;
+        height: 100%;
+        border: 1px solid #bcbbc0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 10px;
+        font-weight:300 ;
+    }
+    .middleBottom{
+        /* background-color: aqua; */
+        width: 100%;
+        font-size: 600;
+    }
+    .middleBottomCards{
+        width: 75%;
+    }
+    .middleBoxmiddleBox{
+        font-size: 600;
+        /* background-color: aqua; */
+    }
+    .buttom{
+        display: none;
+    }
+
+    .featureCamp{
+        background-color: white;
+    }
+
+    .combine{
+        /* background-color: #fe5722; */
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .vectorImg{
+            width: 37%;
+        }
+    }
+    .cardMainBox{
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .FeturesCards{
+        width: 80%;
+        height: max-content;
+    }
+    .imageBox{
+        height:120px;
+    }
+    .cardFirsBox{
+        /* background-color: aqua; */
+        height: 47px;
+        font-size: 15px;
+
+        & div{
+            font-size: 10px;
+            gap: 3px;
+            font-weight: 600;
+            padding: 4px;
+        }
+    }
+    .buyTicket{
+        font-size: 12px;
+    }
+    .mainEventForYou{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+        gap: 5px;
+        /* padding: 10px; */
+    }
+    .firstBlock{
+        /* background-color: aqua; */
+        display: none;
+    }
+    .SecondBlock{
+        width: 100%;
+        height: max-content;
+        /* background-color: aqua; */
+    }
+    .textHeaders{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .contentBox{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+    .textBox{
+        width: 100%;
+        gap: 10px;
+
+    }
+    .contentBoxText{
+        font-size: 15px;
+    }
+    .imgDiv{
+        width: 100%;
+        height: 130px;
+        background-color: gray;
+    }
+    .seeMore{
+        width: 100%;
+        font-size: 6px;
+    }
+    .futureArrow{
+        font-size: 10px;
+    }
+    .ThirdBlock{
+        width: 100%;
+        height: max-content;
+    }
+    .stayinLoopMain{
+       width: 100%;
+       height: max-content;
+       display: flex;
+    }
+    .stayinLoopPadding{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .stayinLoopText{
+        width: 100%;
+        gap: 5px;
+    }
+    .stayinLoopInput{
+        width: 100%; 
+        height: 50px;
+        /* background-color:aqua */
+    }
+    .inputDiv{
+        height: 10%;
+        /* background-color: #1e1e1e; */
+    }
+    .subcribeBnt{
+        width: 40%;
+        height: 100%;
+    }
+
+}
+
+
+@media  (max-width: 414px ){
+    .MainPageEventCategories{
+        /* background-color: #1e1e1e; */
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+    }
+    .topBox{
+        width: 100%;
+        height: 6vh;
+        /* background-color: #1e1e1e; */
+    }
+    .LandingPageEventCategories{
+        /* background-color: #1e1e1e; */
+        width: 100%;
+        height: 80vh;
+    }
+    .middleBoxEventCategories{
+        width: 100%;
+        height: 80%;
+        /* background-color: aqua; */
+    }
+    .middleTop{
+        /* background-color: aqua; */
+        width: 100%;
+        height: 5%;
+        font-size: 20px;
+    }
+    .middleCenter{
+        width: 100%;
+        height: 8%;
+        /* background-color: lightseagreen; */
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .listOfShowsBox{
+        width: max-content;
+        height: 100%;
+        border: 1px solid #bcbbc0;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 10px;
+        font-weight:300;
+    }
+    .middleBottom{
+        /* background-color: aqua; */
+        width: 100%;
+    }
+    .middleBottomCards{
+        width: 70%;
+    }
+    .buttom{
+        display: none;
+    }
+
+    .featureCamp{
+        background-color: white;
+    }
+ 
+    .combine{
+        /* background-color: #fe5722; */
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .vectorImg{
+            width: 37%;
+        }
+    }
+    .cardMainBox{
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .FeturesCards{
+        width: 80%;
+        height: max-content;
+    }
+    .imageBox{
+        height:120px;
+    }
+    .cardFirsBox{
+        /* background-color: aqua; */
+        height: 47px;
+        font-size: 15px;
+
+        & div{
+            font-size: 10px;
+            gap: 3px;
+            font-weight: 600;
+            padding: 4px;
+        }
+    }
+    .buyTicket{
+        font-size: 12px;
+    }
+    .mainEventForYou{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+        gap: 5px;
+        /* padding: 10px; */
+    }
+    .firstBlock{
+        /* background-color: aqua; */
+        display: none;
+    }
+    .SecondBlock{
+        width: 100%;
+        height: max-content;
+        /* background-color: aqua; */
+    }
+    .textHeaders{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .contentBox{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+    .textBox{
+        width: 100%;
+        gap: 10px;
+
+    }
+    .contentBoxText{
+        font-size: 15px;
+    }
+    .imgDiv{
+        width: 100%;
+        height: 130px;
+        background-color: gray;
+    }
+    .seeMore{
+        width: 100%;
+        font-size: 6px;
+    }
+    .futureArrow{
+        font-size: 10px;
+    }
+    .ThirdBlock{
+        width: 100%;
+        height: max-content;
+    }
+    .stayinLoopMain{
+       width: 100%;
+       height: max-content;
+       display: flex;
+    }
+    .stayinLoopPadding{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .stayinLoopText{
+        width: 100%;
+        gap: 5px;
+    }
+    .stayinLoopInput{
+        width: 100%; 
+        height: 50px;
+        /* background-color:aqua */
+    }
+    .inputDiv{
+        height: 10%;
+        /* background-color: #1e1e1e; */
+    }
+    .subcribeBnt{
+        width: 40%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:415px) and (max-width:768px) {
+    .MainPageEventCategories{
+        /* background-color: #1e1e1e; */
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+    }
+    .topBox{
+        width: 100%;
+        height: 6vh;
+        /* background-color: #1e1e1e; */
+    }
+    .LandingPageEventCategories{
+        /* background-color: #1e1e1e; */
+        width: 100%;
+        height: 80vh;
+    }
+    .middleBoxEventCategories{
+        width: 100%;
+        height: 80%;
+        /* background-color: aqua; */
+    }
+    .middleTop{
+        /* background-color: aqua; */
+        width: 100%;
+        height: 5%;
+        font-size: 30px;
+    }
+    .middleCenter{
+        width: 100%;
+        height: 5%;
+        /* background-color: lightseagreen; */
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .listOfShowsBox{
+        width: max-content;
+        height: 100%;
+        border: 1px solid #bcbbc0;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 20px;
+        font-weight:300 ;
+    }
+    .middleBottom{
+        /* background-color: aqua; */
+        width: 100%;
+        height: 90%;
+    }
+    .middleBottomCards{
+        width: 60%;
+    }
+    .middleBox{
+       font-size: 30px;
+    }
+    .buttom{
+        display: none;
+    }
+
+    .featureCamp{
+        background-color: white;
+    }
+
+    .combine{
+        /* background-color: #fe5722; */
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .vectorImg{
+            width: 37%;
+        }
+    }
+    .cardMainBox{
+        /* background-color: aqua; */
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .FeturesCards{
+        width: 45%;
+        height: max-content;
+    }
+    .imageBox{
+        height:120px;
+    }
+    .cardFirsBox{
+        /* background-color: aqua; */
+        height: 47px;
+        font-size: 15px;
+
+        & div{
+            font-size: 10px;
+            gap: 3px;
+            font-weight: 600;
+            padding: 4px;
+        }
+    }
+    .buyTicket{
+        font-size: 12px;
+    }
+    .mainEventForYou{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        width: 100%;
+        gap: 5px;
+        justify-content: center;
+        /* padding: 10px; */
+    }
+    .firstBlock{
+        /* background-color: aqua; */
+        display: none;
+    }
+    .SecondBlock{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: aqua; */
+    }
+    .textHeaders{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .contentBox{
+        width: 90%;
+        height: max-content;
+        display: flex;
+        background-color: aqua;
+        justify-content: center;
+    }
+    .textBox{
+        width: 100%;
+        gap: 70px;
+
+    }
+    .contentBoxText{
+        font-size: 15px;
+        width: 60%;
+    }
+    .imgDiv{
+        width: 40%;
+        height: 200px;
+        background-color: gray;
+    }
+    .seeMore{
+        width: 100%;
+        font-size: 6px;
+    }
+    .futureArrow{
+        font-size: 10px;
+    }
+    .ThirdBlock{
+        width: 100%;
+        height: max-content;
+    }
+    .stayinLoopMain{
+       width: 100%;
+       height: max-content;
+       display: flex;
+    }
+    .stayinLoopPadding{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .stayinLoopText{
+        width: 100%;
+        gap: 5px;
+    }
+    .stayinLoopInput{
+        width: 100%; 
+        height: 50px;
+        /* background-color:aqua */
+    }
+    .inputDiv{
+        height: 10%;
+        /* background-color: #1e1e1e; */
+    }
+    .subcribeBnt{
+        width: 40%;
+        height: 100%;
+    }
+
+}
+
+
 

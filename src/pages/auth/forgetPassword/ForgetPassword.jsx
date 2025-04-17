@@ -9,15 +9,25 @@ import toast from "react-hot-toast";
 
 
 const ForgetPassword = () => {
-  const url ="https://scheditix.onrender.com/api/v1/forgot-password/user"
+
+  const BASEURL = "https://scheditix.onrender.com";
   const navigate = useNavigate()
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState({
+    email: ""
+  });
+
+  
+  
+
   const [loading, setLoading] = useState(false)
+
   const handleForgotpassword = async (e) =>{
     e.preventDefault();
     setLoading(true)
 try{
-const response = await axios.post(url, email)
+  console.log(email)
+const response = await axios.post( `${BASEURL}/api/v1/forgot-password/user`, {email: email})
+
 console.log(response?.data)
 toast.success(response?.data?.message)
 if(response.status === 200){
@@ -52,13 +62,10 @@ setLoading(false)
           <h2 >Forgot your password?</h2>
           </div>
           <form className="form">
-            <p className="Passage">We got your request to reset your password. 
-              No worries, Just enter your email address below 
-              to create a new password and get back to planning 
-              your amazing events.</p>
+            <p className="Passage">Enter your email address to receive a password reset email</p>
           <span className="input" >
             <MdEmail/>
-            <input type="email" className="input2" value={email} placeholder="enter your email" onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="email" className="input2" value={email.email} placeholder="enter your email" onChange={(e)=> setEmail(e.target.value)}/>
           </span>
             <button type="submit" className="btn" onClick={handleForgotpassword}>{loading ? "Loading..." : "Continue"}</button>
           </form>

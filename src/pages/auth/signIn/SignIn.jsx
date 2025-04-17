@@ -28,7 +28,7 @@ const SignIn = () => {
       const response = await axios.post(`${BASEURL}/api/v1/login/user`, input)
       if(response.status === 200){
         setTimeout(() => {
-          navigate("")
+          navigate("/checkin-as")
           setIsLoading(false)
         }, 3000)
       }
@@ -108,7 +108,7 @@ const SignIn = () => {
               <button type="submit" className="btn"
                onClick={() => setIsLoading(true)}
                >
-                {/* (navigate("/checkin-as") */}
+                {/* navigate("/checkin-as") */}
                 Log In
               </button>
             )
