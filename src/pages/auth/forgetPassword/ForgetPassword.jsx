@@ -6,16 +6,31 @@ import orangeLogo from "../../../assets/orangelogo.png"
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { Button, Modal } from 'antd';
+
 
 
 const ForgetPassword = () => {
-
+  const [modal, contextHolder] = Modal.useModal();
   const BASEURL = "https://scheditix.onrender.com";
   const navigate = useNavigate()
   const [email, setEmail] = useState({
     email: ""
   });
 
+  const prompMessage = () => {
+    let secondsToGo = 10;
+    const instance = modal.success({
+      title: 'Reset Password link have been sent to your email',
+    });
+    const timer = setInterval(() => {
+      secondsToGo -= 1;
+    }, 1000);
+    setTimeout(() => {
+      clearInterval(timer);
+      instance.destroy();
+    }, secondsToGo * 1000);
+  };
   
   
 
@@ -25,14 +40,14 @@ const ForgetPassword = () => {
     e.preventDefault();
     setLoading(true)
 try{
-  console.log(email)
+  // console.log(email)
 const response = await axios.post( `${BASEURL}/api/v1/forgot-password/user`, {email: email})
 
 console.log(response?.data)
 toast.success(response?.data?.message)
 if(response.status === 200){
   setTimeout(() => {
-    navigate("/reset-password")
+    prompMessage()
     setLoading(false)
   }, 3000)
 }
@@ -68,6 +83,7 @@ setLoading(false)
             <input type="email" className="input2" value={email.email} placeholder="enter your email" onChange={(e)=> setEmail(e.target.value)}/>
           </span>
             <button type="submit" className="btn" onClick={handleForgotpassword}>{loading ? "Loading..." : "Continue"}</button>
+            {contextHolder}
           </form>
         </div>
       </div>
