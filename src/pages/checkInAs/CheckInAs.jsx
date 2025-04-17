@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const CheckInAs = () => {
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem(`userData`));
-  localStorage.setItem("userToken", response.data.token);
+  // const token = localStorage.getItem("userToken", response?.data.token);
 
   console.log(userData);
   return (
