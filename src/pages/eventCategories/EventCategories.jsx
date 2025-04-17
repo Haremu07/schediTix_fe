@@ -76,7 +76,7 @@ const EventCategories = () => {
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
                 <p>MyKealWise Comedy Live</p>
-                <p>Lagos</p>q
+                <p>Lagos</p>
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}

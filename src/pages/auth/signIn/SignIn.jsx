@@ -25,6 +25,7 @@ const SignIn = () => {
         email,
         password,
       });
+      console.log(response)
       if (response.status === 200) {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
         localStorage.setItem("userToken", (response.data.token));
@@ -103,6 +104,7 @@ const SignIn = () => {
             {isLoading ? (
               <button type="submit" className="btn">
                 Loading...
+                
               </button>
 
             ) : (

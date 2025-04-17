@@ -1,7 +1,7 @@
 
 import "./emailVerification.css"
 import { useNavigate } from "react-router";
-import { FaArrowLeft } from "react-icons/fa6";
+import orangeLogo from "../../../assets/orangelogo.png";
 
 
 const Verify = () => {
@@ -17,25 +17,14 @@ const Verify = () => {
       <div className="email-verification-body">
         <div className="email-verification-form">
           <div className="email-verification-form-Header">
-          <h2 style={{color: "#5a4e9c"}}>SchediTix</h2>
-          <h2>Almost There!</h2>
+         <img src={orangeLogo} alt="" />
+          <p>🎉Welcome to SchediTix!🎉</p>
           </div>
           <form className="form">
-            <p className="Passage">We’ve sent a 4-digit code to
-               your email. Check your inbox (and maybe your spam
-                folder, just in case) and enter the code below
-                 to verify your email.</p>
-          <div className="inputBox">
-            <input type="text" className="inpute"/>
-            <input type="text" className="inpute"/>
-            <input type="text" className="inpute"/>
-            <input type="text" className="inpute"/>
-          </div>
-            <button type="submit" className="btn" onClick={()=> navigate("/login")}>Sign In</button>
-           <div className="CodeBox">
-           <p>Code expires in 1:59 secs</p>
-           <p>Didn't get any code? <span className="resend">resend code</span>  </p>
-           </div>
+            <p className="Passage">We’ve sent a verification link to your email. It’s super quick, just click the button below and you’re good to go! 🥰.</p>
+            <button type="submit" className="btn" onClick={()=> navigate("/login")}>
+              verify your email address
+              </button>
           </form>
         </div>
       </div>
