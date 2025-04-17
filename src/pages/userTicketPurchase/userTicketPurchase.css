@@ -1,90 +1,104 @@
 .tickets-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-  }
-  
-  .tickets-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 24px;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+}
+
+.tickets-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.tickets-list {
+  display: flex;
+  flex-direction: column; /* Stack by default */
+  gap: 16px;
+}
+
+.ticket-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack content on small screens */
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+}
+
+/* Side-by-side layout for screens 600px and above */
+@media (min-width: 600px) {
   .tickets-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .ticket-card {
-    display: flex;
     flex-direction: row;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    overflow: hidden;
-    width: 100%;
+    flex-wrap: wrap;
   }
-  
-  @media (min-width: 600px) {
-    .ticket-card {
-      width: calc(50% - 8px);
-    }
+
+  .ticket-card {
+    width: calc(50% - 8px);
+    flex-direction: row; /* Horizontal layout */
   }
-  
+}
+
+.ticket-image {
+  width: 100%;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.ticket-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* On larger screens, restore fixed image width */
+@media (min-width: 600px) {
   .ticket-image {
     width: 140px;
     height: 100px;
-    flex-shrink: 0;
   }
-  
-  .ticket-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .ticket-details {
-    padding: 12px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .ticket-details h2 {
-    font-size: 14px;
-    margin: 0 0 4px;
-  }
-  
-  .venue,
-  .datetime,
-  .label,
-  .check-in {
-    font-size: 12px;
-    color: #666;
-  }
-  
-  .ticket-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 8px;
-  }
-  
-  .price-info {
-    text-align: right;
-  }
-  
-  .price {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 2px;
-  }
-  
-  .check-in {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
+}
+
+.ticket-details {
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-details h2 {
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.venue,
+.datetime,
+.label,
+.check-in {
+  font-size: 12px;
+  color: #666;
+}
+
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 8px;
+}
+
+.price-info {
+  text-align: right;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.check-in {
+  text-decoration: underline;
+  cursor: pointer;
+}

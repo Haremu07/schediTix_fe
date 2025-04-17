@@ -7,11 +7,12 @@
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+    gap: 30px;
   }
   
   .footer-columns {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
   
@@ -111,3 +112,4 @@
   .footer-social a:hover {
     color: #111827;
   }
+ 
