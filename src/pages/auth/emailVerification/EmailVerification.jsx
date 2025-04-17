@@ -33,7 +33,7 @@ const EmailVerification = () => {
 
   useEffect(() => {
     handleEmailVerification()
-  },[])
+  },[token])
   return (
     <div className="email-verification-container">
       <div className="Nav">
