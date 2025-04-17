@@ -1,9 +1,9 @@
 import "./signIn.css";
 import { MdEmail } from "react-icons/md";
 import { GiDialPadlock } from "react-icons/gi";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import orangeLogo from "../../../assets/orangelogo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -11,9 +11,10 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { token } = useParams()
 
   const [isLoading, setIsLoading] = useState(false);
-  const [disable, setDisable] = useState(false);
+  // const [disable, setDisable] = useState(false);
 
   const BASEURL = "https://scheditix.onrender.com";
 
@@ -29,10 +30,8 @@ const SignIn = () => {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
         localStorage.setItem("userToken", (response.data.token));
         setTimeout(() => {
-
-          // navigate("");
           setIsLoading(false);
-          setDisable(true);
+          navigate("/checkIn-as");
         }, 3000);
       }
       console.log(response);
@@ -40,9 +39,12 @@ const SignIn = () => {
       console.log(error);
       toast.error(error.response.data.message);
       setIsLoading(false);
-      setDisable(true);
     }
   };
+
+  useEffect(() => {
+    handleSubmit()
+  },[])
 
   return (
     <div className="signin-container">
@@ -111,17 +113,15 @@ const SignIn = () => {
                 onClick={() => {
                   setIsLoading(true),
                     setTimeout(() => {
-                      navigate("/checkIn-as");
                     }, 3000);
                 }}
               >
-                {/* (navigate("/checkin-as") */}
 
                 Log In
               </button>
             )}
 
-            {disable ? isLoading : null}
+            {/* {disable ? isLoading : null} */}
             <span
               className="signinBox"
               // style={{ display: "flex", flexDirection: "row" }}
