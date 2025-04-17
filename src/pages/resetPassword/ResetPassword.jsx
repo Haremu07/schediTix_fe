@@ -1,7 +1,7 @@
 import "./resetPassword.css";
 import { GiDialPadlock } from "react-icons/gi";
 import { useNavigate, useParams } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa6";
+// import { FaArrowLeft } from "react-icons/fa6";
 import { useState } from "react";
 import orangeLogo from "../../assets/orangelogo.png";
 
@@ -22,7 +22,8 @@ const ResetPassword = () => {
       return;
     }
 
-    if (newPassword.length < 8) {
+    if (newPassword.length < 6) {
+      
       setError("Password must be at least 8 characters long");
       return;
     }

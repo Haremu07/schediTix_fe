@@ -142,13 +142,13 @@ const SignUP = () => {
               />
             </span>
             {isloading ? (
-              <button type="submit" className="btn">
+              <button type="submit" className="btnUp">
                 Loading....
               </button>
             ) : (
               <button
                 type="submit"
-                className="btn"
+                className="btnUp"
                 onClick={() => setIsLoading(true)}
               >
                 Sign Up

@@ -28,6 +28,7 @@ const SignIn = () => {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
         localStorage.setItem("userToken", (response.data.token));
         setTimeout(() => {
+
           // navigate("");
           setIsLoading(false);
           setDisable(true);
@@ -101,6 +102,7 @@ const SignIn = () => {
               <button type="submit" className="btn">
                 Loading...
               </button>
+
             ) : (
               <button
                 type="submit"
@@ -113,6 +115,7 @@ const SignIn = () => {
                 }}
               >
                 {/* (navigate("/checkin-as") */}
+
                 Log In
               </button>
             )}

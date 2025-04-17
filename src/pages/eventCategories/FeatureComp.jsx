@@ -23,11 +23,11 @@ const FeatureComp = () => {
                 <img src={CardImage1} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+              <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                  <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
@@ -52,11 +52,11 @@ const FeatureComp = () => {
                 <img src={CardImage2} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+                <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
@@ -82,11 +82,11 @@ const FeatureComp = () => {
                 <img src={cardImage3} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+              <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
@@ -111,11 +111,11 @@ const FeatureComp = () => {
                 <img src={cardImage3} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+              <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
@@ -140,11 +140,11 @@ const FeatureComp = () => {
                 <img src={CardImage1} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+              <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
@@ -171,11 +171,11 @@ const FeatureComp = () => {
                 <img src={cardImage3} alt="" />
               </div>
               <nav className='cardFirsBox'>
-                <h1>CONVERGENE OF <br />STARS</h1>
+              <p>CONVERGENE OF <br />STARS</p>
                 <div>
-                  <p><b>21st</b></p>
-                  <p><b>September</b></p>
-                  <p><b>2025</b></p>
+                <p>21st</p>
+                  <p>September</p>
+                  <p>2025</p>
                 </div>
               </nav>
               <nav className='cardSecondBox'>
