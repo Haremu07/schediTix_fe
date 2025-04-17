@@ -95,7 +95,139 @@ const App = () => {
     {
       element: <Private/>,
       children: [
-     
+        {
+          element: <AttendeDashBorad/>,
+          children:[
+            {
+              path:"dashboard/upcoming-events",
+              errorElement: <ErrorPage/>,
+              element: <UpcomingEvent/>
+            },
+             {
+            path: "dashboard/ticket-purchace" ,
+            errorElement: <ErrorPage/>,
+            element: <TicketPurchaced/>
+          }, 
+            {
+              path:"dashboard/upcoming-event-details",
+              errorElement: <ErrorPage/>,
+              element: <UpcomingEventDetails/>
+            },
+            {
+              path:"dashboard/purchase-details",
+              errorElement: <ErrorPage/>,
+              element: <PurchaseDetails/>
+            },
+            {
+              path:"dashboard/past-events",
+              errorElement: <ErrorPage/>,
+              element: <PastEvent/>
+            },
+            {
+              path:"dashboard/ticket-purchased",
+              errorElement: <ErrorPage/>,
+              element: <UserTicketPurchase/>
+            },
+            {
+              path:"dashboard/event-favorite",
+              errorElement: <ErrorPage/>,
+              element: <EventFavorite/>
+            },
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
+            {
+              path: "dashboard/logout" ,
+              errorElement: <ErrorPage/>,
+              element: <Logout/>
+            },
+            {
+              path: "dashboard/user-ticket-purchace" ,
+              errorElement: <ErrorPage/>,
+              element: <UserTicketPurchase/>
+            },
+            {
+              path:"dashboard/logout-attendee",
+              errorElement: <ErrorPage/>,
+              element: <AttendeeLogout/>
+            },
+          ]
+        },
+        {
+            
+          element: <EventplannerDashboard/>,
+          children:[
+            {
+              path: "/dashboard/create-event" ,
+              errorElement: <ErrorPage/>,
+              element: <CreateEvent/>,
+                
+            },
+            {
+              path: "/dashboard/view-event-attendee" ,
+              errorElement: <ErrorPage/>,
+              element: <ViewEventAttendee/>,
+            },
+            {
+              path: "/dashboard/view-event" ,
+              errorElement: <ErrorPage/>,
+              element: <ViewEvent/>,
+            },
+            {
+              path: "/dashboard/check-in" ,
+              errorElement: <ErrorPage/>,
+              element: <CheckIn/>,
+            },
+          
+            {
+              path: "dashboard/overview" ,
+              errorElement: <ErrorPage/>,
+              element: <Overview/>
+            },
+            {
+              path: "dashboard/checkin" ,
+              errorElement: <ErrorPage/>,
+              element: <CheckInAttendee/>
+            },
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
+            {
+              path: "dashboard/ticket-sales" ,
+              errorElement: <ErrorPage/>,
+              element: <TicketSales/>
+            },
+            {
+              path: "dashboard/manage-event" ,
+              errorElement: <ErrorPage/>,
+              element: <ManageEvent/>
+            },
+            {
+              path: "dashboard/edit-event" ,
+              errorElement: <ErrorPage/>,
+              element: <EditEvent/>
+            },
+            {
+              path: "dashboard/manage-event-details" ,
+              errorElement: <ErrorPage/>,
+              element: <ManageEventDetails/>
+            },
+            {
+              path: "dashboard/payout-details" ,
+              errorElement: <ErrorPage/>,
+              element: <PayOutDetails/>
+            },
+            {
+              path: "dashboard/logout" ,
+              errorElement: <ErrorPage/>,
+              element: <Logout/>
+            },
+          ]
+        },
       ]
     },
       {
@@ -140,139 +272,7 @@ const App = () => {
       },
      
 
-      {
-        element: <AttendeDashBorad/>,
-        children:[
-          {
-            path:"dashboard/upcoming-events",
-            errorElement: <ErrorPage/>,
-            element: <UpcomingEvent/>
-          },
-           {
-          path: "dashboard/ticket-purchace" ,
-          errorElement: <ErrorPage/>,
-          element: <TicketPurchaced/>
-        }, 
-          {
-            path:"dashboard/upcoming-event-details",
-            errorElement: <ErrorPage/>,
-            element: <UpcomingEventDetails/>
-          },
-          {
-            path:"dashboard/purchase-details",
-            errorElement: <ErrorPage/>,
-            element: <PurchaseDetails/>
-          },
-          {
-            path:"dashboard/past-events",
-            errorElement: <ErrorPage/>,
-            element: <PastEvent/>
-          },
-          {
-            path:"dashboard/ticket-purchased",
-            errorElement: <ErrorPage/>,
-            element: <UserTicketPurchase/>
-          },
-          {
-            path:"dashboard/event-favorite",
-            errorElement: <ErrorPage/>,
-            element: <EventFavorite/>
-          },
-          {
-            path: "dashboard/profile" ,
-            errorElement: <ErrorPage/>,
-            element: <ProfileSetting/>
-          },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
-          {
-            path: "dashboard/user-ticket-purchace" ,
-            errorElement: <ErrorPage/>,
-            element: <UserTicketPurchase/>
-          },
-          {
-            path:"dashboard/logout-attendee",
-            errorElement: <ErrorPage/>,
-            element: <AttendeeLogout/>
-          },
-        ]
-      },
-      {
-          
-        element: <EventplannerDashboard/>,
-        children:[
-          {
-            path: "/dashboard/create-event" ,
-            errorElement: <ErrorPage/>,
-            element: <CreateEvent/>,
-              
-          },
-          {
-            path: "/dashboard/view-event-attendee" ,
-            errorElement: <ErrorPage/>,
-            element: <ViewEventAttendee/>,
-          },
-          {
-            path: "/dashboard/view-event" ,
-            errorElement: <ErrorPage/>,
-            element: <ViewEvent/>,
-          },
-          {
-            path: "/dashboard/check-in" ,
-            errorElement: <ErrorPage/>,
-            element: <CheckIn/>,
-          },
-        
-          {
-            path: "dashboard/overview" ,
-            errorElement: <ErrorPage/>,
-            element: <Overview/>
-          },
-          {
-            path: "dashboard/checkin" ,
-            errorElement: <ErrorPage/>,
-            element: <CheckInAttendee/>
-          },
-          {
-            path: "dashboard/profile" ,
-            errorElement: <ErrorPage/>,
-            element: <ProfileSetting/>
-          },
-          {
-            path: "dashboard/ticket-sales" ,
-            errorElement: <ErrorPage/>,
-            element: <TicketSales/>
-          },
-          {
-            path: "dashboard/manage-event" ,
-            errorElement: <ErrorPage/>,
-            element: <ManageEvent/>
-          },
-          {
-            path: "dashboard/edit-event" ,
-            errorElement: <ErrorPage/>,
-            element: <EditEvent/>
-          },
-          {
-            path: "dashboard/manage-event-details" ,
-            errorElement: <ErrorPage/>,
-            element: <ManageEventDetails/>
-          },
-          {
-            path: "dashboard/payout-details" ,
-            errorElement: <ErrorPage/>,
-            element: <PayOutDetails/>
-          },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
-        ]
-      },
+
      
   ])
   return (

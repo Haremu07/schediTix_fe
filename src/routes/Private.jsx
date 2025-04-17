@@ -3,10 +3,11 @@ import { Navigate, Outlet, useLocation } from "react-router";
 import { UserContext } from "../global/Contex";
 
 const Private = () => {
-  const { user } = useContext(UserContext);
+  const { userToken } = useContext(UserContext);
+  console.log(useContext(UserContext))
   const location = useLocation();
 
-  return user ? (
+  return userToken && userToken!=="" ? (
     <Outlet />
   ) : (
     <Navigate to="/login" replace state={{ from: location }} />
