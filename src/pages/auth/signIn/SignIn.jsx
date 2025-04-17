@@ -21,7 +21,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/login/user/${token}`, {
+      const response = await axios.post(`${BASEURL}/api/v1/login/user/`, {
         email,
         password,
       });
