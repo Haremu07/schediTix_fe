@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./eventCategories.css"
 import { MdLocationOn } from "react-icons/md";
 import { CiHeart } from "react-icons/ci";
 import CardImage1 from "../../assets/CardImage1.jpg"
-import CardImage2 from "../../assets/CardImage2.png"
+// import CardImage2 from "../../assets/CardImage2.png"
 import cardImage3 from "../../assets/CardImage3.jpg"
 import vector from "../../assets/Vector.png"
+import axios from 'axios';
 
 
 const FeatureComp = () => {
+
   return (
     <div className='featureCamp'>
         <nav className='paddingBox'>
@@ -40,13 +42,13 @@ const FeatureComp = () => {
               </nav>
               <nav className='cardThirdBox'>
                 <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
+                <span className='buyTicketP'>
                   Buy Tickets
                 </span>
               </nav>
             </section>
 
-            <section className='FeturesCards'>
+            {/* <section className='FeturesCards'>
               <div className='imageBox'>
               <CiHeart className='favoriteIcon'/>
                 <img src={CardImage2} alt="" />
@@ -74,9 +76,9 @@ const FeatureComp = () => {
                   Buy Tickets
                 </span>
               </nav>
-            </section>
+            </section> */}
 
-            <section className='FeturesCards'>
+            {/* <section className='FeturesCards'>
               <div className='imageBox'>
               <CiHeart className='favoriteIcon'/>
                 <img src={cardImage3} alt="" />
@@ -103,9 +105,9 @@ const FeatureComp = () => {
                   Buy Tickets
                 </span>
               </nav>
-            </section>
+            </section> */}
 
-            <section className='FeturesCards'>
+            {/* <section className='FeturesCards'>
               <div className='imageBox'>
               <CiHeart className='favoriteIcon'/>
                 <img src={cardImage3} alt="" />
@@ -132,9 +134,9 @@ const FeatureComp = () => {
                   Buy Tickets
                 </span>
               </nav>
-            </section>
+            </section> */}
 
-            <section className='FeturesCards'>
+            {/* <section className='FeturesCards'>
               <div className='imageBox'>
               <CiHeart className='favoriteIcon'/>
                 <img src={CardImage1} alt="" />
@@ -161,7 +163,7 @@ const FeatureComp = () => {
                   Buy Tickets
                 </span>
               </nav>
-            </section>
+            </section> */}
 
             
 

@@ -126,10 +126,7 @@
     outline: none;
 }
 
-/* .checkbox{
-    display: flex;
-    gap: 10px;
-} */
+ 
 
 .btnUp{
     width: 100%;
@@ -142,16 +139,23 @@
     cursor: pointer;
 }
     
-/* .signupBox{
-    width: 100%;
+.signupBox2{
+    width: 20%;
+    height: 15%;
     display: flex;
     background-color: green;
-    justify-content: flex-end;
-    font-size: 20px;
-} */
+    /* justify-content: flex-end; */
+    /* font-size: 20px; */
+}
 
-/* .box{
-    color: #27187e;
-    margin-left: 10px;
+.boxs{
+    width: 5%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    /* color: #27187e; */
+    color: red;
+    /* margin-left: 10px; */
     cursor: pointer;
-} */
+}

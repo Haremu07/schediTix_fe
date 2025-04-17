@@ -9,14 +9,14 @@ const EmailVerification = () => {
   const navigate = useNavigate()
   const { token } = useParams();
   console.log(token)
-  // localStorage.setItem("Authtoken", token);
   const BASEURL = "https://scheditix.onrender.com";
-  // const Token = localStorage.getItem("Authtoken")
+  const Token = localStorage.getItem("userToken")
  
+  const headers = { Authorization: `Bearer ${token}`}
   const handleEmailVerification = async (e) => {
     e.preventDefault ();
     try {
-      const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
+      const response = await axios.get(`${BASEURL}/api/v1/verify/user/`,{headers});
       console.log(response)
       toast.success(response?.data?.message)
       if(response.status === 200){
@@ -25,10 +25,10 @@ const EmailVerification = () => {
       
     } catch (error) {
       console.log(error)
-      toast.error(error?.response?.data?.message || "Something went wrong");
-      if (error.status === 404){
-        return toast.error("Invalid token")
-      }
+      toast.error(error?.response?.data?.message || "Please verify your email");
+      // if (error.status === 404){
+      //   return toast.error("Invalid token")
+      // }
       
     }
 

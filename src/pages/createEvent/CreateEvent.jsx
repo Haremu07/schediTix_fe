@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../createEvent/createEvent.css";
 import { MdLocationOn } from "react-icons/md";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
-import { IoIosArrowDown, IoIosArrowBack } from "react-icons/io";
-import { Outlet, useNavigate } from "react-router-dom";
+// import {  IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Modal } from "antd";
+import "../createEvent/publish.css";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoWarning } from "react-icons/io5";
+// import { Modal } from 'antd';
+import { VscVerifiedFilled } from "react-icons/vsc";
+import toast, { Toaster } from "react-hot-toast";
+// import { useNavigate } from 'react-router-dom';
 
 
 const CreateEvent = () => {
   const [profileImage, setProfileImage] = useState(null);
-  const nav = useNavigate();
+  const navigate = useNavigate();
+  const [isModalOpens, setIsModalOpens] = useState(false);
+  const showModals = () => {
+    setIsModalOpens(true);
+  };
+  const timeout = () => {
+    setTimeout(() => {
+      setIsModalOpens(false);
+    }, 2000);
+  };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -17,8 +35,85 @@ const CreateEvent = () => {
       setProfileImage(imageUrl);
     }
   };
+
+  const [input, setInput] = useState({
+    eventTitle: "",
+    eventDescription: "",
+    endTime: "",
+    startTime: "",
+    eventAgenda: "",
+    eventRule: "",
+    startDate: "",
+    endDate: "",
+    eventLocation: "",
+    totalTableNumber: "",
+    totalSeatNumber: "",
+    image: "",
+    packingInfo: "",
+    ticketPrice: "",
+    ticketQuality: "",
+    ticketLimit: "",
+  });
+
+  const BASEURL = "https://scheditix.onrender.com";
+
+  const [disable, setDisable] = useState(false);
+
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleCategories = async () => {
+    try {
+      const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
+      console.log(res);
+      setCategories(res.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    handleCategories();
+  }, []);
+
+  const handleChange = (e) => {
+    const [ name, value ] = e.target;
+    console.log(name, value);
+    setInput((prev) => ({ ...prev, [name]: value }));
+  };
+
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(`${BASEURL}/api/v1/category`);
+      setInput(response.data.data)
+      console.log(response);
+      toast.success("successfull")
+      setIsLoading(true);
+      // setDisable(true)
+      toast.success("E clear!!!");
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+      setIsLoading(true);
+      if (!eventTitle) {
+        toast.error("Please fill in all fields");
+      }
+    }
+  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  // const handleOk = () => {
+  //   setIsModalOpen(false);
+  // };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="create-event-bg">
+      <Toaster />
       <div className="create-event-wrapper">
         <div className="create-event-title"></div>
         <div className="upload-img-wrapper">
@@ -42,9 +137,6 @@ const CreateEvent = () => {
                 htmlFor="Upload-img-input"
                 className="upload-img-template-details-wrapper"
               >
-                {/* <div className='upload-img-template-details-icon-bg'>
-                        <div className='upload-img-template-details-icon-wrapper'></div>
-                    </div> */}
                 {profileImage ? (
                   <img src={profileImage} className="UploadImgBox" alt="" />
                 ) : (
@@ -71,14 +163,14 @@ const CreateEvent = () => {
               </label>
             </div>
             <div className="upload-img-btn">
-                      <input
+              <input
                 type="file"
                 id="Upload-img-input"
-                onChange={handleFileChange}
-
-                style={{ display: "none" }}
+                name="image"
+                value={input.image}
+                // onChange={{handleFileChange, handleChange}}
+                // style={{ display: "none" }}
                 onClick={handleFileChange}
-
               />
               <h5 className="text-btn">Upload files</h5>
             </div>
@@ -95,6 +187,9 @@ const CreateEvent = () => {
               </div>
               <input
                 type="text"
+                name="eventTitle"
+                value={input.eventTitle}
+                onChange={handleChange}
                 placeholder="enter event name e.g, Tech Hack 2025"
                 className="inputs"
               />
@@ -108,6 +203,9 @@ const CreateEvent = () => {
               </div>
               <input
                 type="text"
+                name="eventDescription"
+                value={input.eventDescription}
+                onChange={handleChange}
                 placeholder="e.g, A night of music, dance & culture!"
                 className="inputs"
               />
@@ -120,14 +218,16 @@ const CreateEvent = () => {
                 <div className="catchy">
                   <p>Choose a category for better visibility</p>
                 </div>
-                <div className="double-inputs-category">
-                  <div className="describe-category">
-                    <h4>select a category that descibes for your event</h4>
-                  </div>
-                  <div className="arrow-down">
-                    <IoIosArrowDown />
-                  </div>
-                </div>
+
+                <select
+                  placeholder="select a category that descibes for your event"
+                  className="describe-category"
+                >
+                  <option value="">Select a category</option>
+                  {categories.map((e) => (
+                    <option value="">{e.categoryName}</option>
+                  ))}
+                </select>
               </div>
 
               <div className="event-category-div">
@@ -145,6 +245,9 @@ const CreateEvent = () => {
                     type="text"
                     placeholder="mghtysolomon@gmail.com"
                     className="location-input"
+                    name="eventLocation"
+                    value={input.eventLocation}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -171,6 +274,9 @@ const CreateEvent = () => {
                       className="input-time"
                       type="text"
                       placeholder="select start date"
+                      name="startDate"
+                      value={input.startDate}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -183,6 +289,9 @@ const CreateEvent = () => {
                       className="input-time"
                       type="text"
                       placeholder="select start time"
+                      name="startTime"
+                      value={input.startTime}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -195,6 +304,9 @@ const CreateEvent = () => {
                       className="input-time"
                       type="text"
                       placeholder="select end date"
+                      name="endDate"
+                      value={input.endDate}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -207,6 +319,9 @@ const CreateEvent = () => {
                       className="input-time"
                       type="text"
                       placeholder="select end time"
+                      name="endTime"
+                      value={input.endTime}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -226,6 +341,9 @@ const CreateEvent = () => {
                   type="text"
                   placeholder="write "
                   className="wider-input"
+                  name="eventAgenda"
+                  value={input.eventAgenda}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -241,6 +359,9 @@ const CreateEvent = () => {
                   type="text"
                   placeholder="e.g, NO smoking, Dress code: Formal "
                   className="wider-input"
+                  name="eventRule"
+                  value={input.eventRule}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -260,6 +381,9 @@ const CreateEvent = () => {
                       type="text"
                       placeholder="e.g.,50"
                       className="finally-input"
+                      name="totalTableNumber"
+                      value={input.totalTableNumber}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -275,6 +399,9 @@ const CreateEvent = () => {
                       type="text"
                       placeholder="e.g.,300"
                       className="finally-input"
+                      name="totalSeatNumber"
+                      value={input.totalSeatNumber}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -292,12 +419,193 @@ const CreateEvent = () => {
                       type="text"
                       placeholder="e.g., No smoking., Free parking available for VIPsg, Dress code: Formal"
                       className="parking-input"
+                      name="packingInfo"
+                      value={input.packingInfo}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
+
+                <Modal
+                  title=""
+                  open={isModalOpen}
+                  // onOk={handleOk}
+                  onCancel={handleCancel}
+                  // className="ModalBody"
+                  // style={{width: "80%"}}
+                  height={50}
+                  width={"70%"}
+                  okButtonProps={{ hidden: true, style: { display: "none" } }}
+                  // cancelButtonProps={ { hidden:true,style:{display:"none"}}}
+                  closeIcon={false}
+                >
+                  <div className="publish-bg">
+                    <div className="publish-wrapper">
+                      <div className="publish-title">
+                        <div className="publish-holder-nav">
+                          {/* <p
+                              className="arrow-back"
+                              onClick={() =>
+                                navigate("/dashboard/create-event")
+                              }
+                            >
+                              <IoIosArrowBack />
+                            </p> */}
+                          <h3>
+                            Create event -{" "}
+                            <span style={{ color: "rgb(255,128,88)" }}>
+                              Add ticket
+                            </span>{" "}
+                          </h3>
+                        </div>
+                      </div>
+                      <div className="publish-wrapper-two">
+                        <div className="publish-wrapper-two-title">
+                          <h3>we don't charge for free ticket</h3>
+                        </div>
+                        <div className="publish-wrapper-two-double-bg">
+                          <div className="publish-wrapper-two-double-div-one">
+                            <div className="publish-first-box">
+                              <div>
+                                <h3>Ticket Price</h3>
+                              </div>
+                              <div>
+                                <p>Set the price for this ticket</p>
+                              </div>
+                              <div>
+                                <input
+                                  type="number"
+                                  placeholder="e.g.,550 / #10,000"
+                                  className="publish-input"
+                                  // min={0}
+                                  name="ticketPrice"
+                                  value={input.ticketPrice}
+                                  onChange={handleChange}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className="publish-wrapper-two-double-div-one">
+                            <div className="publish-first-box">
+                              <div>
+                                <h3>Ticket Quality</h3>
+                              </div>
+                              <div>
+                                <p>
+                                  How many of this ticket are available for
+                                  sale?
+                                </p>
+                              </div>
+                              <div>
+                                <input
+                                  type="number"
+                                  placeholder="e.g.,300"
+                                  className="publish-input"
+                                  // min={0}
+                                  name="ticketQuality"
+                                  value={input.ticketQuality}
+                                  onChange={handleChange}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="publish-wrapper-single-double-bg">
+                          <div className="publish-third-box">
+                            <div>
+                              <h3>Ticket Purchase limit</h3>
+                            </div>
+                            <div>
+                              <p>Set this ticket purchase limit</p>
+                            </div>
+                            <div>
+                              <input
+                                type="number"
+                                placeholder="e.g.,3"
+                                className="publish-third-input"
+                                // min={0}
+                                name="ticketLimit"
+                                value={input.ticketLimit}
+                                onChange={handleChange}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="quick-reminder-bg">
+                          <div className="quick-reminder-wrapper">
+                            <div className="quick-reminder-title-wrapper">
+                              <p className="warning-icon">
+                                <IoWarning />
+                              </p>
+                              <h2 className="warning-texts">Quick Reminder:</h2>
+                            </div>
+                            <div className="quick-reminder-text-wrapper">
+                              <h4 className="quick-reminder-text-wrapper-text">
+                                You're only allowed to make changes to the event
+                                date 📆, time ⏱, and location 📍 . <br /> All
+                                other event details are locked in once the event
+                                goes live. Make sure everything else looks good
+                                before publishing !
+                              </h4>
+                            </div>
+                          </div>
+                          <Modal
+                            open={isModalOpens}
+                            okButtonProps={{ style: { display: "none" } }}
+                            cancelButtonProps={{ style: { display: "none" } }}
+                            closable={false}
+                          >
+                            <div className="success-bg">
+                              <div className="verified-icon-holder">
+                                <VscVerifiedFilled className="verified-icon" />
+                              </div>
+                              <div className="successful-text-holder">
+                                <h3 className="successful-text">
+                                  Congratulations on successfully creating an
+                                  event!!
+                                </h3>
+                              </div>
+                            </div>
+                          </Modal>
+                          <div className="publish-event-btn-bg">
+                            {isLoading ? (
+                              <button className="publish-event-btn">Loading...</button>
+                            ) : (
+                              <button
+                                className="publish-event-btn"
+                                onClick={() => {
+                                  // if(response.status !== 200)
+                                  //   toast.error("e no wrk"}
+                                  handleSubmit()
+                                  setIsLoading(true);
+                                  setTimeout(() => {
+                                    timeout();
+                                    showModals();
+                                    setIsLoading(false);
+                                  }, 3000);
+                                }}
+                                // type="submit"
+                              >
+                                Publish Event
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Modal>
+
                 <div className="parking-btn-wrapper">
-                  <Outlet />
-                  <button className="parking-btn" onClick={()=> nav('/dashboard/create-event/publish')}>Next</button>
+                  {/* <Outlet /> */}
+                  <button
+                    className="parking-btn"
+                    onClick={showModal}
+                    // onClick={() => nav("/dashboard/create-event/publish")}
+                    // onClick={handleCreate}
+                  >
+                    Next
+                  </button>
                 </div>
               </div>
             </div>

@@ -1,46 +1,21 @@
-import ".//viewEvent.css"
-import { FaLocationDot } from "react-icons/fa6";
-import { SlCalender } from "react-icons/sl";
-import { BsFillClockFill } from "react-icons/bs";
+import "./viewEventAttendee.css"
 import UpcomingEventImage from "../../assets/upcmingEventImage.jpg"
 import { IoIosArrowBack } from "react-icons/io";
 import '../../pages/eventDetails/eventDetails.css'
-// import { CiCalendarDate } from "react-icons/ci";
-// import { TbClock } from "react-icons/tb";
-import {  MdFavoriteBorder } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-// import ViewEvent from "../manageEvent/ViewEvent";
 
 
-const ViewEvent = () => {
+const ViewEventAttendee = () => {
     const navigate = useNavigate()
   
   return (
-    <div className="upcoming-event">
-        <div className="upcoming-evenr-header">
-            <h5 onClick={() => navigate("/dashboard/upcoming-events")}><IoIosArrowBack size={25}/> back</h5>
+    <div className="view-event">
+        <div className="view-evenr-header">
+            <h5 onClick={() => navigate("/dashboard/checkin")}><IoIosArrowBack size={25}/> back</h5>
         </div>
-      <div className='upimgDiv'>
-        <section className='upImgDiv'>
+      <div className='viewimgDiv'>
+        <section className='viewImgDiv'>
         <img src={UpcomingEventImage} alt="" />
-        </section>
-        
-        <section className='upTextDiv'>
-          <h2>MyKealwise Live in Aj City</h2>
-          <nav className='upTExtDate'> 
-          <SlCalender className='uptextDateIcone'/>
-          <p><b>26 August 2025</b></p>
-          </nav>
-          <nav className='upTExtDate'>
-          <BsFillClockFill className='uptextDateIcone'/>
-          <p><b>6pm wat</b></p>
-           </nav>
-          <nav className='upTExtDate'> 
-          <FaLocationDot className='uptextDateIcone'/>
-          <p><b>Abayomi Mutipurpose hall, Ajegunle,<br />Lagos, Nigeria</b></p>
-          </nav>
-          <p className='seatnumber'>Seat number: Table1-seat5</p>
-          <p className='checkin'>check in code: <span>38AT</span></p>
         </section>
       </div>
  
@@ -50,16 +25,26 @@ const ViewEvent = () => {
                 <div className='details-wrapper'>
                   <div className='event-rules-box'>
                     <div className='event-rules-box-first'>
-                      <div className='event-rules-box-first-one'><h3>Event Title</h3></div>
-                      <p>Mykealwise live in lagos</p>
+                        <h3> Title</h3>
+                      <div className='event-rules-box-first-one1'>
+                        </div>
+                      <p>Mykealwise live in lagos.</p>
                     </div>
-                    <div className='event-rules-box-first'>
-                      <div className='event-rules-box-first-one'><h3>Event Details</h3></div>
-                      <p>The biggest #comedy Show ever to hit the #city of #ajegunle. Don't miss out! #laughter #mykealwise #premium.</p>
-                    </div>
+                    {/* <div className='event-rules-box-first'> */}
+                    <h3>Event Details</h3>
+                      <div className='event-rules-box-first-one'>
+                        <nav className="Nav1">
+                            <h4>Location</h4>
+                            <p>Zone Park, Egbeda, Lagos.</p>
+                        </nav>
+                        <nav className="Nav1">
+                        <h4>Time</h4>
+                        <p>11:00am - 4:00</p>
+                        </nav>
+                      </div>
+                    {/* </div> */}
                     <div className='event-rules-box-second'>
                       <div className='write-up-header'><h3>Event Rules</h3></div>
-      
                       <div className='write-up'>
                         <li className='write-up-title'>No Heckling or Disruptive Behaviour</li>
                         <p className='write-up-text'>Please be respectful to the performer and fellow audience members. Heckling or disruptive behaviour will not be tolerated.</p>
@@ -98,12 +83,7 @@ const ViewEvent = () => {
                     </div>
                   </div>
                   <div className='reserve-your-spot'>
-                    <div className='reserve-your-spot-title'>
-                          <div className='reserve-your-spot-title-one' 
-                           onClick={() => navigate("/dashboard/purchase-details")}
-                           ><h4>Buy Ticket</h4></div>
-                          {/* <span className='favourite-icon'><MdFavoriteBorder /></span> */}
-                    </div>
+                
                     <div className='reserve-your-spot-box-one'>
                       <div className='reserve-your-spot-box-one-child'>
                         <div className='reserve-your-spot-box-one-child-first'><h3>Event Agenda</h3></div>
@@ -143,4 +123,4 @@ const ViewEvent = () => {
   )
 }
 
-export default ViewEvent
+export default ViewEventAttendee

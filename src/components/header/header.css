@@ -158,4 +158,16 @@
     }
   }
   
-  
+  .CirclrBox{
+    width: 5%;
+    height: 100%;
+    border-radius: 100px;
+    background-color: gray;
+    cursor: pointer;
+  }
+
+  .CirclrBoxImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+  }
