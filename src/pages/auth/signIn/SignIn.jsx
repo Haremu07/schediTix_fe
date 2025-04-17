@@ -20,10 +20,11 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/login/user`, {
+      const response = await axios.post(`${BASEURL}/api/v1/login/user/${token}`, {
         email,
         password,
       });
+      console.log(response)
       if (response.status === 200) {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
         localStorage.setItem("userToken", (response.data.token));
