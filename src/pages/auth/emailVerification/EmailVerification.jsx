@@ -21,6 +21,7 @@ const EmailVerification = () => {
       toast.success(response?.data?.message)
       if(response.status === 200){
         setTimeout(()=>{
+          toast.success("Email verified successfully")
           navigate("/login")
         }, 3000)
       }
