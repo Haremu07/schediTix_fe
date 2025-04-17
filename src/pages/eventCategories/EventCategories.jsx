@@ -28,19 +28,19 @@ const EventCategories = () => {
           
           <section className='middleCenter'>
             <div className='listOfShowsBox' style={{backgroundColor:"#27187d",border:"0px", color:"white"}}>
-              <p><b>Comedy Show</b></p>
+              <p>Comedy Show</p>
             </div>
             <div className='listOfShowsBox'>
-              <p><b>Weddings</b></p>
+              <p>Weddings</p>
             </div>
             <div className='listOfShowsBox'>
-              <p><b>Tech Event</b></p>
+              <p>Tech Event</p>
             </div>
             <div className='listOfShowsBox'>
-              <p><b>Fashion Show</b></p>
+              <p>Fashion Show</p>
             </div>
             <div className='listOfShowsBox'>
-              <p><b>Conferences</b></p>
+              <p>Conferences</p>
             </div>
           </section>
 
@@ -49,8 +49,8 @@ const EventCategories = () => {
                  <img src={Event1} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
-                  <p><b>MyKealWise Comedy Live</b></p>
-                  <p><b>Lagos</b></p>
+                  <p>MyKealWise Comedy Live</p>
+                  <p>Lagos</p>
                   <div className='seeMoreButton'>
                     <p 
                     onClick={()=> navigate("/event-details")}
@@ -63,8 +63,8 @@ const EventCategories = () => {
                  <img src={Event2} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
-                  <p><b>MyKealWise Comedy Live</b></p>
-                  <p><b>Lagos</b></p>
+                <p>MyKealWise Comedy Live</p>
+                <p>Lagos</p>q
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
@@ -77,8 +77,8 @@ const EventCategories = () => {
                  <img src={Event3} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
-                  <p><b>MyKealWise Comedy Live</b></p>
-                  <p><b>Lagos</b></p>
+                  <p>MyKealWise Comedy Live</p>
+                  <p>Lagos</p>
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
@@ -91,8 +91,8 @@ const EventCategories = () => {
                  <img src={Event4} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
-                  <p><b>MyKealWise Comedy Live</b></p>
-                  <p><b>Lagos</b></p>
+                  <p>MyKealWise Comedy Live</p>
+                  <p>Lagos</p>
                   <div className='seeMoreButton'>
                     <p
                     onClick={()=> navigate("/event-details")}
@@ -105,8 +105,8 @@ const EventCategories = () => {
                  <img src={Event5} alt="" />
               <div className='radientBlackBox'>
                 <nav className='middleBox'>
-                  <p><b>MyKealWise Comedy Live</b></p>
-                  <p><b>Lagos</b></p>
+                <p>MyKealWise Comedy Live</p>
+                <p>Lagos</p>
                   <div className='seeMoreButton'>
                     <p>See More</p>
                   </div>
@@ -116,7 +116,7 @@ const EventCategories = () => {
           </section>
         </nav>
       </div>
-      <div style={{width:"100%", height:"10vh", backgroundColor:"#edecf4"}}></div>
+      <div style={{width:"100%", height:"10vh", backgroundColor:"#edecf4"}} className='buttom'></div>
      <FeatureComp/>
      <EventForYou/>
      <StayinLoop/>

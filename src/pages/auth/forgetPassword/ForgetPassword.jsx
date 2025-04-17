@@ -1,11 +1,47 @@
 import "./forgetPassword.css"
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router";
-import { FaArrowLeft } from "react-icons/fa6";
+// import { FaArrowLeft } from "react-icons/fa6";
 import orangeLogo from "../../../assets/orangelogo.png"
+import { useState } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 
 const ForgetPassword = () => {
+
+  const BASEURL = "https://scheditix.onrender.com";
   const navigate = useNavigate()
+  const [email, setEmail] = useState({
+    email: ""
+  });
+
+  
+  
+
+  const [loading, setLoading] = useState(false)
+
+  const handleForgotpassword = async (e) =>{
+    e.preventDefault();
+    setLoading(true)
+try{
+  console.log(email)
+const response = await axios.post( `${BASEURL}/api/v1/forgot-password/user`, {email: email})
+
+console.log(response?.data)
+toast.success(response?.data?.message)
+if(response.status === 200){
+  setTimeout(() => {
+    navigate("/reset-password")
+    setLoading(false)
+  }, 3000)
+}
+} catch(err){
+console.log(err)
+toast.error(err?.data?.message)
+}
+setLoading(false)
+  }
   return (
     <div className="ForgetPassword-container">
       <div className="Nav">
@@ -26,15 +62,12 @@ const ForgetPassword = () => {
           <h2 >Forgot your password?</h2>
           </div>
           <form className="form">
-            <p className="Passage">We got your request to reset your password. 
-              No worries, Just enter your email address below 
-              to create a new password and get back to planning 
-              your amazing events.</p>
+            <p className="Passage">Enter your email address to receive a password reset email</p>
           <span className="input" >
             <MdEmail/>
-            <input type="email" className="input2"  placeholder="enter your email" />
+            <input type="email" className="input2" value={email.email} placeholder="enter your email" onChange={(e)=> setEmail(e.target.value)}/>
           </span>
-            <button type="submit" className="btn" onClick={()=> navigate("/reset-password")}>Continue</button>
+            <button type="submit" className="btn" onClick={handleForgotpassword}>{loading ? "Loading..." : "Continue"}</button>
           </form>
         </div>
       </div>

@@ -23,8 +23,8 @@ const SignUP = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInput((prev) => ({ ...prev, [name]: value }));
-    validateField(name, value);
   };
+  
 
   const BASEURL = "https://scheditix.onrender.com";
 
@@ -35,16 +35,18 @@ const SignUP = () => {
         `${BASEURL}/api/v1/register/user`,
         input
       );
-      if (response.status === "201");
-      setTimeout(() => {
-        navigate("/login");
-        setIsLoading(false);
-      }, 3000);
-      if (input !== input) toast.success("omo run am bro");
       console.log(response);
-      toast.success(response.data.message);
-      const loadingState = toast.loading("Do the calms e don work....");
-      toast.dismiss(loadingState);
+      if (response.status === 201){
+
+        setTimeout(() => {
+            navigate("/email-verification/:token");
+            setIsLoading(false);
+          }, 3000);
+          if (input !== input) toast.success("omo run am bro");
+          toast.success(response.data.message);
+          const loadingState = toast.loading("Do the calms e don work....");
+          toast.dismiss(loadingState);
+        }
     } catch (error) {
       if (input !== input) console.log("omooooo");
       const loadingState2 = toast.loading("Please wait....");
@@ -140,25 +142,24 @@ const SignUP = () => {
               />
             </span>
             {isloading ? (
-              <button type="submit" className="btn">
+              <button type="submit" className="btnUp">
                 Loading....
               </button>
             ) : (
               <button
                 type="submit"
-                className="btn"
+                className="btnUp"
                 onClick={() => setIsLoading(true)}
               >
                 Sign Up
               </button>
             )}
-            <span className="sigupnBox">
-              <h5>
-                Already have an account?
+            <span className="signupBox2">
+              <h5> Already have an account? </h5>
                 <div className="boxs" onClick={() => navigate("/login")}>
                   sign In
                 </div>
-              </h5>
+              
             </span>
           </form>
         </div>

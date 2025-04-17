@@ -176,3 +176,13 @@
     background-color: rgb(39,24,126);
     color: white;
 }
+
+.Small{
+    width: 8%;
+    height: 15%;
+    border: 1px solid gray;
+    position: absolute;
+    border-radius: 10px;
+    left: 1230px;
+    top: 250px;
+}
