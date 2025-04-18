@@ -29,7 +29,7 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() => {
-            if (userData && localStorage.getItem("userToken")) {
+            if (userData?.isLoggedIn            ) {
               navigate("/dashboard/overview");
             } else {
               toast.error("User not found");
@@ -45,11 +45,13 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() =>{
-            if (userData && localStorage.getItem("userToken")) {
+            if (userData?.isLoggedIn) {
+              console.log(userData) 
+              // console.log(localStorage.getItem("userToken"))
               navigate("/dashboard/upcoming-event");
-            } else {
-              navigate("/dashboard/upcoming-event")
+            }  else {
               toast.error("User not found");
+              navigate("/login")
             }
           }}
         >

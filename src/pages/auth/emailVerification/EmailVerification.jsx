@@ -23,17 +23,22 @@ const EmailVerification = () => {
         setTimeout(()=>{
           navigate("/login")
         }, 3000)
+      } else if(response.status === 400){
+        toast.error(response?.status)
+        setTimeout(()=>{
+          navigate("/login")
+        }, 3000)
       }
     } catch (error) {
       console.log(error)
       toast.error(error?.response?.data?.message || "Please verify your email");
     }
   }
-  console.log(handleEmailVerification)
+  // console.log(handleEmailVerification)
 
   useEffect(() => {
     handleEmailVerification()
-  },[token])
+  },[])
   return (
     <div className="email-verification-container">
       <div className="Nav">
@@ -54,7 +59,7 @@ const EmailVerification = () => {
           <h2>Welcome to ShediTix!</h2>
           </div>
           <form className="form">
-            <p className="Passage2">Please wait while we verify your email</p>
+           
             <Flex align="center" gap="middle" style={{width: "70%", height: "200px",  paddingLeft: "90px", placeSelf: "center"}}>
     {/* <Spin size="small" /> */}
     {/* <Spin /> */}
