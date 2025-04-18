@@ -10,10 +10,10 @@ import { useEffect } from "react";
 const EmailVerification = () => {
   const navigate = useNavigate()
   const { token } = useParams();
-  // console.log(token)
   const BASEURL = "https://scheditix.onrender.com";
   const user = localStorage.getItem("userData")
-
+  // const token = JSON.parse(localStorage.getItem("userToken"))
+  console.log(token)
   const handleEmailVerification = async () => {
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
@@ -21,6 +21,7 @@ const EmailVerification = () => {
       toast.success(response?.data?.message)
       if(response.status === 200){
         setTimeout(()=>{
+          toast.success("Email verified successfully")
           navigate("/login")
         }, 3000)
       } else if(response.status === 400){
@@ -34,7 +35,7 @@ const EmailVerification = () => {
       toast.error(error?.response?.data?.message || "Please verify your email");
     }
   }
-  // console.log(handleEmailVerification)
+
 
   useEffect(() => {
     handleEmailVerification()

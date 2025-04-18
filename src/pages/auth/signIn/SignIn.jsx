@@ -30,13 +30,13 @@ const SignIn = () => {
         localStorage.setItem("userToken", (response.data.token));
         setTimeout(() => {
           setIsLoading(false);
-          navigate("/checkIn-as");
+          navigate("/checkin-as");
         }, 3000);
       }
       console.log(response);
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data.message);
       setIsLoading(false);
     }
   };

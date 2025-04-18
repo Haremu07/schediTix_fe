@@ -156,7 +156,7 @@ const SignUP = () => {
             )}
             <span className="signupBox2">
               <h5> Already have an account? </h5>
-                <div className="boxs" onClick={() => navigate("/login")}>
+                <div className="boxes" onClick={() => navigate("/login")}>
                   sign In
                 </div>
               

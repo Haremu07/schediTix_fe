@@ -3,6 +3,7 @@ import UpcomingEventImage from "../../assets/upcmingEventImage.jpg"
 import { IoIosArrowBack } from "react-icons/io";
 import '../../pages/eventDetails/eventDetails.css'
 import { useNavigate } from 'react-router-dom';
+import { IoCopy } from "react-icons/io5";
 
 
 const ViewEventAttendee = () => {
@@ -10,8 +11,10 @@ const ViewEventAttendee = () => {
   
   return (
     <div className="view-event">
-        <div className="view-evenr-header">
+        <div className="view-event-header">
             <h5 onClick={() => navigate("/dashboard/checkin")}><IoIosArrowBack size={25}/> back</h5>
+            <div className="CheckInBox"><input className="CheckInBoxInput" type="text" placeholder="http://scheditix.mykealwiselive/ticket"/>
+            <p>Copy event link</p><IoCopy/> </div>
         </div>
       <div className='viewimgDiv'>
         <section className='viewImgDiv'>
@@ -110,6 +113,26 @@ const ViewEventAttendee = () => {
                       </div>
                       </div>
                     </div>
+
+                      <div className='reserve-your-spot-box-twoTables'>
+                        <div className='reserve-your-spot-box-two-childTables'>
+                        <div className='reserve-your-spot-box-two-child-first'><h3>Tables & Seats</h3></div>
+                        <div className='reserve-your-spot-box-two-child-secondTable'>
+                          <button className="SEatsTablesBtn">50 tables</button>
+                          <button className="SEatsTablesBtn2">500 seats</button>
+                        </div>
+                        </div>
+                      </div>
+
+                      <div className='reserve-your-spot-box-twoTables'>
+                        <div className='reserve-your-spot-box-two-childTables'>
+                        <div className='reserve-your-spot-box-two-child-first'><h3>Tables & Seats</h3></div>
+                        <div className='reserve-your-spot-box-two-child-secondTable'>
+                          <button className="SEatsTablesBtn">480 sold</button>
+                          <button className="SEatsTablesBtn2">20 unsold</button>
+                        </div>
+                        </div>
+                      </div>
                    
                   </div>
                 </div>

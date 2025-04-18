@@ -55,16 +55,20 @@ const CreateEvent = () => {
 
   const BASEURL = "https://scheditix.onrender.com";
 
+  
+
   const [disable, setDisable] = useState(false);
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
   const[cartegoryId, setCartegoryId] = useState("")
   // console.log(cartegoryId)
 
   const handleCategories = async () => {
     try {
       const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
+
       setCategories(res.data.data);
       console.log(res);
     } catch (error) {
@@ -103,12 +107,14 @@ const CreateEvent = () => {
   
   const handleSubmit = async () => {
     try {
+
       const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,input, {
         headers: {
           "content-type" : "multipart/form-data",
              Authorization: `Bearer ${token}`
         }
       }  );
+
       setInput(response.data.data)
       console.log(response);
       toast.success("successfull")
@@ -167,7 +173,7 @@ const CreateEvent = () => {
                   <div>
                     <div className="upload-img-template-details-text-bg">
                       <h2>
-                        Drag & Drop{" "}
+                        Upload{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>images</span>,{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>Videos</span>{" "}
                         or any{" "}
@@ -186,8 +192,11 @@ const CreateEvent = () => {
                 )}
               </label>
             </div>
-            <div className="upload-img-btn">
+            <label 
+                htmlFor="Upload-img-input"
+            className="upload-img-btn">
               <input
+              hidden
                 type="file"
                 id="Upload-img-input"
                 name="image"
@@ -197,7 +206,7 @@ const CreateEvent = () => {
                 // onClick={handleFileChange}
               />
               <h5 className="text-btn">Upload files</h5>
-            </div>
+            </label>
           </div>
         </div>
         <div className="input-bg">

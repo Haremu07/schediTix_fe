@@ -9,7 +9,6 @@ const CheckInAs = () => {
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem(`userData`));
   // const token = localStorage.getItem("userToken", response?.data.token);
-
   console.log(userData);
   return (
     <div className="CheckInAsBody">
@@ -29,12 +28,14 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() => {
+
             if (userData?.isLoggedIn            ) {
               navigate("/dashboard/overview");
             } else {
               toast.error("User not found");
               navigate("/login")
             }
+
           }}
         >
           <div className="ImgBox">
@@ -53,6 +54,7 @@ const CheckInAs = () => {
               toast.error("User not found");
               navigate("/login")
             }
+
           }}
         >
           <div className="ImgBox">
