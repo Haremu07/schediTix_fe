@@ -46,8 +46,8 @@ const EventDetails = () => {
         <div className='details-bg'>
           <div className='details-wrapper'>
             <div className='event-rules-box'>
-              <div className='event-rules-box-first'>
-                <div className='event-rules-box-first-one'><h3>Event Details</h3></div>
+              <div className='event-rules-box-firsts'>
+                <div className='event-rules-box-first-ones'><h3>Event Details</h3></div>
                 <p>The biggest #comedy Show ever to hit the #city of #ajegunle. Don't miss out! #laughter #mykealwise #premium.</p>
               </div>
               <div className='event-rules-box-second'>
