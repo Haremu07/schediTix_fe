@@ -9,7 +9,6 @@ const CheckInAs = () => {
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem(`userData`));
   // const token = localStorage.getItem("userToken", response?.data.token);
-
   console.log(userData);
   return (
     <div className="CheckInAsBody">
@@ -51,7 +50,7 @@ const CheckInAs = () => {
                 //   navigate("/dashboard/upcoming-event")
                 //   toast.error("User not found");
                 // }
-                  navigate("/dashboard/upcoming-event");
+                  navigate("/dashboard/upcoming-events");
           }}
         >
           <div className="ImgBox">
