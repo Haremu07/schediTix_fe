@@ -101,7 +101,7 @@ const LandingPage = () => {
             <h1 className="LandingPageBox2Nav1SmallH1">
               {slides2[currentSlides].text}
             </h1>
-            <p>
+            <p className="P-body">
               SchediTix brings event planning and ticketing to your fingertips.
               Whether you're an event organizer or an attendee, our platform
               offers a seamless experience. From easy event creation to simple
@@ -135,34 +135,34 @@ const LandingPage = () => {
           <div className="LandingPageBox2Nav1Small2">
             <div className="card">
               <div className="cardNav">
-                <TbTargetArrow size={50} />
+                <TbTargetArrow className="cardIcon" />
               </div>
               <div className="cardNav2">
-                <p>Effortless Event Creation for Organizers</p>
+                <p className="P">Effortless Event Creation for Organizers</p>
               </div>
             </div>
             <div className="card">
               <div className="cardNav">
-                <BsTicketPerforatedFill size={50} />
+                <BsTicketPerforatedFill className="cardIcon" />
               </div>
               <div className="cardNav2">
-                <p>Admin Dashboard for Seamless Event Management</p>
+                <p className="P">Admin Dashboard for Seamless Event Management</p>
               </div>
             </div>
             <div className="card">
               <div className="cardNav">
-                <GrServerCluster size={50} />
+                <GrServerCluster className="cardIcon" />
               </div>
               <div className="cardNav2">
-                <p> Simple Ticketing System with Purchase Confirmation</p>
+                <p className="P"> Simple Ticketing System with Purchase Confirmation</p>
               </div>
             </div>
             <div className="card">
               <div className="cardNav">
-                <FaListAlt size={50} />
+                <FaListAlt className="cardIcon" />
               </div>
               <div className="cardNav2">
-                <p>Streamlined Event Listings for Attendees</p>
+                <p className="P">Streamlined Event Listings for Attendees</p>
               </div>
             </div>
           </div>
