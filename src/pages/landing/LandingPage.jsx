@@ -326,9 +326,9 @@ const LandingPage = () => {
               </ul>
             </div>
             {
-            token ? ( <button className="PlanCardsBtn" onClick={() => navigate("")}>
+            token ? null : ( <button className="PlanCardsBtn" onClick={() => navigate("")}>
             Get Started For Free
-          </button>) : null
+          </button>)  
            }
           </div>
           <div className="PlanCard">

@@ -148,7 +148,7 @@ const CreateEvent = () => {
                   <div>
                     <div className="upload-img-template-details-text-bg">
                       <h2>
-                        Drag & Drop{" "}
+                        Upload{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>images</span>,{" "}
                         <span style={{ color: "rgb(255,87,34)" }}>Videos</span>{" "}
                         or any{" "}
@@ -167,8 +167,11 @@ const CreateEvent = () => {
                 )}
               </label>
             </div>
-            <div className="upload-img-btn">
+            <label 
+                htmlFor="Upload-img-input"
+            className="upload-img-btn">
               <input
+              hidden
                 type="file"
                 id="Upload-img-input"
                 name="image"
@@ -178,7 +181,7 @@ const CreateEvent = () => {
                 onClick={handleFileChange}
               />
               <h5 className="text-btn">Upload files</h5>
-            </div>
+            </label>
           </div>
         </div>
         <div className="input-bg">
