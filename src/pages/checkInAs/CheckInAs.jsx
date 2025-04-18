@@ -28,12 +28,7 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() => {
-            // if (userData && localStorage.getItem("userToken")) {
-            //   navigate("/dashboard/overview");
-            // } else {
-            //   toast.error("User not found");
-            //   navigate("/login")
-            // }
+            
             navigate("/dashboard/overview");
           }}
         >
@@ -45,11 +40,6 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() =>{
-            // if (userData && localStorage.getItem("userToken")) {
-              // } else {
-                //   navigate("/dashboard/upcoming-event")
-                //   toast.error("User not found");
-                // }
                   navigate("/dashboard/upcoming-events");
           }}
         >
