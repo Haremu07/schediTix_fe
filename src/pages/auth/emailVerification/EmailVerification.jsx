@@ -19,6 +19,11 @@ const EmailVerification = () => {
   const showModal = () => setIsModalOpens(true);
 
 
+
+  const user = localStorage.getItem("userData")
+  // const token = JSON.parse(localStorage.getItem("userToken"))
+  console.log(token)
+
   const handleEmailVerification = async () => {
     setIsVerifying(true); 
     try {
@@ -43,6 +48,10 @@ const EmailVerification = () => {
     }
   }, [token]);
 
+  }
+
+
+
   return (
     <div className="email-verification-container">
       <div className="Nav">
@@ -61,6 +70,23 @@ const EmailVerification = () => {
             <img className="Logo" src={Logo} alt="" onClick={() => navigate("/")} />
             <h2>Welcome to ShediTix!</h2>
           </div>
+ 
+          <form className="form">
+           
+            <Flex align="center" gap="middle" style={{width: "70%", height: "200px",  paddingLeft: "90px", placeSelf: "center"}}>
+    {/* <Spin size="small" /> */}
+    {/* <Spin /> */}
+    <Spin size="large"  style={{width: "70px",}} />
+  </Flex>
+
+               {/* You’re officially part of the SchediTix family! 
+               🙌 We’re so excited to help you create, manage, and promote amazing events.</p> 
+
+           <p className="Passage2">Before you dive in, we just need you to <span className="resend1">verify
+             your email</span>  to activate your account. It’s super
+              quick, just click the button below and you’re 
+              good to go! 🥰</p> */}
+ 
 
           <form className="form">
             {!token ? (

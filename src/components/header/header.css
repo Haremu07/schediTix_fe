@@ -50,6 +50,7 @@
     color: #374151;
     font-weight: 500;
     text-decoration: none;
+    cursor: pointer;
   }
   
   .nav-link:hover {
@@ -164,6 +165,9 @@
     border-radius: 100px;
     background-color: gray;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .CirclrBoxImg{

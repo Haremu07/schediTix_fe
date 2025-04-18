@@ -26,6 +26,16 @@
         align-items: center;
         background-size: cover;
         background-position: center;
+
+        @media (max-width: 890px){
+            object-fit: cover;
+        }
+        @media (max-width: 500px){
+            object-fit: cover;
+        }
+        @media (max-width: 320px){
+            object-fit: cover;
+        }
     }
 
     & .LandinPageImgBoxText{
@@ -41,6 +51,32 @@
         align-items: center;
         flex-direction: column;
         gap: 30px;
+
+         @media (max-width: 890px){
+            width: 90%;
+            height: 60%;
+            top:300px;
+            left: 35px;
+        }
+        @media (max-width: 500px){
+            width: 90%;
+            top:220px;
+            left: 20px;
+            gap: 15px;
+        }
+        @media (max-width: 415px){
+            width: 90%;
+            top:220px;
+            left: 20px;
+            gap: 35px;
+        }
+        @media (max-width: 320px){
+            width: 90%;
+            justify-content: space-between;
+            top:180px;
+            left: 20px;
+            height: 40%;
+        }
     }
 
     & .LandinPageImgBoxTextH1{
@@ -49,6 +85,22 @@
         font-family: "Poppins", sans-serif;
         font-size: 30px;
         /* font-weight: 700; */
+
+        @media (max-width: 890px){
+            text-align: none;
+            font-size: 45px;
+        }
+        @media (max-width: 835px){
+            font-size: 50px;
+            text-align: none;
+        }
+        @media (max-width: 500px){
+            width: 100%;
+            font-size: 28px;
+        }
+        @media (max-width: 320px){
+            font-size: 24px;
+        }
     }
 
     
@@ -60,6 +112,23 @@
         text-align: center;
         font-family: "Poppins", sans-serif;
         font-size: 20px;
+
+        @media (max-width: 890px){
+            font-size: 38px;
+            width: 100%;
+            }
+            @media (max-width: 835px){
+            font-size: 35px;
+            width: 100%;
+            }
+            @media (max-width: 500px){
+            font-size: 22px;
+            width: 100%;
+            }
+            @media (max-width: 320px){
+            font-size: 16px;
+            width: 100%;
+            }
     }
 
     & .Btn{
@@ -73,6 +142,27 @@
         color: white;
         font-size: 15px;
         cursor: pointer;
+
+        @media (max-width: 890px){
+            font-size: 28px;
+            width: auto;
+            height: auto;
+            padding: 25px 45px;
+        }
+        @media (max-width: 835px){
+            font-size: 25px;
+            width: auto;
+            padding: 25px 45px;
+        }
+        @media (max-width: 500px){
+            font-size: 20px;
+            width: auto;
+            padding: 18px 40px;
+        }
+        @media (max-width: 320px){
+            padding: 15px 25px;
+            font-size: 16px;
+        }
     }
 }
 
@@ -83,6 +173,15 @@
     display: flex;
     gap: 10px;
 
+    @media Screen and (max-width: 890px){
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: max-content;
+        padding: 50px 0;
+        gap: 60px;
+        }
+
     & .LandingPageBox2Nav1{
         width: 50%;
         height: 100%;
@@ -90,6 +189,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media (max-width: 890px){
+            width: 90%;
+            height: 45%;
+            justify-content: space-between;
+            }
 
     }
 
@@ -112,59 +217,139 @@
         gap: 15px;
         /* font-size: 18px; */
         font-family: "Poppins", sans-serif;
+
+        @media (max-width: 890px){
+            width: 100%;
+        }
+        @media (max-width: 500px){
+            font-size: 15px;
+        }
+    }
+
+    & .P{
+        color: #1e1e1e;
+
+        @media (max-width: 890px){
+        font-size: 30px;
+        }
+        @media (max-width: 500px){
+        font-size: 20px;
+        }
+        
+    }
+
+    & .P-body{
+        color: #1e1e1e;
+        font-size: 18px;
+        font-weight: 500;
+
+        @media (max-width: 890px){
+            font-size: 22px
+        }
+        @media (max-width: 500px){
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
 
     & .LandingPageBox2Nav1SmallH1{
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         /* font-weight: bold; */
+
+        @media (max-width: 890px){
+            font-size: 40px;
+        }
+        @media (max-width: 500px){
+            font-size: 20px;
+        }
     }
 
     .LandingPageBox2Nav1SmallBox{
         width: 100%;
-        height: 15%;
-        /* background-color: green; */
+        height: 20%;
         display: flex;
-        padding-left: 30px;
+        justify-content: space-between;
+        align-items: center;
         gap: 15px;
     }
 
     & .Btns{
-        width: 35%;
-        height: 20%;
+        width: auto;
         color: white;
         border-radius: 50px;
-        padding: 19px;
         border: none;
         background-color: #27187e;
-        font-size: 13px;
+        font-size: 18px;
         cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Poppins", sans-serif;
+        padding: 10px 20px;
+
+        @media (max-width: 890px){
+            font-weight: 500;
+            font-size: 20px;
+            padding: 20px;
+            width: 45%;
+        }
+
+        @media (max-width: 500px){
+            width: 50%;
+            padding: 15px 10px;
+            height: max-content;
+        }
+        @media (max-width: 415px){
+            font-size: 15px;
+        }
+        @media (max-width: 390px){
+            font-size: 16px;
+        }
+        @media (max-width: 320px){
+            width: 45%;
+            padding: 15px 10px;
+            font-size: 13px;
+        }
+
     }
+
     & .Btns2{
-        width: 35%;
-        height: 20%;
-        color: orange;
+        width: auto;
+        color: #FF5722;
         border-radius: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 18px;
-        border: solid orange 2px;
-        background-color: white;
-        font-size: 13px;
+        border: solid #FF5722 2px;
+        font-size: 18px;
         font-family: "Poppins", sans-serif;
         cursor: pointer;
+        padding: 10px 20px;
+
+
+
+        @media (max-width: 890px){
+            font-weight: 500;
+            font-size: 20px;
+            padding: 20px;
+            width: 45%;
+        }
+        @media (max-width: 500px){
+            width: 50%;
+            padding: 15px 5px;
+            height: max-content;
+        }
+        @media (max-width: 415px){
+            font-size: 15px;
+        }
+        @media (max-width: 390px){
+            font-size: 16px;
+        }
+        @media (max-width: 320px){
+            width: auto;
+            padding: 15px 10px;
+            font-size: 13px;
+        }
     }
 }
 
  .LandingPageBox2Nav1Small2{
     width: 90%;
     height: 70%;
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,29 +357,75 @@
     font-size: 15px;
     flex-wrap: wrap;
 
+    @media (max-width: 890px){
+        width: 100%;
+        height: 90%;
+        flex-wrap: nowrap;
+        gap: 35px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
 }
 
 .card{
-    width: 40%;
-    height: 40%;
-    /* background-color: green; */
+    width: 45%;
+    height: 45%;
     display: flex;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     gap: 5px;
     flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
     font-family: "Poppins", sans-serif;
+    
+
+
+
+    & .cardIcon{
+        width: 70px;
+        height: 70px;
+
+        @media (max-width: 890px){
+            width: 65px;
+            height: 65px;
+        }
+        @media (max-width: 500px){
+            width: 45px;
+            height: 45px;
+        }
+    }
 
 
     & .cardNav{
         width: 100%;
         height: 50%;
-        /* background-color: red; */
         display: flex;
         justify-content: center;
         align-items: center;
         color: #27187e;
         text-align: center;
+
+        @media (max-width: 890px){
+            width: auto;
+        }
+    }
+
+    & .P{
+        font-size: 20px;
+        text-align: center;
+        color: #1e1e1e;
+
+        @media (max-width: 890px){
+            font-size: 25px;
+            font-weight: 500;
+            color: #1e1e1e;
+            text-align: left;
+        }
+
+        @media (max-width: 500px){
+            font-size: 18px;
+        }
     }
 
     & .cardNav2{
@@ -575,5 +806,81 @@
         border-radius:   0 50px 50px 0 ;
         cursor: pointer;
         color: white;
+    }
+}
+
+
+@media Screen and (max-width: 890px){
+
+    .LandingPageBox2{
+    
+     & .LandingPageBox2Nav2{
+        width: 90%;
+        /* background-color: orange; */
+    }
+    }
+    .card{
+        height: 20%;
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        box-shadow: rgba(149, 157, 165, 0) 0px 8px 24px;
+
+        & .P{
+            font-size: 25px;
+            font-weight: 500;
+            color: #1e1e1e;
+            text-align: left;
+        }
+    }
+
+    .LandingPageBox2Nav1Small2{
+        width: 100%;
+        height: 90%;
+        flex-wrap: nowrap;
+        gap: 35px;
+        align-items: flex-start;
+        flex-direction: column;
+        /* background-color: red; */
+    }
+    .FeaturedEventBlocked{
+        height: max-content;
+        padding: 20px 0;
+        gap: 20px;
+        
+        & .FeaturedEventBlockedBody{
+            height: max-content;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        }
+
+    }
+    .TrendingEventBlockScroll{
+        height: 90%;
+        width: 90%;
+        gap: 35px;
+        padding: 10px 0;
+    }
+    .TrendingEventBlock{
+        padding: 20px 0;
+        height: max-content;
+    }
+    .TrendingEventBlockHeader{
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+
+
+@media Screen and (max-width: 500px){
+    .TrendingEventBlockScroll{
+        gap: 5px;
     }
 }
