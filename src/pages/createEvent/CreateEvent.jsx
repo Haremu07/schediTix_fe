@@ -57,14 +57,19 @@ const CreateEvent = () => {
 
   const BASEURL = "https://scheditix.onrender.com";
 
+  
+
   const [disable, setDisable] = useState(false);
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  
+  // const token = localStorage.getItem("userToken")
 
   const handleCategories = async () => {
     try {
-      const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
+      const res = await axios.get(`${BASEURL}/api/v1/allCategories`,
+      );
       console.log(res);
       setCategories(res.data.data);
     } catch (error) {
@@ -76,7 +81,7 @@ const CreateEvent = () => {
   }, []);
 
   const handleChange = (e) => {
-    const [ name, value ] = e.target;
+    const { name, value } = e.target;
     console.log(name, value);
     setInput((prev) => ({ ...prev, [name]: value }));
   };
@@ -84,7 +89,7 @@ const CreateEvent = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/category`);
+      const response = await axios.post(`${BASEURL}/api/v1/category${categories}`, input, );
       setInput(response.data.data)
       console.log(response);
       toast.success("successfull")

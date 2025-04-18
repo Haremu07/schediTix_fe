@@ -9,11 +9,11 @@ import { useEffect } from "react";
 
 const EmailVerification = () => {
   const navigate = useNavigate()
-  const { token } = useParams();
+  // const { token } = useParams();
   // console.log(token)
   const BASEURL = "https://scheditix.onrender.com";
   const user = localStorage.getItem("userData")
-
+  const token = JSON.parse(localStorage.getItem("userToken"))
   const handleEmailVerification = async () => {
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
