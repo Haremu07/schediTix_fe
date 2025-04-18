@@ -9,11 +9,11 @@ import { useEffect } from "react";
 
 const EmailVerification = () => {
   const navigate = useNavigate()
-  // const { token } = useParams();
-  // console.log(token)
+  const { token } = useParams();
   const BASEURL = "https://scheditix.onrender.com";
   const user = localStorage.getItem("userData")
-  const token = JSON.parse(localStorage.getItem("userToken"))
+  // const token = JSON.parse(localStorage.getItem("userToken"))
+  console.log(token)
   const handleEmailVerification = async () => {
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
@@ -30,7 +30,6 @@ const EmailVerification = () => {
       toast.error(error?.response?.data?.message || "Please verify your email");
     }
   }
-  console.log(handleEmailVerification)
 
   useEffect(() => {
     handleEmailVerification()
