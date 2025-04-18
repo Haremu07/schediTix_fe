@@ -69,13 +69,15 @@
     align-items: center;
 }
 
-.email-verification-form2{
-    width: 650.56px;
-    height: 420px;
+.email-verification-form{
+    width: 70px;
+    height: 200px;
     /* background-color: gray; */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 20px;
     border-radius: 10px;
@@ -86,6 +88,7 @@
     width: 60%;
     height: 60%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .email-verification-form{
@@ -94,7 +97,7 @@
     /* background-color: gray; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 20px;
     border-radius: 10px;
@@ -119,8 +122,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-direction: column;
+    font-weight: 400;
 }
 
 .form{

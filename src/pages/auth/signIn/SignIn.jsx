@@ -1,36 +1,53 @@
 import "./signIn.css";
 import { MdEmail } from "react-icons/md";
 import { GiDialPadlock } from "react-icons/gi";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import orangeLogo from "../../../assets/orangelogo.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const [input, setInput] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInput((prev) => ({ ...prev, [name]: value }));
-  };
-  const BASEURL = "https://scheditix.onrender.com"
+  const [isLoading, setIsLoading] = useState(false);
+  // const [disable, setDisable] = useState(false);
+
+  const BASEURL = "https://scheditix.onrender.com";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/login/user`, input)
+      const response = await axios.post(`${BASEURL}/api/v1/login/user/`, {
+        email,
+        password,
+      });
       console.log(response)
+      if (response.status === 200) {
+        localStorage.setItem("userData", JSON.stringify(response.data.data));
+        localStorage.setItem("userToken", (response.data.token));
+        setTimeout(() => {
+          setIsLoading(false);
+          navigate("/checkin-as");
+        }, 3000);
+      }
+      console.log(response);
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      toast.error(error?.response?.data.message);
+      setIsLoading(false);
     }
   };
 
+  useEffect(() => {
+    handleSubmit()
+  },[])
+
   return (
     <div className="signin-container">
+      <Toaster />
       <div className="signIn-Nav">
         <div className="signIn-Nav-Header">
           <div className="LogoBox">
@@ -49,8 +66,7 @@ const SignIn = () => {
       </div>
 
       <div className="signin-body">
-        <div className="signin-form">
-         
+        <div className="signin-form" onSubmit={handleSubmit}>
           <div className="sigin-form-Header">
             <h2>Login to continue</h2>
           </div>
@@ -59,9 +75,9 @@ const SignIn = () => {
               <MdEmail />
               <input
                 type="email"
-                name="email"
-                value={input.email}
-                onChange={handleChange}
+                // name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input2"
                 placeholder="enter your email"
               />
@@ -71,28 +87,50 @@ const SignIn = () => {
               <input
                 type="password"
                 name="password"
-                value={input.password}
-                onChange={handleChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="input2"
                 placeholder="enter your password"
               />
             </span>
+
             <h4
               onClick={() => navigate("/forget-password")}
               style={{ cursor: "pointer" }}
             >
               Forgot password?
             </h4>
-            <button type="submit" className="btn" onClick={() => (navigate("/checkin-as"), {handleSubmit})}>
-              Log In
-            </button>
-            <span className="signinBox">
+            {isLoading ? (
+              <button type="submit" className="btn">
+                Loading...
+                
+              </button>
+
+            ) : (
+              <button
+                type="submit"
+                className="btn"
+                onClick={() => {
+                  setIsLoading(true),
+                    setTimeout(() => {
+                    }, 3000);
+                }}
+              >
+
+                Log In
+              </button>
+            )}
+
+            {/* {disable ? isLoading : null} */}
+            <span
+              className="signinBox"
+              // style={{ display: "flex", flexDirection: "row" }}
+            >
               <h5>
-                Dont have an account?
-                <span className="box" onClick={() => navigate("/register")}>
+                Dont have an account?</h5>
+                <p className="boxed" onClick={() => navigate("/register")}>
                   sign Up
-                </span>
-              </h5>
+                </p>
             </span>
           </form>
         </div>

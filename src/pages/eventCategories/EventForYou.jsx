@@ -1,6 +1,7 @@
 import React from 'react'
 import "./eventCategories.css"
 import { GoArrowRight } from "react-icons/go";
+import vector from "../../assets/Vector.png"
 
 const EventForYou = () => {
   return (
@@ -8,11 +9,12 @@ const EventForYou = () => {
         <section className='firstBlock'></section>
         <section className='SecondBlock'>
             <nav className="textHeaders">
-                <p><b>Event For You</b></p>
+                <p>Event For You</p>
+                <img src={vector} alt="" className='vectorim' />
             </nav>
             <div className='contentBox'>
                 <span className='textBox'>
-                   <h1><b>MyKealWise Comedy Live...</b></h1> 
+                   <p>MyKealWise Comedy Live...</p> 
                    <div  className="contentBoxText">
                     <p>A 14-day hackton to build to build ideas that </p>
                     <p>are breaking boundaries in how we pay</p>
@@ -20,9 +22,9 @@ const EventForYou = () => {
                     <p>KoraHACK 2.0 is sponsored by Kora, a</p>
                     <p>pan-African payment gateway</p>
                    </div>
-                   <p style={{fontSize:"16px",display:"flex", gap:"10px", alignItems:"center" }}>
+                   <p style={{fontSize:"16px",display:"flex", gap:"10px", alignItems:"center" }} className='seeMore'>
                     <b>See More</b>
-                    <GoArrowRight style={{fontSize:"25px"}}/>
+                    <GoArrowRight style={{fontSize:"25px"}} className='futureArrow'/>
                     </p> 
                 </span>
                 <span className='imgDiv'>
@@ -31,7 +33,7 @@ const EventForYou = () => {
             </div>
             <div className='contentBox'>
                 <span className='textBox'>
-                   <h1><b>Lagos Tech Fest</b></h1> 
+                <p>MyKealWise Comedy Live...</p>  
                    <div  className="contentBoxText">
                     <p>Now in its 5th year, Lagos Tech Fest</p>
                     <p>gather startup, innovating, investor</p>
@@ -56,7 +58,7 @@ const EventForYou = () => {
         </nav>
         <div className='contentBox'>
                 <span className='textBox'>
-                   <h1><b>Genz Tech Fest 2024</b></h1> 
+                <p>MyKealWise Comedy Live...</p> 
                    <div  className="contentBoxText">
                     <p>we are Genztechies, where Gen-Z </p>
                     <p>developer, founders, designes, and</p>
@@ -74,7 +76,7 @@ const EventForYou = () => {
             </div>
             <div className='contentBox'>
                 <span className='textBox'>
-                   <h1><b>Adanian Labs Africa <br />merges with imapalaPay</b></h1> 
+                <p>MyKealWise Comedy Live...</p> 
                    <div  className="contentBoxText">
                     <p>A Pan Africa Venture studio Actuating</p>
                     <p>the Tech Revolution for Borderless</p>

@@ -110,15 +110,14 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-
         /* font-size: 18px; */
         font-family: "Poppins", sans-serif;
     }
 
     & .LandingPageBox2Nav1SmallH1{
         font-family: "Poppins", sans-serif;
-        /* font-size: 35px; */
-        font-weight: bold;
+        font-size: 15px;
+        /* font-weight: bold; */
     }
 
     .LandingPageBox2Nav1SmallBox{
@@ -215,7 +214,7 @@
     width: 100%;
     height: 100vh;
     background-color: #edecf4;
-    padding-top: 35px;
+    padding-top: 10px;
     display: flex;
     color: rgb(66, 66, 66);
     flex-direction: column;
@@ -255,9 +254,15 @@
     height: 70%;
     background-color: white;
     display: flex;
+    align-items: center;
     flex-direction: column;
     color: rgb(66, 66, 66);
 
+    & .FeaturedEventBlockedBodyHold{
+        width: 100%;
+        height: max-content;
+        /* background-color: green; */
+    }
 
    & .FeaturedEventBlockedHeader{
         width: 100%;
@@ -268,6 +273,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        font-size: 30px;
     }
 
     & .FeaturedEventBlockedBody{
@@ -276,6 +282,7 @@
         /* background-color: pink; */
         display: flex;
         justify-content: center;
+        /* flex-direction: column; */
         align-items: center;
         flex-wrap: wrap;
         margin-top: 20px;
@@ -289,7 +296,7 @@
         background-color: #ff5722;
         color: white;
         border: none;
-        margin-left: 115px;
+        margin-left: 120px;
         font-size: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -336,6 +343,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        font-size: 25px;
     }
 
     & .PerfectPlanBlockPlnsBox{

@@ -71,7 +71,7 @@ const Card3 = () => {
   return (
     <>
       <div className="UsersBlockHeader">
-        <h1>What Our User Says About Us</h1>
+        <h2>What Our User Says About Us</h2>
       </div>
       <div className="UsersBlockNav">
         <FaLessThan style={{cursor: "pointer"}} size={40} onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}/>

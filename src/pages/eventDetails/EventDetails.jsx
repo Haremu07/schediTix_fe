@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../pages/eventDetails/eventDetails.css'
 import { CiCalendarDate } from "react-icons/ci";
 import { TbClock } from "react-icons/tb";
 import { MdLocationOn, MdFavoriteBorder } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 const EventDetails = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='eventdetails-bg'>
+      
+
       <div className='eventdetails-wrapper'>
         <div className='eventdetails-sections'>
           <div className='eventdetails-sections-one'><h4>Shows</h4></div>
@@ -87,7 +92,9 @@ const EventDetails = () => {
             </div>
             <div className='reserve-your-spot'>
               <div className='reserve-your-spot-title'>
-                    <div className='reserve-your-spot-title-one'><h4>Reserve your spot</h4></div>
+                    <div className='reserve-your-spot-title-one' 
+                     onClick={() => navigate("/login")}
+                     ><h4>Reserve your spot</h4></div>
                     <span className='favourite-icon'><MdFavoriteBorder /></span>
               </div>
               <div className='reserve-your-spot-box-one'>

@@ -21,7 +21,7 @@ import CreateEvent from "./pages/createEvent/CreateEvent"
 import ManageEvent from "./pages/manageEvent/ManageEvent"
 import Overview from "./pages/overviewOrganizer/Overview"
 import PayOutDetails from "./pages/payoutDetails/PayOutDetails"
-import ProfileSetting from "./pages/profileSetting/ProfileSetting"
+import ProfileSetting from "./components/profileSetting/ProfileSetting"
 import TicketSales from "./pages/ticketSales/TicketSales"
 import ManageEventDetails from "./pages/manageEventDetails/ManageEventDetails"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
@@ -34,6 +34,13 @@ import CheckInAs from "./pages/checkInAs/CheckInAs"
 import EventplannerDashboard from "./components/Layout/EventplannerDashboard"
 import EditEvent from "./pages/manageEvent/EditEvent"
 import Logout from "./pages/auth/logout/Logout"
+import UpcomingEventDetails from "./pages/upcomingEvent/UpcomingEventDetails"
+import ViewEvent from "./pages/manageEvent/ViewEvent"
+import TicketPurchaced from "./pages/eventFavorite/TicketPurchaced"
+import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
+import CheckIn from "./pages/checkInAttendee/CheckIn"
+import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
+
 
 const App = () => {
 
@@ -82,12 +89,145 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <LandingPage/>
         }, 
+       
       ],
     },
     {
       element: <Private/>,
       children: [
-     
+        {
+          element: <AttendeDashBorad/>,
+          children:[
+            {
+              path:"dashboard/upcoming-events",
+              errorElement: <ErrorPage/>,
+              element: <UpcomingEvent/>
+            },
+             {
+            path: "dashboard/ticket-purchace" ,
+            errorElement: <ErrorPage/>,
+            element: <TicketPurchaced/>
+          }, 
+            {
+              path:"dashboard/upcoming-event-details",
+              errorElement: <ErrorPage/>,
+              element: <UpcomingEventDetails/>
+            },
+            {
+              path:"dashboard/purchase-details",
+              errorElement: <ErrorPage/>,
+              element: <PurchaseDetails/>
+            },
+            {
+              path:"dashboard/past-events",
+              errorElement: <ErrorPage/>,
+              element: <PastEvent/>
+            },
+            {
+              path:"dashboard/ticket-purchased",
+              errorElement: <ErrorPage/>,
+              element: <UserTicketPurchase/>
+            },
+            {
+              path:"dashboard/event-favorite",
+              errorElement: <ErrorPage/>,
+              element: <EventFavorite/>
+            },
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
+            {
+              path: "dashboard/logout" ,
+              errorElement: <ErrorPage/>,
+              element: <Logout/>
+            },
+            {
+              path: "dashboard/user-ticket-purchace" ,
+              errorElement: <ErrorPage/>,
+              element: <UserTicketPurchase/>
+            },
+            {
+              path:"dashboard/logout-attendee",
+              errorElement: <ErrorPage/>,
+              element: <AttendeeLogout/>
+            },
+          ]
+        },
+        {
+            
+          element: <EventplannerDashboard/>,
+          children:[
+            {
+              path: "/dashboard/create-event" ,
+              errorElement: <ErrorPage/>,
+              element: <CreateEvent/>,
+                
+            },
+            {
+              path: "/dashboard/view-event-attendee" ,
+              errorElement: <ErrorPage/>,
+              element: <ViewEventAttendee/>,
+            },
+            {
+              path: "/dashboard/view-event" ,
+              errorElement: <ErrorPage/>,
+              element: <ViewEvent/>,
+            },
+            {
+              path: "/dashboard/check-in" ,
+              errorElement: <ErrorPage/>,
+              element: <CheckIn/>,
+            },
+          
+            {
+              path: "dashboard/overview" ,
+              errorElement: <ErrorPage/>,
+              element: <Overview/>
+            },
+            {
+              path: "dashboard/checkin" ,
+              errorElement: <ErrorPage/>,
+              element: <CheckInAttendee/>
+            },
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
+            {
+              path: "dashboard/ticket-sales" ,
+              errorElement: <ErrorPage/>,
+              element: <TicketSales/>
+            },
+            {
+              path: "dashboard/manage-event" ,
+              errorElement: <ErrorPage/>,
+              element: <ManageEvent/>
+            },
+            {
+              path: "dashboard/edit-event" ,
+              errorElement: <ErrorPage/>,
+              element: <EditEvent/>
+            },
+            {
+              path: "dashboard/manage-event-details" ,
+              errorElement: <ErrorPage/>,
+              element: <ManageEventDetails/>
+            },
+            {
+              path: "dashboard/payout-details" ,
+              errorElement: <ErrorPage/>,
+              element: <PayOutDetails/>
+            },
+            {
+              path: "dashboard/logout" ,
+              errorElement: <ErrorPage/>,
+              element: <Logout/>
+            },
+          ]
+        },
       ]
     },
       {
@@ -101,7 +241,7 @@ const App = () => {
         element: <SignUp/>
       },
       {
-        path: "email-verification" ,
+        path: "email-verification/:token" ,
         errorElement: <ErrorPage/>,
         element: <EmailVerification/>
       },
@@ -130,103 +270,9 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <PasswordResetSuccessfull/>
       },
+     
 
-      {
-        element: <AttendeDashBorad/>,
-        children:[
-          {
-            path:"dashboard/upcoming-events",
-            errorElement: <ErrorPage/>,
-            element: <UpcomingEvent/>
-          },
-          {
-            path:"dashboard/past-events",
-            errorElement: <ErrorPage/>,
-            element: <PastEvent/>
-          },
-          {
-            path:"dashboard/event-favorite",
-            errorElement: <ErrorPage/>,
-            element: <EventFavorite/>
-          },
-          {
-            path: "dashboard/profile" ,
-            errorElement: <ErrorPage/>,
-            element: <ProfileSetting/>
-          },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
-          {
-            path: "dashboard/user-ticket-purchace" ,
-            errorElement: <ErrorPage/>,
-            element: <UserTicketPurchase/>
-          },
-          {
-            path:"dashboard/logout-attendee",
-            errorElement: <ErrorPage/>,
-            element: <AttendeeLogout/>
-          },
-        ]
-      },
-      {
-          
-        element: <EventplannerDashboard/>,
-        children:[
-          {
-            path: "dashboard/create-event" ,
-            errorElement: <ErrorPage/>,
-            element: <CreateEvent/>
-          },
-          {
-            path: "dashboard/overview" ,
-            errorElement: <ErrorPage/>,
-            element: <Overview/>
-          },
-          {
-            path: "dashboard/checkin" ,
-            errorElement: <ErrorPage/>,
-            element: <CheckInAttendee/>
-          },
-          {
-            path: "dashboard/profile" ,
-            errorElement: <ErrorPage/>,
-            element: <ProfileSetting/>
-          },
-          {
-            path: "dashboard/ticket-sales" ,
-            errorElement: <ErrorPage/>,
-            element: <TicketSales/>
-          },
-          {
-            path: "dashboard/manage-event" ,
-            errorElement: <ErrorPage/>,
-            element: <ManageEvent/>
-          },
-          {
-            path: "dashboard/edit-event" ,
-            errorElement: <ErrorPage/>,
-            element: <EditEvent/>
-          },
-          {
-            path: "dashboard/manage-event-details" ,
-            errorElement: <ErrorPage/>,
-            element: <ManageEventDetails/>
-          },
-          {
-            path: "dashboard/payout-details" ,
-            errorElement: <ErrorPage/>,
-            element: <PayOutDetails/>
-          },
-          {
-            path: "dashboard/logout" ,
-            errorElement: <ErrorPage/>,
-            element: <Logout/>
-          },
-        ]
-      },
+
      
   ])
   return (

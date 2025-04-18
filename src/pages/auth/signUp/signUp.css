@@ -1,4 +1,4 @@
-.signin-container{
+.signIn-container{
     width: 100%;
     height: 100vh;
     background-color: #ffffff;
@@ -49,7 +49,7 @@
     }
 }
 
-.signIn-Nav2{
+.signup-Nav2{
     width: 40%;
     height: 100%;
     /* background-color: red; */
@@ -60,7 +60,7 @@
 }
 
 
-.signin-body{
+.signup-body{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@
     align-items: center;
 }
 
-.signin-form{
+.signup-form{
     width: 556.56px;
     max-height: 600px;
     /* background-color: gray; */
@@ -82,7 +82,7 @@
     padding: 20px;
 }
 
-.sigin-form-Header{
+.signup-form-Header{
     width: 100%;
     height: 20%;
     /* background-color: green; */
@@ -119,19 +119,16 @@
     font-size: 20px;
 }
 
-.input2{
+.input3{
     width: 90%;
-    height: 90%;
+    height: 50%;
     border: none;
     outline: none;
 }
 
-.checkbox{
-    display: flex;
-    gap: 10px;
-}
+ 
 
-.btn{
+.btnUp{
     width: 100%;
     height: 60px;
     border-radius: 10px;
@@ -140,19 +137,25 @@
     color: white;
     font-size: 20px;
     cursor: pointer;
-
 }
     
-.signinBox{
-    width: 100%;
+.signupBox2{
+    width: 20%;
+    height: 15%;
     display: flex;
-    justify-content: flex-end;
-    font-size: 20px;
+    background-color: green;
+    /* justify-content: flex-end; */
+    /* font-size: 20px; */
 }
 
-.box{
-    color: #27187e;
-     background-color: #27187e;
-    margin-left: 10px;
+.boxs{
+    width: 5%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    /* color: #27187e; */
+    color: red;
+    /* margin-left: 10px; */
     cursor: pointer;
 }

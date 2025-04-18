@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 23px;
+    font-size: 20px;
     font-family: "Poppins", sans-serif;
     color: rgb(61, 60, 60);
 }
@@ -45,14 +45,16 @@
 .CheckInAsBoxs{
     width: 25%;
     height: 80%;
-    background-color: #ddd5cab0;
+    background-color: whitesmoke;
     border-radius: 10px;
     cursor: pointer;
     color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 20px;
     padding: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .ImgBox{
@@ -69,5 +71,6 @@
 }
 
 .CheckInAsBoxs:hover{
-    background-color: #ddd5caf3;
+    background-color: rgb(233, 231, 231);
+    border: 1px solid #1e1e1e;
 }

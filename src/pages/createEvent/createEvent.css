@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .create-event-bg{
-    width: 75%;
+    width: 80%;
     height: max-content;
     background-color:skyblue ;
+    color: rgb(53, 52, 52);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
 }
 .create-event-wrapper{
     width: 100%;
@@ -28,9 +31,9 @@
     padding-bottom: 30px;
 }
 
-.hiden-file-input{
+/* .hiden-file-input{
     display: none;
-}
+} */
 .upload-img-title{
     width: 80%;
     height: 49px;
@@ -112,7 +115,7 @@
 }
 .upload-img-template-details-text-bg{
     width: 100%;
-    height: 108px;
+    height: 90%;
     /* background-color: rgb(44, 255, 55); */
      font-family: "Inter", sans-serif;
    font-weight: 400;
@@ -146,6 +149,22 @@
     justify-content: center;
     align-items: center;
 }
+.text-btn{
+    font-family: "Inter", sans-serif;
+    font-weight: 400; 
+    font-size: 16px; 
+    color: white;
+}
+.upload-img-btns {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+  }
 .input-bg{
     width: 100%;
     height: max-content;

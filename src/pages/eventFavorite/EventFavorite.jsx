@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./eventFavorite.css"
 import { IoLocationSharp } from "react-icons/io5";
 
 const EventFavorite = () => {
+    const navigate = useNavigate()
   return (
     <div className="Card">
       <div className='CardsBox2'>
@@ -27,7 +29,7 @@ const EventFavorite = () => {
    
            <div className="CardBoxTicket2">
                <p>#2,000</p>
-               <button className="TicketBtn2">Buy Ticket</button>
+               <button className="TicketBtn2" onClick={() => navigate("/dashboard/ticket-purchace")}>Buy Ticket</button>
            </div>
        </div>
        </div>
