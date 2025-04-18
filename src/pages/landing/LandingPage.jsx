@@ -184,22 +184,7 @@ const LandingPage = () => {
             Location="Eko Hotel and Suites"
             Price="2,000"
           />
-          {/* <Cards
-            img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
-            text1="Ajegunle love feast"
-            Date="23rd December, 2025"
-            content="This is the 4th edition of the biggest community love feast."
-            Location="Ayobami Hall"
-            Price="Free"
-          /> */}
-          {/* <Cards
-            img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
-            text1="Ajegunle City Youth Marathon"
-            Date="18th Novenber, 2025"
-            content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
-            Location="Eko Hotel and Suites"
-            Price="5,000"
-          /> */}
+         
           <Cards
             img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
             text1="CONVERGENCE OF STARS"
@@ -216,22 +201,7 @@ const LandingPage = () => {
             Location="Eko Hotel and Suites"
             Price="2,000"
           />
-          {/* <Cards
-            img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
-            text1="Ajegunle love feast"
-            Date="23rd December, 2025"
-            content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
-            Location="Ayobami Hall"
-            Price="Free"
-          /> */}
-          {/* <Cards
-            img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp3T5OktPF7vAENJ28_hj-lO5Ww4mw55bXkQ&s"
-            text1="Ajegunle City Youth Marathon"
-            Date="18th Novenber, 2025"
-            content="The Aj City Youth Marathon celebrates the resilience of the  ajegunle youth"
-            Location="Eko Hotel and Suites"
-            Price="5,000"
-          /> */}
+         
           <Cards
             img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
             text1="CONVERGENCE OF STARS"
