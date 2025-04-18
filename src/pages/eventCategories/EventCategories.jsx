@@ -3,7 +3,7 @@ import "./eventCategories.css"
 import EventForYou from './EventForYou'
 import StayinLoop from './StayinLoop'
 import FeatureComp from './FeatureComp'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import Event1 from "../../assets/Event1.jpg"
 import Event2 from "../../assets/Event2.jpg"
 import Event3 from "../../assets/Event3.jpg"
@@ -16,6 +16,8 @@ import axios from 'axios'
 
 const EventCategories = () => {
   const navigate = useNavigate()
+  const _id = useParams()
+  console.log(_id)
 
   const [categories, setCategories] = useState([])
     const BASEURL = "https://scheditix.onrender.com";
@@ -29,9 +31,31 @@ const EventCategories = () => {
         console.log(error)
       }
     }
+
+
+    // const handleEventsWithId = (id) => {
+
+    // }
+
+
+     const [category, setCategory] = useState({})
+               
+     const handleCategoryById = async (_id) =>{
+      
+            try{
+    const response = await axios.get(`${BASEURL}/api/v1/oneCategory/${_id}`)
+    setCategory(response?.data?.data)
+    
+    console.log(response?.data?.data)
+            }
+            catch(err){
+               console.log(err)
+            }
+        }
   
     useEffect(() => {
       handleCategories()
+      
     },[])
   return (
     <div className="MainPageEventCategories">
@@ -47,13 +71,12 @@ const EventCategories = () => {
           <section className='middleCenter'>
           {
             categories.map(( category,index) => (
-              <div className='listOfShowsBox' key={index} >
+              <div className='listOfShowsBox' key={index} onClick={() => handleCategoryById(category._id)}>
               <p>{category.categoryName}</p>
             </div>
              ))
             }
-           
-           
+              
           </section>
 
           <section className='middleBottom'>

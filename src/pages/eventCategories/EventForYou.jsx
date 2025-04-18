@@ -1,9 +1,12 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./eventCategories.css"
 import { GoArrowRight } from "react-icons/go";
 import vector from "../../assets/Vector.png"
+import axios from 'axios';
+
 
 const EventForYou = () => {
+   
   return (
     <div className='mainEventForYou'>
         <section className='firstBlock'></section>
