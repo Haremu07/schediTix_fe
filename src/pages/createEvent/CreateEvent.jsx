@@ -3,7 +3,7 @@ import "../createEvent/createEvent.css";
 import { MdLocationOn } from "react-icons/md";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 // import {  IoIosArrowBack } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Modal } from "antd";
 import "../createEvent/publish.css";
@@ -11,11 +11,12 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 // import { Modal } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast"
 // import { useNavigate } from 'react-router-dom';
 
 
 const CreateEvent = () => {
+  const {token} = useParams()
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
@@ -28,12 +29,8 @@ const CreateEvent = () => {
     }, 2000);
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setProfileImage(imageUrl);
-    }
+  const handleImageChange = (e) => {
+    setProfileImage( e.target.files[0])
   };
 
   const [input, setInput] = useState({
@@ -55,6 +52,7 @@ const CreateEvent = () => {
     ticketLimit: "",
   });
 
+
   const BASEURL = "https://scheditix.onrender.com";
 
   
@@ -63,15 +61,16 @@ const CreateEvent = () => {
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  
-  // const token = localStorage.getItem("userToken")
+
+  const[cartegoryId, setCartegoryId] = useState("")
+  // console.log(cartegoryId)
 
   const handleCategories = async () => {
     try {
-      const res = await axios.get(`${BASEURL}/api/v1/allCategories`,
-      );
-      console.log(res);
+      const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
+
       setCategories(res.data.data);
+      console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -80,16 +79,42 @@ const CreateEvent = () => {
     handleCategories();
   }, []);
 
+
+  const formData = new FormData();  
+  formData.append("eventTitle", input.eventTitle);
+  formData.append("eventDescription", input.eventDescription);
+  formData.append("eventLocation", input.eventLocation);
+  formData.append("startTime", input.startTime);
+  formData.append("eventAgenda", input.eventAgenda);
+  formData.append("endTime", input.endTime);
+  formData.append("eventRule", input.eventRule);
+  formData.append("startDate ", input.startDate);
+  formData.append("totalSeatNumber", input.totalSeatNumber);
+  formData.append("totalTableNumber", input.totalTableNumber);
+  formData.append("parkingAccess", input.packingInfo);
+  formData.append("ticketPrice", input.ticketPrice);
+  formData.append("ticketQuantity", input.ticketQuality);
+  formData.append("ticketPurchaseLimit", input.ticketLimit);
+  formData.append("eventDescription", input.image);
+  formData.append("endDate", input.endDate);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
     setInput((prev) => ({ ...prev, [name]: value }));
   };
 
-
+  
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/category${categories}`, input, );
+
+      const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,input, {
+        headers: {
+          "content-type" : "multipart/form-data",
+             Authorization: `Bearer ${token}`
+        }
+      }  );
+
       setInput(response.data.data)
       console.log(response);
       toast.success("successfull")
@@ -100,9 +125,9 @@ const CreateEvent = () => {
     } catch (error) {
       console.log(error);
       setIsLoading(true);
-      if (!eventTitle) {
-        toast.error("Please fill in all fields");
-      }
+      // if (!eventTitle) {
+      //   toast.error("Please fill in all fields");
+      // }
     }
   };
 
@@ -176,9 +201,9 @@ const CreateEvent = () => {
                 id="Upload-img-input"
                 name="image"
                 value={input.image}
-                // onChange={{handleFileChange, handleChange}}
+                onChange={handleImageChange}
                 // style={{ display: "none" }}
-                onClick={handleFileChange}
+                // onClick={handleFileChange}
               />
               <h5 className="text-btn">Upload files</h5>
             </label>
@@ -230,10 +255,11 @@ const CreateEvent = () => {
                 <select
                   placeholder="select a category that descibes for your event"
                   className="describe-category"
+                  onChange={(e)=>setCartegoryId(e.target.value)}
                 >
-                  <option value="">Select a category</option>
+                  <option value="" >Select a category</option>
                   {categories.map((e) => (
-                    <option value="">{e.categoryName}</option>
+                    <option value={e._id} >{e.categoryName}</option>
                   ))}
                 </select>
               </div>
@@ -275,12 +301,12 @@ const CreateEvent = () => {
               <div className="Four-input-wrapper">
                 <div className="input-one-holder">
                   <div className="calendar-icon">
-                    <FaCalendarAlt />
+                    {/* <FaCalendarAlt /> */}
                   </div>
                   <div className="time-input">
                     <input
                       className="input-time"
-                      type="text"
+                      type="date"
                       placeholder="select start date"
                       name="startDate"
                       value={input.startDate}
@@ -290,12 +316,12 @@ const CreateEvent = () => {
                 </div>
                 <div className="input-one-holder">
                   <div className="calendar-icon">
-                    <FaClock />
+                    {/* <FaClock /> */}
                   </div>
                   <div className="time-input">
                     <input
                       className="input-time"
-                      type="text"
+                      type="time"
                       placeholder="select start time"
                       name="startTime"
                       value={input.startTime}
@@ -305,12 +331,12 @@ const CreateEvent = () => {
                 </div>
                 <div className="input-one-holder">
                   <div className="calendar-icon">
-                    <FaCalendarAlt />
+                    {/* <FaCalendarAlt /> */}
                   </div>
                   <div className="time-input">
                     <input
                       className="input-time"
-                      type="text"
+                      type="date"
                       placeholder="select end date"
                       name="endDate"
                       value={input.endDate}
@@ -320,12 +346,12 @@ const CreateEvent = () => {
                 </div>
                 <div className="input-one-holder">
                   <div className="calendar-icon">
-                    <FaClock />
+                    {/* <FaClock /> */}
                   </div>
                   <div className="time-input">
                     <input
                       className="input-time"
-                      type="text"
+                      type="time"
                       placeholder="select end time"
                       name="endTime"
                       value={input.endTime}
@@ -423,14 +449,24 @@ const CreateEvent = () => {
                     <p>Provide parking details if available</p>
                   </div>
                   <div>
-                    <input
+                    {/* <input
                       type="text"
                       placeholder="e.g., No smoking., Free parking available for VIPsg, Dress code: Formal"
                       className="parking-input"
                       name="packingInfo"
                       value={input.packingInfo}
                       onChange={handleChange}
-                    />
+                    /> */}
+                          <select
+                           placeholder="select a category that descibes for your event"
+                          className="describe-category"
+                           onChange={(e)=>setCartegoryId(e.target.value)}
+                              >
+                           <option value="" >Select a category</option>
+                             {categories.map((e) => (
+                            <option value={e._id} >{e.categoryName}</option>
+                             ))}
+                           </select>
                   </div>
                 </div>
 
