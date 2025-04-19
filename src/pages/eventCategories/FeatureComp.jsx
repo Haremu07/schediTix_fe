@@ -1,206 +1,85 @@
-import React, { useEffect } from 'react'
-import "./eventCategories.css"
-import { MdLocationOn } from "react-icons/md";
-import { CiHeart } from "react-icons/ci";
-import CardImage1 from "../../assets/CardImage1.jpg"
-// import CardImage2 from "../../assets/CardImage2.png"
-import cardImage3 from "../../assets/CardImage3.jpg"
-import vector from "../../assets/Vector.png"
-import axios from 'axios';
+import React from 'react';
+import './eventCategories.css';
+import { MdLocationOn } from 'react-icons/md';
+import { CiHeart } from 'react-icons/ci';
+import CardImage1 from '../../assets/CardImage1.jpg';
+import CardImage3 from '../../assets/CardImage3.jpg';
+import vector from '../../assets/Vector.png';
 
+const featuredEvents = [
+  {
+    id: 1,
+    title: 'CONVERGENCE OF STARS',
+    date: { day: '21st', month: 'September', year: '2025' },
+    description: [
+      'This is the 4th edition of the biggest community',
+      'award ceremony in Africa',
+    ],
+    location: 'Eko Hotel and Suites',
+    price: 'N 20,000',
+    image: CardImage1,
+  },
+  {
+    id: 2,
+    title: 'CONVERGENCE OF STARS',
+    date: { day: '21st', month: 'September', year: '2025' },
+    description: [
+      'This is the 4th edition of the biggest community',
+      'award ceremony in Africa',
+    ],
+    location: 'Eko Hotel and Suites',
+    price: 'N 20,000',
+    image: CardImage3,
+  },
+];
 
 const FeatureComp = () => {
-
   return (
-    <div className='featureCamp'>
-        <nav className='paddingBox'>
-          <div className='combine'>
-            <p>Feature Event</p>
-            <img src={vector } alt="" className='vectorImg' />
-          </div>
-            <div className='cardMainBox'>
-            <section className='FeturesCards'>
-              <div className='imageBox'>
-                 <CiHeart className='favoriteIcon'/>
-                <img src={CardImage1} alt="" />
+    <div className="featureCamp">
+      <nav className="paddingBox">
+        <div className="combine">
+          <p>Feature Event</p>
+          <img src={vector} alt="" className="vectorImg" />
+        </div>
+
+        <div className="cardMainBox">
+          {featuredEvents.map((event) => (
+            <section key={event.id} className="FeturesCards">
+              <div className="imageBox">
+                <CiHeart className="favoriteIcon" />
+                <img src={event.image} alt={event.title} />
               </div>
-              <nav className='cardFirsBox'>
-              <p>CONVERGENE OF <br />STARS</p>
+
+              <nav className="cardFirsBox">
+                <p>{event.title}</p>
                 <div>
-                  <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
+                  <p>{event.date.day}</p>
+                  <p>{event.date.month}</p>
+                  <p>{event.date.year}</p>
                 </div>
               </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
+
+              <nav className="cardSecondBox">
+                {event.description.map((line, i) => (
+                  <p key={i}>{line}</p>
+                ))}
               </nav>
-              <nav className='address'>
-                <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
+
+              <nav className="address">
+                <MdLocationOn className="location" />
+                <p>{event.location}</p>
               </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicketP'>
-                  Buy Tickets
-                </span>
+
+              <nav className="cardThirdBox">
+                <p><b>{event.price}</b></p>
+                <span className="buyTicketP">Buy Tickets</span>
               </nav>
             </section>
-
-            {/* <section className='FeturesCards'>
-              <div className='imageBox'>
-              <CiHeart className='favoriteIcon'/>
-                <img src={CardImage2} alt="" />
-              </div>
-              <nav className='cardFirsBox'>
-                <p>CONVERGENE OF <br />STARS</p>
-                <div>
-                <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
-                </div>
-              </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
-              </nav>
-                 
-              <nav className='address'>
-              <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
-              </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
-                  Buy Tickets
-                </span>
-              </nav>
-            </section> */}
-
-            {/* <section className='FeturesCards'>
-              <div className='imageBox'>
-              <CiHeart className='favoriteIcon'/>
-                <img src={cardImage3} alt="" />
-              </div>
-              <nav className='cardFirsBox'>
-              <p>CONVERGENE OF <br />STARS</p>
-                <div>
-                <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
-                </div>
-              </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
-              </nav>
-              <nav className='address'>
-              <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
-              </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
-                  Buy Tickets
-                </span>
-              </nav>
-            </section> */}
-
-            {/* <section className='FeturesCards'>
-              <div className='imageBox'>
-              <CiHeart className='favoriteIcon'/>
-                <img src={cardImage3} alt="" />
-              </div>
-              <nav className='cardFirsBox'>
-              <p>CONVERGENE OF <br />STARS</p>
-                <div>
-                <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
-                </div>
-              </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
-              </nav>
-              <nav className='address'>
-              <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
-              </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
-                  Buy Tickets
-                </span>
-              </nav>
-            </section> */}
-
-            {/* <section className='FeturesCards'>
-              <div className='imageBox'>
-              <CiHeart className='favoriteIcon'/>
-                <img src={CardImage1} alt="" />
-              </div>
-              <nav className='cardFirsBox'>
-              <p>CONVERGENE OF <br />STARS</p>
-                <div>
-                <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
-                </div>
-              </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
-              </nav>
-              <nav className='address'>
-              <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
-              </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
-                  Buy Tickets
-                </span>
-              </nav>
-            </section> */}
-
-            
-
-            <section className='FeturesCards'>
-              <div className='imageBox'>
-              <CiHeart className='favoriteIcon'/>
-                <img src={cardImage3} alt="" />
-              </div>
-              <nav className='cardFirsBox'>
-              <p>CONVERGENE OF <br />STARS</p>
-                <div>
-                <p>21st</p>
-                  <p>September</p>
-                  <p>2025</p>
-                </div>
-              </nav>
-              <nav className='cardSecondBox'>
-                <p>This is the 4th edition of the biggest community</p>
-                <p>award ceremony in Africa</p>
-              </nav>
-              <nav className='address'>
-              <MdLocationOn  className='location'/>
-                <p>Eko Hotel and Suites</p>
-              </nav>
-              <nav className='cardThirdBox'>
-                <p><b>N 20,000</b></p>
-                <span className='buyTicket'>
-                  Buy Tickets
-                </span>
-              </nav>
-            </section>
-
-            
-            </div>
-        </nav>
+          ))}
+        </div>
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default FeatureComp
+export default FeatureComp;

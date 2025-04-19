@@ -212,3 +212,42 @@
     gap: 10px;
     flex-direction: column;
 }
+
+
+
+
+
+
+
+
+.success-bgs{
+    width: 97%;
+    height: 310px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.verified-icon-holders{
+    width: 70%;
+    height: 200px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.verified-icons{
+    color: rgb(255,87,34);
+    font-size: 180px;
+}
+.successful-text-holders{
+    width: 70%;
+    height: 50px;
+    /* background-color: aqua; */
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
