@@ -39,7 +39,7 @@ const SignUP = () => {
       if (response.status === 201){
 
         setTimeout(() => {
-            navigate("/email-verification/:token");
+            // navigate("/email-verification/:token");
             setIsLoading(false);
           }, 3000);
           if (input !== input) toast.success("omo run am bro");

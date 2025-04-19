@@ -108,7 +108,7 @@ const CreateEvent = () => {
   const handleSubmit = async () => {
     try {
 
-      const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,input, {
+      const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,formData , {
         headers: {
           "content-type" : "multipart/form-data",
              Authorization: `Bearer ${token}`
@@ -118,13 +118,20 @@ const CreateEvent = () => {
       setInput(response.data.data)
       console.log(response);
       toast.success("successfull")
-      setIsLoading(true);
-      // setDisable(true)
+      if(response == "Session timed-out: Please login to continue"){
+        navigate("/login")
+      }
+      // setIsLoading(true);
       toast.success("E clear!!!");
-      setIsLoading(false);
+      setTimeout(() => {
+        setDisable(false)
+        timeout();
+        showModals();
+        setIsLoading(false);
+      }, 3000);
     } catch (error) {
       console.log(error);
-      setIsLoading(true);
+      setIsLoading(false);
       // if (!eventTitle) {
       //   toast.error("Please fill in all fields");
       // }
@@ -460,12 +467,11 @@ const CreateEvent = () => {
                           <select
                            placeholder="select a category that descibes for your event"
                           className="describe-category"
-                           onChange={(e)=>setCartegoryId(e.target.value)}
+                           onChange={handleChange}
                               >
-                           <option value="" >Select a category</option>
-                             {categories.map((e) => (
-                            <option value={e._id} >{e.categoryName}</option>
-                             ))}
+                           <option value={input.packingInfo}>Do you want a parking space?</option>
+                            <option> yes</option>
+                            <option> No</option>
                            </select>
                   </div>
                 </div>
@@ -611,23 +617,18 @@ const CreateEvent = () => {
                               </div>
                             </div>
                           </Modal>
-                          <div className="publish-event-btn-bg">
+                          <div className="publish-event-btn-bg"
+                               onClick={() => {
+                                handleSubmit()
+                                setIsLoading(true);
+                               
+                              }}>
                             {isLoading ? (
                               <button className="publish-event-btn">Loading...</button>
                             ) : (
                               <button
                                 className="publish-event-btn"
-                                onClick={() => {
-                                  // if(response.status !== 200)
-                                  //   toast.error("e no wrk"}
-                                  handleSubmit()
-                                  setIsLoading(true);
-                                  setTimeout(() => {
-                                    timeout();
-                                    showModals();
-                                    setIsLoading(false);
-                                  }, 3000);
-                                }}
+                           
                                 // type="submit"
                               >
                                 Publish Event
@@ -661,3 +662,4 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
+
