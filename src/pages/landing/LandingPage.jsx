@@ -13,6 +13,7 @@ import img4 from "../../assets/Property 1=happy-romantic-couple-hugging-summer-f
 import vector from "../../assets/Vector.png";
 import Card3 from "./Card3";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 // import { FaGreaterThan } from "react-icons/fa6";
 // import { FaLessThan } from "react-icons/fa6";
 
@@ -20,6 +21,21 @@ const LandingPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentSlides, setCurrentSlides] = useState(0);
   const [fade, setFade] = useState(false);
+  const [trending, setTrending] = useState([])
+    const BASEURL = "https://scheditix.onrender.com"
+    const handleTrending = async() => {
+        try {
+            const response = await axios.get(`${BASEURL}/api/v1/trending-events`)
+            console.log(response.data)
+            setTrending(response.data.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        handleTrending()
+    },[])
 
   const slides = [
     {
@@ -69,6 +85,7 @@ const LandingPage = () => {
 
   const navigate = useNavigate();
   const token = localStorage.getItem(`userToken`);
+
 
   return (
     <div className="LandingPage-body">
@@ -120,7 +137,7 @@ const LandingPage = () => {
             ) : (
               <div className="LandingPageBox2Nav1SmallBox">
               <button className="Btns" onClick={() => navigate("/login")}>
-                Create an event
+                Overview
               </button>
               <button className="Btns2" onClick={() => navigate("/login")}>
                 Attend an event
@@ -176,56 +193,17 @@ const LandingPage = () => {
         </div>
         {/* <FaGreaterThan/> */}
         <div className="TrendingEventBlockScroll">
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st December, 2025"
-            content="This is the 4th edition of the biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="2,000"
+          {
+            trending.map((e, i)=>(
+              <Cards
+              key={i}
+            trending={e}
           />
+            ))
+          }
+          
          
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st September, 2025"
-            content="This is the 4th edition of te biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="20,000"
-          />
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st December, 2025"
-            content="This is the 4th edition of the biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="2,000"
-          />
-         
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st September, 2025"
-            content="This is the 4th edition of te biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="20,000"
-          />
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st September, 2025"
-            content="This is the 4th edition of te biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="20,000"
-          />
-          <Cards
-            img="https://www.astro.com/im/in/sr_cosmic_sky.jpg"
-            text1="CONVERGENCE OF STARS"
-            Date="21st September, 2025"
-            content="This is the 4th edition of te biggest community awards ceremony in Africa."
-            Location="Eko Hotel and Suites"
-            Price="20,000"
-          />
+          
         </div>
       </div>
 

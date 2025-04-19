@@ -2,6 +2,7 @@ import axios from "axios";
 import "./cards.css"
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+ 
 import { Toaster, toast } from "react-hot-toast";
 
 const Card2 = (props) => {

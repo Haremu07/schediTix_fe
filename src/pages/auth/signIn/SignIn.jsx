@@ -6,12 +6,17 @@ import orangeLogo from "../../../assets/orangelogo.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPasswords, setShowPasswords] = useState(false);
 
+  const handlePassword = () => {
+    setShowPasswords(true)
+  }
   const [isLoading, setIsLoading] = useState(false);
   // const [disable, setDisable] = useState(false);
 
@@ -24,10 +29,10 @@ const SignIn = () => {
         email,
         password,
       });
-      console.log(response)
+      console.log(response);
       if (response.status === 200) {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
-        localStorage.setItem("userToken", (response.data.token));
+        localStorage.setItem("userToken", response.data.token);
         setTimeout(() => {
           setIsLoading(false);
           navigate("/checkin-as");
@@ -42,8 +47,8 @@ const SignIn = () => {
   };
 
   useEffect(() => {
-    handleSubmit()
-  },[])
+    handleSubmit();
+  }, []);
 
   return (
     <div className="signin-container">
@@ -81,17 +86,26 @@ const SignIn = () => {
                 className="input2"
                 placeholder="enter your email"
               />
+             
             </span>
             <span className="input">
               <GiDialPadlock />
               <input
-                type="password"
+                type={showPasswords ? "text" : "password"}
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input2"
                 placeholder="enter your password"
               />
+               <div
+                type="button"
+                className="password-toggle"
+                // style={{width: "30%", height: "30%", }}
+                // onClick={() => setShowPasswords(true)}
+              >
+                {showPasswords ? <FaEyeSlash onClick={() => setShowPasswords(true)}/> : <FaEye onClick={() => setShowPasswords(false)}/>}
+              </div>
             </span>
 
             <h4
@@ -103,20 +117,15 @@ const SignIn = () => {
             {isLoading ? (
               <button type="submit" className="btn">
                 Loading...
-                
               </button>
-
             ) : (
               <button
                 type="submit"
                 className="btn"
                 onClick={() => {
-                  setIsLoading(true),
-                    setTimeout(() => {
-                    }, 3000);
+                  setIsLoading(true), setTimeout(() => {}, 3000);
                 }}
               >
-
                 Log In
               </button>
             )}
@@ -126,11 +135,10 @@ const SignIn = () => {
               className="signinBox"
               // style={{ display: "flex", flexDirection: "row" }}
             >
-              <h5>
-                Dont have an account?</h5>
-                <p className="boxed" onClick={() => navigate("/register")}>
-                  sign Up
-                </p>
+              <h5>Dont have an account?</h5>
+              <p className="boxed" onClick={() => navigate("/register")}>
+                sign Up
+              </p>
             </span>
           </form>
         </div>

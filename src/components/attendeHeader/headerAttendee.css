@@ -47,15 +47,19 @@
 
         & .headerAttendeProfileCircle{
             width: 30%;
-            height: 30%;
+            height: 100%;
             border-radius: 1000px;
-            background-color: pink;
+           
+            /* background-color: red; */
         }
 
         & .headerAttendeProfileCircleImg{
             width: 100%;
             height: 100%;
             border-radius: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             object-fit: contain;
         }
     }
