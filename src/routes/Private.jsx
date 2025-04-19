@@ -4,10 +4,11 @@ import { UserContext } from "../global/Contex";
 
 const Private = () => {
   const { userToken } = useContext(UserContext);
-  console.log(useContext(UserContext))
+  console.log(userToken)
+  const userData = JSON.parse(localStorage.getItem("userData"));
   const location = useLocation();
 
-  return userToken && userToken!=="" ? (
+  return userData?.isLoggedIn ? (
     <Outlet />
   ) : (
     <Navigate to="/login" replace state={{ from: location }} />

@@ -1,7 +1,10 @@
+import axios from "axios";
 import "./cards.css"
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 const Card2 = (props) => {
+
   return (
     <div className="Card2">
         <div className="Card2Nav">

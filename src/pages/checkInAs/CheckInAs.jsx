@@ -8,8 +8,7 @@ import toast from "react-hot-toast";
 const CheckInAs = () => {
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem(`userData`));
-  localStorage.setItem("userToken", response.data.token);
-
+  // const token = localStorage.getItem("userToken", response?.data.token);
   console.log(userData);
   return (
     <div className="CheckInAsBody">
@@ -29,12 +28,14 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() => {
-            if (userData && localStorage.getItem("userToken")) {
+
+            if (userData?.isLoggedIn            ) {
               navigate("/dashboard/overview");
             } else {
               toast.error("User not found");
               navigate("/login")
             }
+
           }}
         >
           <div className="ImgBox">
@@ -45,12 +46,15 @@ const CheckInAs = () => {
         <div
           className="CheckInAsBoxs"
           onClick={() =>{
-            if (userData && localStorage.getItem("userToken")) {
+            if (userData?.isLoggedIn) {
+              console.log(userData) 
+              // console.log(localStorage.getItem("userToken"))
               navigate("/dashboard/upcoming-event");
-            } else {
-              navigate("/dashboard/upcoming-event")
+            }  else {
               toast.error("User not found");
+              navigate("/login")
             }
+
           }}
         >
           <div className="ImgBox">

@@ -50,15 +50,17 @@
 }
 .middleCenter{
     width: 100%;
-    height: 9%;
+    height: 10%;
     display: flex;
     gap: 20px;
     /* background-color: black; */
+    overflow-x: scroll;
+    scrollbar-width: none;
 }
 .listOfShowsBox{
     width: max-content;
     height: 100%;
-    border: 1px solid #bcbbc0;
+    border:1px solid #fe5722;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -281,6 +283,7 @@
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    cursor: pointer;
 }
 
 .mainEventForYou{
@@ -494,9 +497,10 @@
     }
     .listOfShowsBox{
         width: max-content;
+        min-width: 30%;
         height: 100%;
         border: 1px solid #bcbbc0;
-        border-radius: 10px;
+        border-radius: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -687,9 +691,10 @@
     }
     .listOfShowsBox{
         width: max-content;
+        min-width: 30%;
         height: 100%;
         border: 1px solid #bcbbc0;
-        border-radius: 15px;
+        border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -867,16 +872,17 @@
     }
     .middleCenter{
         width: 100%;
-        height: 5%;
+        height: 7%;
         /* background-color: lightseagreen; */
         overflow-x: scroll;
         scrollbar-width: none;
     }
     .listOfShowsBox{
         width: max-content;
+        min-width: 30%;
         height: 100%;
         border: 1px solid #bcbbc0;
-        border-radius: 10px;
+        border-radius: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -968,22 +974,40 @@
     .textHeaders{
         font-size: 20px;
         font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .contentBox{
         width: 90%;
         height: max-content;
         display: flex;
-        background-color: aqua;
+        /* background-color: aqua; */
         justify-content: center;
     }
     .textBox{
-        width: 100%;
-        gap: 70px;
-
+        margin: 0;
+        padding: 0;
+        width: 55%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: justify; 
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-style: normal; 
     }
+
     .contentBoxText{
         font-size: 15px;
-        width: 60%;
+        width: 100%;
+        /* background-color: #1e1e1e; */
+        display: flex;
+        flex-direction: column;
+        text-align: justify; 
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-style: normal; 
     }
     .imgDiv{
         width: 40%;
@@ -1000,6 +1024,10 @@
     .ThirdBlock{
         width: 100%;
         height: max-content;
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .stayinLoopMain{
        width: 100%;
@@ -1030,7 +1058,5 @@
         height: 100%;
     }
 
-}
-
-
-
+    }
+    

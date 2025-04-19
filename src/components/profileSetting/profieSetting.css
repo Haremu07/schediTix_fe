@@ -108,6 +108,11 @@
     justify-content: center;
   }
   
+  h4{
+    width: 30%;
+    height: 10%;
+    /* background-color: red; */
+  }
 
   .update-button {
     background-color: #ff5521;

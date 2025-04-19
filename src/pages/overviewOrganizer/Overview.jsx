@@ -1,10 +1,38 @@
 import "../overviewOrganizer/overview.css";
 import { FaTicketAlt, FaUsers, FaCheck, FaPlus, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import Calender from "../../assets/calendar.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Overview() {
   const navigate = useNavigate()
+
+  const BASEURL = "https://scheditix.onrender.com"
+
+  const [overview, setOverview] = useState([])
+const token = localStorage.getItem(`userToken`)
+console.log(token)
+  // const header = {
+  //   Authorization: 
+  // }
+  const handleOverview = async () => {
+    try {
+      const res = await axios.get(`${BASEURL}/api/v1/recent/events`,{
+        headers: {
+          Authorization: `Bearer, ${token}`
+        }
+      })
+      console.log(res)
+      setOverview(res.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    handleOverview()
+  },[])
   return (
     <div className="dashboard-container">
       <div className="stats-grid">
@@ -109,15 +137,19 @@ function Overview() {
               </tr>
             </thead>
             <tbody>
+           {
+            overview.map((i) => (
               <tr>
-                <td>HC Saxio Comedy Show</td>
-                <td>170/180</td>
-                <td>150</td>
-                <td>#2,535,000</td>
-                <td>0</td>
-                <td><div className="status-container"><div className="status-dot upcoming"></div>Upcoming</div></td>
-              </tr>
-              <tr>
+              <td>{i.eventName}</td>
+              <td>{i.ticketSold}</td>
+              <td>{i.totalAttendee}</td>
+              <td>#{i.revenueGenerated}</td>
+              <td>{i.checkins}</td>
+              <td><div className="status-container"><div className="status-dot upcoming"></div>{i.status}</div></td>
+            </tr>
+            ))
+           }
+              {/* <tr>
                 <td>Aegunie City Youth Marathon</td>
                 <td>500/550</td>
                 <td>500</td>
@@ -140,7 +172,7 @@ function Overview() {
                 <td>#18,535,000</td>
                 <td>400</td>
                 <td><div className="status-container"><div className="status-dot completed"></div>Completed</div></td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

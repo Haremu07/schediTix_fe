@@ -12,10 +12,31 @@
     z-index: 0;
 }
 
-.view-evenr-header{
+.view-event-header{
     width: 100%;
-    height: 10%;
+    height: 50%;
     /* background-color: gray; */
+    display: flex;
+    justify-content: space-between;
+
+    
+    & .CheckInBox{
+        width: 45%;
+        height: 100%;
+        background-color: gray;
+        display: flex;
+        border: 1px solid gray;
+        align-items: center;
+        gap: 10px;
+    }
+
+    & .CheckInBoxInput{
+        width: 65%;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+    }
 
     & h5{
         width: 8%;
@@ -52,7 +73,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: red;
+    background-color: gray;
     border-radius: 10px;
 }
 
@@ -343,7 +364,7 @@
 .event-rules-box-first{
     width: 100%;
     height: 9%;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     /* gap: 10px; */
@@ -353,13 +374,15 @@
 }
 .event-rules-box-first-one{
     width: 100%;
-    height: 20%;
-    background-color: gray;
+    height: 10%;
+    font-size: 15px;
+    margin-top: 15px;
+    /* background-color: gray; */
 
     & .Nav1{
         width: 50%;
         height: 100%;
-        background-color: green;
+        /* background-color: green; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -426,7 +449,7 @@
     background-color: rgb(237,236,244);
 }
 .reserve-your-spot-box-one-child-first{
-    width: 28%;
+    width: 48%;
     height: 50px;
     /* background-color: #FF9E4A; */
     display: flex;
@@ -458,6 +481,7 @@
     margin-left: 20px;
    
 }
+
 .reserve-your-spot-box-two{
     width: 100%;
     height: 170px;
@@ -467,13 +491,40 @@
     align-items: center;
     background: linear-gradient(to right,#74CBC5, #D0E26A, #B0D2F6, #BE88C7,#F5D22B, #FF9E4A, #F27485,#EC9DC1 );;
 }
-.reserve-your-spot-box-two-child{
+.reserve-your-spot-box-twoTables{
+    width: 100%;
+    height: 110px;
+    /* background-color: rgb(255, 0, 255); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,#74CBC5, #D0E26A, #B0D2F6, #BE88C7,#F5D22B, #FF9E4A, #F27485,#EC9DC1 );;
+}
+.reserve-your-spot-box-two-childTables{
     width: 98%;
-    height: 158px;
+    height: 100px;
     background-color: rgb(255, 255, 255);
+
+}
+
+.SEatsTablesBtn{
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #27187e;
+    border: none;
+    color: white;
+}
+.SEatsTablesBtn2{
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #ff5722;
+    border: none;
+    color: white;
 }
 .reserve-your-spot-box-two-child-first{
-    width: 38%;
+    width: 50%;
     height: 40px;
     /* background-color: #F5D22B; */
     font-family: "Poppins", sans-serif;
@@ -491,6 +542,17 @@
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 15px;
+    margin-left: 20px;
+}
+.reserve-your-spot-box-two-child-secondTable{
+    width: 70%;
+    height: 40px;
+    /* background-color: #574c18; */
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    gap: 15px;
     margin-left: 20px;
 }
 .reserve-your-spot-box-two-child-second-one{
