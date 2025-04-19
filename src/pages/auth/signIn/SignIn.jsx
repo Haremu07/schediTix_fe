@@ -100,9 +100,11 @@ const SignIn = () => {
               />
                <div
                 type="button"
+ 
                 className="password-toggleSignIn"
                 // style={{width: "30%", height: "30%", }}
                 onClick={() => setShowPasswords(true)}
+ 
               >
                 {showPasswords ? <FaEyeSlash onClick={() => setShowPasswords(true)}/> : <FaEye onClick={() => setShowPasswords(false)}/>}
               </div>

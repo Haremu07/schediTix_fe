@@ -158,7 +158,7 @@
     outline: none;
     width: 90%;
     height: 70%;
-    position: relative;
+ 
 }
 
 .password-toggleSignIn{
@@ -170,6 +170,8 @@
     align-items: center;
     /* position: absolute; */
     /* left: 850px; */
+
+
 }
 
 
