@@ -27,6 +27,9 @@ const headers = {
     } catch (error) {
       if(error.response?.data?.message === "Unauthorized"){
         toast.error(error.response?.data?.message || "Logout failed")
+      }else if (response.data.message === "Request failed with status code 403"){
+        toast.error("Check your connection")
+      console.log(error)
       }else{
         toast.error("Check your connection")
       console.log(error)

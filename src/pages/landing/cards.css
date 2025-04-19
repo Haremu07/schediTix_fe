@@ -220,3 +220,43 @@
         width: 95%;
     }
 }
+
+.UsersBlockHeader{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    /* background-color: red; */
+
+}
+
+& .UsersBlockNav{
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+}
+
+ .UsersBlockNav1{
+    width: 80%;
+    height: 100%;
+    /* background-color: gray; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.UsersBlockNav1Img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.UsersBlockNav1Text{
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+}

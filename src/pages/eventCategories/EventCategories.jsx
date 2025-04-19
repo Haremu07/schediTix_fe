@@ -44,7 +44,7 @@ const EventCategories = () => {
             <h1 style={{color:"#271b6b"}}>Comedy Show</h1> */}
           </section>
           
-          <section className='middleCenter'>
+          <section className='middleCenter' style={{cursor: "pointer"}}>
           {
             categories.map(( category,index) => (
               <div className='listOfShowsBox' key={index} >

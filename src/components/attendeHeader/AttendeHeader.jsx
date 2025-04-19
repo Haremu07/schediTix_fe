@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 const AttendeHeader = () => {
   const navigate = useNavigate()
   const input = JSON.parse(localStorage.getItem(`userData`))
-console.log(input)
+// console.log(input)
+const token = localStorage.getItem(`userToke`)
   return (
     <div className="headerAttende">
       <div className="headerAttendeImgBox" onClick={() => navigate("/")}>
@@ -16,11 +17,15 @@ console.log(input)
         <h2 className="headerAttendeh2">Welcome, {input.fullname}</h2>
         <div className="headerAttendeProfile">
           <div className="headerAttendeProfileCircle">
-            <img
+            <h4 className="headerAttendeProfileCircleImg">
+            {input.fullname.charAt(0).toUpperCase()}
+            </h4>
+            {/* <img
               className="headerAttendeProfileCircleImg"
-              src={CircleImg}
+              // src={CircleImg}
               alt=""
-            />
+            /> */}
+
           </div>
           <p>{input.fullname}</p>
         </div>
