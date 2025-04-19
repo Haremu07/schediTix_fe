@@ -4,11 +4,16 @@ import Calender from "../../assets/calendar.png";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+
 
 function Overview() {
   const navigate = useNavigate()
 
-  const BASEURL = "https://scheditix.onrender.com"
+
+   const[overviewTop, setOverviewTop]= useState({})
+   const BASEURL = "https://scheditix.onrender.com"
+   
 
   const [overview, setOverview] = useState([])
 const token = localStorage.getItem(`userToken`)
@@ -34,22 +39,13 @@ console.log(token)
     handleOverview()
   },[])
 
-  import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { Toaster, toast } from "react-hot-toast";
-
-function Overview() {
-  const navigate = useNavigate()
-   const[overview, setOverview]= useState({})
-   const BASEURL = "https://scheditix.onrender.com"
-   const handleOverview = async () =>{
+   const handleOverviewTop = async () =>{
         try{
             const response = await axios.get(`${BASEURL}/api/v1/Overview`)
             if(response.status === 200){
-            setOverview(response?.data?.data)
+            setOverviewTop(response?.data?.data)
             console.log(response)
-            toast.success(response?.data?.message || "dashboard statistics successfully retrieved")
+            // toast.success(response?.data?.message || "dashboard statistics successfully retrieved")
         } else{
           toast.error("unable to fetch data")
         }
@@ -62,7 +58,7 @@ function Overview() {
       }
 
       useEffect(()=>{
-        handleOverview()
+        handleOverviewTop()
       },[])
   return (
     <div className="dashboard-container">
@@ -76,7 +72,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Ticket Sales</p>
             </div>
-            <div className="stats-value">{overview.totalTicketSold}</div>
+            <div className="stats-value">{overviewTop.totalTicketSold}</div>
           </div>
         </div>
 
@@ -88,7 +84,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Revenue</p>
             </div>
-            <div className="stats-value">{overview.totalRevenue}</div>
+            <div className="stats-value">{overviewTop.totalRevenue}</div>
           </div>
         </div>
 
@@ -100,7 +96,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Events Organized</p>
             </div>
-            <div className="stats-value">{overview.totalEventOrganizers}</div>
+            <div className="stats-value">{overviewTop.totalEventOrganizers}</div>
           </div>
         </div>
       </div>
@@ -181,30 +177,7 @@ function Overview() {
             </tr>
             ))
            }
-              {/* <tr>
-                <td>Aegunie City Youth Marathon</td>
-                <td>500/550</td>
-                <td>500</td>
-                <td className="free-text">FREE</td>
-                <td>0</td>
-                <td><div className="status-container"><div className="status-dot upcoming"></div>Upcoming</div></td>
-              </tr>
-              <tr>
-                <td>AJ Wine & Dine Gala</td>
-                <td>300/300</td>
-                <td>295</td>
-                <td>#1,850,000</td>
-                <td>295</td>
-                <td><div className="status-container"><div className="status-dot ongoing"></div>Ongoing</div></td>
-              </tr>
-              <tr>
-                <td>Mytastixlive Live in AJ</td>
-                <td>412/425</td>
-                <td>400</td>
-                <td>#18,535,000</td>
-                <td>400</td>
-                <td><div className="status-container"><div className="status-dot completed"></div>Completed</div></td>
-              </tr> */}
+              
             </tbody>
           </table>
         </div>
