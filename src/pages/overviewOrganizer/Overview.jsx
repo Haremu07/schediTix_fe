@@ -1,24 +1,53 @@
 import "../overviewOrganizer/overview.css";
 import { FaTicketAlt, FaUsers, FaCheck, FaPlus, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import Calender from "../../assets/calendar.png";
+import { useNavigate, useParams } from "react-router-dom";
  
- 
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+  
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+
 
 function Overview() {
   const navigate = useNavigate()
-   const[overview, setOverview]= useState({})
+
+
+   const[overviewTop, setOverviewTop]= useState({})
    const BASEURL = "https://scheditix.onrender.com"
-   const handleOverview = async () =>{
+   
+
+  const [overview, setOverview] = useState([])
+const token = localStorage.getItem(`userToken`)
+console.log(token)
+  // const header = {
+  //   Authorization: 
+  // }
+  const handleOverview = async () => {
+    try {
+      const res = await axios.get(`${BASEURL}/api/v1/recent/events`,{
+        headers: {
+          Authorization: `Bearer, ${token}`
+        }
+      })
+      console.log(res)
+      setOverview(res.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    handleOverview()
+  },[])
+
+   const handleOverviewTop = async () =>{
         try{
             const response = await axios.get(`${BASEURL}/api/v1/Overview`)
             if(response.status === 200){
-            setOverview(response?.data?.data)
+            setOverviewTop(response?.data?.data)
             console.log(response)
-            toast.success(response?.data?.message || "dashboard statistics successfully retrieved")
+            // toast.success(response?.data?.message || "dashboard statistics successfully retrieved")
         } else{
           toast.error("unable to fetch data")
         }
@@ -31,7 +60,7 @@ function Overview() {
       }
 
       useEffect(()=>{
-        handleOverview()
+        handleOverviewTop()
       },[])
   return (
     <div className="dashboard-container">
@@ -45,7 +74,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Ticket Sales</p>
             </div>
-            <div className="stats-value">{overview.totalTicketSold}</div>
+            <div className="stats-value">{overviewTop.totalTicketSold}</div>
           </div>
         </div>
 
@@ -57,7 +86,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Revenue</p>
             </div>
-            <div className="stats-value">{overview.totalRevenue}</div>
+            <div className="stats-value">{overviewTop.totalRevenue}</div>
           </div>
         </div>
 
@@ -69,7 +98,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Events Organized</p>
             </div>
-            <div className="stats-value">{overview.totalEventOrganizers}</div>
+            <div className="stats-value">{overviewTop.totalEventOrganizers}</div>
           </div>
         </div>
       </div>
@@ -150,6 +179,7 @@ function Overview() {
             </tr>
             ))
            }
+ 
               {/* <tr>
                 <td>Aegunie City Youth Marathon</td>
                 <td>500/550</td>

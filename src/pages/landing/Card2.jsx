@@ -14,10 +14,10 @@ const Card2 = (props) => {
         const response = await axios.get(`${BASEURL}/api/v1/featured-events`)
         if(response?.data?.data.length){
           setFeatureEvent(response?.data?.data)
-          toast.success(response?.data?.message || "Events loaded")
+          // toast.success(response?.data?.message || "Events loaded")
           console.log(response)
         }else{
-          toast.error("No featured events found.");
+          console.log("No featured events found.");
         }
 
 

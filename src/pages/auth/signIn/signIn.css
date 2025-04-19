@@ -158,17 +158,20 @@
     outline: none;
     width: 90%;
     height: 70%;
+ 
 }
 
-.password-toggle{
+.password-toggleSignIn{
     width: 10%;
-    height: 10%;
-    background-color: green;
+    height: 90%;
+    /* background-color: green; */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 730px;
+    /* position: absolute; */
+    /* left: 850px; */
+
+
 }
 
 
