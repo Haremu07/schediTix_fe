@@ -16,7 +16,7 @@ import toast, { Toaster } from "react-hot-toast"
 
 
 const CreateEvent = () => {
-  const {token} = useParams()
+  // const {token} = useParams()
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
@@ -28,10 +28,13 @@ const CreateEvent = () => {
       setIsModalOpens(false);
     }, 2000);
   };
-
-  const handleImageChange = (e) => {
-    setProfileImage( e.target.files[0])
-  };
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     setProfileImage(file);
+  //     setPreviewURL(URL.createObjectURL(file));
+  //   }
+  // };
 
   const [input, setInput] = useState({
     eventTitle: "",
@@ -46,11 +49,22 @@ const CreateEvent = () => {
     totalTableNumber: "",
     totalSeatNumber: "",
     image: "",
-    packingInfo: "",
+    parkingAccess: "",
     ticketPrice: "",
     ticketQuality: "",
     ticketLimit: "",
   });
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setInput({ ...input, image: file });
+    if (file) {
+      setProfileImage(URL.createObjectURL(file));
+    }
+  };
+
+  console.log(input)
+
 
 
   const BASEURL = "https://scheditix.onrender.com";
@@ -63,7 +77,7 @@ const CreateEvent = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const[cartegoryId, setCartegoryId] = useState("")
-  // console.log(cartegoryId)
+  console.log(cartegoryId)
 
   const handleCategories = async () => {
     try {
@@ -91,11 +105,11 @@ const CreateEvent = () => {
   formData.append("startDate ", input.startDate);
   formData.append("totalSeatNumber", input.totalSeatNumber);
   formData.append("totalTableNumber", input.totalTableNumber);
-  formData.append("parkingAccess", input.packingInfo);
+  formData.append("parkingAccess", input.parkingAccess);
   formData.append("ticketPrice", input.ticketPrice);
   formData.append("ticketQuantity", input.ticketQuality);
   formData.append("ticketPurchaseLimit", input.ticketLimit);
-  formData.append("eventDescription", input.image);
+  formData.append("image", input.image);
   formData.append("endDate", input.endDate);
 
   const handleChange = (e) => {
@@ -103,17 +117,18 @@ const CreateEvent = () => {
     console.log(name, value);
     setInput((prev) => ({ ...prev, [name]: value }));
   };
-
-  
+ const token = localStorage.getItem("userToken")
+   
   const handleSubmit = async () => {
     try {
 
       const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,formData , {
         headers: {
           "content-type" : "multipart/form-data",
-             Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         }
       }  );
+      console.log(headers)
 
       setInput(response.data.data)
       console.log(response);
@@ -206,8 +221,6 @@ const CreateEvent = () => {
               hidden
                 type="file"
                 id="Upload-img-input"
-                name="image"
-                value={input.image}
                 onChange={handleImageChange}
                 // style={{ display: "none" }}
                 // onClick={handleFileChange}
@@ -468,10 +481,11 @@ const CreateEvent = () => {
                            placeholder="select a category that descibes for your event"
                           className="describe-category"
                            onChange={handleChange}
+                           name="parkingAccess"
                               >
-                           <option value={input.packingInfo}>Do you want a parking space?</option>
-                            <option> yes</option>
-                            <option> No</option>
+                           <option value={input.parkingAccess}>Do you want a parking space?</option>
+                           <option value="yes">Yes</option>
+                           <option value="no">No</option>
                            </select>
                   </div>
                 </div>
