@@ -4,19 +4,21 @@ import EventForYou from './EventForYou'
 import StayinLoop from './StayinLoop'
 import FeatureComp from './FeatureComp'
 import { useNavigate } from 'react-router-dom'
-import Event1 from "../../assets/Event1.jpg"
-import Event2 from "../../assets/Event2.jpg"
-import Event3 from "../../assets/Event3.jpg"
-import Event4 from "../../assets/Event 4.jpg"
-import Event5 from "../../assets/Event5.jpg"
+// import Event1 from "../../assets/Event1.jpg"
+// import Event2 from "../../assets/Event2.jpg"
+// import Event3 from "../../assets/Event3.jpg"
+// import Event4 from "../../assets/Event 4.jpg"
+// import Event5 from "../../assets/Event5.jpg"
 import axios from 'axios'
 
 
 
 
-const EventCategories = () => {
+const EventCategories = () => 
+  {
   const navigate = useNavigate()
-
+  const[activeCategoyId, setActiveCategoryId] = useState(null)
+  const [events, setEvents] = useState([])
   const [categories, setCategories] = useState([])
     const BASEURL = "https://scheditix.onrender.com";
   
@@ -29,10 +31,28 @@ const EventCategories = () => {
         console.log(error)
       }
     }
-  
+    
     useEffect(() => {
       handleCategories()
     },[])
+   
+    // useEffect(() => {
+    //   const delay = 10000; 
+  
+    //   const timeoutId = setTimeout(() => {
+    //     const comedyCategory = categories?.find(cat => cat.categoryName === "Comedy");
+    //     setEvents(comedyCategory?.events || []);
+    //   }, delay);
+
+    //   return () => clearTimeout(timeoutId);
+    // }, []); 
+
+    const handleCategoryClick = (categoryId) => {
+      const getEvents = categories.find(cat => cat.categoryName === categoryId);
+      console.log(getEvents)
+      setEvents(getEvents.events)
+      setActiveCategoryId(categoryId)
+    };
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -46,8 +66,8 @@ const EventCategories = () => {
           
           <section className='middleCenter' style={{cursor: "pointer"}}>
           {
-            categories.map(( category,index) => (
-              <div className='listOfShowsBox' key={index} >
+            categories?.map(( category,index) => (
+              <div className='listOfShowsBox' key={index} onClick={() => handleCategoryClick(category.categoryName)} style={{backgroundColor: activeCategoyId === category._id ? "rgba(39, 24, 126, 1)" : "white", color: activeCategoyId === category._id ? "white" : "rgba(50, 50, 50, 1)", border:activeCategoyId === category._id && "none"}} >
               <p>{category.categoryName}</p>
             </div>
              ))
@@ -57,74 +77,25 @@ const EventCategories = () => {
           </section>
 
           <section className='middleBottom'>
-            <article className='middleBottomCards'>
-                 <img src={Event1} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p 
-                    onClick={()=> navigate("/event-details")}
-                      >See More</p>
+            {
+              events?.length == 0 ? <div className='noEvent'>There is no event yet</div> :
+              events?.map((item, index) => (
+                <article className='middleBottomCards' key={index}>
+                  <img src={item.image.imageUrl} alt="" />
+                  <div className='radientBlackBox'>
+                    <nav className='middleBox'>
+                      <p>{item.eventTitle}</p>
+                      <p className='Categorylocation'>{item.eventLocation}</p >
+                      <div className='seeMoreButton'>
+                        <p 
+                        onClick={()=> navigate(`/event-details/${item._id}`)}
+                          >See More</p>
+                      </div>
+                    </nav>
                   </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event2} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                <p>MyKealWise Comedy Live</p>
-                <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event3} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event4} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event5} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                <p>MyKealWise Comedy Live</p>
-                <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p>See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
+                </article>
+              ))
+            }
           </section>
         </nav>
       </div>

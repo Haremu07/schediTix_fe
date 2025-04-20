@@ -2,6 +2,8 @@ import "../overviewOrganizer/overview.css";
 import { FaTicketAlt, FaUsers, FaCheck, FaPlus, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import Calender from "../../assets/calendar.png";
 import { useNavigate, useParams } from "react-router-dom";
+ 
+  
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
@@ -177,7 +179,31 @@ console.log(token)
             </tr>
             ))
            }
-              
+ 
+              {/* <tr>
+                <td>Aegunie City Youth Marathon</td>
+                <td>500/550</td>
+                <td>500</td>
+                <td className="free-text">FREE</td>
+                <td>0</td>
+                <td><div className="status-container"><div className="status-dot upcoming"></div>Upcoming</div></td>
+              </tr>
+              <tr>
+                <td>AJ Wine & Dine Gala</td>
+                <td>300/300</td>
+                <td>295</td>
+                <td>#1,850,000</td>
+                <td>295</td>
+                <td><div className="status-container"><div className="status-dot ongoing"></div>Ongoing</div></td>
+              </tr>
+              <tr>
+                <td>Mytastixlive Live in AJ</td>
+                <td>412/425</td>
+                <td>400</td>
+                <td>#18,535,000</td>
+                <td>400</td>
+                <td><div className="status-container"><div className="status-dot completed"></div>Completed</div></td>
+              </tr> */}
             </tbody>
           </table>
         </div>

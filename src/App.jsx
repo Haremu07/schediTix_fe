@@ -64,7 +64,7 @@ const App = () => {
           element: <ExploreCategories/>
         },
         {
-          path: "event-details" ,
+          path: "event-details/:eventId" ,
           errorElement: <ErrorPage/>,
           element: <EventDetails/>
         },

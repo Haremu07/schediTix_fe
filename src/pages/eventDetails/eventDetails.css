@@ -11,24 +11,28 @@
 }
 .eventdetails-wrapper{
     width: 100%;
-    height:max-content;
-    background-color: rgb(255, 255, 255);
+    height: 100%;
+    /* background-color: rgb(255, 255, 255); */
+    background-color: green;
     display: flex;
     flex-direction: column;
     /* gap: 20px; */
 }
-.eventdetails-sections{
-    width: 32%;
-    height: 40px;
-    /* background-color: green; */
+ 
 
-    margin-top: 140px;
-
-    margin-left: 45px;
+.eventdetailsHeader{
+    width: 40%;
+    height: 8%;
+    /* background-color: red; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    margin-top: 90px;
 }
+
+
 .eventdetails-sections-one{
     width: 90px;
     height: 40px;
@@ -76,9 +80,9 @@
     font-size: 16px;
 }
 .eventdetails-sections-five{
-    width: 135px;
+    width: 50%;
     height: 40px;
-    /* background-color: #BE88C7; */
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,13 +106,14 @@
     border-radius: 35px;
     background-image: linear-gradient(to right, rgb(177,65,68),rgb(92,39,104), rgb(39,24,126));
     display: flex;
+    gap: 10px;
     justify-content: center;
     align-items: center;
 }
 .eventdetails-billboard-image{
     width: 46%;
     height: 250px;
-    background-color: rgb(248,199,1);
+    background-color: gray;
     border-radius: 35px;
 
     background-image: url('C:\Users\user\Desktop\Scheditix-fe\schediTix_fe\src\assets\Frame 83@2x.png');
@@ -117,7 +122,11 @@
     background-size: contain;
     background-position: center;
     
-
+    & .EventImg{
+        width: 100%;
+        height: 100%;
+        border-radius: 35px;
+    }
 }
 .eventdetails-billboard-text{
     width: 47%;
@@ -127,6 +136,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
     padding-left: 40px;
 
 }
@@ -134,6 +144,9 @@
     width:100%;
     height: 50px;
     /* background-color: yellow; */
+    text-align: center;
+    display: flex;
+    align-items: center;
      
 }
 .text-title{
@@ -152,6 +165,7 @@
     height: 60px;
     /* background-color: rgb(81, 255, 0); */
     display: flex;
+    align-items: center;
    text-align: center;
     /* gap: 30px; */
     
@@ -175,7 +189,7 @@
     height: 60px;
     /* background-color: rgb(76, 0, 255); */
     display: flex;
-    
+    align-items: center;
 
 }
 .text-time{
@@ -196,7 +210,7 @@
     height: 75px;
     /* background-color: rgb(255, 0, 149); */
     display: flex;
-    
+    align-items: center;
 }
 .text-address{
     width: 70%;

@@ -14,15 +14,17 @@ const headers = {
 }
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/logout`, {},{headers} )
-      if (response.data.message === "authorized")
+      const response = await axios.post(`${BASEURL}/api/v1/logout/`, {},{headers} )
+      if (response.data.message === "authorized"){
+
         toast.success("Logged out successfull")
-      localStorage.removeItem("userToken")
-      localStorage.removeItem("userData")
-      
-      setTimeout(() => {
-        navigate("/")
-      },3000)
+        localStorage.removeItem("userToken")
+        localStorage.removeItem("userData")
+        
+        setTimeout(() => {
+          navigate("/")
+        },3000)
+      }else if(response.data.message === "Session timed-out: Please login to continue")
       console.log(response)
     } catch (error) {
       if(error.response?.data?.message === "Unauthorized"){
