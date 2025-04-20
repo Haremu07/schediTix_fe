@@ -5,6 +5,7 @@ import { TbClock } from "react-icons/tb";
 import { MdLocationOn, MdFavoriteBorder } from "react-icons/md";
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { IoChevronBack } from "react-icons/io5";
 
 const EventDetails = () => {
   const navigate = useNavigate();
@@ -33,19 +34,27 @@ const EventDetails = () => {
       
 
       <div className='eventdetails-wrapper'>
-        <div className='eventdetails-sections'>
-          <div className='eventdetails-sections-one'><h4>Shows</h4></div>
-          <div className='eventdetails-sections-two'><h3>-</h3></div>
-          <div className='eventdetails-sections-three'><h4>Comedy</h4></div>
-          <div className='eventdetails-sections-four'><h3>-</h3></div>
-          <div className='eventdetails-sections-five'><h4>Mykealwise live</h4></div>
+        <div className='eventdetailsHeader'>
+          <IoChevronBack size={30} style={{cursor: "pointer"}} onClick={() => {
+          navigate("/event-categories")
+        }}/>
+        <h3 style={{cursor: "pointer"}} onClick={() => {
+          navigate("/event-categories")
+        }}>Shows</h3>
+        <p>-</p>
+        <h3 style={{color: "purple"}}>{event.eventCategory?.categoryName}</h3>
+        <p>-</p>
+        <h3 style={{color: "purple"}}>{event.eventTitle}</h3>
+ 
         </div>
         <div className='eventdetails-billboard-bg'>
           <div className='eventdetails-billboard-wrapper'>
-            <div className='eventdetails-billboard-image'></div>
+            <div className='eventdetails-billboard-image'>
+              <img className='EventImg' src={event.image?.imageUrl} alt="" />
+            </div>
             <div className='eventdetails-billboard-text'>
               <div className='eventdetails-billboard-text-one'>
-                <h1 className='text-title'>{event.eventTitle }</h1>
+                <h2 >{event.eventTitle }</h2>
               </div>
               <div className='eventdetails-billboard-text-two'>
                 <p className='icon'><CiCalendarDate /></p>
@@ -53,7 +62,7 @@ const EventDetails = () => {
               </div>
               <div className='eventdetails-billboard-text-three'>
                 <p className='icon'><TbClock /></p>
-                <h3 className='text-time'>{event.startTime}</h3>
+                <p className='text-time'>{event.startTime}</p>
               </div>
               <div className='eventdetails-billboard-text-four'>
                 <p className='icon'><MdLocationOn /></p>
@@ -83,8 +92,8 @@ const EventDetails = () => {
             <div className='reserve-your-spot'>
               <div className='reserve-your-spot-title'>
                     <div className='reserve-your-spot-title-one' 
-                     onClick={() => navigate("/login")}
-                     ><h4>Reserve your spot</h4></div>
+                     onClick={() => navigate(" ")}
+                     ><p>Reserve your spot</p></div>
                     <span className='favourite-icon'><MdFavoriteBorder /></span>
               </div>
               <div className='reserve-your-spot-box-one'>

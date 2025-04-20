@@ -160,7 +160,7 @@ const SignUP = () => {
               </div>
             </span>
             {isloading ? (
-              <button type="submit" className="btnUp">
+              <button type="submit" className="btnUp" style={{cursor: "not-allowed"}}  >
                 Loading....
               </button>
             ) : (

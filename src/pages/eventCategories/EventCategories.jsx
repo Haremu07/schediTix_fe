@@ -4,11 +4,11 @@ import EventForYou from './EventForYou'
 import StayinLoop from './StayinLoop'
 import FeatureComp from './FeatureComp'
 import { useNavigate } from 'react-router-dom'
-import Event1 from "../../assets/Event1.jpg"
-import Event2 from "../../assets/Event2.jpg"
-import Event3 from "../../assets/Event3.jpg"
-import Event4 from "../../assets/Event 4.jpg"
-import Event5 from "../../assets/Event5.jpg"
+// import Event1 from "../../assets/Event1.jpg"
+// import Event2 from "../../assets/Event2.jpg"
+// import Event3 from "../../assets/Event3.jpg"
+// import Event4 from "../../assets/Event 4.jpg"
+// import Event5 from "../../assets/Event5.jpg"
 import axios from 'axios'
 
 
@@ -81,7 +81,7 @@ const EventCategories = () =>
               events?.length == 0 ? <div className='noEvent'>There is no event yet</div> :
               events?.map((item, index) => (
                 <article className='middleBottomCards' key={index}>
-                  <img src={item.eventImage} alt="" />
+                  <img src={item.image.imageUrl} alt="" />
                   <div className='radientBlackBox'>
                     <nav className='middleBox'>
                       <p>{item.eventTitle}</p>
