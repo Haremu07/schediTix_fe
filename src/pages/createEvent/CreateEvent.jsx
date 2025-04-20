@@ -11,9 +11,8 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 // import { Modal } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
-import toast, { Toaster } from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast";
 // import { useNavigate } from 'react-router-dom';
-
 
 const CreateEvent = () => {
   // const {token} = useParams()
@@ -48,7 +47,7 @@ const CreateEvent = () => {
     eventLocation: "",
     totalTableNumber: "",
     totalSeatNumber: "",
-    image: "",
+    image: [],
     parkingAccess: "",
     ticketPrice: "",
     ticketQuality: "",
@@ -57,44 +56,40 @@ const CreateEvent = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setInput({ ...input, image: file });
+    setInput({ ...input, image: [file] });
     if (file) {
       setProfileImage(URL.createObjectURL(file));
     }
   };
 
-  console.log(input)
-
-
+  console.log(input);
 
   const BASEURL = "https://scheditix.onrender.com";
-
-  
 
   const [disable, setDisable] = useState(false);
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const[cartegoryId, setCartegoryId] = useState("")
-  console.log(cartegoryId)
+  const [cartegoryId, setCartegoryId] = useState("");
+  console.log(cartegoryId);
 
   const handleCategories = async () => {
     try {
       const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
-
       setCategories(res.data.data);
+      // toast.success(res?.data.data)
       console.log(res);
     } catch (error) {
       console.log(error);
+      toast.error(error.res?.data.data)
     }
   };
   useEffect(() => {
     handleCategories();
   }, []);
 
-
-  const formData = new FormData();  
+  const formData = new FormData();
   formData.append("eventTitle", input.eventTitle);
   formData.append("eventDescription", input.eventDescription);
   formData.append("eventLocation", input.eventLocation);
@@ -117,29 +112,31 @@ const CreateEvent = () => {
     console.log(name, value);
     setInput((prev) => ({ ...prev, [name]: value }));
   };
- const token = localStorage.getItem("userToken")
-   
+  const token = localStorage.getItem("userToken");
+
   const handleSubmit = async () => {
     try {
-
-      const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,formData , {
-        headers: {
-          "content-type" : "multipart/form-data",
-          Authorization: `Bearer ${token}`,
+      const response = await axios.post(
+        `${BASEURL}/api/v1/create-event/${cartegoryId}`,
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: `Bearer ${token}`
+          },
         }
-      }  );
-      console.log(headers)
-
-      setInput(response.data.data)
+      );
+      console.log(headers);
+      setInput(response.data.data);
       console.log(response);
-      toast.success("successfull")
-      if(response == "Session timed-out: Please login to continue"){
-        navigate("/login")
+      toast.success(response.data.data.messagse);
+      if (response == "Session timed-out: Please login to continue") {
+        navigate("/login");
       }
       // setIsLoading(true);
       toast.success("E clear!!!");
       setTimeout(() => {
-        setDisable(false)
+        setDisable(false);
         timeout();
         showModals();
         setIsLoading(false);
@@ -214,16 +211,13 @@ const CreateEvent = () => {
                 )}
               </label>
             </div>
-            <label 
-                htmlFor="Upload-img-input"
-            className="upload-img-btn">
+            <label htmlFor="Upload-img-input" className="upload-img-btn">
               <input
-              hidden
+                hidden
                 type="file"
                 id="Upload-img-input"
                 onChange={handleImageChange}
-                // style={{ display: "none" }}
-                // onClick={handleFileChange}
+                value={input.image}
               />
               <h5 className="text-btn">Upload files</h5>
             </label>
@@ -275,11 +269,11 @@ const CreateEvent = () => {
                 <select
                   placeholder="select a category that descibes for your event"
                   className="describe-category"
-                  onChange={(e)=>setCartegoryId(e.target.value)}
+                  onChange={(e) => setCartegoryId(e.target.value)}
                 >
-                  <option value="" >Select a category</option>
+                  <option value="">Select a category</option>
                   {categories.map((e) => (
-                    <option value={e._id} >{e.categoryName}</option>
+                    <option value={e._id}>{e.categoryName}</option>
                   ))}
                 </select>
               </div>
@@ -289,7 +283,7 @@ const CreateEvent = () => {
                   <h4>Add event location</h4>
                 </div>
                 <div className="catchy">
-                  <p>Enter the venue or online link</p>
+                  <p>Enter the venue location</p>
                 </div>
                 <div className="double-inputs-location">
                   <div className="location-icons">
@@ -297,7 +291,7 @@ const CreateEvent = () => {
                   </div>
                   <input
                     type="text"
-                    placeholder="mghtysolomon@gmail.com"
+                    placeholder="Lagos,Abuja......"
                     className="location-input"
                     name="eventLocation"
                     value={input.eventLocation}
@@ -318,11 +312,10 @@ const CreateEvent = () => {
                   <p>select event end date & time</p>
                 </div>
               </div>
+              {/* <FaCalendarAlt /> */}
               <div className="Four-input-wrapper">
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaCalendarAlt /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -334,10 +327,9 @@ const CreateEvent = () => {
                     />
                   </div>
                 </div>
+                {/* <FaClock /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaClock /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -349,10 +341,9 @@ const CreateEvent = () => {
                     />
                   </div>
                 </div>
+                {/* <FaCalendarAlt /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaCalendarAlt /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -364,10 +355,9 @@ const CreateEvent = () => {
                     />
                   </div>
                 </div>
+                {/* <FaClock /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaClock /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -432,7 +422,7 @@ const CreateEvent = () => {
                   </div>
                   <div>
                     <input
-                      type="text"
+                      type="number"
                       placeholder="e.g.,50"
                       className="finally-input"
                       name="totalTableNumber"
@@ -450,7 +440,7 @@ const CreateEvent = () => {
                   </div>
                   <div>
                     <input
-                      type="text"
+                      type="numb.,er"
                       placeholder="e.g.,300"
                       className="finally-input"
                       name="totalSeatNumber"
@@ -477,16 +467,18 @@ const CreateEvent = () => {
                       value={input.packingInfo}
                       onChange={handleChange}
                     /> */}
-                          <select
-                           placeholder="select a category that descibes for your event"
-                          className="describe-category"
-                           onChange={handleChange}
-                           name="parkingAccess"
-                              >
-                           <option value={input.parkingAccess}>Do you want a parking space?</option>
-                           <option value="yes">Yes</option>
-                           <option value="no">No</option>
-                           </select>
+                    <select
+                      placeholder="select a category that descibes for your event"
+                      className="describe-category"
+                      onChange={handleChange}
+                      name="parkingAccess"
+                    >
+                      <option value={input.parkingAccess}>
+                        Do you want a parking space?
+                      </option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
                   </div>
                 </div>
 
@@ -605,11 +597,13 @@ const CreateEvent = () => {
                             </div>
                             <div className="quick-reminder-text-wrapper">
                               <h4 className="quick-reminder-text-wrapper-text">
-                                You're only allowed to make changes to the event
-                                date 📆, time ⏱, and location 📍 . <br /> All
-                                other event details are locked in once the event
-                                goes live. Make sure everything else looks good
-                                before publishing !
+                                <p>
+                                  You're only allowed to make changes to the
+                                  event date 📆, time ⏱, and location 📍 .{" "}
+                                  <br /> All other event details are locked in
+                                  once the event goes live. Make sure everything
+                                  else looks good before publishing !
+                                </p>
                               </h4>
                             </div>
                           </div>
@@ -631,18 +625,21 @@ const CreateEvent = () => {
                               </div>
                             </div>
                           </Modal>
-                          <div className="publish-event-btn-bg"
-                               onClick={() => {
-                                handleSubmit()
-                                setIsLoading(true);
-                               
-                              }}>
+                          <div
+                            className="publish-event-btn-bg"
+                            onClick={() => {
+                              handleSubmit();
+                              setIsLoading(true);
+                            }}
+                          >
                             {isLoading ? (
-                              <button className="publish-event-btn">Loading...</button>
+                              <button className="publish-event-btn">
+                                Loading...
+                              </button>
                             ) : (
                               <button
                                 className="publish-event-btn"
-                           
+
                                 // type="submit"
                               >
                                 Publish Event
@@ -676,4 +673,3 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
-

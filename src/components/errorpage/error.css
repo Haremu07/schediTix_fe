@@ -1,7 +1,7 @@
 .ErrorPageBody{
     width: 100%;
     height: 100vh;
-    background-color: #ff440071;
+    background-color: #ff4500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 h1{
