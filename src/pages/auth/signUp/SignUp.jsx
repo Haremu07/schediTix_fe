@@ -9,6 +9,7 @@ import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import '../emailVerification/Brief'
 
 const SignUP = () => {
   const [input, setInput] = useState({
@@ -51,6 +52,7 @@ const SignUP = () => {
         setTimeout(() => {
           toast.success(response.data.message);
           setIsLoading(false);
+          navigate(<Brief />)
         }, 5000);
         if (input !== input) toast.success("omo run am bro");
         // const loadingState = toast.loading("Do the calms e don work....");

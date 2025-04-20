@@ -1,11 +1,12 @@
 import "./emailVerification.css"
 import { useNavigate, useParams } from "react-router";
-import Logo from "../../../assets/orangelogo.png"
+// import Logo from "../../../assets/orangelogo.png"
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { Modal } from 'antd';
 import { useEffect, useState } from "react";
 import { VscVerifiedFilled } from "react-icons/vsc";
+import Verify from "./Verify";
 
 
 const EmailVerification = () => {
@@ -25,16 +26,18 @@ const EmailVerification = () => {
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
       if (response.status === 200) {
-        toast.success("Email verified successfully");
-        showModal(); 
+        toast.success("Email verified successfully"); 
         setTimeout(() => {
+          showModal();
           navigate("/login"); 
         }, 3000);
+        
       }
     } catch (error) {
       toast.error(error?.response?.data?.message || "Invalid or expired token.");
     } finally {
       setIsVerifying(false); 
+      
     }
   };
 
@@ -57,18 +60,11 @@ const EmailVerification = () => {
                </div>
                </div>
       </div>
-      <div className="email-verification-body">
-        <div className="email-verification-form2">
-          <div className="email-verification-form-Header">
-          <img className="Logo" src={Logo} alt="" onClick={() => navigate("/")} />
-          <h2>Welcome to ShediTix!</h2>
-          </div>
+      
           <div className="form">
             {!token ? (
               <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
-            ) : isVerifying ? (
-              <p className="Passage2">We've have sent a verifiction link to your email. It's super quick, go click the link and you're ready to go</p> 
-            ) : (
+            ) : isVerifying ?(<Verify/>) : (
               
               <Modal
                 open={isModalOpens}
@@ -85,10 +81,11 @@ const EmailVerification = () => {
                   </div>
                 </div>
               </Modal>
-            )}
+            )  
+              
+            }
           </div>
-        </div>
-      </div>
+       
       <div className="Nav2">
       <div className="Nav-Box">
         <div className="navBoxs1"></div>

@@ -169,3 +169,94 @@
     font-weight: bold;
     font-size: 14px;
 }
+
+
+
+
+.email-verification-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Nav{
+    width: 40%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: flex-end;
+    padding-left: 40px;
+}
+
+
+.email-verification-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-verification-form{
+    width: 70px;
+    height: 200px;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(66, 66, 66);
+}
+
+.Logo{
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.email-verification-form{
+    width: 556.56px;
+    height: 450px;
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.email-verification-form-Header{
+    width: 100%;
+    height: 20%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    font-weight: 400;
+}
+
+.form{
+    height: max-content;
+    display: flex;
+    gap: 21px;
+    /* background-color: green; */
+    flex-direction: column;
+    box-shadow: none;
+    border-radius: none;
+    }
