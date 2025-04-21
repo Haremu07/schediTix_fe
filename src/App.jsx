@@ -109,7 +109,7 @@ const App = () => {
             element: <TicketPurchaced/>
           }, 
             {
-              path:"dashboard/upcoming-event-details",
+              path:"dashboard/upcoming-event-details/:id",
               errorElement: <ErrorPage/>,
               element: <UpcomingEventDetails/>
             },
