@@ -19,16 +19,8 @@ const CreateEvent = () => {
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
-  const showModals = () => {
-    setIsModalOpens(true);
-  };
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     setProfileImage(file);
-  //     setPreviewURL(URL.createObjectURL(file));
-  //   }
-  // };
+
+
 
   const [input, setInput] = useState({
     eventTitle: "",

@@ -6,7 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Modal } from 'antd';
 import { useEffect, useState } from "react";
 import { VscVerifiedFilled } from "react-icons/vsc";
-import Verify from "./Verify";
+
 
 
 const EmailVerification = () => {
@@ -30,7 +30,7 @@ const EmailVerification = () => {
         setTimeout(() => {
           showModal();
           navigate("/login"); 
-        }, 3000);
+        }, 5000);
         
       }
     } catch (error) {
@@ -64,7 +64,7 @@ const EmailVerification = () => {
           <div className="form">
             {!token ? (
               <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
-            ) : isVerifying ?(<Verify/>) : (
+            ) : isVerifying && (
               
               <Modal
                 open={isModalOpens}
