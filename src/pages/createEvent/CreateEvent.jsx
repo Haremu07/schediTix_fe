@@ -22,11 +22,6 @@ const CreateEvent = () => {
   const showModals = () => {
     setIsModalOpens(true);
   };
-  const timeout = () => {
-    setTimeout(() => {
-      setIsModalOpens(false);
-    }, 2000);
-  };
   // const handleImageChange = (e) => {
   //   const file = e.target.files[0];
   //   if (file) {
@@ -128,27 +123,20 @@ const CreateEvent = () => {
           },
         }
       );
-      console.log(headers);
-      setInput(response.data.data);
       console.log(response);
-      toast.success(response.data.data.messagse);
-      if (response == "Session timed-out: Please login to continue") {
-        navigate("/login");
-      }
-      // setIsLoading(true);
-      toast.success("E clear!!!");
+      setInput(response.data.data);
+      toast.success(response?.data?.data?.messagse);
+      toast.success("Event Created Successfully");
       setTimeout(() => {
         setDisable(false);
-        timeout();
-        showModals();
+        navigate("/dashboard/manage-event"); 
         setIsLoading(false);
-      }, 3000);
+      }, 8000);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
-      // if (!eventTitle) {
-      //   toast.error("Please fill in all fields");
-      // }
+      setDisable(false);
+      toast.error(error.response?.data.message);
     }
   };
 
@@ -326,6 +314,7 @@ const CreateEvent = () => {
                       name="startDate"
                       value={input.startDate}
                       onChange={handleChange}
+                      min={new Date().toISOString().split("T")[0]}
                     />
                   </div>
                 </div>
@@ -354,6 +343,7 @@ const CreateEvent = () => {
                       name="endDate"
                       value={input.endDate}
                       onChange={handleChange}
+                      min={new Date().toISOString().split("T")[0]}
                     />
                   </div>
                 </div>
