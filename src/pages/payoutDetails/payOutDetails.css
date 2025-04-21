@@ -495,3 +495,87 @@ table {
     text-align: center;
     font-size: 18px;
 }  
+@media (max-width: 768px) {
+    .payout-bg {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+    }
+  
+    .payout-model-holder {
+      flex-direction: column;
+      height: auto;
+      gap: 30px;
+    }
+  
+    .payout-model-holder-one,
+    .payout-model-holder-two {
+      width: 100%;
+      height: auto;
+    }
+  
+    .bank-details,
+    .paypal-details {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .request-for-payment-btn,
+    .request-for-payment-btns {
+      width: 100%;
+    }
+  
+    .payout-history-input-wrapper {
+      flex-direction: column;
+      gap: 12px;
+      padding: 10px 15px;
+    }
+  
+    .payout-history-input-holder,
+    .payout-history-filter-holder {
+      width: 100%;
+    }
+  
+    .pagination-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .verified-icon {
+      font-size: 180px;
+    }
+  
+    .successful-text-holder {
+      font-size: 17px;
+    }
+  
+    .Access-bank-input,
+    .amount-input,
+    .bank-account-input,
+    .bank-account-inputs {
+      width: 100%;
+      max-width: none;
+    }
+  
+    .holder-bank-detailss-child {
+      padding: 10px 15px;
+      gap: 12px;
+    }
+  
+    .radio-container {
+      width: auto;
+    }
+  
+    .num {
+      width: 38px;
+      height: 38px;
+      font-size: 14px;
+    }
+  
+    .div .divBtn {
+      width: 95%;
+      height: 45%;
+    }
+  }
+  
