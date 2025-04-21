@@ -250,4 +250,67 @@
     font-family: "Poppins", sans-serif;
     text-align: center;
     font-size: 18px;
-}
+}@media screen and (max-width: 768px) {
+    .email-verification-container {
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px;
+    }
+  
+    .Nav,
+    .Nav2 {
+      width: 100%;
+      justify-content: center;
+      padding: 0;
+      height: auto;
+    }
+  
+    .Nav-Box {
+      width: 60%;
+      height: 150px;
+      margin: 0 auto;
+    }
+  
+    .email-verification-form {
+      width: 90%;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .inputBox {
+      width: 100%;
+      margin-left: 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .inputBox .inpute {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 10px;
+    }
+  
+    .Passage,
+    .Passage2,
+    .successful-text-holders {
+      font-size: 16px;
+    }
+  
+    .verified-icons {
+      font-size: 120px;
+    }
+  
+    .success-bgs {
+      height: auto;
+      padding: 20px 10px;
+    }
+  
+    .verified-icon-holders {
+      height: 120px;
+    }
+  
+    .GoBack {
+      justify-content: center;
+    }
+  }
+  
