@@ -45,7 +45,7 @@ const EventCategories = () => {
 
   useEffect(() => {
     handleCategories();
-    fetchAllEvents(); // Fetch all events on initial render
+    fetchAllEvents(); 
   }, []);
 
   return (
