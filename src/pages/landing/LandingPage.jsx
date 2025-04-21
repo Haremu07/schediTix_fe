@@ -244,7 +244,7 @@ const LandingPage = () => {
               image={img4}
             />
           </div>
-          <button className="FeaturedEventBlockedBtn">View all</button>
+          {/* <button className="FeaturedEventBlockedBtn">View all</button> */}
         </div>
       </div>
 
