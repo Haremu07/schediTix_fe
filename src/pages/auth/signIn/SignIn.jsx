@@ -12,10 +12,10 @@ const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPasswords, setShowPasswords] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handlePassword = () => {
-    setShowPasswords(true)
+    setShowPassword(!showPassword)
   }
   const [isLoading, setIsLoading] = useState(false);
   // const [disable, setDisable] = useState(false);
@@ -34,7 +34,7 @@ const SignIn = () => {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
         localStorage.setItem("userToken", response.data.token);
         setTimeout(() => {
-          setIsLoading(false);
+          setIsLoading(true);
           navigate("/checkin-as");
         }, 3000);
       }
@@ -45,6 +45,7 @@ const SignIn = () => {
       setIsLoading(false);
     }
   };
+  
 
   // useEffect(() => {
   //   handleSubmit();
@@ -91,7 +92,7 @@ const SignIn = () => {
             <span className="input">
               <GiDialPadlock />
               <input
-                type={showPasswords ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -106,7 +107,7 @@ const SignIn = () => {
                 onClick={handlePassword}
  
               >
-                {showPasswords ? <FaEyeSlash onClick={() => setShowPasswords(true)}/> : <FaEye onClick={() => setShowPasswords(false)}/>}
+                {showPassword ? <FaEyeSlash onClick={() => setShowPassword(true)}/> : <FaEye onClick={() => setShowPassword(false)}/>}
               </div>
             </span>
 
@@ -126,7 +127,7 @@ const SignIn = () => {
                 // onClick={() => {
                 //   setIsLoading(true), setTimeout(() => {}, 3000);
                 // }}
-                disabled={isLoading}
+                // disabled={isLoading}
               >
                 {
                   isLoading ? "Loading" : "Login"

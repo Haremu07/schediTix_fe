@@ -34,6 +34,8 @@ const featuredEvents = [
 ];
 
 const FeatureComp = () => {
+
+ 
   return (
     <div className="featureCamp">
       <nav className="paddingBox">

@@ -5,9 +5,11 @@ import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsTicketPerforatedFill } from "react-icons/bs";
 import { RiPencilFill } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import AddedPopUp from "./AddedPopUp";
+import axios from "axios";
+import { Toaster, toast } from "react-hot-toast";
 
 const PurchaseDetails = () => {
     const navigate = useNavigate();
@@ -22,6 +24,49 @@ const PurchaseDetails = () => {
                   setToggle(!true)
               },3000)
           },[])
+          const[ticketPurchase, setTicketPurchase] = useState({
+             fullName :"",
+             email: "",
+             numberOfTicket:"",
+             needCarParkingSpace:"",
+             specialRequest :"",
+          })
+        
+           localStorage.setItem("ticPurchase", ticketPurchase)
+           console.log(ticketPurchase)
+          const handleChange = (e) => {
+            const { name, value } = e.target;
+            setTicketPurchase((prev) => ({ ...prev, [name]: value }));
+          };
+        const nav = useNavigate()
+          const {eventId} = useParams()
+          console.log(eventId)
+          const BASEURL = "https://scheditix.onrender.com";
+          const handleTicketPurchase = async () =>{
+            try{
+                const response = await axios.post(`${BASEURL}/api/v1/create/ticket/${eventId}`, ticketPurchase)
+                console.log(response.data)
+              
+                if(response.status === 200 ){
+                  setTicketPurchase(response?.data?.data)
+                  toast.success(response?.data?.message)
+                  setTimeout(()=>{
+                    handleToggle()
+                  },4000)
+                  nav("/dashboard/payout-details")
+                }
+
+            }
+            catch(error){
+              console.log(error)
+              toast.error(error?.data?.message )
+
+            }
+          }
+
+          // useEffect(()=>{
+          //   handleTicketPurchase();
+          // },[])
   return (
     <div className='PurchaseDetailsBody'>
                     {toggle && <AddedPopUp />}
@@ -31,6 +76,7 @@ const PurchaseDetails = () => {
            <GoDash size={30}/>
            <h3 style={{color: "#ff5722"}}>purchase ticket</h3>
         </div>
+        <Toaster />
         <div className="PurchaseDetailsTitle">
             <h3>MyKealwise Live In Aj City</h3>
         </div>
@@ -39,13 +85,13 @@ const PurchaseDetails = () => {
         <h3>Full Name</h3>
         <div className="InputBox">
         <FaUser size={20}/>
-        <input type="text" placeholder="enter your full name" className="Input" />
+        <input type="text" name="fullName" onChange={handleChange} value={ticketPurchase.fullName} placeholder="enter your full name" className="Input" />
         </div>
 
         <h3>Email Address</h3>
         <div className="InputBox">
         <MdEmail size={20}/>
-        <input type="text" placeholder="enter a valid email address to receive this event information" className="Input" />
+        <input type="email" name="email" onChange={handleChange} value={ticketPurchase.email} placeholder="enter a valid email address to receive this event information" className="Input" />
         </div>
 
         <div className="NumberTicketBox">
@@ -53,7 +99,7 @@ const PurchaseDetails = () => {
        <h3>Number of ticket(s)</h3>
         <div className="InputBox2">
         <BsTicketPerforatedFill size={20}/>
-        <input type="text" placeholder="enter number of ticket" className="Input2" />
+        <input type="number" min={1} name="numberOfTicket" onChange={handleChange} value={ticketPurchase.numberOfTicket} placeholder="enter number of ticket" className="Input2" />
         </div>
        </div>
 
@@ -61,7 +107,11 @@ const PurchaseDetails = () => {
         <h3>Need car parking space?</h3>
         <div className="InputBox2">
         <BsTicketPerforatedFill size={20}/>
-        <input type="text" placeholder="enter Yes/No" className="Input2" />
+       <select name="needCarParkingSpace" onChange={handleChange} value={ticketPurchase.needCarParkingSpace}  className="input2">
+       <option value="">Enter Yes/No</option>
+        <option value="Yes">yes</option>
+        <option value="No">No</option>
+       </select>
         </div>
         </span>
         </div>
@@ -69,9 +119,9 @@ const PurchaseDetails = () => {
         <h3>Special Request</h3>
         <div className="InputBox">
         <RiPencilFill size={20}/>
-        <input type="text" placeholder="describe any special request for this event" className="Input" />
+        <input type="text"  name="specialRequest" onChange={handleChange} value={ticketPurchase.specialRequest} placeholder="describe any special request for this event" className="Input" />
         </div>
-        <button className="Btnn" onClick={handleToggle}>Proceed to checkout</button>
+        <button className="Btnn" onClick={handleTicketPurchase}>Proceed to checkout</button>
         </form>
     </div>
   )
