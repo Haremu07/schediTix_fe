@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const EventCategories = () => {
   const navigate = useNavigate();
-  const [activeCategoyId, setActiveCategoryId] = useState('All Events'); // Set default to 'All Events'
+  const [activeCategoyId, setActiveCategoryId] = useState('All Events'); 
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
   const BASEURL = "https://scheditix.onrender.com";
