@@ -260,3 +260,919 @@
     box-shadow: none;
     border-radius: none;
     }
+
+
+
+    @media only screen and (max-width:900px) {
+        .signIn-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            padding-bottom: 100px !important;
+            padding-left: 30px;
+            overflow: hidden;
+        
+        }
+        
+        
+    
+        
+        .signup-body{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+           /* background-color:red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signup-form{
+            width: 790px;
+            max-height: 900px;
+            background-color:transparent !important;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            padding: 20px;
+        }
+        
+        .signup-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            color: rgb(66, 66, 66);
+        
+        }
+        .sigup-form-Headerz-text{
+            font-size: 35px !important;
+        }
+        
+        .form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 21px;
+            flex-direction: column;
+            background-color:transparent !important;
+            box-shadow: none;
+            border: none;
+            color: rgb(66, 66, 66);
+        
+            }
+        
+        .input{
+            width: 100%;
+            height: 50px;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 30px !important;
+        }
+        
+        .EyeBox{
+            width: 15%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .input3{
+            width: 90%;
+            height: 80%;
+            border: none;
+            outline: none;
+            font-size: 26px;
+            /* background-color: yellow; */
+        }
+        
+         
+        
+        .btnUp{
+            width: 100%;
+            height: 80px !important;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+            
+        .signupBox2{
+            width: 100%;
+            height: 40px !important;
+            display: flex;
+            /* background-color: green; */
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            font-size: 27px;
+        }
+        
+        .boxes{
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #27187e;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        
+        
+        
+        .email-verification-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .Nav{
+            width: 40%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            align-items: flex-end;
+            padding-left: 40px;
+        }
+        
+        
+        .email-verification-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .email-verification-form{
+            width: 70px;
+            height: 200px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(66, 66, 66);
+        }
+        
+        .Logo{
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
+        .email-verification-form{
+            width: 556.56px;
+            height: 450px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        
+        .email-verification-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            font-weight: 400;
+        }
+        
+        .form{
+            height: max-content;
+            display: flex;
+            gap: 21px;
+            background-color:transparent;
+            flex-direction: column;
+            box-shadow: none;
+            border-radius: none;
+            }
+        
+    }
+
+    @media only screen and (max-width:769px) {
+        .signIn-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            padding-bottom: 40px !important;
+            padding-left: 30px;
+            overflow: hidden;
+        
+        }
+        
+        
+    
+        
+        .signup-body{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+           /* background-color:red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signup-form{
+            width: 790px;
+            max-height: 900px;
+            background-color:transparent !important;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            padding: 20px;
+        }
+        
+        .signup-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            color: rgb(66, 66, 66);
+        
+        }
+        .sigup-form-Headerz-text{
+            font-size: 35px !important;
+        }
+        
+        .form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 21px;
+            flex-direction: column;
+            background-color:transparent !important;
+            box-shadow: none;
+            border: none;
+            color: rgb(66, 66, 66);
+        
+            }
+        
+        .input{
+            width: 100%;
+            height: 50px;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 30px !important;
+        }
+        
+        .EyeBox{
+            width: 15%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .input3{
+            width: 90%;
+            height: 80%;
+            border: none;
+            outline: none;
+            font-size: 26px;
+            /* background-color: yellow; */
+        }
+        
+         
+        
+        .btnUp{
+            width: 100%;
+            height: 80px !important;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            font-size: 27px;
+            cursor: pointer;
+        }
+            
+        .signupBox2{
+            width: 100%;
+            height: 40px !important;
+            display: flex;
+            /* background-color: green; */
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            font-size: 27px;
+        }
+        
+        .boxes{
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #27187e;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        
+        
+        
+        .email-verification-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .Nav{
+            width: 40%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            align-items: flex-end;
+            padding-left: 40px;
+        }
+        
+        
+        .email-verification-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .email-verification-form{
+            width: 70px;
+            height: 200px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(66, 66, 66);
+        }
+        
+        .Logo{
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
+        .email-verification-form{
+            width: 556.56px;
+            height: 450px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        
+        .email-verification-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            font-weight: 400;
+        }
+        
+        .form{
+            height: max-content;
+            display: flex;
+            gap: 21px;
+            background-color:transparent;
+            flex-direction: column;
+            box-shadow: none;
+            border-radius: none;
+            }
+        
+    }
+
+    @media only screen and (max-width:480px) {
+        .signIn-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            padding-bottom: 10px !important;
+            padding-left: 0px !important;
+            overflow: hidden;
+        
+        }
+    
+        .signup-body{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+           /* background-color:red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signup-form{
+            width: 400px;
+            max-height: 900px;
+            background-color:transparent !important;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            padding: 20px;
+        }
+        
+        .signup-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            color: rgb(66, 66, 66);
+        
+        }
+        .sigup-form-Headerz-text{
+            font-size: 19px !important;
+        }
+        
+        .form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 21px;
+            flex-direction: column;
+            background-color:transparent !important;
+            box-shadow: none;
+            border: none;
+            color: rgb(66, 66, 66);
+        
+            }
+        
+        .input{
+            width: 100%;
+            height: 40px;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px !important;
+        }
+        
+        .EyeBox{
+            width: 15%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .input3{
+            width: 100%;
+            height: 80%;
+            border: none;
+            outline: none;
+            font-size: 19px;
+            /* background-color: yellow; */
+        }
+        
+         
+        
+        .btnUp{
+            width: 100%;
+            height: 56px !important;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+            
+        .signupBox2{
+            width: 100%;
+            height: 40px !important;
+            display: flex;
+            /* background-color: green; */
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            font-size: 19px;
+        }
+        
+        .boxes{
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #27187e;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        
+        
+        
+        .email-verification-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .Nav{
+            width: 40%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            align-items: flex-end;
+            padding-left: 40px;
+        }
+        
+        
+        .email-verification-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .email-verification-form{
+            width: 70px;
+            height: 200px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(66, 66, 66);
+        }
+        
+        .Logo{
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
+        .email-verification-form{
+            width: 556.56px;
+            height: 450px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        
+        .email-verification-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            font-weight: 400;
+        }
+        
+        .form{
+            height: max-content;
+            display: flex;
+            gap: 21px;
+            background-color:transparent;
+            flex-direction: column;
+            box-shadow: none;
+            border-radius: none;
+            }
+        
+    }
+
+    @media only screen and (max-width:379px) {
+        .signIn-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            padding-bottom: 10px !important;
+            padding-left: 0px !important;
+            overflow: hidden;
+        
+        }
+    
+        .signup-body{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+           /* background-color:red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signup-form{
+            width: 400px;
+            max-height: 900px;
+            background-color:transparent !important;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            padding: 20px;
+        }
+        
+        .signup-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            color: rgb(66, 66, 66);
+        
+        }
+        .sigup-form-Headerz-text{
+            font-size: 19px !important;
+        }
+        
+        .form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 21px;
+            flex-direction: column;
+            background-color:transparent !important;
+            box-shadow: none;
+            border: none;
+            color: rgb(66, 66, 66);
+        
+            }
+        
+        .input{
+            width: 100%;
+            height: 40px;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px !important;
+        }
+        
+        .EyeBox{
+            width: 15%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .input3{
+            width: 100%;
+            height: 80%;
+            border: none;
+            outline: none;
+            font-size: 19px;
+            /* background-color: yellow; */
+        }
+        
+         
+        
+        .btnUp{
+            width: 100%;
+            height: 56px !important;
+            border-radius: 10px;
+            border: none;
+            background-color: #ff5722;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+            
+        .signupBox2{
+            width: 100%;
+            height: 40px !important;
+            display: flex;
+            /* background-color: green; */
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            font-size: 19px;
+        }
+        
+        .boxes{
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #27187e;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        
+        
+        
+        .email-verification-container{
+            width: 100%;
+            height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .Nav{
+            width: 40%;
+            height: 100%;
+            /* background-color: red; */
+            display: flex;
+            align-items: flex-end;
+            padding-left: 40px;
+        }
+        
+        
+        .email-verification-body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .email-verification-form{
+            width: 70px;
+            height: 200px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(66, 66, 66);
+        }
+        
+        .Logo{
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
+        .email-verification-form{
+            width: 556.56px;
+            height: 450px;
+            /* background-color: gray; */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        
+        .email-verification-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-direction: column;
+            font-weight: 400;
+        }
+        
+        .form{
+            height: max-content;
+            display: flex;
+            gap: 21px;
+            background-color:transparent;
+            flex-direction: column;
+            box-shadow: none;
+            border-radius: none;
+            }
+        
+    }
