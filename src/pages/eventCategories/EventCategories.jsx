@@ -34,6 +34,7 @@ const EventCategories = () =>
 
     const fetchEventsForCategory = async (categoryName) => {
       const category = categories.find(cat => cat.categoryName.toLowerCase() === categoryName.toLowerCase());
+      // console.log(category)
       if (category && category.events) {
         setEvents(category.events);
       } else {
