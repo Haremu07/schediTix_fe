@@ -31,21 +31,20 @@ const EventCategories = () =>
         console.log(error)
       }
     }
+
+    const fetchEventsForCategory = async (categoryName) => {
+      const category = categories.find(cat => cat.categoryName.toLowerCase() === categoryName.toLowerCase());
+      if (category && category.events) {
+        setEvents(category.events);
+      } else {
+        setEvents([]); 
+      }
+    };
     
     useEffect(() => {
       handleCategories()
     },[])
-   
-    // useEffect(() => {
-    //   const delay = 10000; 
-  
-    //   const timeoutId = setTimeout(() => {
-    //     const comedyCategory = categories?.find(cat => cat.categoryName === "Comedy");
-    //     setEvents(comedyCategory?.events || []);
-    //   }, delay);
-
-    //   return () => clearTimeout(timeoutId);
-    // }, []); 
+    
 
     const handleCategoryClick = (categoryId) => {
       const getEvents = categories.find(cat => cat.categoryName === categoryId);
@@ -53,6 +52,18 @@ const EventCategories = () =>
       setEvents(getEvents.events)
       setActiveCategoryId(categoryId)
     };
+
+    useEffect(() => {
+      if (categories.length > 0) {
+        fetchEventsForCategory("Comedy");
+        const comedyCategory = categories.find(cat => cat.categoryName.toLowerCase() === "Fashion Show");
+        if (comedyCategory) {
+          setActiveCategoryId(comedyCategory.categoryName); 
+        } else if (categories.length > 0) {
+          setActiveCategoryId(categories[0].categoryName); 
+        }
+      }
+    }, [categories]);
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -67,7 +78,7 @@ const EventCategories = () =>
           <section className='middleCenter'>
           {
             categories?.map(( category,index) => (
-              <div className='listOfShowsBox' key={index} onClick={() => handleCategoryClick(category.categoryName)} style={{backgroundColor: activeCategoyId === category._id ? "rgba(39, 24, 126, 1)" : "white", color: activeCategoyId === category._id ? "white" : "rgba(50, 50, 50, 1)", border:activeCategoyId === category._id && "none"}} >
+              <div className='listOfShowsBox' key={index} onClick={() => handleCategoryClick(category.categoryName)} style={{backgroundColor: activeCategoyId === category.categoryName ? "rgba(39, 24, 126, 1)" : "white", color: activeCategoyId === category.categoryName ? "white" : "rgba(50, 50, 50, 1)", border:activeCategoyId === category.categoryName && "none"}} >
               <p>{category.categoryName}</p>
             </div>
              ))
