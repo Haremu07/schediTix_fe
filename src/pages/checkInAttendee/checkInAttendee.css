@@ -186,3 +186,109 @@
     left: 1230px;
     top: 250px;
 }
+@media (max-width: 599px) {
+    .checkInAttendee {
+      width: 100%;
+      padding: 15px;
+      gap: 20px;
+    }
+  
+    .checkInAttendee__nav {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 16px;
+      gap: 10px;
+    }
+  
+    .navInpit {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .rows {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 15px;
+      font-size: 14px;
+    }
+  
+    .medalandtitle, .medalandtitleHeader {
+      width: 100%;
+    }
+  
+    .status, .statusUpgoing, .statusend {
+      width: auto;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+  
+    .Checkinpagination-bg {
+      margin-top: 40px;
+      height: auto;
+    }
+  
+    .pagination-wrapper {
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .num {
+      width: 35px;
+      height: 35px;
+      font-size: 14px;
+    }
+  
+    .Small {
+      position: static;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+  }
+  @media (min-width: 600px) and (max-width: 1023px) {
+    .checkInAttendee {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .checkInAttendee__nav {
+      font-size: 18px;
+    }
+  
+    .navInpit {
+      width: 50%;
+    }
+  
+    .rows {
+      font-size: 14px;
+      padding: 20px;
+    }
+  
+    .medalandtitle,
+    .medalandtitleHeader {
+      width: 50%;
+    }
+  
+    .status, .statusUpgoing, .statusend {
+      width: fit-content;
+      padding: 5px 12px;
+      font-size: 14px;
+    }
+  
+    .pagination-wrapper {
+      width: 90%;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+  
+    .Small {
+      left: auto;
+      top: auto;
+      position: static;
+      width: 20%;
+    }
+  }
+    
