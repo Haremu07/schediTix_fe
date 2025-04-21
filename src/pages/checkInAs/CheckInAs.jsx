@@ -49,7 +49,7 @@ const CheckInAs = () => {
             if (userData?.isLoggedIn) {
               console.log(userData) 
               // console.log(localStorage.getItem("userToken"))
-              navigate("/dashboard/upcoming-event");
+              navigate("/dashboard/upcoming-events");
             }  else {
               toast.error("User not found");
               navigate("/login")
