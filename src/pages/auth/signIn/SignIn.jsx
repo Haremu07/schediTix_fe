@@ -23,7 +23,7 @@ const SignIn = () => {
   const BASEURL = "https://scheditix.onrender.com";
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     try {
       const response = await axios.post(`${BASEURL}/api/v1/login/user/`, {
         email,
@@ -46,9 +46,9 @@ const SignIn = () => {
     }
   };
 
-  useEffect(() => {
-    handleSubmit();
-  }, []);
+  // useEffect(() => {
+  //   handleSubmit();
+  // }, []);
 
   return (
     <div className="signin-container">
@@ -71,11 +71,11 @@ const SignIn = () => {
       </div>
 
       <div className="signin-body">
-        <div className="signin-form" onSubmit={handleSubmit}>
+        <div className="signin-form" >
           <div className="sigin-form-Header">
             <h2>Login to continue</h2>
           </div>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <span className="input">
               <MdEmail  className="iconzz"/>
               <input
@@ -103,7 +103,7 @@ const SignIn = () => {
  
                 className="password-toggleSignIn"
                 // style={{width: "30%", height: "30%", }}
-                onClick={() => setShowPasswords(true)}
+                onClick={handlePassword}
  
               >
                 {showPasswords ? <FaEyeSlash className="eye" onClick={() => setShowPasswords(true)}/> : <FaEye className="eye" onClick={() => setShowPasswords(false)}/>}
@@ -117,21 +117,25 @@ const SignIn = () => {
             >
               Forgot password?
             </h4>
-            {isLoading ? (
-              <button type="submit" className="btnz">
+ 
+             
+              {/* <button type="submit" className="btn" disabled={isLoading}>
                 Loading...
-              </button>
-            ) : (
+              </button> */}
               <button
                 type="submit"
-                className="btnz"
-                onClick={() => {
-                  setIsLoading(true), setTimeout(() => {}, 3000);
-                }}
+ 
+                className="btn"
+                // onClick={() => {
+                //   setIsLoading(true), setTimeout(() => {}, 3000);
+                // }}
+                disabled={isLoading}
               >
-                Log In
+                {
+                  isLoading ? "Loading" : "Login"
+                }
               </button>
-            )}
+            
 
             {/* {disable ? isLoading : null} */}
             <span
