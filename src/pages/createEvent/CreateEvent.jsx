@@ -47,7 +47,7 @@ const CreateEvent = () => {
     eventLocation: "",
     totalTableNumber: "",
     totalSeatNumber: "",
-    image: [],
+    image: "",
     parkingAccess: "",
     ticketPrice: "",
     ticketQuality: "",
@@ -56,7 +56,7 @@ const CreateEvent = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setInput({ ...input, image: [file] });
+    setInput({ ...input, image: file });
     if (file) {
       setProfileImage(URL.createObjectURL(file));
     }
@@ -89,23 +89,7 @@ const CreateEvent = () => {
     handleCategories();
   }, []);
 
-  const formData = new FormData();
-  formData.append("eventTitle", input.eventTitle);
-  formData.append("eventDescription", input.eventDescription);
-  formData.append("eventLocation", input.eventLocation);
-  formData.append("startTime", input.startTime);
-  formData.append("eventAgenda", input.eventAgenda);
-  formData.append("endTime", input.endTime);
-  formData.append("eventRule", input.eventRule);
-  formData.append("startDate ", input.startDate);
-  formData.append("totalSeatNumber", input.totalSeatNumber);
-  formData.append("totalTableNumber", input.totalTableNumber);
-  formData.append("parkingAccess", input.parkingAccess);
-  formData.append("ticketPrice", input.ticketPrice);
-  formData.append("ticketQuantity", input.ticketQuality);
-  formData.append("ticketPurchaseLimit", input.ticketLimit);
-  formData.append("image", input.image);
-  formData.append("endDate", input.endDate);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -116,6 +100,24 @@ const CreateEvent = () => {
 
   const handleSubmit = async () => {
     try {
+      const formData = new FormData();
+      formData.append("eventTitle", input.eventTitle);
+      formData.append("eventDescription", input.eventDescription);
+      formData.append("eventLocation", input.eventLocation);
+      formData.append("startTime", input.startTime);
+      formData.append("eventAgenda", input.eventAgenda);
+      formData.append("endTime", input.endTime);
+      formData.append("eventRule", input.eventRule);
+      formData.append("startDate", input.startDate);
+      formData.append("totalSeatNumber", input.totalSeatNumber);
+      formData.append("totalTableNumber", input.totalTableNumber);
+      formData.append("parkingAccess", input.parkingAccess);
+      formData.append("ticketPrice", input.ticketPrice);
+      formData.append("ticketQuantity", input.ticketQuality);
+      formData.append("ticketPurchaseLimit", input.ticketLimit);
+      formData.append("image", input.image);
+      formData.append("endDate", input.endDate);
+
       const response = await axios.post(
         `${BASEURL}/api/v1/create-event/${cartegoryId}`,
         formData,
@@ -217,7 +219,7 @@ const CreateEvent = () => {
                 type="file"
                 id="Upload-img-input"
                 onChange={handleImageChange}
-                value={input.image}
+                // value={input.image}
               />
               <h5 className="text-btn">Upload files</h5>
             </label>
