@@ -185,8 +185,7 @@ const ExploreFetures = () => {
                 </span>
               </nav>
             </section>
-        
-        
+   
         </section>
         </nav>
     </div>

@@ -4,34 +4,46 @@ import { IoLocationSharp } from "react-icons/io5";
 
 const EventFavorite = () => {
     const navigate = useNavigate()
-  return (
+
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    console.log(favorites)
+    return (
     <div className="Card">
-      <div className='CardsBox2'>
-           <div className="CardBoxImgBox2">
-               <img src="https://www.astro.com/im/in/sr_cosmic_sky.jpg" className="CardBoxImg2" alt="" />
-           </div>
-           <div className="CardsBoxTextBox2">
-               <div className="CardsBoxTextBoxNav12">
-                   <h3>CONVERGENCE OF STARS</h3>
-               </div>
-               <div className="CardsBoxTextBoxNav22">
-                   <h3>21st December, 2025</h3>
-               </div>
-           </div>
-   
-           <div className="CardsBoxContent2">
-               <p>This is the 4th edition of the biggest community awards ceremony in Africa."</p>
-           </div>
-   
-           <div className="CardsBoxLocation2">
-           <IoLocationSharp /> <p>Eko Hotel and Suites</p>
-           </div>
-   
-           <div className="CardBoxTicket2">
-               <p>#2,000</p>
-               <button className="TicketBtn2" onClick={() => navigate("/dashboard/ticket-purchace")}>Buy Ticket</button>
-           </div>
-       </div>
+        {
+            favorites.length === 0 ? (
+                <p>no favorite Event</p>
+            ) :(
+          favorites.map((event, index) => (
+            <div className='CardsBox2' key={index}>
+            <div className="CardBoxImgBox2">
+                <img src={event?.image?.imageUrl} className="CardBoxImg2" alt="" />
+            </div>
+            <div className="CardsBoxTextBox2">
+                <div className="CardsBoxTextBoxNav12">
+                    <h3>{event?.eventTitle}</h3>
+                </div>
+                <div className="CardsBoxTextBoxNav22">
+                    <h3>{event?.startDate}</h3>
+                </div>
+            </div>
+    
+            <div className="CardsBoxContent2">
+                <p> {event.eventDescription}</p>
+            </div>
+    
+            <div className="CardsBoxLocation2">
+            <IoLocationSharp /> <p>{event?.eventLocation}</p>
+            </div>
+    
+            <div className="CardBoxTicket2">
+                <p>#{event.ticketPrice}</p>
+                <button className="TicketBtn2" onClick={() => navigate("/dashboard/ticket-purchace")}>Buy Ticket</button>
+            </div>
+        </div>
+          )) 
+            )
+        }
+     
        </div>
   )
 }

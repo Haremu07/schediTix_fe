@@ -1,11 +1,11 @@
 
 import "./emailVerification.css"
-import { useNavigate } from "react-router";
 import orangeLogo from "../../../assets/orangelogo.png";
+import { FadeLoader } from 'react-spinners'
 
 
 const Verify = () => {
-  const navigate = useNavigate()
+ 
   return (
     <div className="email-verification-container">
       <div className="Nav">
@@ -21,10 +21,18 @@ const Verify = () => {
           <p>🎉Welcome to SchediTix!🎉</p>
           </div>
           <form className="form">
-            <p className="Passage">We’ve sent a verification link to your email. It’s super quick, just click the button below and you’re good to go! 🥰.</p>
-            <button type="submit" className="btn" onClick={()=> navigate("/login")}>
-              verify your email address
-              </button>
+          <div className='spin-bg'>
+        <div className='spin-wrapper'>
+            <div className='spin-text-holder'>
+            <p className="Passage">"Hang tight! We’re verifying your email and unlocking your event access..."🥰.</p>
+            </div>
+            <div className='spin-holder'>
+                <FadeLoader  className='loading-ico' />
+            </div>
+        </div>
+      
+    </div>
+         
           </form>
         </div>
       </div>

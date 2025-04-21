@@ -85,6 +85,7 @@ const LandingPage = () => {
 
   const navigate = useNavigate();
   const token = localStorage.getItem(`userToken`);
+  const userData = localStorage.getItem(`userData`)
 
 
   return (
@@ -137,7 +138,7 @@ const LandingPage = () => {
             ) : (
               <div className="LandingPageBox2Nav1SmallBox">
               <button className="Btns" onClick={() => navigate("/login")}>
-                Overview
+                Create an event
               </button>
               <button className="Btns2" onClick={() => navigate("/login")}>
                 Attend an event
@@ -186,7 +187,9 @@ const LandingPage = () => {
         </div>
       </div>
 
-      <div className="TrendingEventBlock">
+     {
+      userData?.plan === "basic" ?   (
+        <div className="TrendingEventBlock">
         <div className="TrendingEventBlockHeader">
           <h2>Trending Events</h2>
           <img src={vector} alt="" />
@@ -201,11 +204,10 @@ const LandingPage = () => {
           />
             ))
           }
-          
-         
-          
         </div>
       </div>
+      ):("") 
+     }
 
       <div className="FeaturedEventBlocked">
         <div className="FeaturedEventBlockedHeader">
@@ -242,7 +244,7 @@ const LandingPage = () => {
               image={img4}
             />
           </div>
-          <button className="FeaturedEventBlockedBtn">View all</button>
+          {/* <button className="FeaturedEventBlockedBtn">View all</button> */}
         </div>
       </div>
 
