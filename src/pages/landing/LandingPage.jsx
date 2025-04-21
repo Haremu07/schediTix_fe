@@ -188,7 +188,7 @@ const LandingPage = () => {
       </div>
 
      {
-      userData.plan === "basic" ?   (
+      userData?.plan === "basic" ?   (
         <div className="TrendingEventBlock">
         <div className="TrendingEventBlockHeader">
           <h2>Trending Events</h2>

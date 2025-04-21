@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useId } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const DeletePopUp = ({setToggle}) => {
@@ -21,11 +22,16 @@ const DeletePopUp = ({setToggle}) => {
     try {
       const res = await axios.delete(`${BASEURL}/api/v1/delete/user/${userId}`, {headers})
       console.log("Deleted", res.data)
-      toast.success(res.data  )
-            navigate("/")
+      toast.success(res.data)
       localStorage.clear()
+      navigate("/")
+      // localStorage.clear()
     } catch (error) {
       console.log("Not Deleted", error)
+      if(error.res.data.message === "Session timed-out: Please login to continue" || "Unauthorized")
+        localStorage.clear()
+      navigate("/")
+      toast.error(error.res.data.message)
     }
   }
 

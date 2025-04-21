@@ -18,24 +18,23 @@ const headers = {
       if (response.data.message === "authorized"){
 
         toast.success("Logged out successfull")
-        localStorage.removeItem("userToken")
-        localStorage.removeItem("userData")
-        
-        setTimeout(() => {
+        localStorage.clear()
           navigate("/")
-        },3000)
-      }else if(response.data.message === "Session timed-out: Please login to continue")
+      }else if(response?.data.message === "Session timed-out: Please login to continue")
       console.log(response)
     } catch (error) {
+      console.log(error)
       if(error.response?.data?.message === "Unauthorized"){
         toast.error(error.response?.data?.message || "Logout failed")
+        toast.error(error.response?.data.message)
+        localStorage.clear()
+        navigate("/login")
       }else if (response.data.message === "Request failed with status code 403"){
         toast.error("Check your connection")
+        localStorage.clear()
+        navigate("/login")
       console.log(error)
-      }else{
-        toast.error("Check your connection")
-      console.log(error)
-      }
+      } 
     }
   }
   return (
