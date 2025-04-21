@@ -77,7 +77,7 @@ const SignIn = () => {
           </div>
           <form className="form">
             <span className="input">
-              <MdEmail />
+              <MdEmail  className="iconzz"/>
               <input
                 type="email"
                 // name="email"
@@ -89,7 +89,7 @@ const SignIn = () => {
              
             </span>
             <span className="input">
-              <GiDialPadlock />
+              <GiDialPadlock   className="iconzz"/>
               <input
                 type={showPasswords ? "text" : "password"}
                 name="password"
@@ -106,24 +106,25 @@ const SignIn = () => {
                 onClick={() => setShowPasswords(true)}
  
               >
-                {showPasswords ? <FaEyeSlash onClick={() => setShowPasswords(true)}/> : <FaEye onClick={() => setShowPasswords(false)}/>}
+                {showPasswords ? <FaEyeSlash className="eye" onClick={() => setShowPasswords(true)}/> : <FaEye className="eye" onClick={() => setShowPasswords(false)}/>}
               </div>
             </span>
 
             <h4
               onClick={() => navigate("/forget-password")}
               style={{ cursor: "pointer" }}
+              className="forgot"
             >
               Forgot password?
             </h4>
             {isLoading ? (
-              <button type="submit" className="btn">
+              <button type="submit" className="btnz">
                 Loading...
               </button>
             ) : (
               <button
                 type="submit"
-                className="btn"
+                className="btnz"
                 onClick={() => {
                   setIsLoading(true), setTimeout(() => {}, 3000);
                 }}

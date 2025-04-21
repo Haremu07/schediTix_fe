@@ -286,3 +286,13 @@
    font-size: 300px;
    color: rgb(223, 66, 9);
 }
+.link-sub-text{
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.link-text{
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+}

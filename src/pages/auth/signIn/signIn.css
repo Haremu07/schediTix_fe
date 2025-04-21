@@ -175,12 +175,12 @@
 }
 
 
-.btn{
+.btnz{
     width: 100%;
     height: 60px;
     border-radius: 10px;
     border: none;
-    background-color: red;
+    background-color: rgb(255, 72, 0);
     color: white;
     font-size: 20px;
     cursor: pointer;
@@ -201,11 +201,728 @@
 
 .boxed{
     color: #27187e;
-    width: 15%;
+    width: 19%;
     height: 100%;
     display: flex;
     align-items: center;
+    font-weight: bold;
     margin-left: 10px;
     /* background-color: red; */
     cursor: pointer;
+}
+
+
+
+@media screen and (max-width:900px) {
+    .signin-container{
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        padding-bottom: 75px !important;
+    }
+    
+
+    .signIn-Nav-Header{
+      display: none;
+    
+       
+    }
+
+        & .navBoxs1{
+          display: none;
+        }
+    
+        & .navBoxs2{
+           display: none;
+        }
+
+        .signin-body{
+            height: 30%;
+            height: 80%;
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signin-form{
+            width: 850px;
+            height: 100vh;
+            background-color: rgb(255, 255, 255); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            padding: 75px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            /* padding: 20px; */
+            /* border-radius: 10px; */
+            overflow: hidden;
+        }
+        
+        .sigin-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            flex-direction: column;
+        
+           
+        }
+        
+        & .Back{
+            display: flex;
+            gap: 6px;
+            margin-left: -440px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .form{
+            width: 700px;
+            display: flex;
+            border: none;
+            gap: 21px;
+            flex-direction: column;
+            box-shadow: none;
+            /* background-color: red; */
+            }
+        
+        .input{
+            width: 40%;
+            height: 100px !important;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            /* background-color: rgb(196, 40, 188); */
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+        }
+        
+        .input2{
+            border: none;
+            outline: none;
+            width: 90%;
+            height: 70%;
+            font-size: 20px;
+            padding: 5px;
+         
+        }
+        
+        .password-toggleSignIn{
+            width: 10%;
+            height: 90%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+            /* position: absolute; */
+            /* left: 850px; */
+        }
+        .eye{
+            font-size: 35px !important;
+        }
+        .forgot{
+            width: 65%;
+            font-size: 26px !important;
+        }
+        .iconzz{
+            font-size: 35px !important;  
+        }
+        
+        
+        .btnz{
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(255, 51, 0);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+        }
+            
+        .signinBox{
+            width: 100%;
+            display: flex;
+            height: 15%;
+            /* background-color: green; */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 27px !important;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .boxed{
+            color: #27187e;
+            width: 19%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            /* background-color: red; */
+            cursor: pointer;
+        } 
+    }
+
+
+@media screen and (max-width:769px) {
+    .signin-container{
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+    }
+    
+
+    .signIn-Nav-Header{
+      display: none;
+    
+       
+    }
+
+        & .navBoxs1{
+          display: none;
+        }
+    
+        & .navBoxs2{
+           display: none;
+        }
+
+        .signin-body{
+            height: 30%;
+            height: 80%;
+            /* background-color: blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signin-form{
+            width: 850px;
+            height: 100vh;
+            background-color: rgb(255, 255, 255); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            padding: 75px;
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+            /* padding: 20px; */
+            /* border-radius: 10px; */
+            overflow: hidden;
+        }
+        
+        .sigin-form-Header{
+            width: 100%;
+            height: 20%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            flex-direction: column;
+        
+           
+        }
+        
+        & .Back{
+            display: flex;
+            gap: 6px;
+            margin-left: -440px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .form{
+            width: 700px;
+            display: flex;
+            border: none;
+            gap: 21px;
+            flex-direction: column;
+            box-shadow: none;
+            /* background-color: red; */
+            }
+        
+        .input{
+            width: 40%;
+            height: 100px !important;
+            border: gray 1px solid;
+            border-radius: 10px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            /* background-color: rgb(196, 40, 188); */
+            gap: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+        }
+        
+        .input2{
+            border: none;
+            outline: none;
+            width: 90%;
+            height: 70%;
+            font-size: 20px;
+            padding: 5px;
+         
+        }
+        
+        .password-toggleSignIn{
+            width: 10%;
+            height: 90%;
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+            /* position: absolute; */
+            /* left: 850px; */
+        }
+        .eye{
+            font-size: 35px !important;
+        }
+        .forgot{
+            width: 65%;
+            font-size: 26px !important;
+        }
+        .iconzz{
+            font-size: 35px !important;  
+        }
+        
+        
+        .btnz{
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(255, 51, 0);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            font-family: "Poppins", sans-serif;
+        }
+            
+        .signinBox{
+            width: 100%;
+            display: flex;
+            height: 15%;
+            /* background-color: green; */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 27px !important;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .boxed{
+            color: #27187e;
+            width: 19%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 25px;
+            /* background-color: red; */
+            cursor: pointer;
+        } 
+    }
+    
+@media only screen and (max-width:480px) {
+    .signin-container{
+        width: 100%;
+        height: 100vh;
+        background-color: #ffffff;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+    }
+    
+
+    
+    .signIn-Nav-Header{
+        width: 100%;
+        height: 100%;
+        /* background-color: gray;  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+       
+    }
+    
+    .signIn-Nav-Box{
+      display: none;
+    
+    
+        & .navBoxs1{
+          display: none;
+        }
+    
+        & .navBoxs2{
+           display: none;
+        }
+    }
+    
+
+    
+    
+    .signin-body{
+        height: 30%;
+        height: 80%;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .signin-form{
+        width: 430px;
+        height: 100vh;
+        /* background-color: rgb(31, 119, 97);  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+        padding: 27px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .sigin-form-Header{
+        width: 100%;
+        height: 20%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 18px;
+        flex-direction: column;
+    
+       
+    }
+    
+    & .Back{
+        display: flex;
+        gap: 6px;
+        margin-left: -440px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .form{
+        width: 400px;
+        display: flex;
+        border: none;
+        gap: 21px;
+        flex-direction: column;
+        box-shadow: none;
+        /* background-color: red; */
+        }
+    
+    .input{
+        width: 40%;
+        height: 60px !important;
+        border: gray 1px solid;
+        border-radius: 10px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        /* background-color: rgb(196, 40, 188); */
+        gap: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+    }
+    
+    .input2{
+        border: none;
+        outline: none;
+        width: 90%;
+        height: 70%;
+     
+    }
+    
+    .password-toggleSignIn{
+        width: 10%;
+        height: 90%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* position: absolute; */
+        /* left: 850px; */
+    
+    
+    }
+    .eye{
+        font-size: 25px !important;
+    }
+    .forgot{
+        width: 65%;
+        font-size: 17px !important;
+    }
+    .iconzz{
+        font-size: 25px !important;  
+    }
+    
+    
+    .btnz{
+        width: 100%;
+        height: 60px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(255, 60, 0);
+        color: white;
+        font-size: 18px !important;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+    }
+        
+    .signinBox{
+        width: 100%;
+        display: flex;
+        height: 15%;
+        /* background-color: green; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 19px !important;
+        padding: 5px;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .boxed{
+        color: #27187e;
+        width: 19%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 15px !important;
+        /* background-color: red; */
+        cursor: pointer;
+    } 
+}
+
+@media only screen and (max-width:379px) {
+    .signin-container{
+        width: 100%;
+        height: 100vh;
+        /* background-color: #7a1313; */
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+        font-family: "Poppins", sans-serif;
+    }
+    
+
+    
+    .signIn-Nav-Header{
+        width: 100%;
+        height: 100%;
+        /* background-color: gray;  */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+       
+    }
+    
+    .signIn-Nav-Box{
+      display: none;
+    
+    
+        & .navBoxs1{
+          display: none;
+        }
+    
+        & .navBoxs2{
+           display: none;
+        }
+    }
+    
+
+    
+    
+    .signin-body{
+        height: 30%;
+        height: 80%;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .signin-form{
+        width: 430px;
+        height: 100vh;
+        /* background-color: rgb(31, 119, 97);  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+        padding: 45px !important;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .sigin-form-Header{
+        width: 100%;
+        height: 20%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 17px;
+        flex-direction: column;
+    
+       
+    }
+    
+    & .Back{
+        display: flex;
+        gap: 6px;
+        margin-left: -440px;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .form{
+        width: 400px;
+        display: flex;
+        border: none;
+        gap: 21px;
+        flex-direction: column;
+        box-shadow: none;
+        /* background-color: red; */
+        }
+    
+    .input{
+        width: 97% !important;
+        height: 60px !important;
+        border: gray 1px solid;
+        border-radius: 10px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    
+        /* background-color: rgb(196, 40, 188); */
+        gap: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+    }
+    
+    .input2{
+        border: none;
+        outline: none;
+        width: 90%;
+        height: 70%;
+     
+    }
+    
+    .password-toggleSignIn{
+        width: 10%;
+        height: 90%;
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* position: absolute; */
+        /* left: 850px; */
+    
+    
+    }
+    .eye{
+        font-size: 20px !important;
+    }
+    .forgot{
+        width: 65%;
+        font-size: 15px !important;
+    }
+    .iconzz{
+        font-size: 22px !important;  
+    }
+    
+    
+    .btnz{
+        width: 97%;
+        height: 60px;
+        border-radius: 10px;
+        border: none;
+        background-color: rgb(255, 60, 0);
+        color: white;
+        font-size: 18px !important;
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+    }
+        
+    .signinBox{
+        width: 100%;
+        display: flex;
+        height: 15%;
+        /* background-color: green; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 19px !important;
+        padding: 5px;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    .boxed{
+        color: #27187e;
+        width: 19%;
+        height: 100%;
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 15px !important;
+        /* background-color: red; */
+        cursor: pointer;
+    } 
 }

@@ -52,7 +52,7 @@ const SignUP = () => {
         setTimeout(() => {
           toast.success(response.data.message);
           setIsLoading(false);
-          navigate(<Brief />)
+          navigate("/brief")
         }, 5000);
         if (input !== input) toast.success("omo run am bro");
         // const loadingState = toast.loading("Do the calms e don work....");
@@ -93,7 +93,7 @@ const SignUP = () => {
       <div className="signup-body">
         <div className="signup-form">
           <div className="sigup-form-Header">
-            <h2>Unlock Your Event Access</h2>
+            <h2 className="sigup-form-Headerz-text">Unlock Your Event Access</h2>
           </div>
           <form className="form" onSubmit={handleSubmit}>
             <span className="input">

@@ -1,4 +1,4 @@
-import "./forgetPassword.css"
+import "../forgetPassword/forgetpassword.css"
 import { MdEmail } from "react-icons/md";
 import { useNavigate } from "react-router";
 // import { FaArrowLeft } from "react-icons/fa6";
@@ -58,7 +58,7 @@ toast.error(err?.data?.message)
 setLoading(false)
   }
   return (
-    <div className="ForgetPassword-container">
+    <div className="ForgetPassword-containerz">
       <div className="Nav">
       <div className="signIn-Nav-Header">
           <div className="LogoBox">
@@ -70,17 +70,17 @@ setLoading(false)
         </div>
         </div>
       </div>
-      <div className="ForgetPassword-body">
-        <div className="ForgetPassword-form">
+      <div className="ForgetPassword-bodyz">
+        <div className="ForgetPassword-formzz">
           <div className="ForgetPassword-form-Header">
         {/* <span className="Back" onClick={() => navigate("/login")}><FaArrowLeft/><p>go back</p></span> */}
           <h2 >Forgot your password?</h2>
           </div>
-          <form className="form">
+          <form className="formzz">
             <p className="Passage">Enter your email address to receive a password reset email</p>
           <span className="input" >
-            <MdEmail/>
-            <input type="email" className="input2" value={email.email} placeholder="enter your email" onChange={(e)=> setEmail(e.target.value)}/>
+            <MdEmail className="email-iconzz"/>
+            <input type="email" className="input2z" value={email.email} placeholder="enter your email" onChange={(e)=> setEmail(e.target.value)}/>
           </span>
             <button type="submit" className="btn" onClick={handleForgotpassword}>{loading ? "Loading..." : "Continue"}</button>
             {contextHolder}
