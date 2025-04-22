@@ -8,6 +8,8 @@ import { TbChartCandle } from "react-icons/tb";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import { Modal, Select } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const PayOutDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +49,30 @@ const PayOutDetails = () => {
 
   const handleOptions = (selectedOption) => {
     console.log('Seleted:', selectedOption);
+  }
+  const BASEURL = "https://scheditix.onrender.com";
+  const {ticketId}=useParams()
+ const token = localStorage.getItem("userToken")
+  const [paymentdetails, setPaymentDetails] = useState({
+
+  })
+  const handlePaymentDetails = async () =>{
+   try{
+    const response = await axios.post(`${BASEURL}/api/v1/payment/initialize/${ticketId}`, paymentdetails, {headers:{
+      Authorization : `Bearer ${token}`
+    }})
+    console.log(response.data)
+    
+    if(response.status === 200){
+      setTimeout(()=>{
+        window.location.href(response?.data?.data?.checkout_Url)
+      },4000)
+     
+    }
+   }
+   catch(err){
+console.log(err)
+   }
   }
 
   
