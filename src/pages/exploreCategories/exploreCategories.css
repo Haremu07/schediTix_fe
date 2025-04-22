@@ -235,3 +235,122 @@
         color: white;
     }
 }
+@media (max-width: 1024px) {
+    .exploreFeturesCards {
+      width: 45%;
+    }
+  
+    .exploreBillBordText {
+      font-size: 38px;
+      text-align: center;
+    }
+  
+    .exploreMiddleCenter {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  
+    .explorelistOfShowsBox {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .exploreMiddleBox {
+      font-size: 16px;
+    }
+  
+    .exlporeMiddleTop {
+      flex-direction: column;
+      gap: 10px;
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .exploreFeturesCards {
+      width: 100%;
+      height: auto;
+    }
+  
+    .exploreBillBordText {
+      font-size: 30px;
+      padding: 0 10px;
+      text-align: center;
+    }
+  
+    .explorePaddingBox > div {
+      font-size: 16px;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .elpoerecardFirsBox > div {
+      width: 100%;
+    }
+  
+    .cardThirdBox {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .cardThirdBox span {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .exploreLandingPage {
+      margin-top: 60px;
+      height: auto;
+      padding: 20px 0;
+    }
+  
+    .exploreMiddleBox {
+      font-size: 14px;
+      gap: 8px;
+    }
+  
+    .exlporeMiddleTop {
+      font-size: 18px;
+    }
+  
+    .explorelistOfShowsBox {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .exploreBillBordText {
+      font-size: 24px;
+    }
+  
+    .explorePaddingBox {
+      font-size: 14px;
+      gap: 15px;
+    }
+  
+    .exploreCardBox {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .exploreFeturesCards {
+      width: 100%;
+      height: auto;
+    }
+  
+    .exploreaddress,
+    .explorecardSecondBox {
+      font-size: 12px;
+    }
+  
+    .cardThirdBox {
+      font-size: 13px;
+    }
+  
+    .cardThirdBox span {
+      font-size: 14px;
+      height: 36px;
+    }
+  }
+  

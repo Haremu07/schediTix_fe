@@ -16,12 +16,10 @@ const headers = {
     try {
       const response = await axios.post(`${BASEURL}/api/v1/logout/`, {},{headers} )
       if (response.data.message === "authorized"){
-
         toast.success("Logged out successfull")
         localStorage.clear()
-          navigate("/")
-      }else if(response?.data.message === "Session timed-out: Please login to continue")
-      console.log(response)
+          navigate("/login")
+      }
     } catch (error) {
       console.log(error)
       if(error.response?.data?.message === "Unauthorized"){
@@ -29,12 +27,15 @@ const headers = {
         toast.error(error.response?.data.message)
         localStorage.clear()
         navigate("/login")
-      }else if (response.data.message === "Request failed with status code 403"){
+      }else if (error.response.data.message === "Request failed with status code 403"){
         toast.error("Check your connection")
         localStorage.clear()
         navigate("/login")
       console.log(error)
-      } 
+      }else if(error.response?.data.message === "Session timed-out: Please login to continue")
+        toast.success("Logged out successfull")
+        localStorage.clear()
+          navigate("/login")
     }
   }
   return (

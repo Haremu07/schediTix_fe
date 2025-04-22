@@ -14,41 +14,38 @@ const Card2 = (props) => {
         const response = await axios.get(`${BASEURL}/api/v1/featured-events`)
         if(response?.data?.data.length){
           setFeatureEvent(response?.data?.data)
-          // toast.success(response?.data?.message || "Events loaded")
+          toast.success(response?.data?.message || "Events loaded")
           console.log(response)
         }else{
           console.log("No featured events found.");
         }
 
-
        }
        catch(err){
         console.log(err)
-        toast.error(err?.data?.message || "Failed to fetch events")
+        toast.error(err?.response?.data?.message || "Failed to fetch events")
        }
      }
-     useEffect(() => {
-      handleFeaturedEvents();
-    }, []);
+ 
     
-     const eventsToDisplay = featureEvent.length ? featureEvent : [{
-      title: props.text,
-      description: props.content,
-      image: props.image
-    }];
+    //  const eventsToDisplay = featureEvent.length ? featureEvent : [{
+    //   title: props.text,
+    //   description: props.content,
+    //   image: props.image
+    // }];
   
     return (
       <>
         <Toaster />
-        {eventsToDisplay.map((event, index) => (
-          <div className="Card2" key={index}>
+        {featureEvent.map((event, index) => (
+          <div className="Card2" key={index} onClick={ handleFeaturedEvents}>
             <div className="Card2Nav">
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
+              <h3>{event.eventTitle}</h3>
+              <p>{event.eventDescription}</p>
               <p className="SeeM">See more <FaArrowRightLong /></p>
             </div>
             <div className="Card2Nav2">
-              <img className="Card2Nav2Img" src={event.image} alt="Event" />
+              <img className="Card2Nav2Img" src={event?.image?.imageUrl} alt="Event" />
             </div>
           </div>
         ))}

@@ -15,6 +15,8 @@
 .upcoming-evenr-header{
     width: 100%;
     height: 10%;
+    display: flex;
+    align-items: center;
     /* background-color: gray; */
 
     & h5{
@@ -240,11 +242,12 @@
 }
 
 .tickets-container {
-    width: 75%;
+    width: 80%;
     height: 100%;
     /* margin: 0 auto; */
     padding: 20px;
     background-color: #fffbfa;
+    overflow-y: scroll;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
   
