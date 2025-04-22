@@ -74,7 +74,7 @@ const Card3 = () => {
         <h2>What Our User Says About Us</h2>
       </div>
       <div className="UsersBlockNav">
-        <FaLessThan style={{cursor: "pointer"}} size={40} onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}/>
+        <FaLessThan className="lessThanIcon"  onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}/>
         <div className={`UsersBlockNav1 ${fade ? "fade" : ""}`}>
           <img className="UsersBlockNav1Img" src={slides[currentSlide].image} alt="" />
         </div>
@@ -82,17 +82,17 @@ const Card3 = () => {
         <div className={`UsersBlockNav1 ${fade ? "fade" : ""}`}>
            <div className="UsersBlockNav1Text">
            <h1>< FaQuoteLeft/></h1>
-           <p>{Texts[currentText].Text}</p>
+           <p className="ContentP">{Texts[currentText].Text}</p>
           <p>{Texts[currentText].Text2}</p>
             <div className="UsersBlockNav1Box">
                 <div className="ImgBox">
                     <div className="ImgBoxCircle">
                         <img className="circleBox" src={cimg1} alt="" />
                     </div>
-                    <div className="ImgBoxCircle1">
+                    <div className="ImgBoxCircle">
                     <img className="circleBox" src={cimg2} alt="" />
                     </div>
-                    <div className="ImgBoxCircle2">
+                    <div className="ImgBoxCircle">
                     <img className="circleBox" src={cimg3} alt="" />
                     </div>
                     <div className="stars">
@@ -107,7 +107,9 @@ const Card3 = () => {
             </div>
            </div>
         </div>
-        <FaGreaterThan style={{cursor: "pointer"}} size={40} onClick={()=> setCurrentSlide((prev) => (prev + 1) % slides.length)}/>
+        <FaGreaterThan className="greaterThanIcon" style={{cursor: "pointer"}} size={40} onClick={()=> setCurrentSlide((prev) => (prev + 1) % slides.length)}/>
+        <FaLessThan className="lessThanIconDown"  onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}/>
+       
       </div>
     </>
   );

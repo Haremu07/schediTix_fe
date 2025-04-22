@@ -13,6 +13,8 @@
 
 }
 
+
+
 .CardBoxImgBox{
     width: 333.5px;
     height: 180px;
@@ -130,7 +132,6 @@
 .Card2Nav2{
     width: 40%;
     height: 100%;
-    background-color: #ff5722;
     border-radius: 10px;
 
     & .Card2Nav2Img{
@@ -187,6 +188,7 @@
 }
 
 @media Screen and (max-width: 420px){
+
     .CardBoxImgBox{
         width: 95%;
         margin: 0;
@@ -195,6 +197,14 @@
     .CardsBox{
         width: 90%;
     }
+    .Card2{
+        height: max-content;
+}
+
+.Card2Nav{
+    gap: 18px;
+}
+
     
 }
 

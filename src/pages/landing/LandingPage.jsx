@@ -97,7 +97,7 @@ const LandingPage = () => {
       <div className="LandingPageBox2">
         <div className="LandingPageBox2Nav1">
           <div className="LandingPageBox2Nav1Small">
-            <p>Why choose ShediTix?</p>
+            <p style={{fontWeight: "bold"}}>Why choose ShediTix?</p>
             <h1 className="LandingPageBox2Nav1SmallH1">
               {slides2[currentSlides].text}
             </h1>
@@ -301,7 +301,7 @@ const LandingPage = () => {
           </button>)  
            }
           </div>
-          <div className="PlanCard">
+          <div className="PlanCards">
             <div className="PlanCardsHeader">
               <h3>Pro Plan</h3>
               <p className="PlanCardsHeaderP">
