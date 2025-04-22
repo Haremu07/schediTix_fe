@@ -5,10 +5,13 @@ import StayinLoop from './StayinLoop';
 import FeatureComp from './FeatureComp';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+// import { SlArrowLeft } from "react-icons/sl";
+// import { SlArrowRight } from "react-icons/sl";
 
 const EventCategories = () => {
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const [activeCategoyId, setActiveCategoryId] = useState('All Events'); 
+  const [activeCategoyId, setActiveCategoryId] = useState('All Events');
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
   const BASEURL = "https://scheditix.onrender.com";
@@ -35,17 +38,20 @@ const EventCategories = () => {
 
   const handleCategoryClick = (categoryId) => {
     setActiveCategoryId(categoryId);
+    setLoading(true); // Start loading
+  
     if (categoryId === 'All Events') {
-      fetchAllEvents();
+      fetchAllEvents().finally(() => setLoading(false));
     } else {
-      const getEvents = categories.find(cat => cat.categoryName === categoryId);
-      setEvents(getEvents?.events || []);
+      const selectedCategory = categories.find(cat => cat.categoryName === categoryId);
+      setEvents(selectedCategory?.events || []);
+      setTimeout(() => setLoading(false), 500); // simulate delay
     }
   };
-
+  
   useEffect(() => {
     handleCategories();
-    fetchAllEvents(); 
+    fetchAllEvents();
   }, []);
 
   return (
@@ -77,32 +83,38 @@ const EventCategories = () => {
             ))}
           </section>
 
-          <section className='middleBottom'>
-            {events?.length === 0 ? (
-              <div className='noEvent'>There are no events yet</div>
-            ) : (
-              events?.map((item, index) => (
-                <article className='middleBottomCards' key={index}>
-                  <img src={item.image?.imageUrl} alt={item.eventTitle} />
-                  <div className='radientBlackBox'>
-                    <nav className='middleBox'>
-                      <p>{item.eventTitle}</p>
-                      <p className='Categorylocation'>{item.eventLocation}</p >
-                      <div className='seeMoreButton'>
-                        <p
-                          onClick={() => navigate(`/event-details/${item._id}`)}
-                        >See More</p>
-                      </div>
-                    </nav>
-                  </div>
-                </article>
-              ))
-            )}
-          </section>
+            {/* <SlArrowLeft className='left-arrow' /> */}
+            <section className='middleBottom'>
+  {events?.length === 0 ? (
+    <div className='noEvent'>There are no events yet</div>
+  ) : (
+    [...events]
+      .sort(() => Math.random() - 0.5)
+      .map((item, index) => (
+        <article className='middleBottomCards' key={index}>
+          <img src={item.image?.imageUrl} alt={item.eventTitle} />
+          <div className='radientBlackBox'>
+            <nav className='middleBox'>
+              <p>{item.eventTitle}</p>
+              <p className='Categorylocation'>{item.eventLocation}</p>
+              <div className='seeMoreButton'>
+                <p onClick={() => navigate(`/event-details/${item._id}`)}>
+                  See More
+                </p>
+              </div>
+            </nav>
+          </div>
+        </article>
+      ))
+  )}
+</section>
+
+            {/* <SlArrowRight className='right-arrow' /> */}
         </nav>
       </div>
       <div style={{ width: "100%", height: "10vh", backgroundColor: "#edecf4" }} className='buttom'></div>
-      <FeatureComp />
+      {/* Pass activeCategoyId as a prop to FeatureComp */}
+      <FeatureComp events={events} loading={loading} />
       <EventForYou />
       <StayinLoop />
     </div>

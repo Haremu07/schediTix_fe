@@ -22,14 +22,15 @@
     justify-content: center;
     align-items: center;
     background-color: #edecf4;
-    /* padding-bottom: 0px; */
 }
+
 .middleBoxEventCategories{
     width: 90%;
     height: 87%;
     gap: 18px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .middleTop{
@@ -40,24 +41,65 @@
     gap: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
-    /* background-color: black; */
 }
+
 .replaceInline1{
     width: 20px;
     height: 3px;
     background-color: #1e1e1e;
     border-radius: 5px;
 }
+
 .middleCenter{
     width: 100%;
     height: 10%;
     display: flex;
     gap: 20px;
-    /* background-color: black; */
-    overflow-x: scroll;
+    overflow-x: auto;
     scrollbar-width: none;
     padding: 2px;
+    position: relative;
 }
+
+.middleCenter::-webkit-scrollbar {
+  display: none;
+}
+
+/* .scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+} */
+
+.left-arrow {
+  left: 10px;
+  z-index: 1;
+  font-size: 35px;
+  color: #1e1e1e;
+  position: absolute;
+  /* position: fixed; */
+}
+
+.right-arrow {
+  right: 10px;
+    z-index: 1;
+    font-size: 35px;
+    color: #1e1e1e;
+    position: absolute;
+    /* position: fixed; */
+}
+
 .listOfShowsBox {
     width: max-content;
     min-width: 20%;
@@ -71,24 +113,32 @@
     font-size: 20px;
     padding: 15px;
     cursor: pointer;
-    transition: ease-in-out 0.3s;
-  }
-  
-  .listOfShowsBox:hover {
+    transition: transform 0.3s ease-in-out, background-color 0.3s, color 0.3s;
+}
+
+.listOfShowsBox:hover {
     background-color: #fe5722;
     color: white;
     transform: scale(1.05);
-  }
+}
+
 .middleBottom{
     width: 100%;
     height: 76%;
     display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 35px;
-   overflow-x: scroll;
-   scrollbar-width: none;
-    
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+    /* background-color: black; */
 }
+
+.middleBottom::-webkit-scrollbar {
+  display: none;
+}
+
 .noEvent{
     width: 100%;
     height: 100%;
@@ -108,15 +158,16 @@
     background-color:lightblue;
     position: relative; 
     border-radius: 20px;
-    
-    & img{
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        position: absolute;
-        object-fit: cover;
-    }
 }
+
+.middleBottomCards img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    object-fit: cover;
+}
+
 .radientBlackBox{
     border-radius: 20px; 
     width: 100%;
@@ -132,7 +183,6 @@
     padding-top: 10%;
     width: 100%;
     height: 67%;
-    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,15 +190,15 @@
     font-size: 15px;
     color: white;
     gap: 10px;
+    text-align: center;
     flex-direction: column;
     font-weight: 600;
 }
+
+
+
 .Categorylocation{
     width: 80%;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     text-align: center; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
@@ -256,6 +306,7 @@
     position: absolute;
     z-index: 6;
     color: rgba(255, 255, 255, 1);
+    cursor: pointer ;
 }
 .location{
     font-size: 20px;
@@ -287,6 +338,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    /* background-color: aqua; */
 }
 .address{
     width: 90%;
@@ -402,7 +454,7 @@
 .imgDiv{
     width: 40%;
     height: 100%;
-    background-color: aqua;
+    background-color: gray;
     border-radius: 15px;
 }
 .contentBoxText{
@@ -554,6 +606,14 @@
         font-size: 600;
         /* background-color: aqua; */
     }
+    .middleBox{
+        font-size: 600;
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
     .buttom{
         display: none;
     }
@@ -683,11 +743,221 @@
         width: 40%;
         height: 100%;
     }
-
 }
 
+    
+    @media screen and (min-width:415px) and (max-width:768px){
+        .MainPageEventCategories{
+            /* background-color: #1e1e1e; */
+            display: flex;
+            flex-direction: column;
+            height: max-content;
+            width: 100%;
+        }
+        .topBox{
+            width: 100%;
+            height: 6vh;
+            /* background-color: #1e1e1e; */
+        }
+        .LandingPageEventCategories{
+            /* background-color: #1e1e1e; */
+            width: 100%;
+            height: 80vh;
+        }
+        .middleBoxEventCategories{
+            width: 100%;
+            height: 80%;
+            /* background-color: aqua; */
+        }
+        .middleTop{
+            /* background-color: aqua; */
+            width: 100%;
+            height: 5%;
+            font-size: 20px;
+        }
+        .middleCenter{
+            width: 100%;
+            height: 5%;
+            /* background-color: lightseagreen; */
+            overflow-x: scroll;
+            scrollbar-width: none;
+        }
+        .listOfShowsBox{
+            width: max-content;
+            min-width: 40%;
+            height: 100%;
+            border: 1px solid #bcbbc0;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            font-size: 10px;
+            font-weight:300 ;
+        }
+        .middleBottom{
+            /* background-color: aqua; */
+            width: 100%;
+            font-size: 500;
+        }
+        .middleBottomCards{
+            width: 80%;
+        }
+        .middleBoxmiddleBox{
+            font-size: 600;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .middleBox{
+            font-size: 600;
+            /* background-color: aqua; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .buttom{
+            display: none;
+        }
+    
+        .featureCamp{
+            background-color: white;
+        }
+    
+        .combine{
+            /* background-color: #fe5722; */
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    
+            .vectorImg{
+                width: 37%;
+            }
+        }
+        .cardMainBox{
+            /* background-color: aqua; */
+            display: flex;
+           justify-content: center;
+           flex-wrap: wrap;
+            align-items: center;
+        }
+        .FeturesCards{
+            width: 80%;
+            height: max-content;
+        }
+        .imageBox{
+            height:120px;
+        }
+        .cardFirsBox{
+            /* background-color: aqua; */
+            height: 47px;
+            font-size: 15px;
+    
+            & div{
+                font-size: 10px;
+                gap: 3px;
+                font-weight: 600;
+                padding: 4px;
+            }
+        }
+        .buyTicket{
+            font-size: 12px;
+        }
+        .mainEventForYou{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            height: max-content;
+            width: 100%;
+            gap: 5px;
+            /* padding: 10px; */
+        }
+        .firstBlock{
+            /* background-color: aqua; */
+            display: none;
+        }
+        .SecondBlock{
+            width: 100%;
+            height: max-content;
+            /* background-color: aqua; */
+        }
+        .textHeaders{
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .contentBox{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            /* background-color: aqua; */
+        }
+        .textBox{
+            width: 100%;
+            gap: 10px;
+    
+        }
+        .contentBoxText{
+            font-size: 15px;
+        }
+        .imgDiv{
+            width: 100%;
+            height: 130px;
+            background-color: gray;
+        }
+        .seeMore{
+            width: 100%;
+            font-size: 6px;
+        }
+        .futureArrow{
+            font-size: 10px;
+        }
+        .ThirdBlock{
+            width: 100%;
+            height: max-content;
+        }
+        .stayinLoopMain{
+           width: 100%;
+           height: max-content;
+           display: flex;
+        }
+        .stayinLoopPadding{
+            width: 100%;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+        }
+        .stayinLoopText{
+            width: 100%;
+            gap: 5px;
+        }
+        .stayinLoopInput{
+            width: 100%; 
+            height: 50px;
+            /* background-color:aqua */
+        }
+        .inputDiv{
+            height: 10%;
+            /* background-color: #1e1e1e; */
+        }
+        .subcribeBnt{
+            width: 40%;
+            height: 100%;
+        }
+    }
 
-@media  (max-width: 414px ){
+
+
+
+
+
+
+    @media  (max-width: 414px ){
     .MainPageEventCategories{
         /* background-color: #1e1e1e; */
         display: flex;
@@ -875,7 +1145,7 @@
     }
 }
 
-@media screen and (min-width:415px) and (max-width:768px) {
+@media screen and (min-width:570px) and (max-width:768px) {
     .MainPageEventCategories{
         /* background-color: #1e1e1e; */
         display: flex;
@@ -981,10 +1251,13 @@
         }
     }
     .buyTicket{
-        font-size: 12px;
+        width: 40%;
+        display: flex;
+        font-size: 5px;
+        font-weight: 200;
     }
     .mainEventForYou{
-        background-color: white;
+        /* background-color: red; */
         display: flex;
         flex-direction: column;
         height: max-content;
@@ -1016,6 +1289,7 @@
         width: 90%;
         height: max-content;
         display: flex;
+        flex-direction: row-reverse;
         /* background-color: aqua; */
         justify-content: center;
     }

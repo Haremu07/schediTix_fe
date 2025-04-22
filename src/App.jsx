@@ -42,6 +42,8 @@ import CheckIn from "./pages/checkInAttendee/CheckIn"
 import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
 
 
+
+
 const App = () => {
 
   const routes = createBrowserRouter([
