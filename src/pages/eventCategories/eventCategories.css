@@ -1,19 +1,4 @@
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .MainPageEventCategorie{
     width: 100%;
     height: max-content;
@@ -57,6 +42,8 @@
     gap: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
+    /* background-color: #1e1e1e; */
+  
 }
 
 .replaceInline1{
@@ -74,28 +61,10 @@
     overflow-x: auto;
     scrollbar-width: none;
     padding: 2px;
-    position: relative;
 }
 
 
 
-.left-arrow {
-  left: 10px;
-  z-index: 1;
-  font-size: 35px;
-  color: #1e1e1e;
-  position: absolute;
-  /* position: fixed; */
-}
-
-.right-arrow {
-  right: 10px;
-    z-index: 1;
-    font-size: 35px;
-    color: #1e1e1e;
-    position: absolute;
-    /* position: fixed; */
-}
 
 .listOfShowsBox {
     width: max-content;
@@ -131,22 +100,47 @@
     position: relative;
     /* background-color: black; */
 }
-.loadingSpinner{
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to left #fe55225b, rgba(39, 24, 126, 0.237)  );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 500;
-    color: black;
-}
-  
 
-.middleBottom::-webkit-scrollbar {
-  display: none;
-}
+.custom-skeleton {
+    width: 100%;
+    max-width: 300px;
+    background: #eee;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-image {
+    width: 100%;
+    height: 180px;
+    background-color: #ccc;
+    border-radius: 8px;
+  }
+  
+  .skeleton-line {
+    height: 15px;
+    background-color: #ddd;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .skeleton-line.short {
+    width: 60%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #e0e0e0;
+    }
+    50% {
+      background-color: #f0f0f0;
+    }
+    100% {
+      background-color: #e0e0e0;
+    }
+  }
+  
 
 .noEvent{
     width: 100%;

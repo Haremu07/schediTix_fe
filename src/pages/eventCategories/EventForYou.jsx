@@ -75,7 +75,9 @@ const EventForYou = () => {
                 <GoArrowRight style={{ fontSize: "25px" }} className='futureArrow' />
               </p>
             </span>
-            <span className='imgDiv'></span>
+            <span className='imgDiv'>
+            <img src={event.img} alt="" className='imgForYou' style={{width:"100%", height:"100%"}} />
+            </span>
           </div>
         ))}
       </section>
