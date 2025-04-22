@@ -261,7 +261,7 @@ const App = () => {
         element: <CheckInAs/>
       },
       {
-        path: "reset-password" ,
+        path: "reset-password/:token" ,
         errorElement: <ErrorPage/>,
         element: <ResetPassword/>
       },
