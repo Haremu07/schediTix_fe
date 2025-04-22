@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState}from 'react';
 import '../header/header.css';
-import {FiSearch } from 'react-icons/fi';
+import {FiSearch, FiMenu, FiX} from 'react-icons/fi';
 import { useNavigate } from 'react-router';
 import orangelogo from '../../assets/orangelogo.png'
 
 const Header = () => {
  const  navigate = useNavigate();
+ const [menuOpen, setMenuOpen] = useState(false);
  const input = JSON.parse(localStorage.getItem(`userData`))
 // const user = input ? JSON.parse(input) : null
 const token= localStorage.getItem(`userToken`)
@@ -23,7 +24,7 @@ console.log(input)
           token ? (
             <>
             <p className='nav-link' onClick={() => navigate("/dashboard/Upcoming-events")}>My Events</p>
-            <p className='nav-link' onClick={() => navigate("/dashboard/overview")}>Overview</p>
+            <p className='nav-link' onClick={() => navigate("/dashboard/create-event")}>Create Event</p>
             </>
           ) : null
         }
@@ -54,7 +55,36 @@ console.log(input)
           </div>
           ) 
         }
+        <div className='mobile-menu-icon' onClick={() => setMenuOpen(true)}>
+          <FiMenu size={26}/>
+        </div>
+
       </div>
+      {menuOpen && (
+        <div className="mobile-dropdown">
+          <div className="mobile-header-top">
+            <img className="logo-link" src={orangelogo} alt="SchediTix logo" />
+            <button className="close-btn" onClick={() => setMenuOpen(false)}>
+              <FiX size={26} />
+            </button>
+          </div>
+          <a href="/event-categories">Event Categories</a>
+          {!token ? (
+            <>
+              <a onClick={() => { navigate('/login'); setMenuOpen(false); }}>Sign In</a>
+              <a onClick={() => { navigate('/register'); setMenuOpen(false); }}>Sign Up</a>
+            </>
+          ) : (
+            <>
+              <a onClick={() => { navigate('/dashboard/Upcoming-events'); setMenuOpen(false); }}>My Events</a>
+              <a onClick={() => { navigate('/dashboard/overview'); setMenuOpen(false); }}>Overview</a>
+              <a onClick={() => { navigate('/dashboard/profile'); setMenuOpen(false); }}>
+                {input?.fullname?.charAt(0)}
+              </a>
+            </>
+          )}
+        </div>
+      )}
     </header>
   );
 };

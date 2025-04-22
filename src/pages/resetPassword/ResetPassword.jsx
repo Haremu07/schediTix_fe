@@ -1,5 +1,6 @@
 import "./resetPassword.css";
 import { GiDialPadlock } from "react-icons/gi";
+import { AiFillEye,AiFillEyeInvisible } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 // import { FaArrowLeft } from "react-icons/fa6";
 import { useState } from "react";
@@ -7,7 +8,8 @@ import orangeLogo from "../../assets/orangelogo.png";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
-
+  const [showPassword, setShowPassword]=useState(false);
+  const [showConfirmPassword, setShowConfirmPassword]= useState(false);
   const { token } = useParams(); 
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -101,26 +103,30 @@ const ResetPassword = () => {
               <span className="input">
                 <GiDialPadlock />
                 <input 
-                  type="password" 
+                  type={showPassword ? "text" : "password"}
                   className="input2" 
                   placeholder="New password" 
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   required
                 />
+                <span className="eye-icon" onClick={() =>setShowPassword(!showPassword)}>{showPassword ? <AiFillEyeInvisible /> : <AiFillEye/>}
+                </span>
               </span>
 
 
               <span className="input">
                 <GiDialPadlock />
                 <input 
-                  type="password" 
+                  type={showConfirmPassword ? "text" : "password"}
                   className="input2" 
                   placeholder="Confirm password" 
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
                 />
+                 <span className="eye-icon" onClick={() =>setShowConfirmPassword(!showConfirmPassword)}>{showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye/>}
+                 </span>
               </span>
 
               

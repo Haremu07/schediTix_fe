@@ -19,8 +19,24 @@ const CreateEvent = () => {
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
+  const showModals = () => {
+    setIsModalOpens(true);
+  };
+  const [succesful, setSuccesful] = useState(false);
 
+  const sucessShowModal = () => {
+    setSuccesful(true);
+  };
 
+  
+
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     setProfileImage(file);
+  //     setPreviewURL(URL.createObjectURL(file));
+  //   }
+  // };
 
   const [input, setInput] = useState({
     eventTitle: "",
@@ -117,9 +133,10 @@ const CreateEvent = () => {
       );
       console.log(response);
       setInput(response.data.data);
-      toast.success(response?.data?.data?.messagse);
-      toast.success("Event Created Successfully");
+      setSuccesful(true);
       setTimeout(() => {
+        setIsModalOpens(false);
+        // toast.success(response?.data?.data?.messagse);
         setDisable(false);
         navigate("/dashboard/manage-event"); 
         setIsLoading(false);
@@ -635,6 +652,19 @@ const CreateEvent = () => {
                     </div>
                   </div>
                 </Modal>
+                        
+                       
+               <Modal
+              title="Success"
+              open={succesful}
+              // onOk={handleOk}
+              // onCancel={handleOk}
+              centered
+              okText="Okay"
+              cancelButtonProps={{ style: { display: 'none' } }}
+             >
+             <p className="CreatedSussecfully">🎉 Event created successfully!</p>
+            </Modal>
 
                 <div className="parking-btn-wrapper">
                   {/* <Outlet /> */}
