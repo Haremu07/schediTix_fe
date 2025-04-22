@@ -40,6 +40,7 @@ import TicketPurchaced from "./pages/eventFavorite/TicketPurchaced"
 import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
 import CheckIn from "./pages/checkInAttendee/CheckIn"
 import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
+import Brief from "./pages/auth/emailVerification/Brief"
 
 
 const App = () => {
@@ -114,7 +115,7 @@ const App = () => {
               element: <UpcomingEventDetails/>
             },
             {
-              path:"dashboard/purchase-details",
+              path:"dashboard/purchase-details/:eventId",
               errorElement: <ErrorPage/>,
               element: <PurchaseDetails/>
             },
@@ -176,11 +177,15 @@ const App = () => {
               element: <ViewEvent/>,
             },
             {
-              path: "/dashboard/check-in" ,
+              path: "/dashboard/check-in/:id" ,
               errorElement: <ErrorPage/>,
               element: <CheckIn/>,
             },
-          
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
             {
               path: "dashboard/overview" ,
               errorElement: <ErrorPage/>,
@@ -234,6 +239,11 @@ const App = () => {
         path: "login" ,
         errorElement: <ErrorPage/>,
         element: <SignIn/>
+      },
+      {
+        path: "brief" ,
+        errorElement: <ErrorPage/>,
+        element: <Brief/>
       },
       {
         path: "register" ,

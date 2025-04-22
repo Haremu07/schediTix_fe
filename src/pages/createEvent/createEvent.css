@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .create-event-bg{
-    width: 80%;
+    width: 100%;
     height: max-content;
     background-color:skyblue ;
     color: rgb(53, 52, 52);
@@ -181,6 +181,9 @@
     background-color: rgb(255, 255, 255);
     margin-top: 10px;
    
+}
+.tt{
+    font-size: 13px;
 }
 .input-holder{
     width: 100%;
@@ -505,18 +508,32 @@ border-radius: 7px;
     .upload-img-card,
     .input-wrapper,
     .finally-input-wrapper {
-      width: 95%;
+      width: 100%;
+      
+     
+    }
+    .upload-img-title{
+        font-size: 12.9px;
     }
   
     .upload-img-template {
       flex-direction: column;
-      height: auto;
+      height: 50%;
+    }
+    .describe-category{
+        width: 100%;
+        
+    }
+    .finally-input{
+        width: 100%;
     }
   
     .upload-img-template-details-wrapper {
       width: 100%;
-      height: auto;
-      padding: 10px 0;
+      height:90%;
+      padding: 10px 10px 10px 10px;
+      /* background-color: red; */
+      font-size: 15px;
     }
   
     .upload-img-btn,
@@ -534,6 +551,20 @@ border-radius: 7px;
     .finally-double-input-wrapper {
       flex-direction: column;
       height: auto;
+      
+    }
+    .tt{
+        width: 100%;
+        height: auto;
+        /* background-color: red; */
+        display: flex;
+        font-size: 14px;
+    }
+    .catchy{
+        width: 100%;
+        height: 30%;
+       font-size: 15px; 
+        /* background-color: yellowgreen; */
     }
   
     .input-one-holder,
@@ -543,12 +574,25 @@ border-radius: 7px;
   
     .wider-bg {
       width: 95%;
-      height: auto;
+      height: 100%;
+      /* background-color: #ff5722; */
+      margin-top: 100%;
+      font-size: 13px;
     }
   
     .Four-input-wrapper {
       flex-direction: column;
-      height: auto;
+      width:100%;
+      height:80%;
+      /* background-color: yellow; */
+      
+    
+    }
+    .wider-input{
+        font-size: 15px;
+    }
+    .catchz{
+        font-size: 14px;
     }
   
     .input-time,
@@ -569,10 +613,18 @@ border-radius: 7px;
       flex-direction: column;
       align-items: flex-start;
       gap: 5px;
+      width: 100%;
+      height: 55%;
+      /* background-color: green; */
+      
     }
   
     .start {
       width: 100%;
+      
+    }
+    .parking-btn{
+        width: 90%;
     }
   
     .arrow-down,
@@ -582,3 +634,15 @@ border-radius: 7px;
     }
   }
   
+
+.CreatedSussecfully{
+    width: 30%;
+    height: 20%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 30px;
+    font-weight: 600;
+}

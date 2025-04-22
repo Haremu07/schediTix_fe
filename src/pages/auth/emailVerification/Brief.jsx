@@ -7,8 +7,8 @@ import Logo from "../../../assets/orangelogo.png"
 const Brief = () => {
   return (
     <div className="email-verification-container">
-      <div className="Nav">
-               <div className="signIn-Nav-Header">
+      {/* <div className="Nav">
+               <div className="signIn-Nav-Header"> */}
                  {/* <div className="LogoBox">
                 
                  </div> */}
@@ -16,8 +16,8 @@ const Brief = () => {
                <div className="navBoxs1"></div>
                <div className="navBoxs2"></div>
                </div> */}
-               </div>
-      </div>
+               {/* </div>
+      </div> */}
       <div className="email-verification-body">
         <div className="email-verification-form">
           <div className="email-verification-form-Header">
@@ -31,12 +31,12 @@ const Brief = () => {
           </div>
         </div>
       </div>
-      <div className="Nav2">
+      {/* <div className="Nav2"> */}
       {/* <div className="Nav-Box">
         <div className="navBoxs1"></div>
         <div className="navBoxs2"></div>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   )
 }

@@ -2,9 +2,14 @@ import React from 'react';
 import "./eventCategories.css";
 import { GoArrowRight } from "react-icons/go";
 import vector from "../../assets/Vector.png";
+import image1 from "../../assets/Frame 129.png";
+import image2 from "../../assets/Frame 237815 (1).png";
+import image3 from "../../assets/Frame 237815 (2).png";
+import image4 from "../../assets/Frame 50 (1).png";
 
 const eventData = [
   {
+    img: image1,
     title: "MyKealWise Comedy Live...",
     description: [
       "A 14-day hackton to build to build ideas that",
@@ -15,6 +20,7 @@ const eventData = [
     ]
   },
   {
+    img: image2,
     title: "MyKealWise Comedy Live...",
     description: [
       "Now in its 5th year, Lagos Tech Fest",
@@ -25,6 +31,7 @@ const eventData = [
     ]
   },
   {
+    img: image3,
     title: "MyKealWise Comedy Live...",
     description: [
       "we are Genztechies, where Gen-Z",
@@ -34,6 +41,7 @@ const eventData = [
     ]
   },
   {
+    img: image4,
     title: "MyKealWise Comedy Live...",
     description: [
       "A Pan Africa Venture studio Actuating",
@@ -87,7 +95,9 @@ const EventForYou = () => {
                 <GoArrowRight style={{ fontSize: "25px" }} />
               </p>
             </span>
-            <span className='imgDiv'></span>
+            <span className='imgDiv'>
+              <img src={event.img} alt="" className='imgForYou' style={{width:"100%", height:"100%"}} />
+            </span>
           </div>
         ))}
       </section>
