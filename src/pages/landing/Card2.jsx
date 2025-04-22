@@ -15,15 +15,15 @@ const Card2 = (props) => {
         if(response?.data?.data.length){
           setFeatureEvent(response?.data?.data)
           toast.success(response?.data?.message || "Events loaded")
-          console.log(response)
+          // console.log(response)
         }else{
-          console.log("No featured events found.");
+          // console.log("No featured events found.");
         }
 
        }
        catch(err){
-        console.log(err)
-        toast.error(err?.response?.data?.message || "Failed to fetch events")
+        // console.log(err)
+        // toast.error(err?.response?.data?.message || "Failed to fetch events")
        }
      }
      useEffect(() => {

@@ -23,7 +23,7 @@ console.log(input)
           token ? (
             <>
             <p className='nav-link' onClick={() => navigate("/dashboard/Upcoming-events")}>My Events</p>
-            <p className='nav-link' onClick={() => navigate("/dashboard/overview")}>Overview</p>
+            <p className='nav-link' onClick={() => navigate("/dashboard/create-event")}>Create Event</p>
             </>
           ) : null
         }

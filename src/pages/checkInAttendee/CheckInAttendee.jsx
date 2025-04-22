@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./checkInAttendee.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
@@ -10,11 +10,36 @@ import profile5 from "../../assets/profile5.png";
 import { Dropdown } from "antd";
 import { CiMenuKebab } from "react-icons/ci";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const CheckInAttendee = () => {
-  
   const navigate = useNavigate();
 
+  const BASEURL = "https://scheditix.onrender.com";
+
+  const [allEvent, setAllEvent] = useState([])
+  const [search, setSearch] = useState("")
+  const [theId, setTheId] = useState("")
+
+
+
+  useEffect(() => {
+    const handleEvent = async() => {
+      try {
+        const res = await axios.get(`${BASEURL}/api/v1/events`)
+        // console.log(res)
+        setAllEvent(res?.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    handleEvent()
+  },[])
+
+  const filteredEvents = allEvent.filter((event) =>
+    event.eventTitle.toLowerCase().includes(search.toLowerCase())
+  );
   const items = [
     {
       label: (
@@ -26,7 +51,7 @@ const CheckInAttendee = () => {
     },
     {
       label: (
-        <p onClick={() => navigate("/dashboard/check-in")}>
+        <p onClick={() => navigate(`/dashboard/check-in/${theId}`)}>
           Check In
         </p>
       ),
@@ -49,6 +74,8 @@ const CheckInAttendee = () => {
           type="text"
           placeholder="search for event"
           className="navInpit"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </nav>
 
@@ -65,28 +92,35 @@ const CheckInAttendee = () => {
             <p>Actions</p>
           </section>
 
-          <section className="rows">
-            <div className="medalandtitle">
+            {
+              filteredEvents.length === 0 ? (<p style={{display: "flex", alignItems: "center", justifyContent: "center"}}>No event!</p>) : (
+             filteredEvents.map((event, index) => (
+          <section className="rows" key={index}>
+            <div className="medalandtitle" >
               <nav className="profile">
-                <img src={profile1} alt="" />
+                <img src={event?.image.imageUrl} alt="" />
               </nav>
-              <p>Ajegunle city youth marathon</p>
+              <p> {event.eventTitle}</p>
             </div>
-            <p>24/04/2025 - 11:00am</p>
-            <p>350 (220)</p>
-            <p>N2,450,000</p>
+            <p>{event.startDate} - {event.startTime}</p>
+            <p>{event.ticketQuantity} {(event.ticketSold)}</p>
+            <p>#{event.revenueGenerated}</p>
             <div className="status">
-              <p>Ongoing</p>
+              <p>{event.status}</p>
             </div>
             <p className="dot">
               {/* <PiDotsThreeOutlineFill style={{cursor: "pointer"}} onClick={handleToggle}/> */}
               <Dropdown menu={{ items }} trigger={["click"]}>
-                <CiMenuKebab style={{cursor: "pointer"}} onClick={(e) => e.preventDefault()}/>
+                <CiMenuKebab style={{cursor: "pointer"}} onClick={(e) => {e.preventDefault(); setTheId(event._id)}}/>
               </Dropdown>
             </p>
-          </section>
 
-          <section className="rows">
+          </section>
+            ))
+          )
+            }
+
+          {/* <section className="rows">
             <div className="medalandtitle">
               <nav className="profile">
                 <img src={profile2} alt="" />
@@ -184,7 +218,7 @@ const CheckInAttendee = () => {
                 <CiMenuKebab style={{cursor: "pointer"}} onClick={(e) => e.preventDefault()}/>
               </Dropdown>
             </p>
-          </section>
+          </section> */}
         </nav>
 
         <div className="Checkinpagination-bg">
@@ -198,8 +232,10 @@ const CheckInAttendee = () => {
             <div className="num">4</div>
             <div className="num">5</div>
             <p className="dot">
-            <Dropdown menu={{ items }} trigger={["click"]}>
-                <CiMenuKebab style={{cursor: "pointer"}} onClick={(e) => e.preventDefault()}/>
+            <Dropdown
+             menu={{ items }} trigger={["click"]}
+             >
+                <CiMenuKebab style={{cursor: "pointer"}}  />
               </Dropdown>
             </p>
             <div className="num">10</div>

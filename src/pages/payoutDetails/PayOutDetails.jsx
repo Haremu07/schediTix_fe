@@ -90,7 +90,7 @@ const PayOutDetails = () => {
               </div>
             </div>
 
-            <div className='payout-model-holder-two'>
+            {/* <div className='payout-model-holder-two'>
               <div className='paypal-details'>
                 <div className='holder-bank-detailss'>
                   <div className='holder-bank-detailss-child'>
@@ -116,10 +116,10 @@ const PayOutDetails = () => {
                 </div>
               </div>
 
+            </div> */}
               <button className='request-for-payment-btn' onClick={showModal}>
                 <h3>Request For payment</h3>
               </button>
-            </div>
 
             <Modal open={isModalOpen} onCancel={handleCancel} okButtonProps={{ style: { display: "none" } }} cancelButtonProps={{ style: { display: "none" } }}>
               <div className='modal-bg'>
@@ -137,7 +137,6 @@ const PayOutDetails = () => {
                   <button className='request-for-payment-btns'
                   >
                     {
-                  
                       showInput? (
                         <div className="div">
                           <input type="number"  placeholder='Enter amount' className='bank-account-input' style={{ padding: "7px" }} /> 
@@ -200,7 +199,11 @@ const PayOutDetails = () => {
                       <td>2025-03-25</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
-                      <td><span className="status">Paid<span className="status-dot green"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                          Paid<span className="status-dot green"></span>
+                          {/* </span> */}
+                          </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
@@ -208,7 +211,11 @@ const PayOutDetails = () => {
                       <td>2025-03-18</td>
                       <td>Startup Summit 2025</td>
                       <td>₦1,800,000</td>
-                      <td><span className="status">Pending<span className="status-dot yellow"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                        Pending<span className="status-dot yellow"></span>
+                        {/* </span> */}
+                        </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
@@ -216,7 +223,11 @@ const PayOutDetails = () => {
                       <td>2025-03-18</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
-                      <td><span className="status">Rejected<span className="status-dot red"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                          Rejected<span className="status-dot red"></span>
+                          {/* </span> */}
+                          </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
@@ -224,7 +235,11 @@ const PayOutDetails = () => {
                       <td>2025-03-18</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
-                      <td><span className="status">Paid<span className="status-dot green"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                        Paid<span className="status-dot green"></span>
+                        {/* </span> */}
+                        </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
@@ -232,7 +247,11 @@ const PayOutDetails = () => {
                       <td>2025-03-25</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
-                      <td><span className="status">Paid<span className="status-dot green"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                        Paid<span className="status-dot green"></span>
+                        {/* </span> */}
+                        </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
@@ -240,11 +259,15 @@ const PayOutDetails = () => {
                       <td>2025-03-18</td>
                       <td>Startup Summit 2025</td>
                       <td>₦1,800,000</td>
-                      <td><span className="status">Pending<span className="status-dot yellow"></span></span></td>
+                      <td>
+                        {/* <span className="status"> */}
+                        Pending<span className="status-dot yellow"></span>
+                        {/* </span> */}
+                        </td>
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td>2025-03-18</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
@@ -252,14 +275,14 @@ const PayOutDetails = () => {
                       <td>2025-03-26</td>
                       <td>Bank Transfer</td>
                     </tr>
-                    <tr>
-                      <td>2025-03-18</td>
+                    <tr> */}
+                      {/* <td>2025-03-18</td>
                       <td>Tech Conference 2025</td>
                       <td>₦800,000</td>
                       <td><span className="status">Paid<span className="status-dot green"></span></span></td>
                       <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
+                      <td>Bank Transfer</td> */}
+                    {/* </tr> */}
                   </tbody>
                 </table>
 

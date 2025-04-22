@@ -176,11 +176,15 @@ const App = () => {
               element: <ViewEvent/>,
             },
             {
-              path: "/dashboard/check-in" ,
+              path: "/dashboard/check-in/:id" ,
               errorElement: <ErrorPage/>,
               element: <CheckIn/>,
             },
-          
+            {
+              path: "dashboard/profile" ,
+              errorElement: <ErrorPage/>,
+              element: <ProfileSetting/>
+            },
             {
               path: "dashboard/overview" ,
               errorElement: <ErrorPage/>,
