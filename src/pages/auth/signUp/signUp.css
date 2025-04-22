@@ -119,6 +119,16 @@
     font-size: 20px;
 }
 
+.EyeBox{
+    width: 10%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .input3{
     width: 90%;
     height: 50%;
@@ -159,3 +169,108 @@
     font-weight: bold;
     font-size: 14px;
 }
+  
+  @media screen and (max-width: 768px) {
+    .signIn-container {
+      flex-direction: column;
+    }
+  
+    .signIn-Nav {
+      width: 100%;
+      height: auto;
+      padding: 20px 0 0 20px;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  
+    .signup-Nav2 {
+      display: none; 
+    }
+  
+    .signIn-Nav-Box {
+      width: 80px;
+      height: 80px;
+      margin: 0;
+    }
+  
+    .signup-body {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .signup-form {
+      width: 100%;
+      max-width: 400px;
+      box-shadow: none;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .signup-form {
+      padding: 10px;
+    }
+  
+    .input {
+      height: 50px;
+      font-size: 16px;
+    }
+  
+    .btnUp {
+      height: 50px;
+      font-size: 18px;
+    }
+  
+    .boxes {
+      font-size: 12px;
+    }
+  
+    .signup-form-Header h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .signIn-container {
+      background-color: #ffffff;
+      padding: 0;
+    }
+  
+    .signIn-Nav {
+      padding: 15px;
+      height: auto;
+    }
+  
+    .signIn-Nav-Box {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  
+    .signup-form {
+      box-shadow: none;
+      padding: 15px;
+      max-height: none;
+    }
+  
+    .signup-form-Header {
+      margin-bottom: 20px;
+    }
+  
+    .form {
+      gap: 15px;
+    }
+  
+    .input {
+      border-radius: 8px;
+      height: 48px;
+    }
+  
+    .btnUp {
+      margin-top: 10px;
+    }
+  
+    .signupBox2 {
+      margin-top: 10px;
+      justify-content: center;
+    }
+  }

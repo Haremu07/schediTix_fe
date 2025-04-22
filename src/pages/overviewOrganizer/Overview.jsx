@@ -1,14 +1,72 @@
 import "../overviewOrganizer/overview.css";
 import { FaTicketAlt, FaUsers, FaCheck, FaPlus, FaCalendarAlt, FaDollarSign } from "react-icons/fa";
 import Calender from "../../assets/calendar.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+ 
+  
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+
 
 function Overview() {
   const navigate = useNavigate()
+
+
+   const[overviewTop, setOverviewTop]= useState({})
+   const BASEURL = "https://scheditix.onrender.com"
+   
+
+  const [overview, setOverview] = useState([])
+const token = localStorage.getItem(`userToken`)
+console.log(token)
+  // const header = {
+  //   Authorization: 
+  // }
+  const handleOverview = async () => {
+    try {
+      const res = await axios.get(`${BASEURL}/api/v1/recent/events`,{
+        headers: {
+          Authorization: `Bearer, ${token}`
+        }
+      })
+      console.log(res)
+      setOverview(res.data.data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    handleOverview()
+  },[])
+
+   const handleOverviewTop = async () =>{
+        try{
+            const response = await axios.get(`${BASEURL}/api/v1/Overview`)
+            if(response.status === 200){
+            setOverviewTop(response?.data?.data)
+            console.log(response)
+            // toast.success(response?.data?.message || "dashboard statistics successfully retrieved")
+        } else{
+          toast.error("unable to fetch data")
+        }
+      }
+        
+        catch(err){
+           console.log(err)
+           toast.error(err?.data?.message || "Failed to fetch dashboard statistics")
+        }
+      }
+
+      useEffect(()=>{
+        handleOverviewTop()
+      },[])
   return (
     <div className="dashboard-container">
       <div className="stats-grid">
-        <div className="stats-card">
+        <Toaster />
+        <div className="stats-card" >
           <div className="stats-content">
             <div className="stats-icon-container">
               <div className="icon-wrapper purple">
@@ -16,7 +74,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Ticket Sales</p>
             </div>
-            <div className="stats-value">300</div>
+            <div className="stats-value">{overviewTop.totalTicketSold}</div>
           </div>
         </div>
 
@@ -28,7 +86,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Revenue</p>
             </div>
-            <div className="stats-value">#3,800,000</div>
+            <div className="stats-value">{overviewTop.totalRevenue}</div>
           </div>
         </div>
 
@@ -40,7 +98,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Events Organized</p>
             </div>
-            <div className="stats-value">25</div>
+            <div className="stats-value">{overviewTop.totalEventOrganizers}</div>
           </div>
         </div>
       </div>
@@ -109,15 +167,20 @@ function Overview() {
               </tr>
             </thead>
             <tbody>
+           {
+            overview.map((i) => (
               <tr>
-                <td>HC Saxio Comedy Show</td>
-                <td>170/180</td>
-                <td>150</td>
-                <td>#2,535,000</td>
-                <td>0</td>
-                <td><div className="status-container"><div className="status-dot upcoming"></div>Upcoming</div></td>
-              </tr>
-              <tr>
+              <td>{i.eventName}</td>
+              <td>{i.ticketSold}</td>
+              <td>{i.totalAttendee}</td>
+              <td>#{i.revenueGenerated}</td>
+              <td>{i.checkins}</td>
+              <td><div className="status-container"><div className="status-dot upcoming"></div>{i.status}</div></td>
+            </tr>
+            ))
+           }
+ 
+              {/* <tr>
                 <td>Aegunie City Youth Marathon</td>
                 <td>500/550</td>
                 <td>500</td>
@@ -140,7 +203,7 @@ function Overview() {
                 <td>#18,535,000</td>
                 <td>400</td>
                 <td><div className="status-container"><div className="status-dot completed"></div>Completed</div></td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

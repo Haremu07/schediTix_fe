@@ -1,10 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useId } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const DeletePopUp = ({setToggle}) => {
   const navigate = useNavigate();
   // localStorage.setItem('token',)
   // console.log("clicked", setToggle)
+  const BASEURL = "https://scheditix.onrender.com" 
+
+  const token = localStorage.getItem(`userToken`)
+  console.log(token)
+  const userData = JSON.parse(localStorage.getItem(`userData`))
+  const userId = userData._id
+  console.log(userId)
+
+  const headers = {
+  Authorization: `Bearer ${token}`
+}
+  const handleDeelete = async() => {
+    try {
+      const res = await axios.delete(`${BASEURL}/api/v1/delete/user/${userId}`, {headers})
+      console.log("Deleted", res.data)
+      toast.success(res.data)
+      localStorage.clear()
+      navigate("/")
+      // localStorage.clear()
+    } catch (error) {
+      console.log("Not Deleted", error)
+      if(error.res.data.message === "Session timed-out: Please login to continue" || "Unauthorized")
+        localStorage.clear()
+      navigate("/")
+      toast.error(error.res.data.message)
+    }
+  }
+
+  
   return (
     <div className="DeletePopUpBody">
       <div className="DeletePopUpCard">
@@ -13,7 +44,9 @@ const DeletePopUp = ({setToggle}) => {
 
        <div className="BtnBox">
        <button
-         onClick={ () => navigate("/")}
+         onClick={
+              handleDeelete
+         }
          className="YesBtn" 
          >Yes</button>
          <button className="NoBtn" 

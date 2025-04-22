@@ -432,3 +432,157 @@
     justify-content: space-between;
     align-items: center;
 }
+@media (max-width: 1024px) {
+    .eventdetails-sections {
+      width: 80%;
+      margin-left: 30px;
+    }
+  
+    .eventdetails-billboard-wrapper {
+      height: auto;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .eventdetails-billboard-image,
+    .eventdetails-billboard-text {
+      width: 100%;
+      height: auto;
+    }
+  
+    .details-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+    }
+  
+    .event-rules-box,
+    .reserve-your-spot {
+      width: 90%;
+    }
+  
+    .reserve-your-spot-box-one-child,
+    .reserve-your-spot-box-two-child,
+    .reserve-your-spot-box-three-child {
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .eventdetails-sections {
+      flex-direction: column;
+      width: 90%;
+      margin-left: 20px;
+      gap: 12px;
+    }
+  
+    .eventdetails-sections-one,
+    .eventdetails-sections-two,
+    .eventdetails-sections-three,
+    .eventdetails-sections-four,
+    .eventdetails-sections-five {
+      width: 100%;
+      text-align: left;
+    }
+  
+    .eventdetails-billboard-wrapper {
+      padding: 20px;
+    }
+  
+    .text-title,
+    .text-calendar,
+    .text-time,
+    .text-address {
+      font-size: 16px;
+      text-align: center;
+    }
+  
+    .text-calendar,
+    .text-time,
+    .text-address {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .details-wrapper {
+      padding-bottom: 60px;
+    }
+  
+    .reserve-your-spot-title-one {
+      font-size: 14px;
+      height: 40px;
+    }
+  
+    .reserve-your-spot-box-one-child-first,
+    .reserve-your-spot-box-two-child-first,
+    .reserve-your-spot-box-three-child-first {
+      width: 100%;
+      font-size: 14px;
+      padding-left: 5px;
+    }
+  
+    .reserve-your-spot-box-one-child-second-first,
+    .reserve-your-spot-box-two-child-second-one {
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .eventdetails-sections {
+      margin-top: 100px;
+    }
+  
+    .eventdetails-billboard-wrapper {
+      border-radius: 20px;
+    }
+  
+    .eventdetails-billboard-image {
+      border-radius: 20px;
+      background-size: cover;
+    }
+  
+    .eventdetails-billboard-text {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .text-title {
+      font-size: 18px;
+    }
+  
+    .text-calendar,
+    .text-time,
+    .text-address {
+      font-size: 14px;
+    }
+  
+    .reserve-your-spot-title-one {
+      height: 38px;
+      font-size: 13px;
+    }
+  
+    .reserve-your-spot-box-one-child,
+    .reserve-your-spot-box-two-child,
+    .reserve-your-spot-box-three-child {
+      width: 100%;
+    }
+  
+    .reserve-your-spot-box-one-child-first,
+    .reserve-your-spot-box-three-child-first {
+      font-size: 13px;
+    }
+  
+    .reserve-your-spot-box-two-child-second-one {
+      font-size: 12px;
+    }
+  
+    .reserve-your-spot-box-two-child-second {
+      font-size: 13px;
+    }
+  
+    .details-wrapper {
+      padding-bottom: 40px;
+    }
+  }
+  

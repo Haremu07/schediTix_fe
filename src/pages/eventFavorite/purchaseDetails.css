@@ -159,3 +159,60 @@
         height: 100%;
     }
   }
+  @media screen and (max-width: 768px) {
+    .PurchaseDetailsBody {
+      width: 95%;
+      padding-left: 15px;
+    }
+  
+    .PurchaseDetailsHeader {
+      font-size: 16px;
+    }
+  
+    .Form {
+      gap: 15px;
+    }
+  
+    .InputBox,
+    .InputBox2 {
+      width: 90%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .Input,
+    .Input2 {
+      font-size: 14px;
+    }
+  
+    .NumberTicketBox {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .NumberTicketBoxdiv {
+      width: 100%;
+    }
+  
+    .Btnn {
+      width: 40%;
+      height: 12%;
+      font-size: 14px;
+    }
+  
+    .AddedPopUpCard {
+      width: 80% !important;
+      height: 40% !important;
+    }
+  
+    .AddedPopUpCardSmall {
+      width: 90% !important;
+      height: 80% !important;
+    }
+  
+    .ImgBox {
+      width: 70%;
+      height: auto;
+    }
+  }
+  

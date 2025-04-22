@@ -6,30 +6,35 @@ import orangeLogo from "../../../assets/orangelogo.png";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
+  const handlePassword = () => {
+    setShowPassword(!showPassword)
+  }
   const [isLoading, setIsLoading] = useState(false);
   // const [disable, setDisable] = useState(false);
 
   const BASEURL = "https://scheditix.onrender.com";
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     try {
       const response = await axios.post(`${BASEURL}/api/v1/login/user/`, {
         email,
         password,
       });
-      console.log(response)
+      console.log(response);
       if (response.status === 200) {
         localStorage.setItem("userData", JSON.stringify(response.data.data));
-        localStorage.setItem("userToken", (response.data.token));
+        localStorage.setItem("userToken", response.data.token);
         setTimeout(() => {
-          setIsLoading(false);
+          setIsLoading(true);
           navigate("/checkin-as");
         }, 3000);
       }
@@ -40,10 +45,11 @@ const SignIn = () => {
       setIsLoading(false);
     }
   };
+  
 
-  useEffect(() => {
-    handleSubmit()
-  },[])
+  // useEffect(() => {
+  //   handleSubmit();
+  // }, []);
 
   return (
     <div className="signin-container">
@@ -66,11 +72,11 @@ const SignIn = () => {
       </div>
 
       <div className="signin-body">
-        <div className="signin-form" onSubmit={handleSubmit}>
+        <div className="signin-form" >
           <div className="sigin-form-Header">
             <h2>Login to continue</h2>
           </div>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <span className="input">
               <MdEmail />
               <input
@@ -81,17 +87,28 @@ const SignIn = () => {
                 className="input2"
                 placeholder="enter your email"
               />
+             
             </span>
             <span className="input">
               <GiDialPadlock />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input2"
                 placeholder="enter your password"
               />
+               <div
+                type="button"
+ 
+                className="password-toggleSignIn"
+                // style={{width: "30%", height: "30%", }}
+                onClick={handlePassword}
+ 
+              >
+                {showPassword ? <FaEyeSlash onClick={() => setShowPassword(true)}/> : <FaEye onClick={() => setShowPassword(false)}/>}
+              </div>
             </span>
 
             <h4
@@ -100,37 +117,33 @@ const SignIn = () => {
             >
               Forgot password?
             </h4>
-            {isLoading ? (
-              <button type="submit" className="btn">
+             
+              {/* <button type="submit" className="btn" disabled={isLoading}>
                 Loading...
-                
-              </button>
-
-            ) : (
+              </button> */}
               <button
                 type="submit"
                 className="btn"
-                onClick={() => {
-                  setIsLoading(true),
-                    setTimeout(() => {
-                    }, 3000);
-                }}
+                // onClick={() => {
+                //   setIsLoading(true), setTimeout(() => {}, 3000);
+                // }}
+                // disabled={isLoading}
               >
-
-                Log In
+                {
+                  isLoading ? "Loading" : "Login"
+                }
               </button>
-            )}
+            
 
             {/* {disable ? isLoading : null} */}
             <span
               className="signinBox"
               // style={{ display: "flex", flexDirection: "row" }}
             >
-              <h5>
-                Dont have an account?</h5>
-                <p className="boxed" onClick={() => navigate("/register")}>
-                  sign Up
-                </p>
+              <h5>Dont have an account?</h5>
+              <p className="boxed" onClick={() => navigate("/register")}>
+                sign Up
+              </p>
             </span>
           </form>
         </div>

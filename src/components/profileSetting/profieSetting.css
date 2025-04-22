@@ -108,6 +108,11 @@
     justify-content: center;
   }
   
+  h4{
+    width: 30%;
+    height: 10%;
+    /* background-color: red; */
+  }
 
   .update-button {
     background-color: #ff5521;
@@ -279,3 +284,43 @@
     }
 
   }
+@media (max-width: 600px) {
+  .profile-settings-container {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .profile-settings-container-small {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .profile-picture-section {
+    padding-right: 0;
+  }
+
+  .DeletePopUpCard {
+    width: 90% !important;
+    height: auto !important;
+    padding: 16px;
+  }
+
+  .YesBtn,
+  .NoBtn {
+    width: 40% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-settings-container {
+    width: 95%;
+  }
+
+  .profile-settings-container-small {
+    width: 80%;
+  }
+
+  .profile-picture-section {
+    padding-right: 100px;
+  }
+}

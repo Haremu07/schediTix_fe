@@ -13,11 +13,10 @@ import { useNavigate } from 'react-router-dom';
 
 const TicketPurchaced = () => {
     const navigate = useNavigate()
-  
   return (
     <div className="upcoming-event">
         <div className="upcoming-evenr-header">
-            <h5 onClick={() => navigate("/dashboard/upcoming-events")}><IoIosArrowBack size={25}/> back</h5>
+            <h5 onClick={() => navigate("/dashboard/event-favorite")}><IoIosArrowBack size={25}/> back</h5>
         </div>
       <div className='upimgDiv'>
         <section className='upImgDiv'>

@@ -3,41 +3,70 @@ import '../../pages/eventDetails/eventDetails.css'
 import { CiCalendarDate } from "react-icons/ci";
 import { TbClock } from "react-icons/tb";
 import { MdLocationOn, MdFavoriteBorder } from "react-icons/md";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { IoChevronBack } from "react-icons/io5";
 
 const EventDetails = () => {
   const navigate = useNavigate();
+  const { eventId } = useParams()
+
+  const [event, setEvent] = useState([])
+
+     const BASEURL = "https://scheditix.onrender.com";
+    
+      const handleEventDetails = async() => {
+        try {
+        const response = await axios.get(`${BASEURL}/api/v1/event/${eventId}`)
+        setEvent(response.data.data)
+          console.log(response)
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      
+      useEffect(() => {
+        handleEventDetails()
+      },[])
 
   return (
     <div className='eventdetails-bg'>
       
 
       <div className='eventdetails-wrapper'>
-        <div className='eventdetails-sections'>
-          <div className='eventdetails-sections-one'><h4>Shows</h4></div>
-          <div className='eventdetails-sections-two'><h3>-</h3></div>
-          <div className='eventdetails-sections-three'><h4>Comedy</h4></div>
-          <div className='eventdetails-sections-four'><h3>-</h3></div>
-          <div className='eventdetails-sections-five'><h4>Mykealwise live</h4></div>
+        <div className='eventdetailsHeader'>
+          <IoChevronBack size={30} style={{cursor: "pointer"}} onClick={() => {
+          navigate("/event-categories")
+        }}/>
+        <h3 style={{cursor: "pointer"}} onClick={() => {
+          navigate("/event-categories")
+        }}>Shows</h3>
+        <p>-</p>
+        <h3 style={{color: "purple"}}>{event.eventCategory?.categoryName}</h3>
+        <p>-</p>
+        <h3 style={{color: "purple"}}>{event.eventTitle}</h3>
+ 
         </div>
         <div className='eventdetails-billboard-bg'>
           <div className='eventdetails-billboard-wrapper'>
-            <div className='eventdetails-billboard-image'></div>
+            <div className='eventdetails-billboard-image'>
+              <img className='EventImg' src={event.image?.imageUrl} alt="" />
+            </div>
             <div className='eventdetails-billboard-text'>
               <div className='eventdetails-billboard-text-one'>
-                <h1 className='text-title'>MyKealwise Live in Aj City</h1>
+                <h2 >{event.eventTitle }</h2>
               </div>
               <div className='eventdetails-billboard-text-two'>
                 <p className='icon'><CiCalendarDate /></p>
-                <h3 className='text-calendar'>26th August 2025</h3>
+                <h3 className='text-calendar'>{event.startDate}</h3>
               </div>
               <div className='eventdetails-billboard-text-three'>
                 <p className='icon'><TbClock /></p>
-                <h3 className='text-time'>6pm WAT</h3>
+                <p className='text-time'>{event.startTime}</p>
               </div>
               <div className='eventdetails-billboard-text-four'>
                 <p className='icon'><MdLocationOn /></p>
-                <h3 className='text-address'>Abayomi Multipurpose Hall, Ajegunle, Lagos, Nigeria.</h3>
+                <h3 className='text-address'>{event.eventLocation}</h3>
               </div>
             </div>
           </div>
@@ -48,53 +77,23 @@ const EventDetails = () => {
             <div className='event-rules-box'>
               <div className='event-rules-box-first'>
                 <div className='event-rules-box-first-one'><h3>Event Details</h3></div>
-                <p>The biggest #comedy Show ever to hit the #city of #ajegunle. Don't miss out! #laughter #mykealwise #premium.</p>
+                <p>{event.eventDescription}</p>
               </div>
               <div className='event-rules-box-second'>
                 <div className='write-up-header'><h3>Event Rules</h3></div>
-
+                =
                 <div className='write-up'>
                   <li className='write-up-title'>No Heckling or Disruptive Behaviour</li>
-                  <p className='write-up-text'>Please be respectful to the performer and fellow audience members. Heckling or disruptive behaviour will not be tolerated.</p>
+                  <p className='write-up-text'>{event.eventRule}</p>
                 </div>
                 
-                <div className='write-up'>
-                  <li className='write-up-title'>Security Check</li>
-                  <p className='write-up-text'>All attendees may be subject to a security check upon entry. Please cooperate with security staff.</p>
-                </div>
-
-                <div className='write-up'>
-                  <li className='write-up-title'>Cell Phones and Recording</li>
-                  <p className='write-up-text'>Keep your cell phones on silent during the performance. Recording is prohibited unless permitted by organizers.</p>
-                </div>
-
-                <div className='write-up'>
-                  <li className='write-up-title'>No Outside Food or Drinks</li>
-                  <p className='write-up-text'>To maintain a safe environment, do not bring outside food or drinks. Refreshments are available inside.</p>
-                </div>
-
-                <div className='write-up'>
-                  <li className='write-up-title'>Respect the Venue and Fellow Attendees</li>
-                  <p className='write-up-text'>Be considerate, maintain a friendly atmosphere, and keep conversations minimal during performances.</p>
-                </div>
-
-                <div className='write-up'>
-                  <li className='write-up-title'>No Refunds or Exchanges</li>
-                  <p className='write-up-text'>All ticket sales are final. Contact event organizers for any assistance regarding unforeseen circumstances.</p>
-                </div>
-
-                <div className='write-up'>
-                  <li className='write-up-title'>Accessibility</li>
-                  <p className='write-up-text'>The venue is accessible to all guests. If you have specific accessibility needs, please inform us in advance.</p>
-                </div>
-
               </div>
             </div>
             <div className='reserve-your-spot'>
               <div className='reserve-your-spot-title'>
                     <div className='reserve-your-spot-title-one' 
-                     onClick={() => navigate("/login")}
-                     ><h4>Reserve your spot</h4></div>
+                     onClick={() => navigate("dashboard/ticket-purchace")}
+                     ><p>Reserve your spot</p></div>
                     <span className='favourite-icon'><MdFavoriteBorder /></span>
               </div>
               <div className='reserve-your-spot-box-one'>

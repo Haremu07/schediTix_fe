@@ -1,38 +1,67 @@
-import React, { useEffect, useState } from 'react'
-import "./eventCategories.css"
-import EventForYou from './EventForYou'
-import StayinLoop from './StayinLoop'
-import FeatureComp from './FeatureComp'
-import { useNavigate } from 'react-router-dom'
-import Event1 from "../../assets/Event1.jpg"
-import Event2 from "../../assets/Event2.jpg"
-import Event3 from "../../assets/Event3.jpg"
-import Event4 from "../../assets/Event 4.jpg"
-import Event5 from "../../assets/Event5.jpg"
-import axios from 'axios'
 
 
 
+
+import React, { useEffect, useState } from 'react';
+import './eventCategories.css';
+import EventForYou from './EventForYou';
+import StayinLoop from './StayinLoop';
+import FeatureComp from './FeatureComp';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const EventCategories = () => {
-  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false); // Loading state for events fetching
+  const [activeCategoyId, setActiveCategoryId] = useState('All Events');
+  const [events, setEvents] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const BASEURL = "https://scheditix.onrender.com"; // Update with your base URL
+  const navigate = useNavigate();
 
-  const [categories, setCategories] = useState([])
-    const BASEURL = "https://scheditix.onrender.com";
-  
-    const handleCategories = async() => {
-      try {
-      const response = await axios.get(`${BASEURL}/api/v1/allCategories`)
-      setCategories(response?.data.data)
-        console.log("Available categories", response)
-      } catch (error) {
-        console.log(error)
-      }
+  const handleCategories = async () => {
+    setLoading(true); 
+    try {
+      const response = await axios.get(`${BASEURL}/api/v1/allCategories`);
+      setCategories(response?.data.data);
+      console.log("Available categories:", response?.data.data);
+    } catch (error) {
+      console.log("Error fetching categories:", error);
+    } finally {
+      setLoading(false); 
     }
-  
-    useEffect(() => {
-      handleCategories()
-    },[])
+  };
+
+  const fetchAllEvents = async () => {
+    setLoading(true); 
+    try {
+      const response = await axios.get(`${BASEURL}/api/v1/events`);
+      setEvents(response.data.data);
+      console.log("All events fetched:", response.data.data);
+    } catch (error) {
+      console.log("Error fetching all events:", error);
+    } finally {
+      setLoading(false); 
+    }
+  };
+
+  const handleCategoryClick = (categoryId) => {
+    setActiveCategoryId(categoryId);
+    setLoading(true); 
+
+    if (categoryId === 'All Events') {
+      fetchAllEvents();
+    } else {
+      const selectedCategory = categories.find((cat) => cat.categoryName === categoryId);
+      setEvents(selectedCategory?.events || []);
+      setLoading(false); 
+    }
+  };
+
+  useEffect(() => {
+    handleCategories();
+    fetchAllEvents(); 
+  }, []);
+
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -40,100 +69,71 @@ const EventCategories = () => {
         <nav className='middleBoxEventCategories'>
           <section className='middleTop'>
             <h4>Shows</h4>
-            {/* <div className='replaceInline1'></div>
-            <h1 style={{color:"#271b6b"}}>Comedy Show</h1> */}
-          </section>
-          
-          <section className='middleCenter'>
-          {
-            categories.map(( category,index) => (
-              <div className='listOfShowsBox' key={index} >
-              <p>{category.categoryName}</p>
-            </div>
-             ))
-            }
-           
-           
           </section>
 
+          <section className='middleCenter' style={{ cursor: 'pointer' }}>
+            <div
+              className={`listOfShowsBox ${activeCategoyId === 'All Events' ? 'active' : ''}`}
+              onClick={() => handleCategoryClick('All Events')}
+              style={{
+                backgroundColor: activeCategoyId === 'All Events' ? 'rgba(39, 24, 126, 1)' : 'white',
+                color: activeCategoyId === 'All Events' ? 'white' : 'rgba(50, 50, 50, 1)',
+                border: activeCategoyId === 'All Events' && 'none',
+              }}
+            >
+              <p>All Events</p>
+            </div>
+            {categories?.map((category, index) => (
+              <div
+                className={`listOfShowsBox ${activeCategoyId === category.categoryName ? 'active' : ''}`}
+                key={index}
+                onClick={() => handleCategoryClick(category.categoryName)}
+                style={{
+                  backgroundColor: activeCategoyId === category.categoryName ? 'rgba(39, 24, 126, 1)' : 'white',
+                  color: activeCategoyId === category.categoryName ? 'white' : 'rgba(50, 50, 50, 1)',
+                  border: activeCategoyId === category.categoryName && 'none',
+                }}
+              >
+                <p>{category.categoryName}</p>
+              </div>
+            ))}
+          </section>
+
+          {/* Loading State for Events */}
           <section className='middleBottom'>
-            <article className='middleBottomCards'>
-                 <img src={Event1} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p 
-                    onClick={()=> navigate("/event-details")}
-                      >See More</p>
-                  </div>
-                </nav>
+            {loading ? (
+              <div className="loadingSpinner">
+                <p>Loading...</p>
               </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event2} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                <p>MyKealWise Comedy Live</p>
-                <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
+            ) : events?.length === 0 ? (
+              <div className='noEvent'>There are no events yet</div>
+            ) : (
+              events?.map((item, index) => (
+                <article className='middleBottomCards' key={index}>
+                  <img src={item.image?.imageUrl} alt={item.eventTitle} />
+                  <div className='radientBlackBox'>
+                    <nav className='middleBox'>
+                      <p>{item.eventTitle}</p>
+                      <p className='Categorylocation'>{item.eventLocation}</p>
+                      <div className='seeMoreButton'>
+                        <p onClick={() => navigate(`/event-details/${item._id}`)}>See More</p>
+                      </div>
+                    </nav>
                   </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event3} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event4} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                  <p>MyKealWise Comedy Live</p>
-                  <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p
-                    onClick={()=> navigate("/event-details")}
-                    >See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
-            <article className='middleBottomCards'>
-                 <img src={Event5} alt="" />
-              <div className='radientBlackBox'>
-                <nav className='middleBox'>
-                <p>MyKealWise Comedy Live</p>
-                <p>Lagos</p>
-                  <div className='seeMoreButton'>
-                    <p>See More</p>
-                  </div>
-                </nav>
-              </div>
-            </article>
+                </article>
+              ))
+            )}
           </section>
         </nav>
       </div>
-      <div style={{width:"100%", height:"10vh", backgroundColor:"#edecf4"}} className='buttom'></div>
-     <FeatureComp/>
-     <EventForYou/>
-     <StayinLoop/>
-    </div>
-  )
-}
+      <div style={{ width: '100%', height: '10vh', backgroundColor: '#edecf4' }} className='buttom'></div>
 
-export default EventCategories
+      {/* Pass activeCategoyId as a prop to FeatureComp */}
+      <FeatureComp events={events} loading={loading} />
+      <EventForYou />
+      <StayinLoop />
+    </div>
+  );
+};
+
+export default EventCategories;

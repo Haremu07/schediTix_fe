@@ -74,3 +74,50 @@
     background-color: rgb(233, 231, 231);
     border: 1px solid #1e1e1e;
 }
+@media screen and (max-width: 768px) {
+    .CheckInAsHeader {
+      justify-content: center;
+      margin-top: 10px;
+    }
+  
+    .CheckInAsHeaderImg {
+      margin-left: 0 !important;
+    }
+  
+    .CheckInAsText {
+      text-align: center;
+      font-size: 16px;
+      padding: 0 20px;
+    }
+  
+    .CheckInAsBox {
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+      height: auto;
+    }
+  
+    .CheckInAsBoxs {
+      width: 90%;
+      height: auto;
+      font-size: 16px;
+      padding: 15px;
+    }
+  
+    .ImgBox {
+      width: 100%;
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .Img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+  

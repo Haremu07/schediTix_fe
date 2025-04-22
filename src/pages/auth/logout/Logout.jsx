@@ -14,23 +14,28 @@ const headers = {
 }
   const handleLogout = async () => {
     try {
-      const response = await axios.post(`${BASEURL}/api/v1/logout`, {},{headers} )
-      if (response.data.message === "authorized")
+      const response = await axios.post(`${BASEURL}/api/v1/logout/`, {},{headers} )
+      if (response.data.message === "authorized"){
         toast.success("Logged out successfull")
-      localStorage.removeItem("userToken")
-      localStorage.removeItem("userData")
-      
-      setTimeout(() => {
-        navigate("/")
-      },3000)
-      console.log(response)
+        localStorage.clear()
+          navigate("/login")
+      }
     } catch (error) {
+      console.log(error)
       if(error.response?.data?.message === "Unauthorized"){
         toast.error(error.response?.data?.message || "Logout failed")
-      }else{
+        toast.error(error.response?.data.message)
+        localStorage.clear()
+        navigate("/login")
+      }else if (error.response.data.message === "Request failed with status code 403"){
         toast.error("Check your connection")
+        localStorage.clear()
+        navigate("/login")
       console.log(error)
-      }
+      }else if(error.response?.data.message === "Session timed-out: Please login to continue")
+        toast.success("Logged out successfull")
+        localStorage.clear()
+          navigate("/login")
     }
   }
   return (

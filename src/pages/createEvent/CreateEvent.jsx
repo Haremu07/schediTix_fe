@@ -11,27 +11,32 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoWarning } from "react-icons/io5";
 // import { Modal } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
-import toast, { Toaster } from "react-hot-toast"
+import toast, { Toaster } from "react-hot-toast";
 // import { useNavigate } from 'react-router-dom';
 
-
 const CreateEvent = () => {
-  const {token} = useParams()
+  // const {token} = useParams()
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
   const showModals = () => {
     setIsModalOpens(true);
   };
-  const timeout = () => {
-    setTimeout(() => {
-      setIsModalOpens(false);
-    }, 2000);
+  const [succesful, setSuccesful] = useState(false);
+
+  const sucessShowModal = () => {
+    setSuccesful(true);
   };
 
-  const handleImageChange = (e) => {
-    setProfileImage( e.target.files[0])
-  };
+  
+
+  // const handleImageChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     setProfileImage(file);
+  //     setPreviewURL(URL.createObjectURL(file));
+  //   }
+  // };
 
   const [input, setInput] = useState({
     eventTitle: "",
@@ -46,95 +51,101 @@ const CreateEvent = () => {
     totalTableNumber: "",
     totalSeatNumber: "",
     image: "",
-    packingInfo: "",
+    parkingAccess: "",
     ticketPrice: "",
     ticketQuality: "",
     ticketLimit: "",
   });
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setInput({ ...input, image: file });
+    if (file) {
+      setProfileImage(URL.createObjectURL(file));
+    }
+  };
+
+  console.log(input);
 
   const BASEURL = "https://scheditix.onrender.com";
-
-  
 
   const [disable, setDisable] = useState(false);
 
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const[cartegoryId, setCartegoryId] = useState("")
-  // console.log(cartegoryId)
+  const [cartegoryId, setCartegoryId] = useState("");
+  console.log(cartegoryId);
 
   const handleCategories = async () => {
     try {
       const res = await axios.get(`${BASEURL}/api/v1/allCategories`);
-
       setCategories(res.data.data);
+      // toast.success(res?.data.data)
       console.log(res);
     } catch (error) {
       console.log(error);
+      toast.error(error.res?.data.data)
     }
   };
   useEffect(() => {
     handleCategories();
   }, []);
 
-
-  const formData = new FormData();  
-  formData.append("eventTitle", input.eventTitle);
-  formData.append("eventDescription", input.eventDescription);
-  formData.append("eventLocation", input.eventLocation);
-  formData.append("startTime", input.startTime);
-  formData.append("eventAgenda", input.eventAgenda);
-  formData.append("endTime", input.endTime);
-  formData.append("eventRule", input.eventRule);
-  formData.append("startDate ", input.startDate);
-  formData.append("totalSeatNumber", input.totalSeatNumber);
-  formData.append("totalTableNumber", input.totalTableNumber);
-  formData.append("parkingAccess", input.packingInfo);
-  formData.append("ticketPrice", input.ticketPrice);
-  formData.append("ticketQuantity", input.ticketQuality);
-  formData.append("ticketPurchaseLimit", input.ticketLimit);
-  formData.append("eventDescription", input.image);
-  formData.append("endDate", input.endDate);
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     console.log(name, value);
     setInput((prev) => ({ ...prev, [name]: value }));
   };
+  const token = localStorage.getItem("userToken");
 
-  
   const handleSubmit = async () => {
     try {
+      const formData = new FormData();
+      formData.append("eventTitle", input.eventTitle);
+      formData.append("eventDescription", input.eventDescription);
+      formData.append("eventLocation", input.eventLocation);
+      formData.append("startTime", input.startTime);
+      formData.append("eventAgenda", input.eventAgenda);
+      formData.append("endTime", input.endTime);
+      formData.append("eventRule", input.eventRule);
+      formData.append("startDate", input.startDate);
+      formData.append("totalSeatNumber", input.totalSeatNumber);
+      formData.append("totalTableNumber", input.totalTableNumber);
+      formData.append("parkingAccess", input.parkingAccess);
+      formData.append("ticketPrice", input.ticketPrice);
+      formData.append("ticketQuantity", input.ticketQuality);
+      formData.append("ticketPurchaseLimit", input.ticketLimit);
+      formData.append("image", input.image);
+      formData.append("endDate", input.endDate);
 
-      const response = await axios.post(`${BASEURL}/api/v1/create-event/${cartegoryId}`,formData , {
-        headers: {
-          "content-type" : "multipart/form-data",
-             Authorization: `Bearer ${token}`
+      const response = await axios.post(
+        `${BASEURL}/api/v1/create-event/${cartegoryId}`,
+        formData,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+            Authorization: `Bearer ${token}`
+          },
         }
-      }  );
-
-      setInput(response.data.data)
+      );
       console.log(response);
-      toast.success("successfull")
-      if(response == "Session timed-out: Please login to continue"){
-        navigate("/login")
-      }
-      // setIsLoading(true);
-      toast.success("E clear!!!");
+      setInput(response.data.data);
+      setSuccesful(true);
       setTimeout(() => {
-        setDisable(false)
-        timeout();
-        showModals();
+        setIsModalOpens(false);
+        // toast.success(response?.data?.data?.messagse);
+        setDisable(false);
+        navigate("/dashboard/manage-event"); 
         setIsLoading(false);
-      }, 3000);
+      }, 8000);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
-      // if (!eventTitle) {
-      //   toast.error("Please fill in all fields");
-      // }
+      setDisable(false);
+      toast.error(error.response?.data.message);
     }
   };
 
@@ -156,7 +167,7 @@ const CreateEvent = () => {
         <div className="upload-img-wrapper">
           <div className="upload-img-title">
             <div className="holder-nav">
-              <p className="arrow-back" onClick={() => nav(-1)}>
+              <p className="arrow-back" onClick={() => navigate(-1)}>
                 <IoIosArrowBack />
               </p>
               <h3 className="text-after-arrow-back">
@@ -199,18 +210,13 @@ const CreateEvent = () => {
                 )}
               </label>
             </div>
-            <label 
-                htmlFor="Upload-img-input"
-            className="upload-img-btn">
+            <label htmlFor="Upload-img-input" className="upload-img-btn">
               <input
-              hidden
+                hidden
                 type="file"
                 id="Upload-img-input"
-                name="image"
-                value={input.image}
                 onChange={handleImageChange}
-                // style={{ display: "none" }}
-                // onClick={handleFileChange}
+                // value={input.image}
               />
               <h5 className="text-btn">Upload files</h5>
             </label>
@@ -220,7 +226,7 @@ const CreateEvent = () => {
           <div className="input-wrapper">
             <div className="input-holder">
               <div className="event-title">
-                <h4>Event title</h4>
+                <h4 className="tt">Event title</h4>
               </div>
               <div className="catchy">
                 <p>Give your event a catchy name</p>
@@ -236,7 +242,7 @@ const CreateEvent = () => {
             </div>
             <div className="input-holder">
               <div className="event-title">
-                <h4>Event description</h4>
+                <h4 className="tt">Event description</h4>
               </div>
               <div className="catchy">
                 <p>Briefly describe your event</p>
@@ -253,7 +259,7 @@ const CreateEvent = () => {
             <div className="double-input-holder">
               <div className="event-category-div">
                 <div className="event-category">
-                  <h4>Event Category</h4>
+                  <h4 className="tt">Event Category</h4>
                 </div>
                 <div className="catchy">
                   <p>Choose a category for better visibility</p>
@@ -262,21 +268,21 @@ const CreateEvent = () => {
                 <select
                   placeholder="select a category that descibes for your event"
                   className="describe-category"
-                  onChange={(e)=>setCartegoryId(e.target.value)}
+                  onChange={(e) => setCartegoryId(e.target.value)}
                 >
-                  <option value="" >Select a category</option>
+                  <option value="">Select a category</option>
                   {categories.map((e) => (
-                    <option value={e._id} >{e.categoryName}</option>
+                    <option value={e._id}>{e.categoryName}</option>
                   ))}
                 </select>
               </div>
 
               <div className="event-category-div">
                 <div className="event-location">
-                  <h4>Add event location</h4>
+                  <h4 className="tt">Add event location</h4>
                 </div>
                 <div className="catchy">
-                  <p>Enter the venue or online link</p>
+                  <p>Enter the venue location</p>
                 </div>
                 <div className="double-inputs-location">
                   <div className="location-icons">
@@ -284,7 +290,7 @@ const CreateEvent = () => {
                   </div>
                   <input
                     type="text"
-                    placeholder="mghtysolomon@gmail.com"
+                    placeholder="Lagos,Abuja......"
                     className="location-input"
                     name="eventLocation"
                     value={input.eventLocation}
@@ -297,19 +303,18 @@ const CreateEvent = () => {
             <div className="Four-input-bg">
               <div className="text-holder">
                 <div className="start">
-                  <h3>Add event start date & time</h3>
+                  <h3 className="tt">Add event start date & time</h3>
                   <p>select event start date & time</p>
                 </div>
                 <div className="start">
-                  <h3>Add event end date & time</h3>
+                  <h3 className="tt">Add event end date & time</h3>
                   <p>select event end date & time</p>
                 </div>
               </div>
+              {/* <FaCalendarAlt /> */}
               <div className="Four-input-wrapper">
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaCalendarAlt /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -318,13 +323,13 @@ const CreateEvent = () => {
                       name="startDate"
                       value={input.startDate}
                       onChange={handleChange}
+                      min={new Date().toISOString().split("T")[0]}
                     />
                   </div>
                 </div>
+                {/* <FaClock /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaClock /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -336,10 +341,9 @@ const CreateEvent = () => {
                     />
                   </div>
                 </div>
+                {/* <FaCalendarAlt /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaCalendarAlt /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -348,13 +352,13 @@ const CreateEvent = () => {
                       name="endDate"
                       value={input.endDate}
                       onChange={handleChange}
+                      min={new Date().toISOString().split("T")[0]}
                     />
                   </div>
                 </div>
+                {/* <FaClock /> */}
                 <div className="input-one-holder">
-                  <div className="calendar-icon">
-                    {/* <FaClock /> */}
-                  </div>
+                  <div className="calendar-icon"></div>
                   <div className="time-input">
                     <input
                       className="input-time"
@@ -372,7 +376,7 @@ const CreateEvent = () => {
           <div className="wider-bg">
             <div className="event-agenda-wrapper">
               <div className="event-agenda-holder">
-                <h3>Event Agenda</h3>
+                <h3 className="tt">Event Agenda</h3>
               </div>
               <div className="event-agenda-text-holder">
                 <p>Outline key activities or sessions of your event</p>
@@ -390,7 +394,7 @@ const CreateEvent = () => {
             </div>
             <div className="event-agenda-wrapper">
               <div className="event-agenda-holder">
-                <h3>Event Rules</h3>
+                <h3 className="tt">Event Rules</h3>
               </div>
               <div className="event-agenda-text-holder">
                 <p>List any event guidelines</p>
@@ -412,14 +416,14 @@ const CreateEvent = () => {
               <div className="finally-double-input-wrapper">
                 <div className="finally-box">
                   <div>
-                    <h3>Tables</h3>
+                    <h3 className="tt">Tables</h3>
                   </div>
                   <div>
-                    <p>Set the total numbers of tables for this ticket</p>
+                    <p className="catchz">Set the total numbers of tables for this ticket</p>
                   </div>
                   <div>
                     <input
-                      type="text"
+                      type="number"
                       placeholder="e.g.,50"
                       className="finally-input"
                       name="totalTableNumber"
@@ -430,14 +434,14 @@ const CreateEvent = () => {
                 </div>
                 <div className="finally-box">
                   <div>
-                    <h3>Seats</h3>
+                    <h3 className="tt">Seats</h3>
                   </div>
                   <div>
-                    <p>Set the total numbers of seats for this ticket</p>
+                    <p className="catchz">Set the total numbers of seats for this ticket</p>
                   </div>
                   <div>
                     <input
-                      type="text"
+                      type="numb.,er"
                       placeholder="e.g.,300"
                       className="finally-input"
                       name="totalSeatNumber"
@@ -450,10 +454,10 @@ const CreateEvent = () => {
               <div className="finally-single-input-wrapper">
                 <div className="finally-single-input-holder">
                   <div>
-                    <h3>Parking info</h3>
+                    <h3 className="tt">Parking info</h3>
                   </div>
                   <div>
-                    <p>Provide parking details if available</p>
+                    <p className="catchz">Provide parking details if available</p>
                   </div>
                   <div>
                     {/* <input
@@ -464,15 +468,18 @@ const CreateEvent = () => {
                       value={input.packingInfo}
                       onChange={handleChange}
                     /> */}
-                          <select
-                           placeholder="select a category that descibes for your event"
-                          className="describe-category"
-                           onChange={handleChange}
-                              >
-                           <option value={input.packingInfo}>Do you want a parking space?</option>
-                            <option> yes</option>
-                            <option> No</option>
-                           </select>
+                    <select
+                      placeholder="select a category that descibes for your event"
+                      className="describe-category"
+                      onChange={handleChange}
+                      name="parkingAccess"
+                    >
+                      <option value={input.parkingAccess}>
+                        Do you want a parking space?
+                      </option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
                   </div>
                 </div>
 
@@ -517,7 +524,7 @@ const CreateEvent = () => {
                           <div className="publish-wrapper-two-double-div-one">
                             <div className="publish-first-box">
                               <div>
-                                <h3>Ticket Price</h3>
+                                <h3 className="tt">Ticket Price</h3>
                               </div>
                               <div>
                                 <p>Set the price for this ticket</p>
@@ -563,7 +570,7 @@ const CreateEvent = () => {
                         <div className="publish-wrapper-single-double-bg">
                           <div className="publish-third-box">
                             <div>
-                              <h3>Ticket Purchase limit</h3>
+                              <h3 className="tt">Ticket Purchase limit</h3>
                             </div>
                             <div>
                               <p>Set this ticket purchase limit</p>
@@ -591,11 +598,13 @@ const CreateEvent = () => {
                             </div>
                             <div className="quick-reminder-text-wrapper">
                               <h4 className="quick-reminder-text-wrapper-text">
-                                You're only allowed to make changes to the event
-                                date 📆, time ⏱, and location 📍 . <br /> All
-                                other event details are locked in once the event
-                                goes live. Make sure everything else looks good
-                                before publishing !
+                                <p>
+                                  You're only allowed to make changes to the
+                                  event date 📆, time ⏱, and location 📍 .{" "}
+                                  <br /> All other event details are locked in
+                                  once the event goes live. Make sure everything
+                                  else looks good before publishing !
+                                </p>
                               </h4>
                             </div>
                           </div>
@@ -617,18 +626,21 @@ const CreateEvent = () => {
                               </div>
                             </div>
                           </Modal>
-                          <div className="publish-event-btn-bg"
-                               onClick={() => {
-                                handleSubmit()
-                                setIsLoading(true);
-                               
-                              }}>
+                          <div
+                            className="publish-event-btn-bg"
+                            onClick={() => {
+                              handleSubmit();
+                              setIsLoading(true);
+                            }}
+                          >
                             {isLoading ? (
-                              <button className="publish-event-btn">Loading...</button>
+                              <button className="publish-event-btn">
+                                Loading...
+                              </button>
                             ) : (
                               <button
                                 className="publish-event-btn"
-                           
+
                                 // type="submit"
                               >
                                 Publish Event
@@ -640,6 +652,19 @@ const CreateEvent = () => {
                     </div>
                   </div>
                 </Modal>
+                        
+                       
+               <Modal
+              title="Success"
+              open={succesful}
+              // onOk={handleOk}
+              // onCancel={handleOk}
+              centered
+              okText="Okay"
+              cancelButtonProps={{ style: { display: 'none' } }}
+             >
+             <p className="CreatedSussecfully">🎉 Event created successfully!</p>
+            </Modal>
 
                 <div className="parking-btn-wrapper">
                   {/* <Outlet /> */}
@@ -662,4 +687,3 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
-

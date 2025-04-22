@@ -1,28 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .upcoming-bg{
-    width: 80%;
-    height: 170vh;
+    width: 100%;
+    height: 90vh;
+    
     /* background-color: orange; */
     display: flex;
+    /* height: 100%; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    padding-bottom: 80px;
+    padding-top: 30px;
     overflow-y: scroll;
     
 }
 .upcoming-headerss{
     width: 95%;
-    height: 60px;
+    height: 8%;
     /* background-color: red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 0;
 }
 
 .the-border-bottom{
@@ -31,7 +33,7 @@
 }
 
 .upcoming-headers-title-one{
-    width: 13%;
+    width: 15%;
     height: 30px;
     padding: 0px 15px;
     /* background-color: green; */
@@ -40,7 +42,7 @@
     cursor: pointer;
 }
 .upcoming-headers-title-two{
-    width: 21%;
+    width: 22%;
     height: 30px;
     padding: 0px 15px;
     /* background-color: green; */
@@ -80,7 +82,7 @@
 }
 .upcoming-wrapper{
     width: 95%;
-    height: 900px;
+    height: 500px;
     /* background-color: rgb(100, 13, 13); */
     border: 1px solid grey;
     border-radius: 12px;
@@ -88,7 +90,7 @@
 }
 .upcoming-header{
     width: 100%;
-    height: 70px;
+    height: 50px;
     /* background-color: red; */
     display: flex;
     justify-content: space-between;
@@ -132,7 +134,7 @@
 }
 .upcoming-event-info-wrapper{
     width: 100%;
-    height: 100px;
+    height: 75px;
     /* background-color: red; */
     border-bottom: 1px solid grey;
     display: flex;
@@ -285,24 +287,25 @@
 }
 .pagination-bg{
     width: 100%;
-    height: 135px;
+    height: 90px !important;
     /* background-color: green; */
     border-bottom-right-radius: 7px;
     border-bottom-left-radius: 7px;
     display: flex;
+    padding-bottom: 25px;
     justify-content: center;
     align-items: center;
 }
 .pagination-wrapper{
     width: 60%;
-    height: 100px;
+    height: 50px !important;
     /* background-color: yellow; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .arrow{
-    font-size: 25px;
+    font-size: 19px;
     color:black;
 }
 .dot{
@@ -310,8 +313,8 @@
     color:black;
 }
 .num{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     /* background-color: aquamarine; */
     background: transparent;
@@ -529,8 +532,8 @@
     color:black;
 }
 .nums{
-    width: 45px;
-    height: 45px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     /* background-color: aquamarine; */
     background: transparent;
