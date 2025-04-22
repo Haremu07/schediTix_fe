@@ -13,6 +13,9 @@ const FeatureComp = ({ events, loading }) => {
       minimumFractionDigits: 0,
     }).format(amount);
 
+const FeatureComp = () => {
+
+ 
   return (
     <div className="featureCamp">
       <nav className="paddingBox">

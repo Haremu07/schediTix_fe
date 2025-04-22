@@ -790,3 +790,38 @@
         height: 100%;
     }
   }
+@media (max-width: 768px) {
+    .eventdetails-wrapper {
+      padding: 1rem;
+      gap: 1.5rem;
+    }
+  
+    .billboard-wrapper {
+      flex-direction: column;
+      height: auto;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+  
+    .billboard-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .details-wrapper {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .eventdetails-sections-three {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  
+    .checkInBtn {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  }
+  

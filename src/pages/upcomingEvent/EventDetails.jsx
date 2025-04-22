@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import AddedPopUp from "./AddedPopUp";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 // import axios from "axios";
 
 const EventDetails = ({eventDetails}) => {
@@ -29,7 +30,7 @@ const EventDetails = ({eventDetails}) => {
           localStorage.setItem("favorites", JSON.stringify(existingFavorites));
           setToggle(true);  
         } else {
-          alert("Already added to favorites");
+          toast("Already added to favorites");
         }
       };
       
@@ -40,6 +41,7 @@ const EventDetails = ({eventDetails}) => {
     <div className="exentDetails">
       <section className="detailsText">
         {toggle && <AddedPopUp />}
+        <Toaster/>
         <h1>Event Details</h1>
         <p className="detailsTextP">
             <p>{eventDetails?.eventDescription}</p>

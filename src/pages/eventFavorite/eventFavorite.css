@@ -69,8 +69,9 @@
     border-radius: 10px;
     text-wrap: wrap;
     font-family: "Poppins", sans-serif; 
-    padding: 10px;
-    font-size: 11px;
+    padding: 13px;
+    font-size: 13px;
+    /* text-align: left; */
 }
 
 .CardsBoxContent2{
@@ -117,4 +118,99 @@
     font-family: "Poppins", sans-serif;
     border: none;
     cursor: pointer;
+}
+.Card {
+    width: 100%; /* Full width for small screens */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fffbfa;
+}
+
+.CardsBox2 {
+    width: 100%; /* Full width on small screens */
+    height: auto;
+    background-color: white;
+    padding: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Media Query for Tablets (up to 768px) */
+@media screen and (max-width: 768px) {
+    .Card {
+        width: 90%; /* Reduce the width for tablets */
+        padding: 20px;
+    }
+
+    .CardsBox2 {
+        width: 45%; /* Show cards side by side */
+    }
+
+    .CardBoxImgBox2 {
+        width: 100%;
+    }
+
+    .CardsBoxTextBoxNav12 {
+        font-size: 14px;
+    }
+
+    .CardsBoxTextBoxNav22 {
+        font-size: 13px;
+    }
+
+    .TicketBtn2 {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* Media Query for Desktops (up to 1024px) */
+@media screen and (max-width: 1024px) {
+    .Card {
+        width: 85%; /* Set the width to 85% for larger screens */
+        padding: 25px;
+    }
+
+    .CardsBox2 {
+        width: 30%; /* Adjust card width for larger screens */
+    }
+
+    .CardsBoxTextBoxNav12 {
+        font-size: 16px;
+    }
+
+    .CardsBoxTextBoxNav22 {
+        font-size: 14px;
+    }
+
+    .TicketBtn2 {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Media Query for Large Screens (desktops and larger) */
+@media screen and (min-width: 1025px) {
+    .Card {
+        width: 80%; /* Adjust width for larger screens */
+        padding: 30px;
+    }
+
+    .CardsBox2 {
+        width: 30%;
+    }
+
+    .CardsBoxTextBoxNav12 {
+        font-size: 18px;
+    }
+
+    .CardsBoxTextBoxNav22 {
+        font-size: 16px;
+    }
+
+    .TicketBtn2 {
+        padding: 18px;
+        font-size: 18px;
+    }
 }
