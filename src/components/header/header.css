@@ -150,7 +150,7 @@
     background-color: #e85a2a;
   }
   
-  /* Responsive navigation display */
+  
   @media (min-width: 640px) {
     .nav {
       display: flex;
@@ -239,4 +239,10 @@
   font-size: 24px;
   cursor: pointer;
   color: #374151;
+}
+@media (max-width: 639px){
+  .logo-link{
+    width: 40%;
+    height: auto;
+  }
 }
