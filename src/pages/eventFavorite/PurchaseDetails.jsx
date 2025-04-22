@@ -25,14 +25,14 @@ const PurchaseDetails = () => {
               },3000)
           },[])
           const[ticketPurchase, setTicketPurchase] = useState({
-             fullName :"",
+             fullName:"",
              email: "",
              numberOfTicket:"",
              needCarParkingSpace:"",
              specialRequest :"",
           })
         
-           localStorage.setItem("ticPurchase", ticketPurchase)
+          
            console.log(ticketPurchase)
           const handleChange = (e) => {
             const { name, value } = e.target;
@@ -45,25 +45,26 @@ const PurchaseDetails = () => {
           const handleTicketPurchase = async () =>{
             try{
                 const response = await axios.post(`${BASEURL}/api/v1/create/ticket/${eventId}`, ticketPurchase)
-                console.log(response.data)
+                console.log(response.data.data)
               
                 if(response.status === 200 ){
-                  setTicketPurchase(response?.data?.data)
-                  toast.success(response?.data?.message)
+                  // setTicketPurchase(response)
+                  toast.success(response)
                   setTimeout(()=>{
                     handleToggle()
                   },4000)
-                  nav("/dashboard/payout-details")
+                  nav("/dashboard/payout-details" )
                 }
 
             }
             catch(error){
               console.log(error)
               toast.error(error?.data?.message )
+             
 
             }
           }
-
+          localStorage.setItem("ticPurchase", "response?.data?.data")
           // useEffect(()=>{
           //   handleTicketPurchase();
           // },[])

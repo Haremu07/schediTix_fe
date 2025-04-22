@@ -68,7 +68,7 @@ const EmailVerification = () => {
           <div className="form">
           {!token ? (
           <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
-        ) : isVerifying ? (
+        ) : isVerifying && (
           <Modal
                 open={isModalOpen}
                 okButtonProps={{ style: { display: "none" } }}
@@ -85,7 +85,7 @@ const EmailVerification = () => {
                 </div>
               </Modal>
             
-        ) : "Null"}
+        ) }
         
               
               

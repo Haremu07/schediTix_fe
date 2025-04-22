@@ -167,7 +167,7 @@ const CreateEvent = () => {
         <div className="upload-img-wrapper">
           <div className="upload-img-title">
             <div className="holder-nav">
-              <p className="arrow-back" onClick={() => nav(-1)}>
+              <p className="arrow-back" onClick={() => navigate(-1)}>
                 <IoIosArrowBack />
               </p>
               <h3 className="text-after-arrow-back">
@@ -226,7 +226,7 @@ const CreateEvent = () => {
           <div className="input-wrapper">
             <div className="input-holder">
               <div className="event-title">
-                <h4>Event title</h4>
+                <h4 className="tt">Event title</h4>
               </div>
               <div className="catchy">
                 <p>Give your event a catchy name</p>
@@ -242,7 +242,7 @@ const CreateEvent = () => {
             </div>
             <div className="input-holder">
               <div className="event-title">
-                <h4>Event description</h4>
+                <h4 className="tt">Event description</h4>
               </div>
               <div className="catchy">
                 <p>Briefly describe your event</p>
@@ -259,7 +259,7 @@ const CreateEvent = () => {
             <div className="double-input-holder">
               <div className="event-category-div">
                 <div className="event-category">
-                  <h4>Event Category</h4>
+                  <h4 className="tt">Event Category</h4>
                 </div>
                 <div className="catchy">
                   <p>Choose a category for better visibility</p>
@@ -279,7 +279,7 @@ const CreateEvent = () => {
 
               <div className="event-category-div">
                 <div className="event-location">
-                  <h4>Add event location</h4>
+                  <h4 className="tt">Add event location</h4>
                 </div>
                 <div className="catchy">
                   <p>Enter the venue location</p>
@@ -303,11 +303,11 @@ const CreateEvent = () => {
             <div className="Four-input-bg">
               <div className="text-holder">
                 <div className="start">
-                  <h3>Add event start date & time</h3>
+                  <h3 className="tt">Add event start date & time</h3>
                   <p>select event start date & time</p>
                 </div>
                 <div className="start">
-                  <h3>Add event end date & time</h3>
+                  <h3 className="tt">Add event end date & time</h3>
                   <p>select event end date & time</p>
                 </div>
               </div>
@@ -376,7 +376,7 @@ const CreateEvent = () => {
           <div className="wider-bg">
             <div className="event-agenda-wrapper">
               <div className="event-agenda-holder">
-                <h3>Event Agenda</h3>
+                <h3 className="tt">Event Agenda</h3>
               </div>
               <div className="event-agenda-text-holder">
                 <p>Outline key activities or sessions of your event</p>
@@ -394,7 +394,7 @@ const CreateEvent = () => {
             </div>
             <div className="event-agenda-wrapper">
               <div className="event-agenda-holder">
-                <h3>Event Rules</h3>
+                <h3 className="tt">Event Rules</h3>
               </div>
               <div className="event-agenda-text-holder">
                 <p>List any event guidelines</p>
@@ -416,10 +416,10 @@ const CreateEvent = () => {
               <div className="finally-double-input-wrapper">
                 <div className="finally-box">
                   <div>
-                    <h3>Tables</h3>
+                    <h3 className="tt">Tables</h3>
                   </div>
                   <div>
-                    <p>Set the total numbers of tables for this ticket</p>
+                    <p className="catchz">Set the total numbers of tables for this ticket</p>
                   </div>
                   <div>
                     <input
@@ -434,10 +434,10 @@ const CreateEvent = () => {
                 </div>
                 <div className="finally-box">
                   <div>
-                    <h3>Seats</h3>
+                    <h3 className="tt">Seats</h3>
                   </div>
                   <div>
-                    <p>Set the total numbers of seats for this ticket</p>
+                    <p className="catchz">Set the total numbers of seats for this ticket</p>
                   </div>
                   <div>
                     <input
@@ -454,10 +454,10 @@ const CreateEvent = () => {
               <div className="finally-single-input-wrapper">
                 <div className="finally-single-input-holder">
                   <div>
-                    <h3>Parking info</h3>
+                    <h3 className="tt">Parking info</h3>
                   </div>
                   <div>
-                    <p>Provide parking details if available</p>
+                    <p className="catchz">Provide parking details if available</p>
                   </div>
                   <div>
                     {/* <input
@@ -524,7 +524,7 @@ const CreateEvent = () => {
                           <div className="publish-wrapper-two-double-div-one">
                             <div className="publish-first-box">
                               <div>
-                                <h3>Ticket Price</h3>
+                                <h3 className="tt">Ticket Price</h3>
                               </div>
                               <div>
                                 <p>Set the price for this ticket</p>
@@ -570,7 +570,7 @@ const CreateEvent = () => {
                         <div className="publish-wrapper-single-double-bg">
                           <div className="publish-third-box">
                             <div>
-                              <h3>Ticket Purchase limit</h3>
+                              <h3 className="tt">Ticket Purchase limit</h3>
                             </div>
                             <div>
                               <p>Set this ticket purchase limit</p>
