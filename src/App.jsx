@@ -41,6 +41,7 @@ import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
 import CheckIn from "./pages/checkInAttendee/CheckIn"
 import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
 import Brief from "./pages/auth/emailVerification/Brief"
+import PaymentVerify from "./pages/paaymentVerify/PaymentVerify"
 
 
 const App = () => {
@@ -54,6 +55,7 @@ const App = () => {
           errorElement: <ErrorPage/>,
           element: <LandingPage/>
         }, 
+       
         {
           path: "event-categories" ,
           errorElement: <ErrorPage/>,
@@ -239,6 +241,11 @@ const App = () => {
         path: "login" ,
         errorElement: <ErrorPage/>,
         element: <SignIn/>
+      },
+      {
+        path:"payment-verify/:reference?",
+        errorElement: <ErrorPage/>,
+        element: <PaymentVerify/>
       },
       {
         path: "brief" ,
