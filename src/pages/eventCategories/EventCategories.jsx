@@ -12,7 +12,8 @@ const EventCategories = () => {
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
   const BASEURL = "https://scheditix.onrender.com"; 
-  // const navigate = useNavigate();
+
+  const navigate = useNavigate();
 
   const handleCategories = async () => {
     setLoading(true); 

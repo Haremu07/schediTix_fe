@@ -38,6 +38,7 @@ const EventFavorite = () => {
             <div className="CardBoxTicket2">
                 <p>#{event.ticketPrice}</p>
                 <button className="TicketBtn2" onClick={() => navigate(`/dashboard/ticket-purchace/${event?._id}`)}>Buy Ticket</button>
+ 
             </div>
         </div>
           )) 

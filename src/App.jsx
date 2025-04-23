@@ -116,6 +116,7 @@ const App = () => {
             },
             {
               path:"dashboard/purchase-details/:id",
+ 
               errorElement: <ErrorPage/>,
               element: <PurchaseDetails/>
             },

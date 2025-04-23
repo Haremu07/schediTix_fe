@@ -6,6 +6,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Modal } from "antd";
 import { useEffect, useState } from "react";
 import { VscVerifiedFilled } from "react-icons/vsc";
+ 
 
 const EmailVerification = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const EmailVerification = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleEmailVerification = async () => {
+ 
     try {
       const response = await axios.get(
         `${BASEURL}/api/v1/verify/user/${token}`
@@ -27,6 +29,7 @@ const EmailVerification = () => {
         setTimeout(() => {
           navigate("/login");
         }, 5000);
+ 
       }
     } catch (error) {
       toast.error(
@@ -86,8 +89,10 @@ const EmailVerification = () => {
             </Modal>
           </>
         )}
-      </div>
-
+     
+            
+          </div>
+       
       <div className="Nav2">
         <div className="Nav-Box">
           <div className="navBoxs1"></div>

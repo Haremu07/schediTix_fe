@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .create-event-bg{
-    width: 80%;
+    width: 100%;
     height: max-content;
     background-color:skyblue ;
     color: rgb(53, 52, 52);
@@ -181,6 +181,9 @@
     background-color: rgb(255, 255, 255);
     margin-top: 10px;
    
+}
+.tt{
+    font-size: 13px;
 }
 .input-holder{
     width: 100%;
@@ -499,6 +502,139 @@ border-radius: 7px;
     font-size: 17px;
     cursor: pointer;
 }
+ 
+@media screen and (max-width: 768px) {
+    .create-event-bg,
+    .upload-img-title,
+    .upload-img-card,
+    .input-wrapper,
+    .finally-input-wrapper {
+      width: 100%;
+      
+     
+    }
+    .upload-img-title{
+        font-size: 12.9px;
+    }
+  
+    .upload-img-template {
+      flex-direction: column;
+      height: 50%;
+    }
+    .describe-category{
+        width: 100%;
+        
+    }
+    .finally-input{
+        width: 100%;
+    }
+  
+    .upload-img-template-details-wrapper {
+      width: 100%;
+      height:90%;
+      padding: 10px 10px 10px 10px;
+      /* background-color: red; */
+      font-size: 15px;
+    }
+  
+    .upload-img-btn,
+    .parking-btn {
+      width: 80%;
+    }
+  
+    .holder-nav {
+      width: 90%;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  
+    .double-input-holder,
+    .finally-double-input-wrapper {
+      flex-direction: column;
+      height: auto;
+      
+    }
+    .tt{
+        width: 100%;
+        height: auto;
+        /* background-color: red; */
+        display: flex;
+        font-size: 14px;
+    }
+    .catchy{
+        width: 100%;
+        height: 30%;
+       font-size: 15px; 
+        /* background-color: yellowgreen; */
+    }
+  
+    .input-one-holder,
+    .finally-box {
+      width: 100%;
+    }
+  
+    .wider-bg {
+      width: 95%;
+      height: 100%;
+      /* background-color: #ff5722; */
+      margin-top: 100%;
+      font-size: 13px;
+    }
+  
+    .Four-input-wrapper {
+      flex-direction: column;
+      width:100%;
+      height:80%;
+      /* background-color: yellow; */
+      
+    
+    }
+    .wider-input{
+        font-size: 15px;
+    }
+    .catchz{
+        font-size: 14px;
+    }
+  
+    .input-time,
+    .location-input,
+    .inputs,
+    .parking-input,
+    .finally-input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .upload-img-btns {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .text-holder {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      width: 100%;
+      height: 55%;
+      /* background-color: green; */
+      
+    }
+  
+    .start {
+      width: 100%;
+      
+    }
+    .parking-btn{
+        width: 90%;
+    }
+  
+    .arrow-down,
+    .location-icons,
+    .calendar-icon {
+      font-size: 20px;
+    }
+  }
+  
 
 .CreatedSussecfully{
     width: 30%;

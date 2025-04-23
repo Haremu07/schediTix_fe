@@ -13,6 +13,126 @@ const ManageEvent = () => {
 
       
       
+  
+  const [currentPage, setCurrentPage] = useState(1)
+  const [eventsPerPage] = useState(5)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [getTicketUserId, setGetTicketUserId] = useState([])
+
+  const BASE = "https://scheditix.onrender.com";
+
+  const getUserId = () => {
+    const userData = localStorage.getItem("userData");
+    if (!userData) return null;
+
+    try {
+      const parsedUser = JSON.parse(userData);
+      return parsedUser._id || null;
+    } catch (error) {
+      console.error("Failed to parse user data:", error);
+      return null;
+    }
+  };
+
+  const userId = getUserId();
+
+  const getId = async () => {
+    try {
+      const response = await axios.get(`${BASE}/api/v1/getPlannerEvent/${userId}`)
+      setGetTicketUserId(response?.data?.data || [])
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getId()
+  }, [])
+
+  const filteredEvents = getTicketUserId.filter(event => {
+    const matchesSearch = event.eventTitle.toLowerCase().includes(searchTerm.toLowerCase())
+    if (active === 0) return matchesSearch
+    if (active === 1) return matchesSearch && event.status === 'upcoming'
+    if (active === 2) return matchesSearch && event.status === 'ongoing'
+    if (active === 3) return matchesSearch && event.status === 'ended'
+    return matchesSearch
+  })
+
+  const indexOfLastEvent = currentPage * eventsPerPage
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage
+  const currentEvents = filteredEvents.slice(indexOfFirstEvent, indexOfLastEvent)
+  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage)
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1)
+  const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1)
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [active, searchTerm])
+
+  const renderPaginationNumbers = () => {
+    const pageNumbers = []
+    const maxVisiblePages = 5
+
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2))
+    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
+
+    if (endPage - startPage + 1 < maxVisiblePages) {
+      startPage = Math.max(1, endPage - maxVisiblePages + 1)
+    }
+
+    for (let i = startPage; i <= endPage; i++) {
+      pageNumbers.push(
+        <div
+          key={i}
+          className={`num ${currentPage === i ? 'active-page' : ''}`}
+          onClick={() => paginate(i)}
+        >
+          {i}
+        </div>
+      )
+    }
+
+    return pageNumbers
+  }
+
+  const EventRow = ({ event }) => (
+    <div className='upcoming-event-info-wrapper'>
+      <div className='upcoming-event-info-wrapper-one'>
+        <div className='upcoming-event-info-wrapper-one-img'>
+          <img src={event?.image?.imageUrl} alt="" className='imagez' />
+        </div>
+        <p>{event.eventTitle}</p>
+      </div>
+
+      <div className='upcoming-event-info-wrapper-two'>
+        <p>{event.startDate}</p>
+        <p>{event.ticketQuantity}</p>
+        <p>{event.revenueGenerated}</p>
+        <p className={event.status}>
+          {event.status.charAt(0).toUpperCase() + event.status.slice(1)}
+        </p>
+      </div>
+
+      <div className='upcoming-event-info-wrapper-three'>
+        <div className='dot-icon' onClick={() => {
+          setToggle(!toggle)
+          setCount(event._id)
+        }}>
+          <PiDotsThreeOutlineFill />
+        </div>
+        {count === event._id && toggle && (
+          <div className='boxs'>
+            <div className='boxs-one' onClick={() => navigate('/dashboard/create-event')}><h5>Create event</h5></div>
+            <div className='boxs-two' onClick={() => navigate('/dashboard/edit-event')}><h5>Edit</h5></div>
+            <div className='boxs-three'><h5>Check in</h5></div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
   return (
     <div className='upcoming-bg'>
       <div className='upcoming-headerss'>

@@ -11,6 +11,7 @@ import { VscVerifiedFilled } from "react-icons/vsc";
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+ 
 
 const PayOutDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -74,6 +75,43 @@ const PayOutDetails = () => {
 
   
 
+  const getUserId = () => {
+    const userData = localStorage.getItem("userData");
+    
+    if (!userData) return null;
+    
+    try {
+      const parsedUser = JSON.parse(userData);
+      return parsedUser._id || null;
+    } catch (error) {
+      console.error("Failed to parse user data:", error);
+      return null;
+    }
+  };
+
+  const userId = getUserId();
+  console.log("User ID:", userId);
+  
+  const [getTicketId, setGetTicketId]=useState([])
+  const BASE = "https://scheditix.onrender.com";
+  const getId = async ()=>{
+    try {
+      const response = await axios.get(`${BASE}/api/v1/getPlannerEvent/${userId}`)
+      setGetTicketId(response?.data?.data[0])
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  useEffect(()=>{
+    getId()
+  },[])
+
+
+
+  
+
   const handleInput = () => {
     setShowInput(true)
   }
@@ -96,12 +134,10 @@ const PayOutDetails = () => {
     }, 2000);
   };
 
-  const options = allEvent?.eventTitle ? 
-  [ {value: allEvent?.eventTitle,  label: allEvent.eventTitle }]
-  : []
-
+ 
     
-    // [ value: allEvent?.eventTitle,  label: allEvent.eventTitle ]
+  const options =  getTicketId?.eventTitle ? [{ value:getTicketId?.eventTitle , label: getTicketId?.eventTitle }] : []
+    // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
     // { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
     // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
     // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },

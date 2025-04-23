@@ -1,7 +1,9 @@
 .LandingPage-body{
     width: 100%;
     height: max-content;
-    background-color: goldenrod;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .LandingPageImgBox{
@@ -169,8 +171,8 @@
 .LandingPageBox2{
     width: 100%;
     height: 100vh;
-    background-color: #fff;
     display: flex;
+    align-items: center;
     gap: 10px;
 
     @media Screen and (max-width: 890px){
@@ -185,7 +187,6 @@
     & .LandingPageBox2Nav1{
         width: 50%;
         height: 100%;
-        /* background-color: green; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -201,7 +202,6 @@
     & .LandingPageBox2Nav2{
         width: 50%;
         height: 100%;
-        /* background-color: purple; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -211,11 +211,10 @@
     & .LandingPageBox2Nav1Small{
         width: 75%;
         height: 70%;
-        /* background-color: red; */
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 15px;
-        /* font-size: 18px; */
         font-family: "Poppins", sans-serif;
 
         @media (max-width: 890px){
@@ -240,22 +239,27 @@
 
     & .P-body{
         color: #1e1e1e;
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
 
         @media (max-width: 890px){
             font-size: 22px
         }
         @media (max-width: 500px){
             font-size: 18px;
-            font-weight: 500;
+            font-weight: 400;
         }
     }
 
     & .LandingPageBox2Nav1SmallH1{
         font-family: "Poppins", sans-serif;
+        font-size: 28px;
+        font-weight: bold;
+        color: #1e1e1e;
         font-size: 33px;
         /* font-weight: bold; */
+
 
         @media (max-width: 890px){
             font-size: 40px;
@@ -378,9 +382,7 @@
     justify-content: center;
     border-radius: 10px;
     font-family: "Poppins", sans-serif;
-    
-
-
+    transition: all 450ms;
 
     & .cardIcon{
         width: 70px;
@@ -391,8 +393,8 @@
             height: 65px;
         }
         @media (max-width: 500px){
-            width: 45px;
-            height: 45px;
+            width: 35px;
+            height: 35px;
         }
     }
 
@@ -439,6 +441,11 @@
         text-align: center;
         padding: 20px;
     }
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: all 450ms;
 }
 
 .TrendingEventBlock{
@@ -527,11 +534,13 @@
         background-color: #ff5722;
         color: white;
         border: none;
-        margin-left: 120px;
+        margin-left: 20px;
         font-size: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
         cursor: pointer;
+        text-align: center;
+
     }
 
 }
@@ -549,6 +558,26 @@
     align-items: center;
     flex-direction: column;
     color: rgb(66, 66, 66);
+
+    & .UsersBlockNav{
+
+        & .IconWrap{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        & .lessThanIcon{
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        & .lessThanIconDown{
+            display: none;
+        }
+    }
+
 
 }
 
@@ -814,6 +843,32 @@
 
 @media Screen and (max-width: 890px){
 
+
+
+    .PerfectPlanBlock{
+        padding: 15px 0;
+
+        & .PerfectPlanBlockHeader{
+
+            & h2{
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        & .PerfectPlanBlockPlnsBox{
+            /* background-color: forestgreen; */
+            width: 100%;
+            flex-direction: column;
+
+            & .PlanCards{
+                /* background-color: thistle; */
+                width: 95%;
+            }
+        }
+    }
+
+
     .LandingPageBox2{
     
      & .LandingPageBox2Nav2{
@@ -829,6 +884,7 @@
         align-items: center;
         gap: 10px;
         box-shadow: rgba(149, 157, 165, 0) 0px 8px 24px;
+        /* background-color: red; */
 
         & .P{
             font-size: 25px;
@@ -880,9 +936,278 @@
     }
 }
 
+@media Screen and (max-width: 769px){
+
+    .StayInLoopBlock{
+        /* background-color: hotpink; */
+        flex-direction: column;
+        padding: 15px 0;
+        height: max-content;
+
+        & .StayInLoopBlockNav{
+            /* background-color: khaki; */
+            width: 100%;
+            text-align: center;
+
+            & .StayInLoopBlockNavbox{
+                /* background-color: darkmagenta; */
+                height: max-content;
+                justify-content: space-between;
+                background-color: white;
+            }
+
+            & .ipute{
+                height: 40px;
+                width: 70%;
+                background: none;
+            }
+
+            & .suscribe{
+                height: 40px;
+            }
+        }
+    }
+
+    .GetStartedBlock{
+
+        & .GetStartedBlockBox{
+            width: 90%;
+
+            & .GetStartedBlockBoxP{
+                font-size: 18px;
+            }
+
+            & .GetStartedBlockBoxBtn{
+                width: max-content;
+                padding: 10px 25px;
+            }
+        }
+    }
+
+    .UsersBlock{
+        height: max-content;
+        /* background: linear-gradient(to right, rgb(255, 255, 255), #f0420de0);  */
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+    
+        & .UsersBlockNav{
+            width: 90%;
+            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+    
+            & .IconWrap{
+                width: 90%;
+                background-color: wheat;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            & .lessThanIcon{
+                width: 18px;
+                height: 18px;
+                /* margin: 80px 0 0 10px; */
+            }
+    
+            & .lessThanIconDown{
+                width: 18px;
+                height: 18px;
+                display: block;
+                margin-right: 350px;
+            }
+    
+            & .greaterThanIcon{
+                width: 18px;
+                height: 18px;
+                margin: 0 0 0 350px;
+    
+            }
+        }
+    
+        & .UsersBlockNav1{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            & .UsersBlockNav1Box{
+                & .ImgBox{
+                    & .ImgBoxCircle{
+                        width: 10%;
+                    }
+            
+                    & .stars{
+                        margin: 10px 0 0 20px;
+                    }
+                }
+            }
+        }
+    
+        & .UsersBlockNav1Img{
+            width: 70%;
+    
+         
+        }
+    
+        & .UsersBlockNav1Text{
+            /* background-color: orchid; */
+            gap: 10px;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* align-items: center; */
+    
+            h1{
+                font-size: 18px;
+            }
+        }
+        }
+}
 
 @media Screen and (max-width: 500px){
+    .PerfectPlanBlock{
+        width: 90%;
+        height: max-content;
+    }
+
+    .FeaturedEventBlockedBodyHold{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .FeaturedEventBlockedBtn{
+            width: 80%;
+            margin-left: 0;
+
+        }
+    }
     .TrendingEventBlockScroll{
         gap: 5px;
     }
+    .FeaturedEventBlockedHeader{
+
+       & h2{
+        font-size: 30px;
+        }
+    }
+}
+
+
+@media Screen and (max-width: 430px){
+    .UsersBlock{
+    height: max-content;
+    /* background: linear-gradient(to right, rgb(255, 255, 255), #f0420de0);  */
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    & .UsersBlockNav{
+        width: 90%;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        & .IconWrap{
+            width: 90%;
+            background-color: wheat;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & .lessThanIcon{
+            width: 18px;
+            height: 18px;
+            /* margin: 80px 0 0 10px; */
+        }
+
+        & .lessThanIconDown{
+            width: 18px;
+            height: 18px;
+            display: block;
+            margin-right: 350px;
+        }
+
+        & .greaterThanIcon{
+            width: 18px;
+            height: 18px;
+            margin: 0 0 0 350px;
+
+        }
+    }
+
+    & .UsersBlockNav1{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & .UsersBlockNav1Box{
+            & .ImgBox{
+                & .ImgBoxCircle{
+                    width: 10%;
+                }
+        
+                & .stars{
+                    margin: 10px 0 0 20px;
+                }
+            }
+        }
+    }
+
+    & .UsersBlockNav1Img{
+        width: 70%;
+
+     
+    }
+
+    & .UsersBlockNav1Text{
+        /* background-color: orchid; */
+        gap: 10px;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* align-items: center; */
+
+        h1{
+            font-size: 18px;
+        }
+
+        
+    }
+    }
+    .TrendingEventBlockHeader{
+
+        & h2{
+            font-size: 30px;
+        }
+    }
+    .card{
+        height: 20%;
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        box-shadow: rgba(149, 157, 165, 0) 0px 8px 24px;
+        /* background-color: red; */
+
+        & .P{
+            font-size: 18px;
+            font-weight: 500;
+            color: #1e1e1e;
+            text-align: left;
+        }
+    }
+ 
 }
