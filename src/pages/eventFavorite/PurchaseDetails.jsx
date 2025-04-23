@@ -69,7 +69,7 @@ const PurchaseDetails = () => {
         setTicketPurchase(response.data?.data)
         // setTicketId(response?.data?.data?._id)
         toast.success(response.data?.message);
-        handlePayment(response?.data?.data?._id)
+        handlePayment(response?.data?.data[0]?._id)
       }
     } catch (error) {
       console.log(error);

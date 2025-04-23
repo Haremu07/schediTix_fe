@@ -11,6 +11,7 @@ const PaymentVerify = () => {
   const [searchParams]  = useSearchParams()
   const reference = searchParams.get('reference')
   console.log(reference);
+  const { id } = useParams();
 
   const navigate = useNavigate()
   const baseUrl = "https://scheditix.onrender.com";
@@ -22,12 +23,14 @@ const PaymentVerify = () => {
       );
       console.log(response?.data);
       setTimeout(() => {
-        if (response?.status===200) {
+        if (response?.data?.data?.status === "Successful") {
           setStatus(1);
-        }
+        }else{
         setStatus(2);
         setMessage(response?.data?.data?.message)
+        }
       }, 3000);
+      console.log(response)
     } catch (error) {
       setStatus(2);
       setMessage(error?.response?.data?.message)
@@ -59,11 +62,11 @@ const PaymentVerify = () => {
         </>
       ) : status === 1 ? (
         <>
+          <button onClick={() => navigate(`/dashboard/purchase-details/${id}`)} className="verifyHomeBtn">go back</button>
           <p>Payment successfull</p>
           <span>
             <img src={successIcon} alt="" />
           </span>
-          <button onClick={() => navigate("/")} className="verifyHomeBtn">Home</button>
         </>
       ) : (
         <>
