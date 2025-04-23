@@ -19,21 +19,22 @@ const ResetPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (newPassword !== confirmPassword) {
-      setError("Passwords don't match");
-      return;
-    }
-
-    if (newPassword.length < 6) {
-      
-      setError("Password must be at least 8 characters long");
-      return;
-    }
-
-    
-    setLoading(true);
     setError("");
-    
+    setSuccess(false);
+
+  if (!token){
+    setError("Invalid or Expired reset link");
+    return;
+  }
+  if (newPassword !== confirmPassword){
+    setError ("Passwords don't match.");
+    return;
+  }
+  if (newPassword.length < 8){
+    setError("Password must be at least 8 characters long .");
+    return;
+  }
+  setLoading(true)
     try {
       const response = await fetch(`https://scheditix.onrender.com/api/v1/reset-password/user/${token}`, {
         method: "POST",
@@ -48,18 +49,29 @@ const ResetPassword = () => {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to reset password");
+     if (!response.ok){
+      window.scrollTo({top: 0,behavior: "smooth"});
+      const errorMessage = data.message || data.error || "Failed to reset password .";
+      if (errorMessage.toLowerCase (). includes("expired") || errorMessage.toLowerCase ().includes ("invalid")) {
+        setError(errorMessage);
+        setTimeout(() => {
+          navigate("/forget-password");
+        }, 3000);
+        return;
       }
-
-      setSuccess(true);
-      setTimeout(() => {
-        navigate("/login");
-      }, 2000);
-
-    } catch (err) {
-      setError(err.message || "Something went wrong. Please try again.");
-    } finally {
+      throw new Error (errorMessage);
+      
+     }
+     setSuccess(true);
+     setTimeout(()=> navigate("/login"), 2000);
+    } catch (err){
+      console.error("Reset error:", err);
+      if (err instanceof Error){
+        setError(err.message);
+      }else{
+        setError("An unespected error occured .")
+      }
+    } finally{
       setLoading(false);
     }
   };
