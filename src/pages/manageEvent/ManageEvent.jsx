@@ -98,8 +98,8 @@ const ManageEvent = () => {
       <div className='upcoming-event-info-wrapper-one'>
         <div className='upcoming-event-info-wrapper-one-img'>
           <img src={event?.image?.imageUrl} alt="" className='imagez' />
-        </div>
         <p>{event.eventTitle}</p>
+        </div>
       </div>
 
       <div className='upcoming-event-info-wrapper-two'>

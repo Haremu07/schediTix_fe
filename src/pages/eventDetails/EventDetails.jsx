@@ -90,12 +90,12 @@ const EventDetails = () => {
               </div>
             </div>
             <div className='reserve-your-spot'>
-              <div className='reserve-your-spot-title'>
+              {/* <div className='reserve-your-spot-title'>
                     <div className='reserve-your-spot-title-one' 
-                     onClick={() => navigate("dashboard/ticket-purchace")}
+                     onClick={() => navigate(`dashboard/ticket-purchace/${eventId}`)}
                      ><p>Reserve your spot</p></div>
                     <span className='favourite-icon'><MdFavoriteBorder /></span>
-              </div>
+              </div> */}
               <div className='reserve-your-spot-box-one'>
                 <div className='reserve-your-spot-box-one-child'>
                   <div className='reserve-your-spot-box-one-child-first'><h3>Event Agenda</h3></div>
