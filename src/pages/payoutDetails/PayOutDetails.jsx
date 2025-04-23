@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../payoutDetails/payOutDetails.css'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { RiBankFill } from "react-icons/ri";
@@ -8,11 +8,34 @@ import { TbChartCandle } from "react-icons/tb";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 import { Modal, Select } from 'antd';
 import { VscVerifiedFilled } from "react-icons/vsc";
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const PayOutDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpens, setIsModalOpens] = useState(false);
   const [showInput, setShowInput] = useState(false);
+  const [allEvent, setAllEvent] = useState([])
+
+  const BASEURL = "https://scheditix.onrender.com";
+
+
+  const handleAllEvent = async() => {
+    try {
+      const response = await axios.get(`${BASEURL}/api/v1/events`)
+      console.log(response)
+      setAllEvent(response.data.data[0])
+    } catch (error) {
+      console.log(error)
+      toast.error(error.response.data.data.message)
+    }
+  }
+
+
+  useEffect(() => {
+    handleAllEvent()
+  },[])
 
   const handleInput = () => {
     setShowInput(true)
@@ -36,14 +59,18 @@ const PayOutDetails = () => {
     }, 2000);
   };
 
-  const options = [
-    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
-    { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
-    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
-    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
-    { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
-    { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
-  ]
+  const options = allEvent?.eventTitle ? 
+  [ {value: allEvent?.eventTitle,  label: allEvent.eventTitle }]
+  : []
+
+    
+    // [ value: allEvent?.eventTitle,  label: allEvent.eventTitle ]
+    // { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
+    // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+    // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+    // { value: 'Startup Summit 2025', label: 'Startup Summit 2025' },
+    // { value: 'Tech Conference 2025', label: 'Tech Conference 2025' },
+  
 
   const handleOptions = (selectedOption) => {
     console.log('Seleted:', selectedOption);

@@ -104,7 +104,7 @@ const App = () => {
               element: <UpcomingEvent/>
             },
              {
-            path: "dashboard/ticket-purchace" ,
+            path: "dashboard/ticket-purchace/:id" ,
             errorElement: <ErrorPage/>,
             element: <TicketPurchaced/>
           }, 
@@ -114,7 +114,7 @@ const App = () => {
               element: <UpcomingEventDetails/>
             },
             {
-              path:"dashboard/purchase-details",
+              path:"dashboard/purchase-details/:id",
               errorElement: <ErrorPage/>,
               element: <PurchaseDetails/>
             },

@@ -5,6 +5,7 @@ import { CiHeart } from 'react-icons/ci';
 import CardImage1 from '../../assets/CardImage1.jpg';
 import CardImage3 from '../../assets/CardImage3.jpg';
 import vector from '../../assets/Vector.png';
+import { useNavigate } from 'react-router-dom';
 
 const featuredEvents = [
   {
@@ -32,6 +33,8 @@ const featuredEvents = [
     image: CardImage3,
   },
 ];
+
+// const navigate = useNavigate()
 
 const FeatureComp = () => {
   return (
@@ -72,7 +75,9 @@ const FeatureComp = () => {
 
               <nav className="cardThirdBox">
                 <p><b>{event.price}</b></p>
-                <span className="buyTicketP">Buy Tickets</span>
+                <span className="buyTicketP"
+                //  onClick={() => navigate(`dashboard/ticket-purchace/${}`)}
+                 >Buy Tickets</span>
               </nav>
             </section>
           ))}
