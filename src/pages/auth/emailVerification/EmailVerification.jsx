@@ -66,11 +66,13 @@ const EmailVerification = () => {
       </div>
       
           <div className="form">
-          {!token ? (
-          <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
-        ) : isVerifying ? (
-          <Modal
-                open={isModalOpen}
+                    
+            {!token ? (
+              <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
+            ) : isVerifying && (
+              
+              <Modal
+                open={isModalOpens}
                 okButtonProps={{ style: { display: "none" } }}
                 cancelButtonProps={{ style: { display: "none" } }}
                 closable={false}

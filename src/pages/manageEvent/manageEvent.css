@@ -543,3 +543,168 @@
     border: 1px solid grey;
     font-family: "Poppins", sans-serif;
 }
+@media screen and (max-width: 1024px) {
+    .upcoming-bg {
+        width: 90%;
+        height: auto;
+        padding-top: 60px;
+    }
+    
+    .upcoming-headerss {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .upcoming-headers-title-one,
+    .upcoming-headers-title-two,
+    .upcoming-headers-title-three,
+    .upcoming-headers-title-four {
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .upcoming-wrapper {
+        height: auto;
+        padding: 15px;
+    }
+
+    .upcoming-event-info-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .upcoming-event-info-wrapper-one,
+    .upcoming-event-info-wrapper-two,
+    .upcoming-event-info-wrapper-three {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .upcoming {
+        width: 45%;
+        height: 35px;
+    }
+
+    .ended {
+        width: 45%;
+        height: 35px;
+    }
+
+    .ongoing {
+        width: 45%;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .upcoming-bg {
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .upcoming-headerss {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .upcoming-headers-title-one,
+    .upcoming-headers-title-two,
+    .upcoming-headers-title-three,
+    .upcoming-headers-title-four {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .upcoming-wrapper {
+        height: auto;
+        padding: 10px;
+    }
+
+    .upcoming-event-info-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .upcoming-event-info-wrapper-one,
+    .upcoming-event-info-wrapper-two,
+    .upcoming-event-info-wrapper-three {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .upcoming {
+        width: 40%;
+        height: 30px;
+    }
+
+    .ended {
+        width: 40%;
+        height: 30px;
+    }
+
+    .ongoing {
+        width: 40%;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .upcoming-bg {
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+    }
+
+    .upcoming-headerss {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .upcoming-headers-title-one,
+    .upcoming-headers-title-two,
+    .upcoming-headers-title-three,
+    .upcoming-headers-title-four {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .upcoming-wrapper {
+        height: auto;
+        padding: 10px;
+    }
+
+    .upcoming-event-info-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .upcoming-event-info-wrapper-one,
+    .upcoming-event-info-wrapper-two,
+    .upcoming-event-info-wrapper-three {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .upcoming {
+        width: 35%;
+        height: 30px;
+    }
+
+    .ended {
+        width: 35%;
+        height: 30px;
+    }
+
+    .ongoing {
+        width: 35%;
+        height: 30px;
+    }
+}
