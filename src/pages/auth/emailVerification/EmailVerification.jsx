@@ -71,6 +71,7 @@ const EmailVerification = () => {
         ) : isVerifying ? (
           <Modal
                 open={isModalOpen}
+ 
                 okButtonProps={{ style: { display: "none" } }}
                 cancelButtonProps={{ style: { display: "none" } }}
                 closable={false}

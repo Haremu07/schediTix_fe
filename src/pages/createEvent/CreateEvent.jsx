@@ -24,7 +24,7 @@ const CreateEvent = () => {
     setIsModalOpens(true);
   };
   const [succesful, setSuccesful] = useState(false);
-
+ 
   const sucessShowModal = () => {
     setSuccesful(true);
   };

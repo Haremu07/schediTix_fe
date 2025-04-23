@@ -247,6 +247,16 @@
       box-shadow: none;
       border-radius: 0;
     }
+ 
+    .LogoBox{
+        display: flex;
+        align-items: center;
+    }
+    .Logo{
+        font-size: 20px;
+        width: 200px !important;
+        height: 40px !important;
+    }
   
     .sigin-form-Header {
       height: auto;

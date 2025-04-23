@@ -511,3 +511,86 @@ border-radius: 7px;
     font-size: 30px;
     font-weight: 600;
 }
+@media screen and (max-width: 768px) {
+    .create-event-bg,
+    .upload-img-title,
+    .upload-img-card,
+    .input-wrapper,
+    .finally-input-wrapper {
+      width: 95%;
+    }
+  
+    .upload-img-template {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .upload-img-template-details-wrapper {
+      width: 100%;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    .upload-img-btn,
+    .parking-btn {
+      width: 80%;
+    }
+  
+    .holder-nav {
+      width: 90%;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  
+    .double-input-holder,
+    .finally-double-input-wrapper {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .input-one-holder,
+    .finally-box {
+      width: 100%;
+    }
+  
+    .wider-bg {
+      width: 95%;
+      height: auto;
+    }
+  
+    .Four-input-wrapper {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .input-time,
+    .location-input,
+    .inputs,
+    .parking-input,
+    .finally-input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .upload-img-btns {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .text-holder {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .start {
+      width: 100%;
+    }
+  
+    .arrow-down,
+    .location-icons,
+    .calendar-icon {
+      font-size: 20px;
+    }
+  }
+  
