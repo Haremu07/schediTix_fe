@@ -85,7 +85,7 @@ const EmailVerification = () => {
                 </div>
               </Modal>
             
-        ) : "Null"}
+        ) : Null}
         
               
               
