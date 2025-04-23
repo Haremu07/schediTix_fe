@@ -15,20 +15,22 @@ const EmailVerification = () => {
   const BASEURL = "https://scheditix.onrender.com";
 
   
-  const [isVerifying, setIsVerifying] = useState(false);
-  const [isModalOpens, setIsModalOpens] = useState(false);
+  const [isVerifying, setIsVerifying] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => setIsModalOpens(true);
+
 
 
   const handleEmailVerification = async () => {
-    setIsVerifying(true); 
+    
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
       if (response.status === 200) {
         toast.success("Email verified successfully"); 
+        setIsVerifying(true); 
+        setIsModalOpen(true);
         setTimeout(() => {
-          showModal();
+          
           navigate("/login"); 
         }, 5000);
         
@@ -44,6 +46,8 @@ const EmailVerification = () => {
   useEffect(() => {
     if (token) {
       handleEmailVerification();
+    } else {
+      setIsVerifying(false);
     }
   }, [token]);
 
@@ -62,6 +66,7 @@ const EmailVerification = () => {
       </div>
       
           <div className="form">
+                    
             {!token ? (
               <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
             ) : isVerifying && (
@@ -81,9 +86,12 @@ const EmailVerification = () => {
                   </div>
                 </div>
               </Modal>
-            )  
+            
+        ) : Null}
+        
               
-            }
+              
+            
           </div>
        
       <div className="Nav2">

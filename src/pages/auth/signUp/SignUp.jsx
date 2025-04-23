@@ -50,9 +50,9 @@ const SignUP = () => {
       console.log(response);
       if (response.status === 201) {
         setTimeout(() => {
-          toast.success(response.data.message);
+          toast.success(response.data.message );
           setIsLoading(false);
-          navigate(<Brief />)
+          navigate("/brief")
         }, 5000);
         if (input !== input) toast.success("omo run am bro");
         // const loadingState = toast.loading("Do the calms e don work....");

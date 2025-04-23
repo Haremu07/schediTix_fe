@@ -103,6 +103,306 @@
   border-radius: none;
 }
 
+
+.inputBox {
+  width: 80%;
+  height: 60px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.inputBox .inpute {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  padding-left: 30px;
+  border: 1px solid gray;
+  outline-color: #ff5722;
+}
+
+.btn {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff5722;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.box {
+  color: #ff5722;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.Passage {
+  text-align: center;
+  font-size: 18px;
+}
+
+.Passage2 {
+  text-align: center;
+  font-size: 20px;
+}
+.link-text{
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.resend1 {
+  color: #ff5722;
+}
+
+.resend {
+  background-color: #ff5722;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.CodeBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.success-bgs {
+  width: 97%;
+  height: 310px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verified-icon-holders {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verified-icons {
+  color: rgb(255, 87, 34);
+  font-size: 180px;
+}
+
+.successful-text-holders {
+  width: 70%;
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .email-verification-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .Nav,
+  .Nav2 {
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    height: auto;
+  }
+
+  .Nav-Box {
+    width: 60%;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .email-verification-form {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .inputBox {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inputBox .inpute {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  .Passage,
+  .Passage2,
+  .successful-text-holders {
+    font-size: 16px;
+  }
+
+  .verified-icons {
+    font-size: 120px;
+  }
+
+  .success-bgs {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .verified-icon-holders {
+    height: 120px;
+  }
+
+  .GoBack {
+    justify-content: center;
+  }
+}
+
+/* Spin Loader Styles */
+.spin-bg {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin-wrapper {
+  width: 60%;
+  height: 40%;
+}
+
+.spin-text-holder {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin-holder {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+}
+
+.Nav {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 40px;
+}
+
+.Nav-Box {
+  width: 35%;
+  height: 25%;
+  margin-bottom: 30px;
+  margin-right: 25px;
+  position: relative;
+}
+
+.Nav-Box .navBoxs1 {
+  width: 80%;
+  height: 65%;
+  border-radius: 100px;
+  background-color: #ff5722;
+  position: absolute;
+  z-index: 1;
+}
+
+.Nav-Box .navBoxs2 {
+  width: 80%;
+  height: 65%;
+  border-radius: 100px;
+  background-color: #27187e;
+  position: absolute;
+  top: 35%;
+  left: 20%;
+}
+
+.Nav2 {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-top: 30px;
+}
+
+.email-verification-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-verification-form {
+  width: 556.56px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+  border-radius: 10px;
+  color: rgb(66, 66, 66);
+}
+
+.Logo {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.GoBack {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.email-verification-form-Header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  font-weight: 400;
+}
+
+.form {
+  height: max-content;
+  display: flex;
+  gap: 21px;
+  flex-direction: column;
+  box-shadow: none;
+  border-radius: none;
+}
+
 .inputBox {
   width: 80%;
   height: 60px;

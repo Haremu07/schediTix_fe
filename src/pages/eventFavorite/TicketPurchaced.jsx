@@ -9,36 +9,56 @@ import '../../pages/eventDetails/eventDetails.css'
 // import { TbClock } from "react-icons/tb";
 import {  MdFavoriteBorder } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import axios from "axios"
+import {useEffect, useState} from "react"
 
 
 const TicketPurchaced = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const {id} = useParams();
+    const [event, setEvent] = useState([])
+
+    const getEvent= async()=>{
+      try{
+        const res = await axios.get(`https://scheditix.onrender.com/api/v1/event/${id}`)
+        console.log(res?.data?.data);
+        setEvent(res?.data?.data)
+        toast.success(response.data.data.message)
+      }catch(err){
+        console.log(err)
+      }
+    }
+
+    useEffect(()=>{
+      getEvent()
+    },[])
   return (
     <div className="upcoming-event">
         <div className="upcoming-evenr-header">
-            <h5 onClick={() => navigate("/dashboard/event-favorite")}><IoIosArrowBack size={25}/> back</h5>
+            <h5 onClick={() => navigate(-1)}><IoIosArrowBack size={25}/> back</h5>
         </div>
       <div className='upimgDiv'>
         <section className='upImgDiv'>
-        <img src={UpcomingEventImage} alt="" />
+        <img src={event?.image?.imageUrl} alt="" />
         </section>
         
         <section className='upTextDiv'>
-          <h2>MyKealwise Live in Aj City</h2>
+          <h2>{event?.eventTitle}</h2>
           <nav className='upTExtDate'> 
           <SlCalender className='uptextDateIcone'/>
-          <p><b>26 August 2025</b></p>
+          <p><b>{event.startDate}</b></p>
           </nav>
           <nav className='upTExtDate'>
           <BsFillClockFill className='uptextDateIcone'/>
-          <p><b>6pm wat</b></p>
+          <p><b>{event.startTime}</b></p>
            </nav>
           <nav className='upTExtDate'> 
           <FaLocationDot className='uptextDateIcone'/>
-          <p><b>Abayomi Mutipurpose hall, Ajegunle,<br />Lagos, Nigeria</b></p>
+          <p><b>{event.eventLocation}</b></p>
           </nav>
-          <p className='seatnumber'>Seat number: Table1-seat5</p>
-          <p className='checkin'>check in code: <span>38AT</span></p>
+          {/* <p className='seatnumber'>Seat number: {event.seatNumber}</p>
+          <p className='checkin'>check in code: <span>{event?.tableNumber}</span></p> */}
         </section>
       </div>
  
@@ -49,11 +69,11 @@ const TicketPurchaced = () => {
                   <div className='event-rules-box'>
                     <div className='event-rules-box-first'>
                       <div className='event-rules-box-first-one'><h3>Event Title</h3></div>
-                      <p>Mykealwise live in lagos</p>
+                      <p> {event.eventTitle}</p>
                     </div>
                     <div className='event-rules-box-first'>
                       <div className='event-rules-box-first-one'><h3>Event Details</h3></div>
-                      <p>The biggest #comedy Show ever to hit the #city of #ajegunle. Don't miss out! #laughter #mykealwise #premium.</p>
+                      <p>{event.eventDescription}</p>
                     </div>
                     <div className='event-rules-box-second'>
                       <div className='write-up-header'><h3>Event Rules</h3></div>
@@ -74,8 +94,7 @@ const TicketPurchaced = () => {
                       </div>
       
                       <div className='write-up'>
-                        <li className='write-up-title'>No Outside Food or Drinks</li>
-                        <p className='write-up-text'>To maintain a safe environment, do not bring outside food or drinks. Refreshments are available inside.</p>
+                          {event?.eventRule}
                       </div>
       
                       <div className='write-up'>
@@ -98,7 +117,7 @@ const TicketPurchaced = () => {
                   <div className='reserve-your-spot'>
                     <div className='reserve-your-spot-title'>
                           <div className='reserve-your-spot-title-one' 
-                           onClick={() => navigate("/dashboard/purchase-details")}
+                           onClick={() => navigate(`/dashboard/purchase-details/${id}`)}
                            ><h4>Buy Ticket</h4></div>
                           {/* <span className='favourite-icon'><MdFavoriteBorder /></span> */}
                     </div>

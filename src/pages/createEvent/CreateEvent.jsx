@@ -16,12 +16,21 @@ import toast, { Toaster } from "react-hot-toast";
 
 const CreateEvent = () => {
   // const {token} = useParams()
+
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
   const [isModalOpens, setIsModalOpens] = useState(false);
+  const showModals = () => {
+    setIsModalOpens(true);
+  };
+  const [succesful, setSuccesful] = useState(false);
+ 
 
+  const sucessShowModal = () => {
+    setSuccesful(true);
+  };
 
-
+  
   const [input, setInput] = useState({
     eventTitle: "",
     eventDescription: "",
@@ -94,7 +103,7 @@ const CreateEvent = () => {
       formData.append("startTime", input.startTime);
       formData.append("eventAgenda", input.eventAgenda);
       formData.append("endTime", input.endTime);
-      formData.append("eventRule", input.eventRule);
+      formData.append("eventRule", input.eventRule); 
       formData.append("startDate", input.startDate);
       formData.append("totalSeatNumber", input.totalSeatNumber);
       formData.append("totalTableNumber", input.totalTableNumber);
@@ -117,13 +126,16 @@ const CreateEvent = () => {
       );
       console.log(response);
       setInput(response.data.data);
-      toast.success(response?.data?.data?.messagse);
-      toast.success("Event Created Successfully");
+      // setSuccesful(true);
+      toast.success("Event created Succeully")
       setTimeout(() => {
+        toast.dismiss("Event created Succeully")
+        // setIsModalOpens(false);
+        // toast.success(response?.data?.data?.messagse);
         setDisable(false);
         navigate("/dashboard/manage-event"); 
         setIsLoading(false);
-      }, 8000);
+      }, 3000);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -635,6 +647,19 @@ const CreateEvent = () => {
                     </div>
                   </div>
                 </Modal>
+                        
+                       
+               <Modal
+              title="Success"
+              open={succesful}
+              // onOk={handleOk}
+              // onCancel={handleOk}
+              centered
+              okText="Okay"
+              cancelButtonProps={{ style: { display: 'none' } }}
+             >
+             <p className="CreatedSussecfully">🎉 Event created successfully!</p>
+            </Modal>
 
                 <div className="parking-btn-wrapper">
                   {/* <Outlet /> */}
