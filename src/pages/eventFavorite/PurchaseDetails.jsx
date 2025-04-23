@@ -56,13 +56,14 @@ const PurchaseDetails = () => {
         `${BASEURL}/api/v1/create/ticket/${id}`,
         ticketPurchase
       );
+      // console.log("Sending ticketPurchase payload:", ticketPurchase);
+      // console.log("Using _id:", _id);
       console.log(response);
 
-      toast.loading("Please wait")
       if (response.status === 200) {
-        setTicketPurchase(response)
+        // setTicketPurchase(response)
         toast.success(response.data?.message);
-        setTicketId(response?.data?.data?.eventId)
+        // setTicketId(response?.data?.data)
         setTimeout(() => {
           handleToggle();
         }, 4000);

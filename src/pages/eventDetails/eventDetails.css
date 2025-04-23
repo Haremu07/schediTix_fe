@@ -639,3 +639,119 @@
         height: 100%;
     }
   }
+@media screen and (max-width: 768px) {
+    .eventdetails-sections {
+      width: 90%;
+      margin: 100px auto 0 auto;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+  
+    .eventdetails-billboard-wrapper {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+    }
+  
+    .eventdetails-billboard-image,
+    .eventdetails-billboard-text {
+      width: 90%;
+      height: auto;
+    }
+  
+    .text-title,
+    .text-calendar,
+    .text-time,
+    .text-address {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .details-wrapper {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+  
+    .event-rules-box,
+    .reserve-your-spot {
+      width: 95%;
+    }
+  
+    .reserve-your-spot-box-one-child,
+    .reserve-your-spot-box-two-child,
+    .reserve-your-spot-box-three-child {
+      width: 100%;
+    }
+  
+    .update-bg {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+    }
+  
+    .update-wrapper-one,
+    .update-wrapper-two {
+      width: 90%;
+    }
+  
+    .update-wrapper-two-first {
+      width: 100%;
+      flex-direction: column;
+    }
+  
+    .update-wrapper-two-input,
+    .update-wrapper-two-btn {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .text-title {
+      font-size: 18px;
+    }
+  
+    .text-calendar,
+    .text-time,
+    .text-address {
+      font-size: 16px;
+    }
+  
+    .eventdetails-sections-one,
+    .eventdetails-sections-two,
+    .eventdetails-sections-three,
+    .eventdetails-sections-four,
+    .eventdetails-sections-five {
+      font-size: 14px;
+      width: auto;
+      padding: 5px 10px;
+    }
+  
+    .regular,
+    .vip,
+    .v-vip {
+      width: 30%;
+      font-size: 13px;
+      height: 36px;
+    }
+  
+    .reserve-your-spot-title-one {
+      font-size: 14px;
+    }
+  
+    .write-up-header,
+    .update-wrapper-one-first {
+      font-size: 16px;
+    }
+  
+    .update-wrapper-one-second {
+      font-size: 12px;
+    }
+  
+    .reserve-your-spot-box-one-child-first {
+      font-size: 13px;
+    }
+  }
+  

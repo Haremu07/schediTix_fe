@@ -221,3 +221,59 @@
     /* background-color: red; */
     cursor: pointer;
 }
+@media (max-width: 768px) {
+    .signin-container {
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 20px 10px;
+    }
+  
+    .signIn-Nav,
+    .signIn-Nav2 {
+      display: none;
+    }
+  
+    .signin-body {
+      width: 100%;
+      height: auto;
+      justify-content: center;
+      padding-top: 40px;
+    }
+  
+    .signin-form {
+      width: 100%;
+      height: auto;
+      padding: 30px 20px;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  
+    .sigin-form-Header {
+      height: auto;
+      gap: 5px;
+    }
+  
+    .input {
+      height: 50px;
+      font-size: 16px;
+    }
+  
+    .btn {
+      height: 50px;
+      font-size: 18px;
+    }
+  
+    .signinBox {
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      height: auto;
+      gap: 5px;
+      margin-top: 10px;
+    }
+  
+    .boxed {
+      width: auto;
+      margin-left: 0;
+    }
+  }

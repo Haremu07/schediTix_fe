@@ -18,7 +18,7 @@ const PayOutDetails = () => {
   const [showInput, setShowInput] = useState(false);
   const [allEvent, setAllEvent] = useState([])
 
-  const BASEURL = "https://scheditix.onrender.com";
+  // const BASEURL = "https://scheditix.onrender.com";
 
 
   const handleAllEvent = async() => {
@@ -36,6 +36,43 @@ const PayOutDetails = () => {
   useEffect(() => {
     handleAllEvent()
   },[])
+
+  const getUserId = () => {
+    const userData = localStorage.getItem("userData");
+    
+    if (!userData) return null;
+    
+    try {
+      const parsedUser = JSON.parse(userData);
+      return parsedUser._id || null;
+    } catch (error) {
+      console.error("Failed to parse user data:", error);
+      return null;
+    }
+  };
+
+  const userId = getUserId();
+  console.log("User ID:", userId);
+  
+  const [getTicketId, setGetTicketId]=useState([])
+  const BASE = "https://scheditix.onrender.com";
+  const getId = async ()=>{
+    try {
+      const response = await axios.get(`${BASE}/api/v1/getPlannerEvent/${userId}`)
+      setGetTicketId(response?.data?.data[0])
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+  useEffect(()=>{
+    getId()
+  },[])
+
+
+
+  
 
   const handleInput = () => {
     setShowInput(true)
@@ -74,6 +111,30 @@ const PayOutDetails = () => {
 
   const handleOptions = (selectedOption) => {
     console.log('Seleted:', selectedOption);
+  }
+  const BASEURL = "https://scheditix.onrender.com";
+  const {ticketId}=useParams()
+ const token = localStorage.getItem("userToken")
+  const [paymentdetails, setPaymentDetails] = useState({
+
+  })
+  const handlePaymentDetails = async () =>{
+   try{
+    const response = await axios.post(`${BASEURL}/api/v1/payment/initialize/${ticketId}`, paymentdetails, {headers:{
+      Authorization : `Bearer ${token}`
+    }})
+    console.log(response.data)
+    
+    if(response.status === 200){
+      setTimeout(()=>{
+        window.location.href(response?.data?.data?.checkout_Url)
+      },4000)
+     
+    }
+   }
+   catch(err){
+console.log(err)
+   }
   }
 
   
@@ -189,152 +250,12 @@ const PayOutDetails = () => {
             </Modal>
           </div>
         </div>
-
         <div className='payout-history-bg'>
-          <div className='payout-history-header'>
-            <div className='payout-history'>
-              <h3>Payout history</h3>
-            </div>
-
-            <div className='payout-history-input-wrapper'>
-              <div className='payout-history-input-holder'>
-                <input type="text" placeholder='search attended by name or phone number' className='payout-history-input' />
-                <p className='search-icons'><CiSearch /></p>
-              </div>
-
-              <div className='payout-history-filter-holder'>
-                <div className='filter'><p>filter by</p></div>
-                <p className='filter-icon'><TbChartCandle /></p>
-              </div>
-            </div>
-
-            <div className='table-bg'>
-              <div className='body'>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Request Date</th>
-                      <th>Event Name</th>
-                      <th>Requested Amount</th>
-                      <th>Status</th>
-                      <th>Payment Date</th>
-                      <th>Payment Method</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>2025-03-25</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                          Paid<span className="status-dot green"></span>
-                          {/* </span> */}
-                          </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr>
-                      <td>2025-03-18</td>
-                      <td>Startup Summit 2025</td>
-                      <td>₦1,800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                        Pending<span className="status-dot yellow"></span>
-                        {/* </span> */}
-                        </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr>
-                      <td>2025-03-18</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                          Rejected<span className="status-dot red"></span>
-                          {/* </span> */}
-                          </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr>
-                      <td>2025-03-18</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                        Paid<span className="status-dot green"></span>
-                        {/* </span> */}
-                        </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr>
-                      <td>2025-03-25</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                        Paid<span className="status-dot green"></span>
-                        {/* </span> */}
-                        </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr>
-                      <td>2025-03-18</td>
-                      <td>Startup Summit 2025</td>
-                      <td>₦1,800,000</td>
-                      <td>
-                        {/* <span className="status"> */}
-                        Pending<span className="status-dot yellow"></span>
-                        {/* </span> */}
-                        </td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    {/* <tr>
-                      <td>2025-03-18</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td><span className="status">Rejected<span className="status-dot red"></span></span></td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td>
-                    </tr>
-                    <tr> */}
-                      {/* <td>2025-03-18</td>
-                      <td>Tech Conference 2025</td>
-                      <td>₦800,000</td>
-                      <td><span className="status">Paid<span className="status-dot green"></span></span></td>
-                      <td>2025-03-26</td>
-                      <td>Bank Transfer</td> */}
-                    {/* </tr> */}
-                  </tbody>
-                </table>
-
-                <div className='pagination-bg'>
-                  <div className='pagination-wrapper'>
-                    <p className='arrow'><IoIosArrowBack /></p>
-                    <div className='num'>1</div>
-                    <div className='num'>2</div>
-                    <div className='num'>3</div>
-                    <div className='num'>4</div>
-                    <div className='num'>5</div>
-                    <p className='dot'><PiDotsThreeOutlineFill /></p>
-                    <div className='num'>10</div>
-                    <p className='arrow'><IoIosArrowForward /></p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
   );
 };
 
 export default PayOutDetails;
+

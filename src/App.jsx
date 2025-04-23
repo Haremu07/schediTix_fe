@@ -5,7 +5,7 @@ import EmailVerification from "./pages/auth/emailVerification/EmailVerification"
 import First from "./routes/First"
 import Private from "./routes/Private"
 import ForgetPassword from "./pages/auth/forgetPassword/ForgetPassword"
-import Verify from "./pages/auth/emailVerification/Verify"
+// import Verify from "./pages/auth/emailVerification/Verify"
 import ResetPassword from "./pages/resetPassword/ResetPassword"
 import PasswordResetSuccessfull from "./pages/passwordResetSuccessfull/PasswordResetSuccessfull"
 import LandingPage from "./pages/landing/LandingPage"
@@ -40,6 +40,7 @@ import TicketPurchaced from "./pages/eventFavorite/TicketPurchaced"
 import PurchaseDetails from "./pages/eventFavorite/PurchaseDetails"
 import CheckIn from "./pages/checkInAttendee/CheckIn"
 import ViewEventAttendee from "./pages/checkInAttendee/ViewEventAttendee"
+import Brief from "./pages/auth/emailVerification/Brief"
 
 
 const App = () => {
@@ -240,6 +241,11 @@ const App = () => {
         element: <SignIn/>
       },
       {
+        path: "brief" ,
+        errorElement: <ErrorPage/>,
+        element: <Brief/>
+      },
+      {
         path: "register" ,
         errorElement: <ErrorPage/>,
         element: <SignUp/>
@@ -254,18 +260,18 @@ const App = () => {
         errorElement: <ErrorPage/>,
         element: <ForgetPassword/>
       },
-      {
-        path: "verify" ,
-        errorElement: <ErrorPage/>,
-        element: <Verify/>
-      },
+      // {
+      //   path: "verify" ,
+      //   errorElement: <ErrorPage/>,
+      //   element: <Verify/>
+      // },
       {
         path: "checkin-as" ,
         errorElement: <ErrorPage/>,
         element: <CheckInAs/>
       },
       {
-        path: "reset-password" ,
+        path: "reset-password/:token" ,
         errorElement: <ErrorPage/>,
         element: <ResetPassword/>
       },

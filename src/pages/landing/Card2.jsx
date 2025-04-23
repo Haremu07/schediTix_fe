@@ -26,9 +26,7 @@ const Card2 = (props) => {
         // toast.error(err?.response?.data?.message || "Failed to fetch events")
        }
      }
-     useEffect(() => {
-      handleFeaturedEvents();
-    }, []);
+ 
     
     //  const eventsToDisplay = featureEvent.length ? featureEvent : [{
     //   title: props.text,
@@ -40,7 +38,7 @@ const Card2 = (props) => {
       <>
         <Toaster />
         {featureEvent.map((event, index) => (
-          <div className="Card2" key={index}>
+          <div className="Card2" key={index} onClick={ handleFeaturedEvents}>
             <div className="Card2Nav">
               <h3>{event.eventTitle}</h3>
               <p>{event.eventDescription}</p>
