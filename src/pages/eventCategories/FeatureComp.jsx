@@ -3,6 +3,7 @@ import './eventCategories.css';
 import { MdLocationOn } from 'react-icons/md';
 import { CiHeart } from 'react-icons/ci';
 import vector from '../../assets/Vector.png';
+import { useNavigate } from 'react-router-dom';
 
 const FeatureComp = ({ events = [], loading }) => {
   const [likedEvents, setLikedEvents] = useState({});
@@ -18,6 +19,7 @@ const FeatureComp = ({ events = [], loading }) => {
     setLikedEvents((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
+  const navigate = useNavigate()
   return (
     <div className="featureCamp">
       <nav className="paddingBox">
@@ -77,7 +79,7 @@ const FeatureComp = ({ events = [], loading }) => {
 
                 <nav className="cardThirdBox">
                   <p>{formatNaira(item.ticketPrice)}</p>
-                  <span className="buyTicketP">Buy Tickets</span>
+                  <span className="buyTicketP"  onClick={()=> navigate(`/dashboard/purchase-details/${item?._id}`)}>Buy Tickets</span>
                 </nav>
               </section>
             ))
