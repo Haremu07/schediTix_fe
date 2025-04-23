@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useEffect, useState } from 'react';
 import './eventCategories.css';
 import EventForYou from './EventForYou';
@@ -11,11 +7,11 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const EventCategories = () => {
-  const [loading, setLoading] = useState(false); // Loading state for events fetching
+  const [loading, setLoading] = useState(false); 
   const [activeCategoyId, setActiveCategoryId] = useState('All Events');
   const [events, setEvents] = useState([]);
   const [categories, setCategories] = useState([]);
-  const BASEURL = "https://scheditix.onrender.com"; // Update with your base URL
+  const BASEURL = "https://scheditix.onrender.com"; 
   const navigate = useNavigate();
 
   const handleCategories = async () => {
@@ -61,7 +57,7 @@ const EventCategories = () => {
     handleCategories();
     fetchAllEvents(); 
   }, []);
-
+    
   return (
     <div className="MainPageEventCategories">
       <div className='topBox'></div>
@@ -101,29 +97,35 @@ const EventCategories = () => {
 
           {/* Loading State for Events */}
           <section className='middleBottom'>
-            {loading ? (
-              <div className="loadingSpinner">
-                <p>Loading...</p>
-              </div>
-            ) : events?.length === 0 ? (
-              <div className='noEvent'>There are no events yet</div>
-            ) : (
-              events?.map((item, index) => (
-                <article className='middleBottomCards' key={index}>
-                  <img src={item.image?.imageUrl} alt={item.eventTitle} />
-                  <div className='radientBlackBox'>
-                    <nav className='middleBox'>
-                      <p>{item.eventTitle}</p>
-                      <p className='Categorylocation'>{item.eventLocation}</p>
-                      <div className='seeMoreButton'>
-                        <p onClick={() => navigate(`/event-details/${item._id}`)}>See More</p>
-                      </div>
-                    </nav>
-                  </div>
-                </article>
-              ))
-            )}
-          </section>
+  {loading ? (
+    Array.from({ length: 3 }).map((_, index) => (
+      <div key={index} className='custom-skeleton'>
+        <div className='skeleton-image'></div>
+        <div className='skeleton-line short'></div>
+        <div className='skeleton-line'></div>
+        <div className='skeleton-line'></div>
+      </div>
+    ))
+  ) : events?.length === 0 ? (
+    <div className='noEvent'>There are no events yet</div>
+  ) : (
+    events.slice(0,5).sort((a, b)=>b-a)?.map((item, index) => (
+      <article className='middleBottomCards' key={index}>
+        <img src={item.image?.imageUrl} alt={item.eventTitle} />
+        <div className='radientBlackBox'>
+          <nav className='middleBox'>
+            <p>{item.eventTitle}</p>
+            <p className='Categorylocation'>{item.eventLocation}</p>
+            <div className='seeMoreButton'>
+              <p onClick={() => navigate(`/event-details/${item._id}`)}>See More</p>
+            </div>
+          </nav>
+        </div>
+      </article>
+    ))
+  )}
+</section>
+
         </nav>
       </div>
       <div style={{ width: '100%', height: '10vh', backgroundColor: '#edecf4' }} className='buttom'></div>
