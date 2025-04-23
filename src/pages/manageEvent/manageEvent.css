@@ -547,3 +547,91 @@
     border: 1px solid grey;
     font-family: "Poppins", sans-serif;
 }
+@media (max-width: 640px) {
+    .upcoming-bg,
+    .upcoming-wrapper,
+    .upcoming-wrappers {
+      width: 100% !important;
+      height: auto !important;
+      padding: 0 10px;
+      overflow-x: hidden;
+    }
+  
+    .upcoming-headerss,
+    .upcoming-headers,
+    .upcoming-header,
+    .upcoming-header-ones,
+    .upcoming-header-twos,
+    .upcoming-header-two-childs,
+    .upcoming-header-two-child,
+    .upcoming-header-threes,
+    .upcoming-header-three,
+    .upcoming-event-info-wrapper-ones,
+    .upcoming-event-info-wrapper-one,
+    .upcoming-event-info-wrapper-twos,
+    .upcoming-event-info-wrapper-two,
+    .upcoming-event-info-wrapper-threes,
+    .upcoming-event-info-wrapper-three {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: 0 !important;
+      width: 100% !important;
+      height: auto !important;
+      padding: 5px 0;
+    }
+  
+    .upcoming-header-twos,
+    .upcoming-header-two-childs,
+    .upcoming-header-two-child,
+    .upcoming-event-info-wrapper-twos,
+    .upcoming-event-info-wrapper-two {
+      margin-left: 0 !important;
+    }
+  
+    .upcoming-header-ones,
+    .upcoming-header-twos,
+    .upcoming-header-threes,
+    .upcoming-header-one,
+    .upcoming-header-two,
+    .upcoming-header-three,
+    .upcoming-event-info-wrapper-ones,
+    .upcoming-event-info-wrapper-twos,
+    .upcoming-event-info-wrapper-threes,
+    .upcoming-event-info-wrapper-one,
+    .upcoming-event-info-wrapper-two,
+    .upcoming-event-info-wrapper-three {
+      width: 100% !important;
+      justify-content: flex-start !important;
+      padding-left: 0 !important;
+    }
+  
+    .upcoming-event-info-wrapper-one-img,
+    .upcoming-event-info-wrapper-one-imgs,
+    .imagez {
+      width: 50px !important;
+      height: 50px !important;
+    }
+  
+    .pagination-wrapper,
+    .pagination-wrappers {
+      width: 90% !important;
+      padding: 0 10px;
+      justify-content: center !important;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  
+    .num,
+    .nums {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 14px !important;
+    }
+  
+    .arrow,
+    .arrows,
+    .dot,
+    .dots {
+      font-size: 20px !important;
+    }
+  }
