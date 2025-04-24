@@ -124,13 +124,13 @@ const SignIn = () => {
               <button
                 type="submit"
                 className="btn"
-                // onClick={() => {
-                //   setIsLoading(true), setTimeout(() => {}, 3000);
-                // }}
+                onClick={() => {
+                  setIsLoading(true), setTimeout(() => {}, 3000);
+                }}
                 // disabled={isLoading}
               >
                 {
-                  isLoading ? "Loading" : "Login"
+                  isLoading ? "Loading..." : "Login"
                 }
               </button>
             

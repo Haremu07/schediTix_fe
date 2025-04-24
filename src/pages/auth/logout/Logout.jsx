@@ -7,6 +7,8 @@ const Logout = () => {
   const navigate = useNavigate()
   const BASEURL = "https://scheditix.onrender.com";
 
+  const loading = toast.loading("Please wait...")
+
   const token = localStorage.getItem(`userToken`)
   console.log(token)
 const headers = {
@@ -15,8 +17,9 @@ const headers = {
   const handleLogout = async () => {
     try {
       const response = await axios.post(`${BASEURL}/api/v1/logout/`, {},{headers} )
-      if (response.data.message === "authorized"){
+      if (response.data.message ===  200 || "authorized" ){
         toast.success("Logged out successfull")
+        // toast.loading(loading)
         localStorage.clear()
           navigate("/login")
       }
