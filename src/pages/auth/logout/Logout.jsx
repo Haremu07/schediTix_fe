@@ -7,7 +7,7 @@ const Logout = () => {
   const navigate = useNavigate()
   const BASEURL = "https://scheditix.onrender.com";
 
-  const loading = toast.loading("Please wait...")
+  // const loading = toast.loading("Please wait...")
 
   const token = localStorage.getItem(`userToken`)
   console.log(token)
@@ -20,6 +20,7 @@ const headers = {
       if (response.data.message ===  200 || "authorized" ){
         toast.success("Logged out successfull")
         // toast.loading(loading)
+        // toast.dismiss(loading)
         localStorage.clear()
           navigate("/login")
       }
