@@ -13,33 +13,40 @@ function Overview() {
   const navigate = useNavigate()
 
 
-   const[overviewTop, setOverviewTop]= useState({})
+  //  const[overviewTop, setOverviewTop]= useState({})
    const BASEURL = "https://scheditix.onrender.com"
    
 
-  const [overview, setOverview] = useState([])
-const token = localStorage.getItem(`userToken`)
-console.log(token)
-  // const header = {
-  //   Authorization: 
-  // }
-  const handleOverview = async () => {
-    try {
-      const res = await axios.get(`${BASEURL}/api/v1/recent/events`,{
-        headers: {
-          Authorization: `Bearer, ${token}`
-        }
-      })
-      console.log(res)
-      setOverview(res.data.data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+   const [plannerEvents, setPlannerEvents] = useState([]);
 
-  useEffect(() => {
-    handleOverview()
-  },[])
+   const getUserId = () => {
+     const userData = localStorage.getItem("userData");
+     if (!userData) return null;
+   
+     try {
+       const parsedUser = JSON.parse(userData);
+       return parsedUser._id || null;
+     } catch (error) {
+       console.error("Failed to parse user data:", error);
+       return null;
+     }
+   };
+   
+   const userId = getUserId();
+   
+   const getPlannerEvents = async () => {
+     try {
+       const response = await axios.get(`${BASEURL}/api/v1/getPlannerEvent/${userId}`);
+       setPlannerEvents(response?.data?.data || []);
+     } catch (error) {
+       console.log(error);
+     }
+   };
+   
+   useEffect(() => {
+     getPlannerEvents();
+   }, []);
+   
 
    const handleOverviewTop = async () =>{
         try{
@@ -74,7 +81,7 @@ console.log(token)
               </div>
               <p className="stats-label">Total Ticket Sales</p>
             </div>
-            <div className="stats-value">{overviewTop.totalTicketSold}</div>
+            <div className="stats-value">{plannerEvents?.totalTicketSold}</div>
           </div>
         </div>
 
@@ -86,7 +93,7 @@ console.log(token)
               </div>
               <p className="stats-label">Total Revenue</p>
             </div>
-            <div className="stats-value">{overviewTop.totalRevenue}</div>
+            <div className="stats-value">{plannerEvents?.totalRevenue}</div>
           </div>
         </div>
 
@@ -98,7 +105,7 @@ console.log(token)
               </div>
               <p className="stats-label">Total Events Organized</p>
             </div>
-            <div className="stats-value">{overviewTop.totalEventOrganizers}</div>
+            <div className="stats-value">{plannerEvents?.totalEventOrganizers}</div>
           </div>
         </div>
       </div>
@@ -167,18 +174,24 @@ console.log(token)
               </tr>
             </thead>
             <tbody>
-           {
-            overview.map((i) => (
-              <tr>
-              <td>{i.eventName}</td>
-              <td>{i.ticketSold}</td>
-              <td>{i.totalAttendee}</td>
-              <td>#{i.revenueGenerated}</td>
-              <td>{i.checkins}</td>
-              <td><div className="status-container"><div className="status-dot upcoming"></div>{i.status}</div></td>
-            </tr>
-            ))
-           }
+            {
+  plannerEvents.map((event) => (
+    <tr key={event._id}>
+      <td>{event.eventTitle}</td>
+      <td>{event.ticketQuantity}</td>
+      <td>{event.attendeeCount || "N/A"}</td>
+      <td>#{event.revenueGenerated || 0}</td>
+      <td>{event.checkins || 0}</td>
+      <td>
+        <div className="status-container">
+          {/* <div className={statusdot ${event.status}}></div> */}
+          {event.status}
+        </div>
+      </td>
+    </tr>
+  ))
+}
+
  
               {/* <tr>
                 <td>Aegunie City Youth Marathon</td>

@@ -15,19 +15,19 @@ const EmailVerification = () => {
   const BASEURL = "https://scheditix.onrender.com";
 
   
-  const [isVerifying, setIsVerifying] = useState(true);
+  const [isVerifying, setIsVerifying] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
 
 
   const handleEmailVerification = async () => {
-    
+    setIsVerifying(0)
     try {
       const response = await axios.get(`${BASEURL}/api/v1/verify/user/${token}`);
       if (response.status === 200) {
         toast.success("Email verified successfully"); 
-        setIsVerifying(true); 
+        setIsVerifying(1); 
         setIsModalOpen(true);
         setTimeout(() => {
           
@@ -35,19 +35,18 @@ const EmailVerification = () => {
         }, 5000);
         
       }
+      setIsVerifying(2)
     } catch (error) {
       toast.error(error?.response?.data?.message || "Invalid or expired token.");
-    } finally {
-      setIsVerifying(false); 
-      
-    }
+      setIsVerifying(2)
+    } 
   };
 
   useEffect(() => {
     if (token) {
       handleEmailVerification();
     } else {
-      setIsVerifying(false);
+      setIsVerifying(2);
     }
   }, [token]);
 
@@ -66,9 +65,9 @@ const EmailVerification = () => {
       </div>
       
           <div className="form">
-          {!token ? (
-          <p className="Passage2">Invalid verification link. Please check your email and try again.</p>
-        ) : isVerifying && (
+            
+          {isVerifying ===0? <p className="Passage">Verifying...</p> :isVerifying ===1? (
+         <>
           <Modal
                 open={isModalOpen}
                 okButtonProps={{ style: { display: "none" } }}
@@ -84,8 +83,9 @@ const EmailVerification = () => {
                   </div>
                 </div>
               </Modal>
+         </> 
             
-        ) }
+        ) : <p className="Passage"> Failed</p> }
         
               
               

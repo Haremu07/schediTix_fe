@@ -1,10 +1,12 @@
 import "./emailVerification.css"
 import Logo from "../../../assets/orangelogo.png"
+import { useNavigate } from "react-router-dom"
 
 
 
 
 const Brief = () => {
+  const navigate = useNavigate()
   return (
     <div className="email-verification-container">
       {/* <div className="Nav">
@@ -27,7 +29,7 @@ const Brief = () => {
           <div className="form">
            
              <h3 className="link-text"> ✉️“We’ve sent a verification link to your email. 👉📩 Click it to confirm your account, then log in to start creating or attending unforgettable events with ShediTix. Can’t find the email? Be sure to check your spam or promotions folder too!”</h3> 
-            
+            <button className="LoginBtn" onClick={() => navigate("/login")}>Login</button>
           </div>
         </div>
       </div>

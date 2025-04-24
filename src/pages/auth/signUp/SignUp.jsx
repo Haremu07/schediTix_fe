@@ -54,8 +54,9 @@ const SignUP = () => {
           setIsLoading(false);
           navigate("/brief")
         }, 5000);
-        if (input !== input) toast.success("omo run am bro");
-        // const loadingState = toast.loading("Do the calms e don work....");
+        if (input !== input)
+          //  toast.success(");
+        toast.success("Sign up successfull please wait.");
         // toast.dismiss(loadingState);
       }
     } catch (error) {
