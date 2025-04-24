@@ -133,7 +133,7 @@ const CheckIn = () => {
           {/* <IoSearch /> */}
         </div>
 
-        <div className="table-bg">
+        <div className="table-bg1">
           <div className="body">
             <table>
               <thead>

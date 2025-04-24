@@ -13,7 +13,7 @@ function Overview() {
   const navigate = useNavigate()
 
 
-  //  const[overviewTop, setOverviewTop]= useState({})
+   const[overviewTop, setOverviewTop]= useState({})
    const BASEURL = "https://scheditix.onrender.com"
    
 
@@ -81,7 +81,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Ticket Sales</p>
             </div>
-            <div className="stats-value">{plannerEvents?.totalTicketSold}</div>
+            <div className="stats-value">{overviewTop?.totalTicketSold}</div>
           </div>
         </div>
 
@@ -93,7 +93,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Revenue</p>
             </div>
-            <div className="stats-value">{plannerEvents?.totalRevenue}</div>
+            <div className="stats-value">{overviewTop?.totalRevenue}</div>
           </div>
         </div>
 
@@ -105,7 +105,7 @@ function Overview() {
               </div>
               <p className="stats-label">Total Events Organized</p>
             </div>
-            <div className="stats-value">{plannerEvents?.totalEventOrganizers}</div>
+            <div className="stats-value">{overviewTop?.totalEventsOrganized}</div>
           </div>
         </div>
       </div>
