@@ -1,23 +1,26 @@
 .LogoutBody{
-    width: 100%;
+    width: 80% !important;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: rgba(230, 177, 164, 0.459);
     position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+  
+  
 }
 
 .LogOutCard{
     width: 45%;
     height: 40%;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 }
 
 .LogoutCardSmall{
@@ -29,6 +32,7 @@
     justify-content: center;
     gap: 10px;
     flex-direction: column;
+    
 }
 
 .btnBox{
@@ -60,4 +64,73 @@
         border: none;
         cursor: pointer;
     }
+}
+@media only screen and (max-width:640px) {
+    .LogoutBody{
+        width: 100% !important;
+        /* height: 100%; */
+        background-color: rgba(189, 21, 21, 0.384);
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+    }
+    
+    .LogOutCard{
+        width: 95% !important;
+        height: 40%;
+        background-color: #fff;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 8px;
+    }
+    
+    .LogoutCardSmall{
+        width: 80% !important;
+        height: 50%;
+        display: flex;
+        /* background-color: rgb(6, 48, 25) !important; */
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+    }
+    
+    .btnBox{
+        width: 100%;
+        height: 25%;
+        /* background-color: rgb(65, 26, 155) !important; */
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    
+        & .LogOutbtn{
+            width: 25%!important;
+            /* height: 100%; */
+            border-radius: 10px;
+            background-color: red;
+            flex-direction: row;
+            color: white;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        & .LogOutbtn2{
+            width: 25%;
+            height: 100%;
+            border-radius: 10px;
+            background-color: green;
+            border-radius: red 1px solid;
+            flex-direction: row;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    } 
 }

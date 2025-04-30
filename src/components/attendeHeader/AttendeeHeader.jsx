@@ -1,6 +1,6 @@
 import orangelogo from "../../assets/orangelogo.png";
 import "./headerAttendee.css";
-import CircleImg from "../../assets/Frame 129.png";
+// import CircleImg from "../../assets/Frame 129.png";
 import { useNavigate } from "react-router-dom";
 import { FiAlignRight } from "react-icons/fi";
 import {  Drawer } from 'antd';
@@ -9,7 +9,7 @@ import logoicon from "../../assets/logo (1).png"
 import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io";
 
 
-const AttendeHeader = () => {
+const AttendeeHeader = () => {
   const [open, setOpen] = useState(false);
   const [burger, setBurger] = useState(true)
   const showDrawer = () => {
@@ -63,11 +63,9 @@ const token = localStorage.getItem(`userToke`)
       placement="left"
       onClick={onClose}
       ><div className="nav-m-bg">
-        <p className="nav-m" onClick={()=>navigate("/dashboard/overview")}>Overview</p>
-        <p className="nav-m" onClick={()=>navigate("/dashboard/create-event")}>Create Event</p>
-        <p className="nav-m"onClick={()=>navigate("/dashboard/manage-event")}>Manage Event</p>
-        <p className="nav-m"onClick={()=>navigate("/dashboard/payout-details")}>Payout Account</p>
-        <p className="nav-m"onClick={()=>navigate("/dashboard/checkin")}>Check in Attendee</p>
+        <p className="nav-m" onClick={()=>navigate("/dashboard/upcoming-events")}>Upcoming Event</p>
+        <p className="nav-m" onClick={()=>navigate("/dashboard/past-events")}>Past Event</p>
+        <p className="nav-m"onClick={()=>navigate("/dashboard/event-favorite")}>Event favorite</p>
         <p className="nav-m"onClick={()=>navigate("/dashboard/profile")}>Settings</p>
         <p className="nav-p"onClick={()=>navigate("/dashboard/logout")}>Logout</p>
       </div>
@@ -78,4 +76,4 @@ const token = localStorage.getItem(`userToke`)
   );
 };
 
-export default AttendeHeader;
+export default AttendeeHeader;

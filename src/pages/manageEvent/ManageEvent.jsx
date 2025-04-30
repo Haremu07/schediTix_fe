@@ -137,30 +137,30 @@ const ManageEvent = () => {
           className={`upcoming-headers-title-one ${active === 0 ? "the-border-bottom" : ""}`}
           onClick={() => setActive(0)}
         >
-          <h3>All events</h3>
+          <h3 className='jj'>Allevents</h3>
         </div>
         <div
           style={{ color: active === 1 ? "rgb(27, 26, 26)" : "" }}
           className={`upcoming-headers-title-two ${active === 1 ? "the-border-bottom" : ""}`}
           onClick={() => setActive(1)}
         >
-          <h3>Upcoming events</h3>
+          <h3 className='jj'>Upcomingevents</h3>
         </div>
         <div
           style={{ color: active === 2 ? "rgb(27, 26, 26)" : "" }}
           className={`upcoming-headers-title-three ${active === 2 ? "the-border-bottom" : ""}`}
           onClick={() => setActive(2)}
         >
-          <h3>Ongoing events</h3>
+          <h3 className='jj'>Ongoingevents</h3>
         </div>
         <div
           style={{ color: active === 3 ? "rgb(27, 26, 26)" : "" }}
           className={`upcoming-headers-title-four ${active === 3 ? "the-border-bottom" : ""}`}
           onClick={() => setActive(3)}
         >
-          <h3>Ended events</h3>
+          <h3 className='jj'>Endedevents</h3>
         </div>
-        <div>
+        <div className='grace'>
           <input
             type="text"
             placeholder='Search for your events'
@@ -174,13 +174,13 @@ const ManageEvent = () => {
       {/* Event Table */}
       <div className='upcoming-wrapper'>
         <div className='upcoming-header'>
-          <div className='upcoming-header-one'><div><p>Media / Title</p></div></div>
+          <div className='upcoming-header-one'><div><p className='ll'> Media/Title</p></div></div>
           <div className='upcoming-header-two'>
             <div className='upcoming-header-two-child'>
-              <p>Date & Time</p>
-              <p>Tickets(sold)</p>
-              <p>Revenue</p>
-              <p>Status</p>
+              <p className='ll'>Date&Time</p>
+              <p className='ll'>Tickets(sold)</p>
+              <p className='ll'>Revenue</p>
+              <p className='ll'>Status</p>
             </div>
           </div>
           <div className='upcoming-header-three'><div><p>Actions</p></div></div>

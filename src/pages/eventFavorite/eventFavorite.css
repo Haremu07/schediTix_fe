@@ -1,19 +1,20 @@
 .Card{
-    width: 80%;
+    width: 100% !important;
     height: 100%;
     background-color: gray;
     padding: 20px;
     display: flex;
     padding-bottom: 45px;
     gap: 10px;
+    background-color: red;
     flex-wrap: wrap;
     overflow-y: scroll;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 .CardsBox2{
     width: 30%;
-    max-height: 80%;
-    background-color: white;
+    max-height: 85% !important;
+    background-color:white;
     border-radius: 10px;
     padding: 20px;
     font-family: "Poppins", sans-serif;
@@ -112,9 +113,12 @@
 }
 
 .TicketBtn2{
-    padding: 7px;
+    width: 37%;
+    height: 25% !important;
+    padding-bottom: 30px !important;
     border-radius: 5px;
     background-color: #ff5722;
+    font-size: 15px !important;
     color: white;
     font-family: "Poppins", sans-serif;
     border: none;
@@ -137,34 +141,36 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Media Query for Tablets (up to 768px) */
-@media screen and (max-width: 768px) {
+
+
+/* Media Query for Large Screens (desktops and larger) */
+@media screen and (min-width: 1025px) {
     .Card {
-        width: 90%; /* Reduce the width for tablets */
-        padding: 20px;
+        width: 80%; /* Adjust width for larger screens */
+        padding: 30px;
     }
 
     .CardsBox2 {
-        width: 45%; /* Show cards side by side */
-    }
-
-    .CardBoxImgBox2 {
-        width: 100%;
+        width: 30%;
     }
 
     .CardsBoxTextBoxNav12 {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .CardsBoxTextBoxNav22 {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .TicketBtn2 {
-        padding: 12px;
-        font-size: 14px;
+        padding: 18px;
+        font-size: 18px;
     }
 }
+
+
+
+
 
 /* Media Query for Desktops (up to 1024px) */
 @media screen and (max-width: 1024px) {
@@ -191,27 +197,34 @@
     }
 }
 
-/* Media Query for Large Screens (desktops and larger) */
-@media screen and (min-width: 1025px) {
+
+
+/* Media Query for Tablets (up to 768px) */
+@media screen and (max-width: 768px) {
     .Card {
-        width: 80%; /* Adjust width for larger screens */
-        padding: 30px;
+        width: 100%; /* Reduce the width for tablets */
+        padding: 20px;
     }
 
     .CardsBox2 {
-        width: 30%;
+        width: 100%; /* Show cards side by side */
+    }
+
+    .CardBoxImgBox2 {
+        width: 100%;
     }
 
     .CardsBoxTextBoxNav12 {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .CardsBoxTextBoxNav22 {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .TicketBtn2 {
-        padding: 18px;
-        font-size: 18px;
+        padding: 12px;
+        font-size: 14px;
     }
 }
+

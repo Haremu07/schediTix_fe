@@ -71,7 +71,7 @@ console.log(input)
           <a href="/event-categories">Event Categories</a>
           {!token ? (
             <>
-              <a onClick={() => { navigate('/login'); setMenuOpen(false); }}>Sign In</a>
+              <a onClick={() => { navigate('/login'); setMenuOpen(false); }}>Sign In </a>
               <a onClick={() => { navigate('/register'); setMenuOpen(false); }}>Sign Up</a>
             </>
           ) : (
