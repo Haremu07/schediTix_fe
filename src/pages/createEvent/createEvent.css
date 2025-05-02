@@ -618,6 +618,9 @@ border-radius: 7px;
       /* background-color: green; */
       
     }
+    .arrow-back{
+       display: none !important;
+    }
   
     .start {
       width: 100%;

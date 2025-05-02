@@ -1,413 +1,495 @@
 .checkInAttendee{
-    width:100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* background-color:aqua ; */
-    gap: 30px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-    overflow-y: scroll;
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color:aqua ; */
+  gap: 30px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  overflow-y: scroll;
 }
 
 .checkInAttendee__nav{
-    width: 100%;
-    height: 6%;
-    display: flex;
-    justify-content: space-between;
-    /* background-color: aqua; */
-    font-family:  sans-serif;
-    font-size: 20px;
-    align-items: center;
-    color: rgb(186, 186, 186);
+  width: 100%;
+  height: 6%;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: aqua; */
+  font-family:  sans-serif;
+  font-size: 20px;
+  align-items: center;
+  color: rgb(186, 186, 186);
 }
 .navInpit{
-    width: 30%;
-    height:100%;
-    border-radius: 10px;
-    border: 1px solid rgba(186, 186, 186, 1);
-    padding: 10px;
-    font-size: 15px;
-    color:rgba(186, 186, 186, 1) ;    
+  width: 30%;
+  height:100%;
+  border-radius: 10px;
+  border: 1px solid rgba(186, 186, 186, 1);
+  padding: 10px;
+  font-size: 15px;
+  color:rgba(186, 186, 186, 1) ;    
 }
 
 .table-bg1{
-    width: 100%;
-    height: max-content;
-    /* background-color: aqua; */
-    display: flex;
-    flex-direction: column;
-    gap: 30px;   
-    border-radius: 10px;
-    border: 1px solid gray;
-    /* padding: 20px; */
+  width: 100%;
+  height: max-content;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;   
+  border-radius: 10px;
+  border: 1px solid gray;
+  /* padding: 20px; */
 }
 .table{
-    width: 100%;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    /* border: 1px solid rgba(186, 186, 186, 1); */
-  
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid rgba(186, 186, 186, 1); */
+
 }
 .rows{
-    width: 100%;
-    height: 20%;
-    border-bottom: 1px solid gray;
-    padding: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #1e1e1e;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid gray;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1e1e1e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 .medalandtitleHeader{
-    width: 24%;
-    height: 100%;
-    /* background-color: aqua; */
-    display: flex;
-    gap: 5px;
-    color: #1e1e1e;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+  width: 24%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  gap: 5px;
+  color: #1e1e1e;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .medalandtitle{
-    width: 27%;
-    height: 100%;
-    /* background-color: aqua; */
-    display: flex;
-    gap: 5px;
-    color: #1e1e1e;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+  width: 27%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  gap: 5px;
+  color: #1e1e1e;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 .profile{
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: green;
-     
-    & img{
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        object-fit: cover;
-    }
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: green;
+   
+  & img{
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      object-fit: cover;
+  }
 }
 .status{
-    width: 10%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: rgba(16, 112, 255, 0.12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    color:rgba(16, 112, 255, 1); 
+  width: 10%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(16, 112, 255, 0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color:rgba(16, 112, 255, 1); 
 }
 .statusUpgoing{
-    width: 10%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: rgba(244, 195, 0, 0.18);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    color:rgba(232, 135, 1, 1); 
+  width: 10%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(244, 195, 0, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color:rgba(232, 135, 1, 1); 
 }
 .statusend{
-    width: 10%;
-    height: 100%;
-    border-radius: 20px;
-    background-color: rgba(237, 32, 0, 0.09);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    color:rgba(237, 32, 0, 1); 
+  width: 10%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: rgba(237, 32, 0, 0.09);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color:rgba(237, 32, 0, 1); 
 }
-  .Checkinpagination-bg{
-    width: 100%;
-    height:  135px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: black; */
-    /* margin-top: 100px; */
+.Checkinpagination-bg{
+  width: 100%;
+  height:  135px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+  /* margin-top: 100px; */
 }
 .pagination-wrapper{
-    width: 60%;
-    height: 100px;
-    /* background-color: yellow; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-top: 30px; */
+  width: 60%;
+  height: 100px;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 30px; */
 }
 .arrow{
-    font-size: 25px;
-    color:black;
+  font-size: 25px;
+  color:black;
 }
 .dot{
-    font-size: 25px;
-    color:black;
+  font-size: 25px;
+  color:black;
 }
 .num{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    /* background-color: aquamarine; */
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid grey;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  /* background-color: aquamarine; */
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
 }
 .num:hover{
-    background-color: rgb(39,24,126);
-    color: white;
+  background-color: rgb(39,24,126);
+  color: white;
 }
 
 .Small{
-    width: 8%;
-    height: 15%;
-    border: 1px solid gray;
-    position: absolute;
-    border-radius: 10px;
-    left: 1230px;
-    top: 250px;
+  width: 8%;
+  height: 15%;
+  border: 1px solid gray;
+  position: absolute;
+  border-radius: 10px;
+  left: 1230px;
+  top: 250px;
 }/* 900px - tablets and medium devices */
 @media (max-width: 900px) {
-  .checkInAttendee {
-    width: 100%;
-    height: auto;
-    padding: 18px;
-    gap: 20px;
-  }
+.checkInAttendee {
+  padding: 14px;
+  width: 210vw;
+  height: 100vh;
+  gap: 16px;
+  /* background-color: red; */
+}
 
-  .checkInAttendee__nav {
-    font-size: 18px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
+.checkInAttendee__nav {
+  font-size: 12px;
+  width: 200vw !important;
+  gap: 10px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: row;
+}
+.tr{
+  font-size: 17px;
+ 
+}
+.yy{
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  /* background-color: yellow; */
+}
+.yt{
+  width: 100%;
+  margin-left: 50px;
+}
 
-  .navInpit {
-    width: 70%;
-    height: 40px;
-    font-size: 14px;
-  }
+.yx{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
 
-  .rows {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 10px;
-    font-size: 14px;
-    height: auto;
-  }
 
-  .medalandtitle,
-  .medalandtitleHeader {
-    width: 100%;
-    font-size: 14px;
-  }
+.navInpit {
+  width: 100%;
+  height: 36px;
+  font-size: 13px;
+  
+ 
+}
 
-  .status, .statusUpgoing, .statusend {
-    width: fit-content;
-    font-size: 14px;
-    padding: 6px 12px;
-  }
+.rows {
+  font-size: 12px;
+  padding: 15px;
+  gap: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
 
-  .Checkinpagination-bg {
-    height: auto;
-    margin-top: 40px;
-  }
+.medalandtitle,
+.medalandtitleHeader {
+  font-size: 11px;
+}
 
-  .pagination-wrapper {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
+.status, .statusUpgoing, .statusend {
+  font-size: 14px;
+  padding: 5px 8px;
+}
 
-  .num {
-    font-size: 14px;
-    width: 36px;
-    height: 36px;
-  }
+.pagination-wrapper {
+  width: 100%;
+  gap: 10px;
+  /* margin-bottom: 60px; */
+}
 
-  .Small {
-    width: 40%;
-    position: static;
-    margin-top: 20px;
-  }
+.num {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.Small {
+  width: 100%;
+  margin-top: 20px;
+  position: static;
+}
 }
 
 /* 769px - smaller tablets and landscape phones */
 @media (max-width: 769px) {
-  .checkInAttendee {
-    width: 100%;
-    height: auto;
-    padding: 16px;
-    gap: 18px;
-  }
-
-  .checkInAttendee__nav {
-    font-size: 16px;
-  }
-
-  .navInpit {
-    width: 100%;
-    font-size: 14px;
-    height: 38px;
-  }
-
-  .rows {
-    padding: 18px;
-    font-size: 13px;
-    flex-direction: column;
-    height: auto;
-  }
-
-  .medalandtitle,
-  .medalandtitleHeader {
-    width: 100%;
-    font-size: 13px;
-  }
-
-  .status, .statusUpgoing, .statusend {
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  .pagination-wrapper {
-    width: 100%;
-    gap: 10px;
-  }
-
-  .num {
-    font-size: 13px;
-    width: 32px;
-    height: 32px;
-  }
-
-  .Small {
-    width: 60%;
-    margin-top: 20px;
-  }
+.checkInAttendee {
+  padding: 14px;
+  width: 210vw;
+  height: 100vh;
+  gap: 16px;
+  /* background-color: red; */
 }
 
+.checkInAttendee__nav {
+  font-size: 12px;
+  width: 200vw !important;
+  gap: 10px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: row;
+}
+.tr{
+  font-size: 17px;
+ 
+}
+.yy{
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  /* background-color: yellow; */
+}
+.yt{
+  width: 100%;
+  margin-left: 50px;
+}
+
+.yx{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+
+.navInpit {
+  width: 100%;
+  height: 36px;
+  font-size: 13px;
+  
+ 
+}
+
+.rows {
+  font-size: 12px;
+  padding: 15px;
+  gap: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.medalandtitle,
+.medalandtitleHeader {
+  font-size: 11px;
+}
+
+.status, .statusUpgoing, .statusend {
+  font-size: 14px;
+  padding: 5px 8px;
+}
+
+.pagination-wrapper {
+  width: 100%;
+  gap: 10px;
+  /* margin-bottom: 60px; */
+}
+
+.num {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.Small {
+  width: 100%;
+  margin-top: 20px;
+  position: static;
+}
+}
 /* 480px - small phones */
-@media (max-width: 480px) {
-  .checkInAttendee {
-    padding: 14px;
-    gap: 16px;
-  }
+@media (max-width: 640px) {
+.checkInAttendee {
+  padding: 14px;
+  width: 210vw;
+  height: 100vh;
+  gap: 16px;
+  /* background-color: red; */
+}
 
-  .checkInAttendee__nav {
-    font-size: 15px;
-    gap: 10px;
-  }
+.checkInAttendee__nav {
+  font-size: 12px;
+  width: 200vw !important;
+  gap: 10px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: row;
+}
+.tr{
+  font-size: 17px;
+ 
+}
+.yy{
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  /* background-color: yellow; */
+}
+.yt{
+  width: 100%;
+  margin-left: 50px;
+}
 
-  .navInpit {
-    width: 100%;
-    height: 36px;
-    font-size: 13px;
-  }
+.yx{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
 
-  .rows {
-    font-size: 12px;
-    padding: 15px;
-    gap: 10px;
-    height: auto;
-  }
 
-  .medalandtitle,
-  .medalandtitleHeader {
-    font-size: 12px;
-  }
+.navInpit {
+  width: 100%;
+  height: 36px;
+  font-size: 13px;
+  
+ 
+}
 
-  .status, .statusUpgoing, .statusend {
-    font-size: 12px;
-    padding: 5px 8px;
-  }
+.rows {
+  font-size: 12px;
+  padding: 15px;
+  gap: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
 
-  .pagination-wrapper {
-    width: 100%;
-    gap: 10px;
-  }
+.medalandtitle,
+.medalandtitleHeader {
+  font-size: 11px;
+}
 
-  .num {
-    font-size: 12px;
-    width: 30px;
-    height: 30px;
-  }
+.status, .statusUpgoing, .statusend {
+  font-size: 14px;
+  padding: 5px 8px;
+}
 
-  .Small {
-    width: 100%;
-    margin-top: 20px;
-    position: static;
-  }
+.pagination-wrapper {
+  width: 100%;
+  gap: 10px;
+  /* margin-bottom: 60px; */
+}
+
+.num {
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.Small {
+  width: 100%;
+  margin-top: 20px;
+  position: static;
+}
 }
 
 /* 397px - extra small devices */
 @media (max-width: 397px) {
-  .checkInAttendee {
-    padding: 12px;
-    gap: 14px;
-  }
+.checkInAttendee {
+  padding: 12px;
+  gap: 14px;
+}
 
-  .checkInAttendee__nav {
-    font-size: 14px;
-    gap: 8px;
-  }
+.checkInAttendee__nav {
+  font-size: 14px;
+  gap: 8px;
+}
 
-  .navInpit {
-    width: 100%;
-    height: 34px;
-    font-size: 12px;
-  }
+.navInpit {
+  width: 100%;
+  height: 34px;
+  font-size: 12px;
+}
 
-  .rows {
-    padding: 12px;
-    gap: 8px;
-    font-size: 11px;
-    height: auto;
-  }
+.rows {
+  padding: 12px;
+  gap: 8px;
+  font-size: 11px;
+  height: auto;
+}
 
-  .medalandtitle,
-  .medalandtitleHeader {
-    font-size: 11px;
-  }
+.medalandtitle,
+.medalandtitleHeader {
+  font-size: 11px;
+}
 
-  .status, .statusUpgoing, .statusend {
-    font-size: 11px;
-    padding: 4px 6px;
-  }
+.status, .statusUpgoing, .statusend {
+  font-size: 11px;
+  padding: 4px 6px;
+}
 
-  .num {
-    font-size: 11px;
-    width: 28px;
-    height: 28px;
-  }
+.num {
+  font-size: 11px;
+  width: 28px;
+  height: 28px;
+}
 
-  .pagination-wrapper {
-    gap: 8px;
-  }
+.pagination-wrapper {
+  gap: 8px;
+}
 
-  .Small {
-    width: 100%;
-    margin-top: 15px;
-    position: static;
-  }
+.Small {
+  width: 100%;
+  margin-top: 15px;
+  position: static;
+}
 }

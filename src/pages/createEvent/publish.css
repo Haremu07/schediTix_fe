@@ -12,6 +12,7 @@
 
 .ant-modal-body{
     height: 60vh !important;
+    /* background-color: red; */
 
 }
 .publish-wrapper{
@@ -251,14 +252,384 @@ justify-content: space-between;
         text-align: center;
         font-size: 18px;
     }  
-@media (max-width: 599px) {
-    .publish-wrapper {
-      padding: 20px;
+  
+    
+    @media (min-width: 600px) and (max-width: 1023px) {
+      .publish-wrapper {
+        padding: 30px;
+      /* background-color: goldenrod; */
+      width: 100% !important;
+      
+      }
+    
+      .publish-wrapper-two-double-bg {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    
+      .publish-wrapper-two-double-div-one,
+      .publish-third-box {
+        width: 48%;
+      }
+    
+      .publish-event-btn {
+        width: 50%;
+      }
+      .tt{
+        font-style: 19px !important;
+        width: 100%;
+        /* background-color: green; */
+      }
+      .ant-modal-body{
+        height: 100% !important;
+        /* background-color: red; */
+        width: 100% !important;
+        font-size: 13px;
+        overflow-y: scroll !important;
+        
+      
+    
     }
+    .gx{
+      font-size: 13px !important;
+    }
+  .gh{
+    font-size: 14px !important;
+    width: 100vw !important;
+    /* background-color: yellow; */
+  }
+  
+  .publish-holder-nav{
+    width: 100%;
+  }
+  .gg{
+    width: 100vw !important;
+  
+    font-size: 12px !important;
+    margin-bottom: 8px ;
+    /* background-color: red; */
+  }
+  .publish-third-input{
+width: 53vw !important;
+/* background-color: red; */
+  }
+  .publish-input{
+    width: 53vw !important;
+  }
+  .warning-icon{
+    width: 100%;
+    /* background-color: red; */
+    padding-bottom: 6px;
+  }
+  .warning-iconx{
+    font-size: 27px;
+    text-align: center;
+    /* background-color: brown; */
+  }
+    .warning-texts{
+      width: 130vw !important;
+      /* background-color: aqua; */
+      font-size: 18.2px;
+    }
+    }
+
+    @media (max-width: 599px) {
+      .publish-wrapper {
+        padding: 20px;
+        width: 100% !important;
+        
+        
+      }
+    
+      .publish-wrapper-two-double-bg {
+        flex-direction: column;
+        gap: 20px;
+      }
+    
+      .publish-wrapper-two-double-div-one,
+      .publish-third-box {
+        width: 100%;
+      }
+    
+      .publish-event-btn {
+        width: 100%;
+      }
+    
+      .quick-reminder-title-wrapper {
+        width: 100%;
+        font-size: 13px;
+      }
+    
+      .verified-icon {
+        font-size: 150px;
+      }
+    
+      .successful-text-holder {
+        font-size: 16px;
+      }
+
+      .gx{
+        font-size: 12px !important;
+      }
+    .gh{
+      font-size: 12px;
+    }
+    
+    .publish-holder-nav{
+      width: 100%;
+    }
+    .gg{
+      width: 100vw !important;
+    
+      font-size: 12px !important;
+      margin-bottom: 8px ;
+      /* background-color: red; */
+    }
+    .publish-input{
+    width: 100%;
+    }
+    .publish-third-input{
+    width: 100%;
+    }
+    .warning-texts{
+      font-size: 13px;
+      /* background-color: green; */
+    }
+    .warning-icon{
+      width: 20%;
+      /* background-color: red; */
+      padding-bottom: 6px;
+    }
+    .warning-iconx{
+      font-size: 17px;
+      text-align: center;
+    }
+  
+  
+    .warning-icon{
+      width: 100%;
+      /* background-color: red; */
+      padding-bottom: 6px;
+      font-size: 18.2px;
+    }
+    }
+  
+    @media only screen and (max-width:480px) {
+
+
+      .publish-wrapper {
+        padding: 7px;
+        width: 100% !important;
+        overflow-x: hidden;
+        /* background-color: yellow; */
+      
+        
+      }
+      .tt{
+        font-style: 12px;
+      }
+      .ant-modal-body{
+        /* height: 100% !important; */
+        background-color: rgb(39, 9, 121) !important;
+        width: 100% !important;
+        font-size: 13px;
+        overflow-x: hidden;
+        overflow-y: scroll !important;
+    
+    }
+    .quick-reminder-text-wrapper-text{
+      width: 42vw !important;
+      font-size: 7px !important;
+      text-align: center;
+      padding-bottom: 10px !important;
+      
+    }
+    .gx{
+      font-size: 5px !important;
+    }
+  .gh{
+    font-size: 12px;
+  }
+  
+  .publish-holder-nav{
+    width: 100%;
+  }
+  .gg{
+    width: 100vw !important;
+  
+    font-size: 12px !important;
+    margin-bottom: 8px ;
+    /* background-color: red; */
+  }
+  .publish-input{
+  width: 100%;
+  }
+  .publish-third-input{
+  width: 100%;
+  }
+  .warning-texts{
+    font-size: 15px;
+  }
+  .warning-icon{
+    width: 20%;
+    /* background-color: red; */
+    padding-bottom: 6px;
+    font-size: 18.2px;
+  }
+  .warning-iconx{
+    font-size: 17px;
+    text-align: center;
+  }
+
+
+  .warning-icon{
+    width: 100%;
+    /* background-color: red; */
+   
+    font-size: 15px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .warning-iconx{
+    font-size: 25px !important;
+    text-align: center;
+    /* background-color: brown; */
+  }
+    .warning-texts{
+      width: 130vw !important;
+      /* background-color: aqua; */
+      font-size: 12px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+      .publish-wrapper-two-double-bg {
+        flex-direction: column;
+        gap: 18px;
+        width: 100%;
+      }
+    
+      .publish-wrapper-two-double-div-one,
+      .publish-third-box {
+        width: 100%;
+      }
+    
+      .publish-event-btn {
+        width: 100%;
+      }
+    
+      .quick-reminder-title-wrapper {
+        width: 100%;
+        font-size: 13px;
+      }
+    
+      .verified-icon {
+        font-size: 150px;
+      }
+    
+      .successful-text-holder {
+        font-size: 15px;
+        background-color: blue;
+      }
+      .quick-reminder-text-wrapper-text{
+        color: rgb(244,159,0);
+        font-weight: 500;
+        line-height: 1.2;
+        /* background-color: red; */
+        font-size: 7px;
+        width: 100%;
+        /* height: 950px; */
+    }
+  }
+  
+
+
+
+
+
+
+  @media (max-width: 397px) {
+    .publish-wrapper {
+      padding: 7px;
+      width: 100% !important;
+      /* background-color: yellow; */
+    
+      
+    }
+    .tt{
+      font-style: 12px;
+    }
+    .ant-modal-body{
+      height: 100% !important;
+      /* background-color: red; */
+      width: 100% !important;
+      font-size: 13px;
+      overflow-y: scroll !important;
+
+    
+  
+  }
+  .gx{
+    font-size: 12px !important;
+  }
+.gh{
+  font-size: 12px;
+}
+
+.publish-holder-nav{
+  width: 100%;
+}
+.gg{
+  width: 100vw !important;
+
+  font-size: 12px !important;
+  margin-bottom: 8px ;
+  /* background-color: red; */
+}
+.publish-input{
+width: 100%;
+}
+.publish-third-input{
+width: 100%;
+}
+.warning-texts{
+  font-size: 15px;
+}
+.warning-icon{
+  width: 20%;
+  /* background-color: red; */
+  padding-bottom: 6px;
+}
+.warning-iconx{
+  font-size: 17px;
+  text-align: center;
+}
+
+
+.warning-icon{
+  width: 100%;
+  /* background-color: red; */
+  padding-bottom: 6px;
+  font-size: 18.2px;
+}
+.warning-iconx{
+  font-size: 27px;
+  text-align: center;
+  /* background-color: brown; */
+}
+  .warning-texts{
+    width: 100vw !important;
+    /* background-color: aqua; */
+    font-size: 18.2px;
+  }
   
     .publish-wrapper-two-double-bg {
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
+      width: 100%;
     }
   
     .publish-wrapper-two-double-div-one,
@@ -280,28 +651,16 @@ justify-content: space-between;
     }
   
     .successful-text-holder {
-      font-size: 16px;
+      font-size: 15px;
+      background-color: blue;
     }
+    .quick-reminder-text-wrapper-text{
+      color: rgb(244,159,0);
+      font-weight: 500;
+      line-height: 1.2;
+      /* background-color: red; */
+      font-size: 7px;
+      width: 100%;
+      /* height: 950px; */
   }
-  
-  @media (min-width: 600px) and (max-width: 1023px) {
-    .publish-wrapper {
-      padding: 30px;
-    }
-  
-    .publish-wrapper-two-double-bg {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-  
-    .publish-wrapper-two-double-div-one,
-    .publish-third-box {
-      width: 48%;
-    }
-  
-    .publish-event-btn {
-      width: 50%;
-    }
-  }
-  
+}
