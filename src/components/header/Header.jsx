@@ -56,7 +56,7 @@ console.log(input)
           ) 
         }
         <div className='mobile-menu-icon' onClick={() => setMenuOpen(true)}>
-          <FiMenu size={26}/>
+          <FiMenu size={26} />
         </div>
 
       </div>
@@ -68,8 +68,9 @@ console.log(input)
               <FiX size={26} />
             </button>
           </div>
-          <a href="/event-categories">Event Categories</a>
+          <a onClick={() => { navigate('/event-categories'); setMenuOpen(false); }}>Event Categories</a>
           {!token ? (
+         
             <>
               <a onClick={() => { navigate('/login'); setMenuOpen(false); }}>Sign In </a>
               <a onClick={() => { navigate('/register'); setMenuOpen(false); }}>Sign Up</a>
