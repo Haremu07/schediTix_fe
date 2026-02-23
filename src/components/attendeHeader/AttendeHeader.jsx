@@ -11,7 +11,7 @@ import { IoIosArrowBack, IoIosArrowForward  } from "react-icons/io";
 
 const AttendeHeader = () => {
   const [open, setOpen] = useState(false);
-  const [burger, setBurger] = useState(true)
+  // const [burger, setBurger] = useState(true)
   const showDrawer = () => {
     setOpen(true);
   };
